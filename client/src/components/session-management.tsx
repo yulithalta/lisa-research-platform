@@ -882,49 +882,102 @@ export function NewSessionContent() {
   });
   
   // Function to toggle session status
+  // Manejar estado del botón 'Stop Session' para evitar múltiples clics
+  const [stoppingSession, setStoppingSession] = useState<boolean>(false);
+
   const toggleSessionStatus = async (session: SessionWithMetadata) => {
+    // Evitar múltiples clics
+    if (stoppingSession) return;
+    
+    // Marcar la operación como en progreso
+    setStoppingSession(true);
+    
+    // Mostrar toast de progreso inmediatamente para feedback visual
+    const loadingToast = toast({
+      title: "Stopping session",
+      description: "Please wait while all recordings are being stopped...",
+      duration: 10000, // Aumenta la duración para evitar que desaparezca antes de completar
+    });
+    
     // Detener grabación de todas las cámaras asociadas a la sesión
     try {
-      // Obtener los dispositivos asociados a la sesión actual
+      // Primero detener la sesión usando la API para que el servidor comience el proceso
+      // Esto es importante para asegurar que el servidor maneje el proceso completo
+      try {
+        const stopSessionResponse = await fetch(`/api/sessions/${session.id}/finalize`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+        });
+        
+        // Verificar si la solicitud principal de detención fue exitosa
+        if (stopSessionResponse.ok) {
+          console.log(`Session ${session.id} finalized successfully via server`);
+        } else {
+          console.warn(`Server responded with ${stopSessionResponse.status} when finalizing session`);
+        }
+      } catch (serverError) {
+        console.error('Error sending stop request to server:', serverError);
+      }
+      
+      // También intentamos detener cada cámara individualmente como respaldo
       const sessionMetadata = session.metadata || {};
       const sessionDevices = sessionMetadata.devices || { cameras: [], sensors: [] };
       const sessionCameras = Array.isArray(sessionDevices) 
         ? sessionDevices.filter((d: any) => d.type === 'camera')
         : sessionDevices.cameras || [];
       
+      // Variables para seguimiento de progresos
+      let completedCameras = 0;
+      const totalCameras = sessionCameras.length;
+      
       if (sessionCameras && sessionCameras.length > 0) {
-        toast({
-          title: "Stopping recordings",
-          description: `Stopping recording for ${sessionCameras.length} camera(s)`,
-        });
+        console.log(`Stopping recording for ${sessionCameras.length} camera(s)`);
         
-        // Detener grabación para cada cámara de la sesión
-        for (const cameraDevice of sessionCameras) {
+        // Promises para detener todas las cámaras en paralelo
+        const stopPromises = sessionCameras.map(async (cameraDevice) => {
           try {
             const response = await fetch(`/api/cameras/${cameraDevice.id}/stop-recording`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
             });
             
-            if (!response.ok) {
-              console.error(`Error stopping recording for camera ${cameraDevice.id}`);
-              toast({
-                title: "Recording error",
-                description: `Could not stop recording for camera ${cameraDevice.name}`,
-                variant: "destructive",
-              });
-            } else {
-              console.log(`Recording stopped for camera ${cameraDevice.id}`);
-            }
+            completedCameras++;
+            // Actualizar el toast con el progreso
+            toast({
+              id: loadingToast.id,
+              title: "Stopping session",
+              description: `Stopped recording for ${completedCameras}/${totalCameras} cameras...`,
+              duration: 10000,
+            });
+            
+            return { cameraId: cameraDevice.id, success: response.ok };
           } catch (error) {
-            console.error(`Error stopping recording:`, error);
+            console.error(`Error stopping recording for camera ${cameraDevice.id}:`, error);
+            return { cameraId: cameraDevice.id, success: false, error };
           }
+        });
+        
+        // Esperar a que todas las detenciones terminen (exitosas o no)
+        const results = await Promise.allSettled(stopPromises);
+        const failedCameras = results
+          .filter(result => result.status === 'fulfilled' && !(result.value as any).success)
+          .map(result => (result.status === 'fulfilled' ? (result.value as any).cameraId : null))
+          .filter(Boolean);
+        
+        if (failedCameras.length > 0) {
+          console.warn(`Failed to stop recording for ${failedCameras.length} cameras:`, failedCameras);
         }
       }
       
       // Actualizar el estado de la sesión a 'completed'
       updateSessionStatusMutation.mutate({ id: session.id, status: 'completed' }, {
         onSuccess: (data) => {
+          // Desmarcar la operación como en progreso
+          setStoppingSession(false);
+          
+          // Actualizar el cache para reflejar los cambios inmediatamente
+          queryClient.invalidateQueries({ queryKey: ['/api/sessions'] });
+          
           // Mostrar notificación verde cuando se completa una sesión
           toast({
             title: "Session Completed",
@@ -933,9 +986,16 @@ export function NewSessionContent() {
                The recorded data is now available in the Historical Sessions tab.`,
             className: "bg-green-50 text-green-800 border-green-300",
           });
+        },
+        onError: (error) => {
+          // Desmarcar la operación como en progreso incluso en caso de error
+          setStoppingSession(false);
+          console.error('Error updating session status:', error);
         }
       });
     } catch (error) {
+      // Desmarcar la operación como en progreso en caso de error
+      setStoppingSession(false);
       console.error('Error stopping session recordings:', error);
       toast({
         title: "Error",
