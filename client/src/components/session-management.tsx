@@ -29,7 +29,7 @@ import {
   Clock, CheckCircle, Download, Database, Plus, X, 
   Timer, Play, FileText, Trash2, Square, ExternalLink,
   Tag, Users, Calendar, Search, Info as InfoIcon,
-  AlertCircle, Wifi, WifiOff, Signal
+  AlertCircle, Wifi, WifiOff, Signal, Loader2
 } from 'lucide-react';
 import { format } from 'date-fns';
 import { enUS } from 'date-fns/locale';
