@@ -49,7 +49,14 @@ class MqttClient {
   private backupInterval: NodeJS.Timeout | null = null;
   private messageCounter = 0;
   private connectionAttempt = 0;
-  private activeSessions: Map<number, { path: string, sensors: string[] }> = new Map();
+  private activeSessions: Map<number, { 
+    path: string, 
+    sensors: string[],
+    jsonPath?: string,
+    csvPath?: string,
+    logPath?: string,
+    startTime?: string
+  }> = new Map();
   
   /**
    * Conecta al broker MQTT
@@ -342,7 +349,8 @@ class MqttClient {
                     }
                   }
                 }
-              } catch (sensorCsvError) {
+              } catch (error) {
+                const sensorCsvError = error as Error;
                 console.warn(`Error escribiendo CSV por tipo de sensor: ${sensorCsvError.message}`);
               }
               
@@ -377,8 +385,9 @@ class MqttClient {
                     
                     // Añadir cada metadato si existe
                     for (const key of metadataKeys) {
-                      if (parsedMessage[key] !== undefined) {
-                        sensorData[key] = parsedMessage[key];
+                      if (parsedMessage[key] !== undefined && typeof parsedMessage === 'object') {
+                        const anyData = sensorData as any;
+                        anyData[key] = parsedMessage[key];
                       }
                     }
                   }
@@ -478,7 +487,8 @@ class MqttClient {
                           fs.copyFileSync(tempPath, mqttJsonPath);
                           try { fs.unlinkSync(tempPath); } catch (e) {}
                         }
-                      } catch (jsonReadError) {
+                      } catch (error) {
+                        const jsonReadError = error as Error;
                         console.error(`Error leyendo archivo JSON MQTT: ${jsonReadError.message}`);
                       }
                     }
@@ -678,7 +688,7 @@ class MqttClient {
       const messagesPath = path.join(DATA_DIR, 'mqtt-messages.json');
       if (fs.existsSync(messagesPath)) {
         const messagesData = fs.readFileSync(messagesPath, 'utf8');
-        const messages = JSON.parse(messagesData);
+        const messages = JSON.parse(messagesData) as Record<string, any[]>;
         
         this.messageCache = new Map(Object.entries(messages));
         console.log(`Cargados ${this.messageCache.size} tópicos desde caché`);
@@ -886,7 +896,7 @@ class MqttClient {
                 .filter(file => file.endsWith('.json'));
               
               // Cargar datos de todos los sensores
-              const allSensorData = {};
+              const allSensorData: Record<string, any> = {};
               for (const file of sensorFiles) {
                 try {
                   const sensorId = path.basename(file, '.json');
