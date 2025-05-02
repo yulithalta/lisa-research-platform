@@ -2,7 +2,12 @@ import fs from 'fs';
 import path from 'path';
 import { promises as fsPromises } from 'fs';
 import AdmZip from 'adm-zip';
-import { type Session, type File } from '@shared/schema';
+import { type Session } from '@shared/schema';
+
+// Definición local de la interfaz File para uso en el FileManager
+interface File {
+  fileName: string;
+}
 
 class FileManager {
   private uploadsDir: string;
