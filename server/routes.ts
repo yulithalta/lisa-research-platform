@@ -21,6 +21,7 @@ import { log as viteLog } from './vite';
 import { fileManager } from './fileManager';
 import { thumbnailService } from './services/thumbnail.service';
 import { archiveService } from './services/archive.service';
+import { sessionService } from './services/session.service';
 import { sessionController } from './controllers/session.controller';
 
 // Función auxiliar para registrar actividad de usuario
@@ -438,6 +439,17 @@ async function startRecording(camera: any, sessionId?: number) {
       }));
       
       console.log(`Created sensor data file: ${sensorDataPath}`);
+      
+      // Registrar el archivo de datos del sensor en la sesión si hay una sesión activa
+      if (activeSessionId) {
+        try {
+          console.log(`Registrando archivo de datos de sensor en sesión ${activeSessionId}: ${sensorDataPath}`);
+          await sessionService.registerSensorDataFile(activeSessionId, sensorDataPath);
+          console.log(`✅ Archivo de datos de sensor registrado exitosamente en la sesión ${activeSessionId}`);
+        } catch (regError) {
+          console.error(`Error al registrar archivo de datos de sensor en sesión ${activeSessionId}:`, regError);
+        }
+      }
     } catch (sensorError) {
       console.error('Error creating sensor data file:', sensorError);
     }
