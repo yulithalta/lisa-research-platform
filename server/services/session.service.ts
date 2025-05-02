@@ -191,11 +191,12 @@ class SessionService {
    * @param sessionData Datos de la sesión
    */
   async finalizeSession(sessionId: number | string, sessionData: Session): Promise<void> {
+    console.log(`\n\n⚡ FINALIZANDO SESIÓN ${sessionId} - GUARDANDO TODOS LOS METADATOS`);
     const sessionDir = await this.getSessionDirectory(sessionId);
     
-    // Crear un archivo JSON con los metadatos de la sesión
+    // Crear un archivo JSON con los metadatos de la sesión (detallado)
     const metadataFile = path.join(sessionDir, 'session_metadata.json');
-    await fsPromises.writeFile(metadataFile, JSON.stringify({
+    const sessionMetadata = {
       id: sessionId,
       name: sessionData.name || `Session${sessionId}`,
       description: sessionData.description,
@@ -204,10 +205,65 @@ class SessionService {
       userId: sessionData.userId,
       status: 'completed',
       exportedAt: null, // Se actualizará cuando se exporte la sesión
-      files: await this.getSessionFiles(sessionId)
-    }, null, 2));
+      files: await this.getSessionFiles(sessionId),
+      // Incluir datos adicionales del formulario
+      metadata: sessionData.metadata || {},
+      notes: sessionData.notes || '',
+      tags: sessionData.tags || [],
+      // Información de investigador y participantes
+      researcher: (sessionData.metadata as any)?.researcher || '',
+      participants: (sessionData.metadata as any)?.participants || [],
+      labInfo: (sessionData.metadata as any)?.labInfo || {}
+    };
     
-    console.log(`Sesión ${sessionId} finalizada y metadata guardada`);
+    await fsPromises.writeFile(metadataFile, JSON.stringify(sessionMetadata, null, 2));
+    console.log(`\u2705 Metadatos de sesión guardados en ${metadataFile}`);
+    
+    // Guardar un archivo JSON exclusivo para el formulario (fácil de encontrar)
+    const formDataFile = path.join(sessionDir, 'session_form_data.json');
+    const metadata = sessionData.metadata as any || {};
+    const formData = {
+      name: sessionData.name || `Session${sessionId}`,
+      description: sessionData.description || '',
+      researcher: metadata?.researcher || '',
+      participants: metadata?.participants || [],
+      tags: sessionData.tags || [],
+      notes: sessionData.notes || '',
+      labInfo: metadata?.labInfo || {},
+      devices: metadata?.selectedDevices || {}
+    };
+    
+    await fsPromises.writeFile(formDataFile, JSON.stringify(formData, null, 2));
+    console.log(`\u2705 Datos del formulario guardados en ${formDataFile}`);
+    
+    // Crear resumen en formato CSV para fácil importación a Excel
+    try {
+      const csvFile = path.join(sessionDir, 'session_summary.csv');
+      const csvHeader = 'Session ID,Name,Description,Researcher,Participants,Start Time,End Time,Tags\n';
+      const metadataForCsv = sessionData.metadata as any || {};
+      const participantsText = Array.isArray(metadataForCsv?.participants) 
+        ? metadataForCsv.participants.join('; ')
+        : '';
+      const tagsText = Array.isArray(sessionData.tags) ? sessionData.tags.join('; ') : '';
+      
+      const csvLine = [
+        sessionId,
+        sessionData.name || `Session${sessionId}`,
+        (sessionData.description || '').replace(/,/g, ';'),
+        (metadataForCsv?.researcher || '').replace(/,/g, ';'),
+        participantsText.replace(/,/g, ';'),
+        sessionData.startTime ? new Date(sessionData.startTime).toISOString() : '',
+        sessionData.endTime ? new Date(sessionData.endTime).toISOString() : new Date().toISOString(),
+        tagsText.replace(/,/g, ';')
+      ].join(',');
+      
+      await fsPromises.writeFile(csvFile, csvHeader + csvLine);
+      console.log(`\u2705 Resumen CSV guardado en ${csvFile}`);
+    } catch (csvError: any) {
+      console.error('Error al crear archivo CSV:', csvError);
+    }
+    
+    console.log(`\u2705 Sesión ${sessionId} finalizada exitosamente - Todos los metadatos guardados`);
   }
 }
 
