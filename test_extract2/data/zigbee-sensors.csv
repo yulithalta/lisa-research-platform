@@ -1,0 +1,5 @@
+timestamp,topic,device_id,temperature,humidity,motion,battery,linkquality,payload
+"2025-05-02T18:30:00.000Z","zigbee2mqtt/livinglab/sensor1","sensor1","22.5","65","","87","95","{""temperature"":22.5,""humidity"":65,""battery"":87,""linkquality"":95}"
+"2025-05-02T18:31:00.000Z","zigbee2mqtt/livinglab/sensor1","sensor1","22.6","64","","87","96","{""temperature"":22.6,""humidity"":64,""battery"":87,""linkquality"":96}"
+"2025-05-02T18:30:05.000Z","zigbee2mqtt/livinglab/sensor2","sensor2","","","true","92","98","{""occupancy"":true,""battery"":92,""linkquality"":98}"
+"2025-05-02T18:31:05.000Z","zigbee2mqtt/livinglab/sensor2","sensor2","","","false","92","97","{""occupancy"":false,""battery"":92,""linkquality"":97}"

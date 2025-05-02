@@ -72,23 +72,80 @@ async function createSessionZip(sessionId, session) {
       console.log('✅ Añadido zigbee-sensors.csv al ZIP');
     }
 
-    // Buscar grabaciones en el directorio principal
+    // Buscar grabaciones en el directorio principal con patrones mejorados
     if (fs.existsSync(recordingsDir)) {
       const files = fs.readdirSync(recordingsDir);
-      const mp4Files = files.filter(file => {
-        return file.endsWith('.mp4') && (
-          file.includes(`session${sessionId}`) || 
-          file.includes(`s${sessionId}_`) ||
-          file.includes(`-session${sessionId}-`)
+      
+      // Patrones que relacionan archivos con esta sesión
+      const sessionPatterns = [
+        `session${sessionId}`,
+        `s${sessionId}_`,
+        `-session${sessionId}-`,
+        `_${sessionId}_`,
+        `-${sessionId}-`,
+        `_${sessionId}.`,
+        `-${sessionId}.`,
+        `session_${sessionId}`,
+        `sesion${sessionId}`,
+        `sesion_${sessionId}`
+      ];
+      
+      // Extensiones de vídeo compatibles
+      const videoExtensions = ['.mp4', '.mkv', '.avi', '.mov', '.webm', '.flv'];
+      
+      // Buscar archivos de vídeo relacionados con la sesión
+      const videoFiles = files.filter(file => {
+        // Verificar extensión de vídeo
+        const hasVideoExt = videoExtensions.some(ext => 
+          file.toLowerCase().endsWith(ext)
         );
+        
+        // Verificar si coincide con patrón de sesión
+        const matchesSession = sessionPatterns.some(pattern => 
+          file.includes(pattern)
+        );
+        
+        return hasVideoExt && matchesSession;
       });
       
-      console.log(`Encontrados ${mp4Files.length} archivos MP4 para la sesión ${sessionId}`);
+      console.log(`Encontrados ${videoFiles.length} archivos de vídeo para la sesión ${sessionId}`);
       
-      for (const file of mp4Files) {
+      for (const file of videoFiles) {
         const filePath = path.join(recordingsDir, file);
-        zip.addLocalFile(filePath, 'recordings');
-        console.log(`✅ Añadido archivo ${file} al ZIP`);
+        if (fs.existsSync(filePath) && fs.statSync(filePath).size > 0) {
+          zip.addLocalFile(filePath, 'recordings');
+          console.log(`✅ Añadido archivo ${file} al ZIP`);
+        } else {
+          console.log(`⚠️ Archivo ${file} no existe o está vacío, saltando...`);
+        }
+      }
+      
+      // Buscar subdirectorios relacionados con la sesión
+      const subDirs = files.filter(item => {
+        const itemPath = path.join(recordingsDir, item);
+        return fs.existsSync(itemPath) && fs.statSync(itemPath).isDirectory() && [
+          `session${sessionId}`, `s${sessionId}`, `${sessionId}`
+        ].some(pattern => item.includes(pattern));
+      });
+      
+      if (subDirs.length > 0) {
+        console.log(`Encontrados ${subDirs.length} subdirectorios potencialmente relacionados con la sesión ${sessionId}`);
+        
+        for (const subDir of subDirs) {
+          const subDirPath = path.join(recordingsDir, subDir);
+          const subDirFiles = fs.readdirSync(subDirPath);
+          const subDirVideos = subDirFiles.filter(file => 
+            videoExtensions.some(ext => file.toLowerCase().endsWith(ext))
+          );
+          
+          for (const file of subDirVideos) {
+            const filePath = path.join(subDirPath, file);
+            if (fs.existsSync(filePath) && fs.statSync(filePath).size > 0) {
+              zip.addLocalFile(filePath, 'recordings');
+              console.log(`✅ Añadido archivo ${file} al ZIP (desde subdirectorio ${subDir})`);
+            }
+          }
+        }
       }
     }
     
@@ -116,10 +173,44 @@ async function createSessionZip(sessionId, session) {
       const sessionRecordingsDir = path.join(sessionDir, 'recordings');
       if (fs.existsSync(sessionRecordingsDir)) {
         const recFiles = fs.readdirSync(sessionRecordingsDir);
-        for (const file of recFiles.filter(f => f.endsWith('.mp4'))) {
+        
+        // Buscar todos los formatos de vídeo, no solo MP4
+        const videoExtensions = ['.mp4', '.mkv', '.avi', '.mov', '.webm', '.flv'];
+        const videoFiles = recFiles.filter(file => 
+          videoExtensions.some(ext => file.toLowerCase().endsWith(ext))
+        );
+        
+        console.log(`Encontrados ${videoFiles.length} archivos de vídeo en directorio específico de sesión`);
+        
+        for (const file of videoFiles) {
           const filePath = path.join(sessionRecordingsDir, file);
-          zip.addLocalFile(filePath, 'recordings');
-          console.log(`✅ Añadido archivo ${file} al ZIP (desde directorio de sesión)`);
+          if (fs.existsSync(filePath) && fs.statSync(filePath).size > 0) {
+            zip.addLocalFile(filePath, 'recordings');
+            console.log(`✅ Añadido archivo ${file} al ZIP (desde directorio de sesión)`);
+          } else {
+            console.log(`⚠️ Archivo de sesión ${file} no existe o está vacío, saltando...`);
+          }
+        }
+        
+        // Buscar imágenes (thumbnails) en directorio de grabaciones de sesión
+        const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'];
+        const imageFiles = recFiles.filter(file => 
+          imageExtensions.some(ext => file.toLowerCase().endsWith(ext))
+        );
+        
+        if (imageFiles.length > 0) {
+          console.log(`Encontrados ${imageFiles.length} archivos de imagen/thumbnails en directorio de sesión`);
+          
+          // Crear directorio para thumbnails
+          zip.addFile('recordings/thumbnails/', Buffer.from(''));
+          
+          for (const file of imageFiles) {
+            const filePath = path.join(sessionRecordingsDir, file);
+            if (fs.existsSync(filePath) && fs.statSync(filePath).size > 0) {
+              zip.addLocalFile(filePath, 'recordings/thumbnails');
+              console.log(`✅ Añadido thumbnail ${file} al ZIP`);
+            }
+          }
         }
       }
     }
@@ -134,21 +225,67 @@ async function createSessionZip(sessionId, session) {
     
     zip.addFile('data/session_metadata.json', Buffer.from(metadataContent));
     
-    // Añadir README
+    // Añadir README con formato mejorado
     const sessionName = session.name || 'Sin título';
+    
+    // Obtener información adicional de la sesión
+    const createDate = session.startTime ? new Date(session.startTime).toLocaleString() : 'Desconocida';
+    const startTime = session.startTime ? new Date(session.startTime).toLocaleString() : 'No iniciada';
+    const endTime = session.endTime ? new Date(session.endTime).toLocaleString() : 'En curso';
+    const status = session.status || 'Desconocido';
+    const tags = session.tags && Array.isArray(session.tags) && session.tags.length > 0 ?
+      session.tags.join(', ') : 'Sin etiquetas';
+    const notes = session.notes ? session.notes : 'Sin notas adicionales';
+    
+    // Directorio de búsqueda para mejor entendimiento
+    const searchPaths = [
+      `- ${recordingsDir} (directorio principal de grabaciones)`,
+      `- ${path.join(sessionsDir, `Session${sessionId}`)} (directorio específico de la sesión)`,
+      `- ${path.join(sessionsDir, `Session${sessionId}`, 'recordings')} (grabaciones específicas de la sesión)`,
+      `- ${dataDir} (directorio de datos globales)`
+    ].join('\n      ');
+    
+    // Patrones que relacionan archivos con la sesión
+    const patternExamples = [
+      `session${sessionId}`,
+      `s${sessionId}_`,
+      `session_${sessionId}`,
+      `_${sessionId}_`,
+      `_${sessionId}.`,
+      `cam*_${sessionId}.mp4`
+    ].join('\n      - ');
+    
     const readme = 
       `# Datos exportados de sesión: ${sessionName}\n\n` +
       `## Información de la sesión\n` +
+      `- ID: ${sessionId}\n` +
       `- Nombre: ${sessionName}\n` +
-      `- Descripción: ${session.description || 'Sin descripción'}\n\n` +
+      `- Descripción: ${session.description || 'Sin descripción'}\n` +
+      `- Fecha de creación: ${createDate}\n` +
+      `- Hora de inicio: ${startTime}\n` +
+      `- Hora de finalización: ${endTime}\n` +
+      `- Estado: ${status}\n` +
+      `- Etiquetas: ${tags}\n` +
+      `- Notas: ${notes}\n\n` +
       `## Contenido\n` +
-      `- /recordings: Grabaciones de vídeo\n` +
-      `- /data: Datos de sensores y metadatos\n` +
+      `- /recordings/: Grabaciones de vídeo vinculadas a esta sesión\n` +
+      `  - Incluye grabaciones MP4, MKV, AVI y otros formatos soportados\n` +
+      `- /data/: Datos de sensores y metadatos\n` +
       `  - zigbee-data.json: Datos completos en formato JSON\n` +
       `  - zigbee-sensors.csv: Datos en formato CSV para análisis\n` +
-      `  - session_metadata.json: Metadatos de la sesión\n` +
-      `\n` +
-      `Exportación generada el ${new Date().toLocaleString()}\n`;
+      `  - session_metadata.json: Metadatos detallados de la sesión\n` +
+      `  - /sensor_data/: Datos específicos de sensores para esta sesión\n\n` +
+      `## Directorio de búsqueda\n` +
+      `Los archivos de esta sesión se han buscado en las siguientes ubicaciones:\n` +
+      `      ${searchPaths}\n\n` +
+      `## Patrones de identificación de archivos\n` +
+      `Las grabaciones se vinculan a esta sesión cuando sus nombres contienen alguno de estos patrones:\n` +
+      `      - ${patternExamples}\n\n` +
+      `## Notas importantes\n` +
+      `- El ID de sesión ${sessionId} es clave para identificar archivos asociados\n` +
+      `- Los archivos sin conexión directa a esta sesión no se incluyen en esta exportación\n\n` +
+      `Exportación generada el ${new Date().toLocaleString()}\n` +
+      `Sistema: SensorSessionTracker v2.1 (Prueba)\n`;
     
     zip.addFile('README.txt', Buffer.from(readme));
     
