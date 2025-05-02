@@ -151,6 +151,33 @@ class SessionService {
       // Asegurar que existan las propiedades necesarias
       if (!sessionFiles.recordings) sessionFiles.recordings = [];
       if (!sessionFiles.sensorData) sessionFiles.sensorData = [];
+      
+      // Verificar que los archivos existan físicamente y registrar la información
+      console.log(`✅ LOG DETALLADO - Archivos encontrados para la sesión ${sessionId}:`);
+      console.log(`Directorio de sesión: ${sessionDir}`);
+      console.log(`Total de grabaciones registradas: ${sessionFiles.recordings.length}`);
+      console.log(`Total de archivos de sensores registrados: ${sessionFiles.sensorData.length}`);
+      
+      // Verificar cada archivo de grabación
+      const validRecordings = sessionFiles.recordings.filter(rec => {
+        const exists = fs.existsSync(rec.path);
+        console.log(`Grabación ${exists ? '✅' : '❌'}: ${rec.path}`);
+        return exists;
+      });
+      
+      // Verificar cada archivo de sensor
+      const validSensorData = sessionFiles.sensorData.filter(sensor => {
+        const exists = fs.existsSync(sensor.path);
+        console.log(`Datos sensor ${exists ? '✅' : '❌'}: ${sensor.path}`);
+        return exists;
+      });
+      
+      // Actualizar la lista con solo archivos válidos
+      sessionFiles.recordings = validRecordings;
+      sessionFiles.sensorData = validSensorData;
+      
+      console.log(`Archivos válidos de grabación: ${validRecordings.length}/${sessionFiles.recordings.length}`);
+      console.log(`Archivos válidos de sensores: ${validSensorData.length}/${sessionFiles.sensorData.length}`);
     } catch (error) {
       console.log(`No se encontró archivo de log para la sesión ${sessionId}, se usará lista vacía`);
     }
