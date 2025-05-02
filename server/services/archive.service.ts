@@ -165,12 +165,16 @@ class ArchiveService {
         console.log('✅ Añadido devices.json al ZIP');
       }
 
-      // Buscar grabaciones en el directorio principal
+      // Buscar grabaciones en el directorio principal con varios patrones de sesión
       const recordingsDir = this.recordingsDir;
       if (fs.existsSync(recordingsDir)) {
         const files = fs.readdirSync(recordingsDir);
         const mp4Files = files.filter(file => {
-          return file.endsWith('.mp4') && file.includes(`session${sessionId}`);
+          return file.endsWith('.mp4') && (
+            file.includes(`session${sessionId}`) || 
+            file.includes(`s${sessionId}_`) ||
+            file.includes(`-session${sessionId}-`)
+          );
         });
         
         console.log(`Encontrados ${mp4Files.length} archivos MP4 para la sesión ${sessionId}`);
@@ -199,6 +203,17 @@ class ArchiveService {
             const filePath = path.join(sensorDataDir, file);
             zip.addLocalFile(filePath, 'data/sensor_data');
             console.log(`✅ Añadido ${file} al ZIP`);
+          }
+        }
+        
+        // Añadir grabaciones del directorio específico de sesiones
+        const sessionRecordingsDir = path.join(sessionDir, 'recordings');
+        if (fs.existsSync(sessionRecordingsDir)) {
+          const recFiles = fs.readdirSync(sessionRecordingsDir);
+          for (const file of recFiles.filter(f => f.endsWith('.mp4'))) {
+            const filePath = path.join(sessionRecordingsDir, file);
+            zip.addLocalFile(filePath, 'recordings');
+            console.log(`✅ Añadido archivo ${file} al ZIP (desde directorio de sesión)`);
           }
         }
       }

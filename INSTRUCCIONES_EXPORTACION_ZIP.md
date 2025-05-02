@@ -1,85 +1,71 @@
-# Instrucciones para Implementar la Solución de Exportación ZIP
+# Instrucciones para la Exportación de Sesiones
 
-## Cambios Realizados
+## ¿Qué es la exportación de sesiones?
 
-Se han realizado las siguientes mejoras en el sistema de exportación ZIP de sesiones:
+La exportación de sesiones permite empaquetar todos los datos relacionados con una sesión específica en un único archivo ZIP, incluyendo grabaciones de vídeo y datos de sensores. Esta funcionalidad es crucial para preservar y compartir los datos recolectados durante las sesiones de monitoreo.
 
-1. **Consolidación de datos de sensores** en un único archivo JSON y CSV para facilitar análisis
-2. **Reorganización de la estructura de archivos** en carpetas 'data' y 'recordings'
-3. **Mejora en la búsqueda de archivos** para incluir todos los archivos relevantes en el ZIP
-4. **Mejora del README** con información detallada sobre la estructura y contenido
-5. **Adición de metadatos** para mejor compatibilidad y claridad
+## ¿Qué contiene el archivo ZIP?
 
-## Archivos Modificados
+Cada archivo ZIP de sesión contiene:
 
-1. **server/fileManager.ts**: Simplificación de la búsqueda de archivos
-2. **server/mqtt-client-simple.ts**: Consolidación de datos de sensores en archivos únicos
-3. **server/services/archive.service.ts**: Reorganización de la estructura del ZIP
+1. **Grabaciones de video** - Todos los archivos MP4 asociados a la sesión
+2. **Datos de sensores** - Archivos JSON y CSV con datos de sensores
+3. **Metadatos de la sesión** - Información sobre la sesión, fecha, y descripción
+4. **Archivo README.txt** - Explicación detallada del contenido del ZIP
 
-## Estructura de Carpetas y Archivos
+## Cómo se identifican las grabaciones por sesión
 
-La estructura en el archivo ZIP exportado es la siguiente:
+El sistema busca grabaciones relacionadas con una sesión de varias formas:
+
+1. **Por prefijo de cámara y ID de sesión**: Los archivos MP4 que contienen el ID de la sesión en su nombre, como:
+   - `cam1_session42_20250502.mp4`
+   - `c32_livinglab_s42_video.mp4`
+   - `cam2-session42-20250502.mp4`
+
+2. **Por ubicación**: Archivos MP4 que se encuentran en el directorio específico de la sesión:
+   - `/sessions/Session42/recordings/cualquier_grabacion.mp4`
+
+## Estructura del archivo ZIP
+
+La estructura interna del archivo ZIP es la siguiente:
 
 ```
 /
-├── README.txt            # Información detallada sobre la sesión y contenidos
-├── data/                 # Carpeta con todos los datos de sensores y metadatos
-│   ├── zigbee-data.json      # Datos completos de sensores en formato JSON
-│   ├── zigbee-sensors.csv    # Datos de sensores en formato CSV para análisis
-│   ├── devices.json          # Lista de todos los dispositivos
-│   ├── bridge.json           # Estado del puente zigbee
-│   ├── session_metadata.json # Metadatos técnicos de la sesión
-│   └── sensor_data/          # Carpeta con datos adicionales de sensores
-└── recordings/           # Carpeta con grabaciones de vídeo
-    └── *.mp4                 # Archivos de grabación MP4
+├── README.txt                        # Información sobre la sesión y contenido
+├── recordings/                      # Directorio con grabaciones de vídeo
+│   ├── cam1_session42_20250502.mp4   # Grabaciones identificadas por ID de sesión
+│   ├── cam2-session42-20250502.mp4
+│   ├── c32_livinglab_s42_video.mp4
+│   └── ...
+├── data/                           # Directorio con datos y metadatos
+│   ├── zigbee-data.json            # Datos unificados en formato JSON
+│   ├── zigbee-sensors.csv           # Datos unificados en formato CSV
+│   ├── devices.json                # Información sobre dispositivos
+│   ├── session_metadata.json        # Metadatos de la sesión
+│   └── sensor_data/                # Directorio con datos específicos de sensores
+│       ├── sensor_readings.json     # Lecturas de sensores en formato JSON
+│       └── sensor_readings.csv      # Lecturas de sensores en formato CSV
+└── ...
 ```
 
-## Instrucciones para Probar Localmente
+## Recomendaciones para nombrar grabaciones
 
-Para probar la funcionalidad de exportación ZIP en tu entorno local:
+Para asegurar que las grabaciones se asocien correctamente con las sesiones, se recomienda:
 
-1. **Crea los directorios necesarios**:
-   ```bash
-   mkdir -p data recordings temp
-   ```
+1. **Uso del prefijo de cámara**: Configure el prefijo en la configuración de cada cámara
+2. **Incluir el ID de sesión** en el nombre del archivo usando alguno de estos formatos:
+   - `prefijo_session{ID}_fecha.mp4`
+   - `prefijo-session{ID}-fecha.mp4`
+   - `prefijo_s{ID}_fecha.mp4`
 
-2. **Copia el archivo de prueba**:
-   - Utiliza el archivo `test-zip-creation.js` proporcionado
-   - Para ejecutarlo:
-   ```bash
-   node test-zip-creation.js
-   ```
+## Resoluciones de problemas comunes
 
-3. **Verifica la estructura** del archivo ZIP resultante en la carpeta `temp/`
+1. **Grabaciones no incluidas en el ZIP**: Verificar que el nombre del archivo siga las convenciones mencionadas e incluya el ID de sesión
+2. **ZIP sin datos de sensores**: Asegurarse de que los archivos `zigbee-data.json` y `zigbee-sensors.csv` existen en el directorio `data/`
+3. **Archivo ZIP vacío o solo con README**: Verificar que las carpetas `/recordings` y `/sessions/Session{ID}` existen y contienen archivos
 
-## Cómo Funciona
+## Notas adicionales
 
-1. **mqtt-client-simple.ts** ahora guarda datos unificados:
-   - Un solo archivo `zigbee-data.json` con todos los datos en formato JSON
-   - Un solo archivo `zigbee-sensors.csv` con datos en formato CSV para análisis
-   - Un archivo `devices.json` con información sobre todos los dispositivos
-
-2. **archive.service.ts** busca archivos en estas ubicaciones:
-   - Primero busca en la carpeta `data/` por los archivos consolidados
-   - Luego busca en `recordings/` por archivos MP4
-   - Finalmente busca en cualquier ubicación adicional por compatibilidad
-
-3. La estructura de carpetas en el ZIP es simplificada:
-   - Solo dos carpetas principales: `/data` y `/recordings`
-   - Un archivo README.txt claro y detallado
-
-## Solución de Problemas
-
-Si el archivo ZIP sigue vacío o incompleto:
-
-1. **Verifica los permisos** de los directorios `data/` y `recordings/`
-2. **Comprueba las rutas** en el código - deben ser relativas desde el directorio raíz
-3. **Revisa los logs** para identificar errores durante la búsqueda de archivos
-4. **Ejecuta el script de prueba** para verificar que la funcionalidad básica funciona
-5. **Asegúrate de que los archivos existen** en las ubicaciones esperadas
-
-## Notas Adicionales
-
-- La carpeta `data/` debe contener los archivos de datos consolidados
-- La carpeta `recordings/` debe contener los archivos MP4
-- El sistema ahora busca los archivos en múltiples ubicaciones para maximizar éxito
+- La exportación crea un archivo temporal que se elimina automáticamente después de ser descargado
+- Para sesiones con muchos archivos, la generación del ZIP puede tardar varios minutos
+- El sistema excluye automáticamente grabaciones que no están relacionadas con la sesión seleccionada

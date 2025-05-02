@@ -3,12 +3,15 @@
  * Este script crea un ZIP para una sesión específica y verifica su contenido
  */
 
-const AdmZip = require('adm-zip');
-const fs = require('fs');
-const path = require('path');
+import AdmZip from 'adm-zip';
+import * as fs from 'fs';
+import * as path from 'path';
+import { fileURLToPath } from 'url';
 const fsPromises = fs.promises;
 
-// Ya tenemos __dirname en CommonJS
+// Obtener __dirname en ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Función para cargar datos de la sesión
 const loadSessionData = (sessionId) => {
