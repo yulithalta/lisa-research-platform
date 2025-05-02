@@ -51,6 +51,7 @@
     "@types/json2csv": "^5.0.7",
     "@types/lodash": "^4.17.16",
     "@types/papaparse": "^5.3.15",
+    "@types/ping": "^0.4.4",
     "@types/uuid": "^10.0.0",
     "adm-zip": "^0.5.16",
     "archiver": "^7.0.1",

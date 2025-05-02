@@ -19,6 +19,8 @@ import * as jsonRoutes from "./json-routes";
 import { mqttClient } from './mqtt-client-simple';
 import { log } from './vite';
 import { fileManager } from './fileManager';
+import { thumbnailService } from './services/thumbnail.service';
+import { archiveService } from './services/archive.service';
 
 // Función auxiliar para registrar actividad de usuario
 function logActivity(userId: number, action: string, details: Record<string, any>) {
@@ -523,50 +525,14 @@ async function startRecording(camera: any, sessionId?: number) {
           }
         }
         
-        // Crear una miniatura del video para la visualización en la interfaz
+        // Crear una miniatura del video para la visualización en la interfaz - Usando el servicio modularizado
         try {
-          // Asegurarse de que el directorio de miniaturas exista
-          if (!fs.existsSync(THUMBNAILS_DIR)) {
-            fs.mkdirSync(THUMBNAILS_DIR, { recursive: true });
-            console.log(`Directorio de miniaturas creado: ${THUMBNAILS_DIR}`);
-          }
-
-          const thumbnailFileName = path.basename(outputPath, '.mp4') + '.jpg';
-          const thumbnailPath = path.join(THUMBNAILS_DIR, thumbnailFileName);
+          // Generar miniatura utilizando el nuevo servicio especializado
+          const thumbnailPromise = thumbnailService.generateThumbnail(outputPath, recording.id);
           
-          console.log(`Generando miniatura en: ${thumbnailPath}`);
-          
-          // Usar la libreria importada como 'ffmpeg' para generar la miniatura
-          // No usar una función llamada 'ffmpeg2' que no existe
-          const ffmpegPromise = new Promise<void>((resolve, reject) => {
-            ffmpeg(outputPath)
-              .on('error', (err: any) => {
-                console.error(`Error generando miniatura para ${outputPath}:`, err);
-                reject(err);
-              })
-              .on('end', () => {
-                console.log(`✅ Miniatura generada exitosamente: ${thumbnailPath}`);
-                
-                // Actualizar la grabación con la URL relativa a la miniatura (para acceso web)
-                const thumbnailUrl = `/thumbnails/${thumbnailFileName}`;
-                storage.updateRecording(recording.id, {
-                  thumbnailUrl: thumbnailUrl
-                }).catch(err => console.error(`Error al actualizar grabación con miniatura: ${err}`));
-                
-                resolve();
-              })
-              .screenshots({
-                count: 1,
-                folder: THUMBNAILS_DIR,
-                filename: thumbnailFileName,
-                size: '320x240'
-              });
-          });
-          
-          // No esperamos a que termine la generación de la miniatura
-          // para no bloquear el proceso principal
-          ffmpegPromise.catch(err => {
-            console.error(`Error al generar miniatura: ${err}`);
+          // No esperamos a que termine la generación de la miniatura para no bloquear el proceso principal
+          thumbnailPromise.catch(error => {
+            console.error(`Error al generar miniatura: ${error}`);
           });
         } catch (thumbnailError) {
           console.error(`Error al generar miniatura: ${thumbnailError}`);
@@ -2806,8 +2772,20 @@ Exportado el: ${new Date().toISOString()}
       return res.status(500).json({ error: 'Error obteniendo grabaciones' });
     }
   });
+  
+  app.get("/api/sessions/:id/export", async (req, res) => {
+    if (!req.isAuthenticated()) return res.sendStatus(401);
+    try {
+      const sessionIdStr = req.params.id;
+      const sessionId = parseInt(sessionIdStr);
+      const session = await storage.getSessionById(sessionId);
+      
+      if (!session) {
+        return res.status(404).json({ error: 'Sesión no encontrada' });
+      }
       
       // Crear el directorio de la sesión si no existe
+      const sessionDir = path.join(SESSIONS_DIR, `Session${sessionId}`);
       if (!fs.existsSync(sessionDir)) {
         fs.mkdirSync(sessionDir, { recursive: true });
         console.log(`Created session directory: ${sessionDir}`);
@@ -2999,7 +2977,7 @@ Exportado el: ${new Date().toISOString()}
       archive.append(JSON.stringify(researchMetadata, null, 2), { name: 'research-metadata.json' });
 
       // Agregar grabaciones de video
-      const sessionIdStr = req.params.id;
+      // Ya tenemos sessionIdStr declarado arriba - usamos la misma variable
       
       // Los archivos pueden estar en diferentes formatos de nombre dependiendo de cómo fueron creados
       const possiblePatterns = [
@@ -3398,8 +3376,12 @@ Exportado el: ${new Date().toISOString()}
         });
       } catch (zipError) {
         console.error('Error crítico en el proceso de ZIP:', zipError);
-        throw zipError; // Re-lanzar para que sea capturado por el bloque catch exterior
+        res.status(500).json({ error: 'Error al crear el archivo ZIP' });
+        return;
       }
+    } catch (error) {
+      console.error('Error general en la exportación de la sesión:', error);
+      res.status(500).json({ error: "Error al exportar la sesión" });
     }
   });
 

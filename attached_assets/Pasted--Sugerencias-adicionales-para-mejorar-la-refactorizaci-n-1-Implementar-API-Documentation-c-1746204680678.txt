@@ -1,0 +1,233 @@
+## Sugerencias adicionales para mejorar la refactorización
+
+### 1. Implementar API Documentation con Swagger/OpenAPI
+
+```typescript
+// swagger.config.ts
+import swaggerJsdoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
+
+const options = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Camera Management API',
+      version: '1.0.0',
+      description: 'API para gestión de cámaras y grabaciones',
+    },
+    servers: [
+      {
+        url: '/api',
+      },
+    ],
+  },
+  apis: ['./src/routes/*.ts', './src/controllers/*.ts'],
+};
+
+export const specs = swaggerJsdoc(options);
+export const setupSwagger = (app) => {
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+};
+```
+
+Añadir a las rutas:
+
+```typescript
+/**
+ * @swagger
+ * /cameras:
+ *   get:
+ *     summary: Obtener todas las cámaras
+ *     responses:
+ *       200:
+ *         description: Lista de cámaras
+ */
+```
+
+### 2. Logging estructurado con Winston
+
+```typescript
+// logger.ts
+import winston from 'winston';
+
+const logger = winston.createLogger({
+  level: process.env.LOG_LEVEL || 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.json()
+  ),
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+    new winston.transports.Console({
+      format: winston.format.combine(
+        winston.format.colorize(),
+        winston.format.simple()
+      ),
+    }),
+  ],
+});
+
+export default logger;
+```
+
+### 3. Implementar una capa de caché para consultas frecuentes
+
+```typescript
+// cache.service.ts
+import NodeCache from 'node-cache';
+
+const cache = new NodeCache({ stdTTL: 300 }); // 5 minutos por defecto
+
+export class CacheService {
+  static set(key: string, value: any, ttl?: number): boolean {
+    return cache.set(key, value, ttl);
+  }
+
+  static get<T>(key: string): T | undefined {
+    return cache.get<T>(key);
+  }
+
+  static del(key: string): number {
+    return cache.del(key);
+  }
+
+  static flush(): void {
+    return cache.flushAll();
+  }
+}
+```
+
+Uso en servicios:
+
+```typescript
+async getAll(userId: number) {
+  const cacheKey = `cameras:user:${userId}`;
+  const cached = CacheService.get<Camera[]>(cacheKey);
+  
+  if (cached) return cached;
+  
+  const cameras = await storage.getCameras(userId);
+  CacheService.set(cacheKey, cameras);
+  return cameras;
+}
+```
+
+### 4. Implementar una estrategia de reintentos para operaciones críticas
+
+```typescript
+// retry.util.ts
+export async function withRetry<T>(
+  operation: () => Promise<T>,
+  {
+    retries = 3,
+    delay = 1000,
+    backoff = 2,
+    shouldRetry = (error: any) => true,
+  } = {}
+): Promise<T> {
+  let lastError: any;
+
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      return await operation();
+    } catch (error) {
+      lastError = error;
+
+      if (attempt >= retries || !shouldRetry(error)) {
+        throw error;
+      }
+
+      const waitTime = delay * Math.pow(backoff, attempt);
+      await new Promise(resolve => setTimeout(resolve, waitTime));
+    }
+  }
+
+  throw lastError;
+}
+```
+
+### 5. Implementar una capa de validación centralizada
+
+```typescript
+// validation.middleware.ts
+import { Request, Response, NextFunction } from 'express';
+import { AnyZodObject, ZodError } from 'zod';
+
+export const validate = (schema: AnyZodObject) => 
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      await schema.parseAsync({
+        body: req.body,
+        query: req.query,
+        params: req.params,
+      });
+      return next();
+    } catch (error) {
+      if (error instanceof ZodError) {
+        return res.status(400).json({
+          status: 'error',
+          errors: error.errors,
+        });
+      }
+      return next(error);
+    }
+  };
+```
+
+### 6. Control de tasa de peticiones (Rate limiting)
+
+```typescript
+// rate-limit.middleware.ts
+import rateLimit from 'express-rate-limit';
+
+export const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutos
+  max: 100, // límite de solicitudes por IP
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    status: 'error',
+    message: 'Demasiadas solicitudes, intente más tarde',
+  },
+});
+```
+
+### 7. Implementar pruebas automatizadas
+
+```typescript
+// camera.service.test.ts
+import { cameraService } from '../services/camera.service';
+import { storage } from '../storage';
+
+jest.mock('../storage', () => ({
+  storage: {
+    getCameras: jest.fn(),
+    getCamera: jest.fn(),
+    createCamera: jest.fn(),
+    updateCamera: jest.fn(),
+    deleteCamera: jest.fn(),
+    updateCameraStatus: jest.fn(),
+  },
+}));
+
+describe('CameraService', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  describe('getAll', () => {
+    it('should return cameras for a user', async () => {
+      const mockCameras = [{ id: 1, name: 'Test Camera' }];
+      (storage.getCameras as jest.Mock).mockResolvedValue(mockCameras);
+
+      const result = await cameraService.getAll(1);
+
+      expect(storage.getCameras).toHaveBeenCalledWith(1);
+      expect(result).toEqual(mockCameras);
+    });
+  });
+});
+```
+
+Estas sugerencias complementan la refactorización inicial y abordan aspectos importantes como seguridad, rendimiento, mantenibilidad y calidad del código.
