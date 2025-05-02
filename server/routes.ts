@@ -2793,15 +2793,10 @@ Exportado el: ${new Date().toISOString()}
   app.get("/api/sessions/:id/download", async (req, res) => {
     // Usar la nueva función mejorada para descargar la sesión
     return await downloadSessionWithFileManager(req, res);
-    if (!req.isAuthenticated()) return res.sendStatus(401);
-
-    try {
-      // Obtener ID de la sesión y datos de la base de datos
-      const sessionId = parseInt(req.params.id);
-      const session = await storage.getSessionById(sessionId);
-      
-      if (!session) {
-        console.error(`Session ${sessionId} not found in database`);
+  });
+  
+  // Endpoint para obtener la lista de grabaciones
+  app.get("/api/recordings", async (req, res) => {
         return res.status(404).json({ error: 'Sesión no encontrada' });
       }
       
