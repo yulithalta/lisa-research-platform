@@ -2473,6 +2473,15 @@ Exportado el: ${new Date().toISOString()}
             console.log(`Registrando sesión ${sessionId} con ${sensorDevices.length} sensores`);
             mqttClient.registerSession(sessionId, sensorDataPath, sensorDevices);
             console.log('Sesión registrada correctamente en MQTT client');
+            
+            // Registrar el archivo de datos de sensores en el servicio de sesión
+            try {
+              console.log(`Registrando archivo de datos MQTT en sesión ${sessionId}: ${sensorDataPath}`);
+              await sessionService.registerSensorDataFile(parseInt(sessionId), sensorDataPath);
+              console.log(`✅ Archivo de datos MQTT registrado exitosamente en la sesión ${sessionId}`);
+            } catch (sensorDataError) {
+              console.error(`Error al registrar archivo de datos MQTT en sesión ${sessionId}:`, sensorDataError);
+            }
           } catch (mqttRegisterError) {
             console.error('Error al registrar sesión en MQTT client:', mqttRegisterError);
             // Continuamos sin registro MQTT si falla
@@ -2494,8 +2503,10 @@ Exportado el: ${new Date().toISOString()}
       }
       
       // En caso de que se dejen seleccionados todos los sensores, crear un archivo de registro
+      const sensorConfigPath = path.join(sensorDir, 'sensor_config.json');
+      
       fs.writeFileSync(
-        path.join(sensorDir, 'sensor_config.json'),
+        sensorConfigPath,
         JSON.stringify({ 
           sessionId,
           registeredSensors: devices.sensors,
@@ -2504,6 +2515,15 @@ Exportado el: ${new Date().toISOString()}
         }, null, 2)
       );
       console.log(`Configuración de sensores guardada para sesión ${sessionId}`);
+      
+      // Registrar también el archivo de configuración de sensores
+      try {
+        console.log(`Registrando archivo de configuración de sensores en sesión ${sessionId}: ${sensorConfigPath}`);
+        await sessionService.registerSensorDataFile(parseInt(sessionId), sensorConfigPath);
+        console.log(`✅ Archivo de configuración de sensores registrado en la sesión ${sessionId}`);
+      } catch (configError) {
+        console.error(`Error al registrar configuración de sensores en sesión ${sessionId}:`, configError);
+      }
 
       // Guardar configuración final
       fs.writeFileSync(

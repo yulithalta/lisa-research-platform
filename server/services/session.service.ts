@@ -42,7 +42,7 @@ class SessionService {
    * @param sessionId ID de la sesión
    * @returns Ruta del directorio de la sesión
    */
-  async getSessionDirectory(sessionId: number): Promise<string> {
+  async getSessionDirectory(sessionId: number | string): Promise<string> {
     const sessionDir = path.join(this.sessionsDir, `Session${sessionId}`);
     
     try {
