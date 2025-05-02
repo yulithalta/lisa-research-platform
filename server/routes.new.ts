@@ -161,10 +161,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Registrar rutas para sensores
   registerSensorRoutes(app);
   // Registrar rutas JSON estáticas
-  app.get("/api/session/:id/sensor-data", jsonRoutes.getLatestSensorData);
-  app.get("/api/session/:id/export-sensor-data", jsonRoutes.exportSessionSensorData);
-  app.get("/api/session/:id/export-all", jsonRoutes.exportAllSessionData);
-  app.get("/api/test-sensor-connection", jsonRoutes.testSensorDataConnection);
+  jsonRoutes.registerRoutes(app);
   // Descarga de sesión
   app.get("/api/sessions/:id/download", async (req, res) => {
     // Usar la nueva función mejorada para descargar la sesión
