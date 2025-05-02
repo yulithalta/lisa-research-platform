@@ -549,6 +549,18 @@ async function startRecording(camera: any, sessionId?: number) {
         // Asegurar que la ruta del archivo guardada en la base de datos es correcta
         filePath: outputPath
       });
+      
+      // Registrar el archivo de grabación en la sesión si hay una sesión activa
+      if (activeSessionId) {
+        try {
+          console.log(`Registrando archivo de grabación en sesión ${activeSessionId}: ${outputPath}`);
+          await sessionService.registerRecordingFile(activeSessionId, outputPath, camera.id);
+          console.log(`✅ Archivo registrado exitosamente en la sesión ${activeSessionId}`);
+        } catch (regError) {
+          console.error(`Error al registrar archivo en sesión ${activeSessionId}:`, regError);
+        }
+      }
+      
       recordingProcesses.delete(camera.id);
     });
 
@@ -566,10 +578,26 @@ async function stopRecording(cameraId: number) {
     if (recordingProcess) {
       console.log(`Stopping recording for camera ${cameraId}`);
       recordingProcess.process.kill('SIGTERM');
-      await storage.updateRecording(recordingProcess.recording.id, {
+      const recordingId = recordingProcess.recording.id;
+      const sessionId = recordingProcess.recording.sessionId;
+      const filePath = recordingProcess.recording.filePath;
+      
+      await storage.updateRecording(recordingId, {
         status: 'completed',
         endTime: new Date()
       });
+      
+      // Registrar el archivo de grabación en la sesión si hay una sesión activa
+      if (sessionId && filePath) {
+        try {
+          console.log(`Registrando archivo de grabación en sesión ${sessionId}: ${filePath}`);
+          await sessionService.registerRecordingFile(sessionId, filePath, cameraId);
+          console.log(`✅ Archivo registrado exitosamente en la sesión ${sessionId}`);
+        } catch (regError) {
+          console.error(`Error al registrar archivo en sesión ${sessionId}:`, regError);
+        }
+      }
+      
       recordingProcesses.delete(cameraId);
     }
   } catch (error) {
