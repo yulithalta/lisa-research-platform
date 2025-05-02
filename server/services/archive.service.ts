@@ -528,7 +528,56 @@ class ArchiveService {
       `- ${path.join(this.sessionsDir, `Session${sessionId}`, 'recordings')} (grabaciones específicas de la sesión)`,
       `- ${this.dataDir} (directorio de datos globales)`
     ].join('\n      ');
+    
+    // Extraer prefijos de grabación configurados por el usuario
+    let cameraRecordingPrefixes: string[] = [];
+    
+    try {
+      // Intentar obtener prefijos de grabación de la metadata de la sesión
+      if (session.metadata && typeof session.metadata === 'object') {
+        const metadata = session.metadata as any;
+        
+        if (metadata.selectedDevices && Array.isArray(metadata.selectedDevices.cameras)) {
+          metadata.selectedDevices.cameras.forEach((camera: any) => {
+            if (camera.recordingPrefix && typeof camera.recordingPrefix === 'string') {
+              cameraRecordingPrefixes.push(camera.recordingPrefix);
+            }
+          });
+        }
+      }
       
+      // Si no hay prefijos en metadata, intentar cargar desde session_data.json
+      if (cameraRecordingPrefixes.length === 0) {
+        const sessionDataPath = path.join(this.sessionsDir, `Session${sessionId}`, 'session_data.json');
+        if (fs.existsSync(sessionDataPath)) {
+          try {
+            const sessionData = JSON.parse(fs.readFileSync(sessionDataPath, 'utf8'));
+            if (sessionData.cameras && Array.isArray(sessionData.cameras)) {
+              sessionData.cameras.forEach((camera: any) => {
+                if (camera.recordingPrefix) {
+                  cameraRecordingPrefixes.push(camera.recordingPrefix);
+                }
+              });
+            }
+          } catch (err) {
+            console.error('Error cargando prefijos desde session_data.json:', err);
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Error obteniendo prefijos de cámara para README:', error);
+    }
+    
+    // Si no se encontraron prefijos, usar algunos valores predeterminados
+    if (cameraRecordingPrefixes.length === 0) {
+      cameraRecordingPrefixes = ['c32_livinglab', 'camera-patio', 'cam', 'c'];
+    }
+    
+    // Información de prefijos para el README
+    const prefixInfo = cameraRecordingPrefixes.length > 0 ? 
+      `Los siguientes prefijos de cámara se utilizan para identificar grabaciones:\n      - ${cameraRecordingPrefixes.join('\n      - ')}` :
+      'No se encontraron prefijos de cámara personalizados.';
+    
     // Patrones de búsqueda para asociar archivos con esta sesión
     const patternExamples = [
       `session${sessionId}`,
@@ -564,14 +613,19 @@ class ArchiveService {
       `## Directorio de búsqueda\n` +
       `Los archivos de esta sesión se han buscado en las siguientes ubicaciones:\n` +
       `      ${searchPaths}\n\n` +
+      `## Prefijos de cámara configurados\n` +
+      `${prefixInfo}\n\n` +
       `## Patrones de identificación de archivos\n` +
-      `Las grabaciones se vinculan a esta sesión cuando sus nombres contienen alguno de estos patrones:\n` +
+      `Las grabaciones se vinculan a esta sesión cuando sus nombres contienen:\n` +
+      `   1. Un prefijo de cámara (ver sección anterior) Y el ID de sesión ${sessionId}\n` +
+      `   2. O alguno de estos patrones estándar:\n` +
       `      - ${patternExamples}\n\n` +
       `## Notas importantes\n` +
       `- El ID de sesión ${sessionId} es clave para identificar archivos asociados\n` +
-      `- Los archivos sin conexión directa a esta sesión no se incluyen en esta exportación\n` +
-      `- Para cambiar el formato de nombres de archivos, modifique la configuración de prefijos de cámara\n` +
-      `- Si faltan grabaciones, verifique que están en alguna de las rutas listadas y tienen el ID de sesión en su nombre\n\n` +
+      `- Para cambiar el formato de nombres de archivos, modifique la configuración de prefijos\n` +
+      `  en: Device Management > Cameras > Recording Prefix\n` +
+      `- El sistema busca primero archivos que tengan tanto el prefijo de cámara como el ID ${sessionId}\n` +
+      `- Las grabaciones se guardan en ./recordings/ con el prefijo configurado por el usuario\n\n` +
       `Exportación generada el ${new Date().toLocaleString()}\n` +
       `Sistema: SensorSessionTracker v2.1\n`;
     
