@@ -18,6 +18,7 @@ import { sensorDataMapper } from "./sensor-data-mapper";
 import * as jsonRoutes from "./json-routes";
 import { mqttClient } from './mqtt-client-simple';
 import { log } from './vite';
+import { fileManager } from './fileManager';
 
 // Función auxiliar para registrar actividad de usuario
 function logActivity(userId: number, action: string, details: Record<string, any>) {

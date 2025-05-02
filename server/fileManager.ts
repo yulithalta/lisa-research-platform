@@ -38,36 +38,108 @@ class FileManager {
 
   /**
    * Create a ZIP file containing all session files
-   * This is the fixed version that correctly handles MP4 files
+   * This is the fixed version that correctly handles MP4 files and maintains folder structure
    */
   async createSessionZip(session: Session, files: File[]): Promise<Buffer> {
     const zip = new AdmZip();
+    
+    // Determinar si los archivos en el zip pertenecen a una sesión específica
+    const sessionId = session?.id;
+    console.log(`Creating ZIP for session ${sessionId || 'unknown'}`);
+    
+    // Crear carpetas dentro del zip para organizar archivos
+    zip.addFile('recordings/', Buffer.from(''));
+    zip.addFile('sensors/', Buffer.from(''));
+    
+    // Si es para una sesión, añadir subcarpeta específica de la sesión
+    if (sessionId) {
+      zip.addFile(`session_${sessionId}/`, Buffer.from(''));
+      zip.addFile(`session_${sessionId}/recordings/`, Buffer.from(''));
+      zip.addFile(`session_${sessionId}/sensors/`, Buffer.from(''));
+    }
     
     for (const file of files) {
       // Get the actual file path on disk
       const filePath = await this.getFilePath(file.fileName);
       
       if (!filePath) {
-        console.warn(`File not found: ${file.fileName}`);
-        continue;
-      }
-
-      try {
-        // Read the file content
-        const fileContent = await fsPromises.readFile(filePath);
+        // También buscar en otras ubicaciones comunes
+        const alternativePaths = [
+          path.join(process.cwd(), 'recordings', file.fileName),
+          path.join(process.cwd(), 'sessions', `Session${sessionId}`, 'recordings', file.fileName),
+          path.join(process.cwd(), file.fileName)
+        ];
         
-        // Use just the filename for the zip entry, not the full path
-        // This is the key fix for MP4 files
-        const zipEntryName = file.fileName;
+        let found = false;
+        for (const altPath of alternativePaths) {
+          try {
+            await fsPromises.access(altPath);
+            console.log(`Encontrado en ubicación alternativa: ${altPath}`);
+            found = true;
+            const fileContent = await fsPromises.readFile(altPath);
+            
+            // Determinar la carpeta basada en el tipo de archivo
+            let zipPath;
+            if (file.fileName.endsWith('.mp4')) {
+              zipPath = sessionId ? `session_${sessionId}/recordings/${file.fileName}` : `recordings/${file.fileName}`;
+            } else if (file.fileName.endsWith('.csv') || file.fileName.endsWith('.json')) {
+              zipPath = sessionId ? `session_${sessionId}/sensors/${file.fileName}` : `sensors/${file.fileName}`;
+            } else {
+              zipPath = file.fileName; // Para otros tipos de archivos, mantener en la raíz
+            }
+            
+            // Añadir archivo al ZIP con la estructura de carpetas
+            zip.addFile(zipPath, fileContent);
+            console.log(`Added ${zipPath} to ZIP (alternative path)`);
+            break;
+          } catch (e) {
+            // Continuar con la siguiente alternativa
+          }
+        }
         
-        // Add the file to the ZIP with the correct name
-        zip.addFile(zipEntryName, fileContent);
-        
-        console.log(`Added ${zipEntryName} to ZIP`);
-      } catch (error) {
-        console.error(`Error adding file to ZIP: ${file.fileName}`, error);
+        if (!found) {
+          console.warn(`File not found in any location: ${file.fileName}`);
+          continue;
+        }
+      } else {
+        try {
+          // Read the file content
+          const fileContent = await fsPromises.readFile(filePath);
+          
+          // Determinar la carpeta basada en el tipo de archivo
+          let zipPath;
+          if (file.fileName.endsWith('.mp4')) {
+            zipPath = sessionId ? `session_${sessionId}/recordings/${file.fileName}` : `recordings/${file.fileName}`;
+          } else if (file.fileName.endsWith('.csv') || file.fileName.endsWith('.json')) {
+            zipPath = sessionId ? `session_${sessionId}/sensors/${file.fileName}` : `sensors/${file.fileName}`;
+          } else {
+            zipPath = file.fileName; // Para otros tipos de archivos, mantener en la raíz
+          }
+          
+          // Añadir archivo al ZIP con la estructura de carpetas
+          zip.addFile(zipPath, fileContent);
+          
+          console.log(`Added ${zipPath} to ZIP`);
+        } catch (error) {
+          console.error(`Error adding file to ZIP: ${file.fileName}`, error);
+        }
       }
     }
+    
+    // Añadir un archivo README.txt con información sobre la sesión
+    const readme = `SensorSessionTracker - Session Export
+===================================
+
+Session ID: ${sessionId || 'N/A'}
+Export Date: ${new Date().toISOString()}
+
+Contents:
+- /recordings: Contains video recordings (.mp4)
+- /sensors: Contains sensor data files (.csv, .json)
+
+This ZIP file was automatically generated by SensorSessionTracker.
+`;
+    zip.addFile('README.txt', Buffer.from(readme));
     
     // Generate zip file buffer
     return zip.toBuffer();
