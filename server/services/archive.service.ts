@@ -202,8 +202,66 @@ class ArchiveService {
         dataFilesCount++;
       }
 
-      // Buscar grabaciones en el directorio principal con varios patrones de sesión
+      // Buscar grabaciones en el directorio principal, priorizando los prefijos de cámaras
       console.log(`\n→ Buscando grabaciones en directorio principal: ${this.recordingsDir}`);
+      
+      // Obtener prefijos de cámara de los metadatos de la sesión si existen
+      let cameraRecordingPrefixes: string[] = [];
+      
+      try {
+        // Intentar cargar cámaras con sus prefijos de grabación desde la base de datos
+        // Esta información no viene en el objeto Session, así que tenemos que buscarla aparte
+        if (session.metadata && typeof session.metadata === 'object') {
+          const metadata = session.metadata as any;
+          
+          // Extraer prefijos de la metadata de la sesión
+          if (metadata.selectedDevices && Array.isArray(metadata.selectedDevices.cameras)) {
+            metadata.selectedDevices.cameras.forEach((camera: any) => {
+              if (camera.recordingPrefix && typeof camera.recordingPrefix === 'string') {
+                cameraRecordingPrefixes.push(camera.recordingPrefix);
+                console.log(`ℹ️ Prefijo de grabación encontrado: ${camera.recordingPrefix}`);
+              }
+            });
+          }
+        }
+        
+        // Si no hay prefijos en metadata, intento cargar las cámaras directamente
+        if (cameraRecordingPrefixes.length === 0) {
+          try {
+            // Cargar cámaras desde archivo ya que no tenemos acceso directo al storage
+            const sessionDataPath = path.join(this.sessionsDir, `Session${sessionId}`, 'session_data.json');
+            if (fs.existsSync(sessionDataPath)) {
+              const sessionData = JSON.parse(fs.readFileSync(sessionDataPath, 'utf8'));
+              if (sessionData.cameras && Array.isArray(sessionData.cameras)) {
+                sessionData.cameras.forEach((camera: any) => {
+                  if (camera.recordingPrefix) {
+                    cameraRecordingPrefixes.push(camera.recordingPrefix);
+                    console.log(`ℹ️ Prefijo de cámara encontrado: ${camera.recordingPrefix}`);
+                  }
+                });
+              }
+            }
+          } catch (err) {
+            console.log('Error cargando prefijos desde session_data.json:', err);
+          }
+        }
+      } catch (error) {
+        console.error('Error obteniendo prefijos de cámara:', error);
+      }
+      
+      // Asegurarse que tenemos prefijos mínimos para buscar
+      if (cameraRecordingPrefixes.length === 0) {
+        console.log('⚠️ No se encontraron prefijos de cámara, usando patrones genéricos');
+        // Añadir algunos patrones predeterminados basados en cámaras comunes
+        cameraRecordingPrefixes = [
+          'c32_livinglab', // Prefijo visto en la imagen compartida
+          'camera-patio', // Posible prefijo basado en la imagen
+          'cam',
+          'camera',
+          'c_',
+          'ip_camera'
+        ];
+      }
       
       const recordingsDir = this.recordingsDir;
       if (fs.existsSync(recordingsDir)) {
@@ -219,25 +277,37 @@ class ArchiveService {
           `-${sessionId}.`,
           `session_${sessionId}`,
           `sesion${sessionId}`,
-          `sesion_${sessionId}`
+          `sesion_${sessionId}`,
+          `_${sessionId}` // Patrón más simple, pero efectivo
         ];
         
         // Extensiones de video soportadas
         const videoExtensions = ['.mp4', '.mkv', '.avi', '.mov', '.webm', '.flv'];
         
-        // Buscar archivos de video que coincidan con algún patrón de sesión
+        console.log(`Buscando con ${cameraRecordingPrefixes.length} prefijos de cámara y ${sessionPatterns.length} patrones de sesión`);       
+        
+        // Buscar archivos de video que coincidan con los criterios
         const videoFiles = files.filter(file => {
           // Verificar si el archivo tiene una extensión de video
           const hasVideoExtension = videoExtensions.some(ext => 
             file.toLowerCase().endsWith(ext)
           );
           
-          // Verificar si el archivo está asociado a la sesión
-          const matchesSession = sessionPatterns.some(pattern => 
+          if (!hasVideoExtension) return false;
+          
+          // Primera prioridad: Verificar si el archivo incluye tanto un prefijo de cámara como el ID de sesión
+          const matchesPrefixAndSession = cameraRecordingPrefixes.some(prefix => 
+            prefix && file.includes(prefix) && file.includes(`${sessionId}`)
+          );
+          
+          if (matchesPrefixAndSession) return true;
+          
+          // Segunda prioridad: Verificar si coincide con algún patrón de sesión estándar
+          const matchesSessionPattern = sessionPatterns.some(pattern => 
             file.includes(pattern)
           );
           
-          return hasVideoExtension && matchesSession;
+          return matchesSessionPattern;
         });
         
         console.log(`Encontrados ${videoFiles.length} archivos de vídeo para la sesión ${sessionId}`);
