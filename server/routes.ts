@@ -17,10 +17,11 @@ import ping from 'ping';
 import { sensorDataMapper } from "./sensor-data-mapper";
 import * as jsonRoutes from "./json-routes";
 import { mqttClient } from './mqtt-client-simple';
-import { log } from './vite';
+import { log as viteLog } from './vite';
 import { fileManager } from './fileManager';
 import { thumbnailService } from './services/thumbnail.service';
 import { archiveService } from './services/archive.service';
+import { sessionController } from './controllers/session.controller';
 
 // Función auxiliar para registrar actividad de usuario
 function logActivity(userId: number, action: string, details: Record<string, any>) {
@@ -961,7 +962,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     verifyClient: (info: any, done: any) => {
       // No requerir autenticación para conexiones WS
       // pero registrar los intentos de conexión
-      log(`WebSocket connection attempt from ${info.req.socket.remoteAddress}`, "websocket");
+      viteLog(`WebSocket connection attempt from ${info.req.socket.remoteAddress}`, "websocket");
       done(true);
     }
   });
@@ -971,10 +972,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
     const url = new URL(req.url ?? '', 'http://localhost');
     const cameraId = url.pathname.split('/')[2]; // /stream/:cameraId
 
-    log(`New WebSocket connection for camera ${cameraId}`, "websocket");
+    viteLog(`New WebSocket connection for camera ${cameraId}`, "websocket");
 
     if (!cameraId) {
-      log('No camera ID provided, closing connection', "websocket");
+      viteLog('No camera ID provided, closing connection', "websocket");
       ws.close();
       return;
     }
@@ -982,14 +983,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const camera = await storage.getCamera(parseInt(cameraId));
       if (!camera) {
-        log(`Camera ${cameraId} not found, closing connection`, "websocket");
+        viteLog(`Camera ${cameraId} not found, closing connection`, "websocket");
         ws.close();
         return;
       }
 
       await startStreaming(camera, ws);
     } catch (error) {
-      log(`Error handling WebSocket connection: ${error}`, "websocket");
+      viteLog(`Error handling WebSocket connection: ${error}`, "websocket");
       ws.close();
     }
   });
@@ -2756,10 +2757,17 @@ Exportado el: ${new Date().toISOString()}
     }
   });
   
-  app.get("/api/sessions/:id/download", async (req, res) => {
-    // Usar la nueva función mejorada para descargar la sesión
-    return await downloadSessionWithFileManager(req, res);
-  });
+  app.get("/api/sessions/:id/download", sessionController.downloadSession);
+  
+  // Endpoint para obtener el progreso de exportación de una sesión
+  app.get("/api/sessions/:id/export-progress", sessionController.getExportProgress);
+  
+  // Endpoints para registrar archivos en una sesión
+  app.post("/api/sessions/register-recording", sessionController.registerRecordingFile);
+  app.post("/api/sessions/register-sensor-data", sessionController.registerSensorDataFile);
+  
+  // Endpoint para finalizar una sesión
+  app.post("/api/sessions/:id/finalize", sessionController.finalizeSession);
   
   // Endpoint para obtener la lista de grabaciones
   app.get("/api/recordings", async (req, res) => {
@@ -3702,7 +3710,8 @@ function getAnalysisProgress(analysisId: string): { progress: number; status: st
   return analysisProgress.get(analysisId);
 }
 
-function log(message: string, context: string = "general") {
+// Esta función ya no se usa, usamos viteLog importado
+function logFn(message: string, context: string = "general") {
   const timestamp = new Date().toISOString();
   console.log(`[${timestamp}] [${context}] ${message}`);
 }

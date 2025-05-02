@@ -1,0 +1,264 @@
+[2025-05-02T17:44:52.836Z] [INFO] Activity logged: cameraUpdated
+7:44:52 PM [express] POST /api/cameras/3/stop-recording 200 in 8ms :: {"message":"Recording stopped …
+FFmpeg (Camera 3): [mp4 @ 0x55d24df156c0] Starting second pass: moving the moov atom to the beginning of the file
+
+FFmpeg (Camera 3): frame= 2230 fps= 25 q=28.0 Lsize=   16974kB time=00:01:29.16 bitrate=1559.5kbits/s dup=5 drop=450 speed=1.01x    
+video:16957kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.097678%
+
+FFmpeg (Camera 3): [libx264 @ 0x55d24df14200] frame I:45    Avg QP:26.98  size:108930
+[libx264 @ 0x55d24df14200] frame P:2185  Avg QP:30.07  size:  5703
+[libx264 @ 0x55d24df14200] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 0x55d24df14200] mb P  I16..4:  0.0%  0.0%  0.0%  P16..4: 15.2%  0.0%  0.0%  0.0%  0.0%    skip:84.8%
+
+FFmpeg (Camera 3): [libx264 @ 0x55d24df14200] coded y,uvDC,uvAC intra: 63.0% 45.7% 25.4% inter: 7.1% 0.4% 0.0%
+[libx264 @ 0x55d24df14200] i16 v,h,dc,p: 21% 23% 32% 24%
+[libx264 @ 0x55d24df14200] i8c dc,h,v,p: 58% 21% 14%  7%
+[libx264 @ 0x55d24df14200] kb/s:1557.27
+
+FFmpeg (Camera 3): Exiting normally, received signal 15.
+
+FFmpeg process closed for camera 3 with code 255
+Recording file size: 17381163 bytes
+✅ Archivo MP4 creado exitosamente en: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/recordings/c32-2025-05-02T17-43-22-943Z.mp4
+Generando miniatura en: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/public/thumbnails/c32-2025-05-02T17-43-22-943Z.jpg
+[2025-05-02T17:44:52.871Z] [INFO] Guardando estado...
+[2025-05-02T17:44:52.871Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-02T17:44:52.871Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-02T17:44:52.872Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-02T17:44:52.872Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-02T17:44:52.872Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-02T17:44:52.872Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-02T17:44:52.872Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-02T17:44:52.873Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-02T17:44:52.873Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-02T17:44:52.873Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-02T17:44:52.873Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-02T17:44:52.873Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-02T17:44:52.873Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-02T17:44:52.875Z] [INFO] Activity logged: recordingUpdated
+7:44:52 PM [auth] Deserializing user ID: 1
+7:44:52 PM [auth] Request PATCH /api/sessions/29 - Auth: true
+Completing active session 29
+Found 1 recordings to stop for session 29
+Stopping MQTT data collection for session 29
+Finalizando captura de datos MQTT para sesión 29
+Creando AllData.json con datos completos de sensores para sesión 29
+Archivo AllData.json creado con éxito en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session29/AllData.json con 2 sensores
+Datos de sesión 29 actualizados y marcados como completados
+MQTT data collection stopped for session 29
+Session 29 completed at Fri May 02 2025 19:44:52 GMT+0200 (hora de verano de Europa central)
+[2025-05-02T17:44:52.886Z] [INFO] Guardando estado...
+[2025-05-02T17:44:52.886Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-02T17:44:52.886Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-02T17:44:52.886Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-02T17:44:52.887Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-02T17:44:52.887Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-02T17:44:52.887Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-02T17:44:52.887Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-02T17:44:52.887Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-02T17:44:52.887Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-02T17:44:52.888Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-02T17:44:52.888Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-02T17:44:52.888Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-02T17:44:52.888Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-02T17:44:52.890Z] [INFO] Activity logged: sessionUpdated
+7:44:52 PM [express] PATCH /api/sessions/29 200 in 6ms :: {"id":29,"userId":1,"name":"s4354","descri…
+7:44:52 PM [auth] Deserializing user ID: 1
+7:44:52 PM [auth] Request GET /api/sessions - Auth: true
+7:44:52 PM [express] GET /api/sessions 200 in 1ms :: [{"id":29,"userId":1,"name":"s4354","descriptio…
+7:44:52 PM [auth] Deserializing user ID: 1
+7:44:52 PM [auth] Request GET /api/sessions - Auth: true
+7:44:52 PM [express] GET /api/sessions 304 in 2ms :: [{"id":29,"userId":1,"name":"s4354","descriptio…
+✅ Miniatura generada exitosamente: c32-2025-05-02T17-43-22-943Z.jpg
+[2025-05-02T17:44:53.061Z] [INFO] Guardando estado...
+[2025-05-02T17:44:53.061Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-02T17:44:53.061Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-02T17:44:53.061Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-02T17:44:53.061Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-02T17:44:53.061Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-02T17:44:53.062Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-02T17:44:53.062Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-02T17:44:53.062Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-02T17:44:53.062Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-02T17:44:53.062Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-02T17:44:53.062Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-02T17:44:53.062Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-02T17:44:53.062Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-02T17:44:53.064Z] [INFO] Activity logged: recordingUpdated
+7:45:00 PM [auth] Deserializing user ID: 1
+7:45:00 PM [auth] Request GET /src/components/session-recordings-player.tsx - Auth: true
+7:45:00 PM [auth] Deserializing user ID: 1
+7:45:00 PM [auth] Request GET /src/components/sensor-data-viewer.tsx - Auth: true
+7:45:01 PM [auth] Deserializing user ID: 1
+7:45:01 PM [auth] Request GET /@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/recharts.js?v=379fe3d7 - Auth: true
+7:45:01 PM [auth] Deserializing user ID: 1
+7:45:01 PM [auth] Request GET /api/sessions/29/sensor-data - Auth: true
+Found session directory at /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session29
+Found sensor data at /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session29/session_29_sensors.json
+7:45:01 PM [express] GET /api/sessions/29/sensor-data 200 in 2ms :: {"sessionId":29,"startTime":"202…
+7:45:01 PM [auth] Deserializing user ID: 1
+7:45:01 PM [auth] Request GET /api/sessions/29/recordings - Auth: true
+7:45:01 PM [express] GET /api/sessions/29/recordings 200 in 2ms :: [{"cameraId":3,"userId":1,"status…
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /sessions - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/main.tsx?v=4eK5IbXf7s8-Qs30TAiry - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /@vite/client - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /@react-refresh - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/App.tsx?v=4eK5IbXf7s8-Qs30TAiry - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/index.css?v=4eK5IbXf7s8-Qs30TAiry - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/vite/dist/client/env.mjs - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/lib/queryClient.ts - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/hooks/use-auth.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/hooks/use-onboarding.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/auth-page.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/toaster.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/home-page.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/lib/protected-route.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/page404/index.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/layout/main-layout.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/lib/services/logger.ts - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/sessions-page.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/player-page.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/recording-player.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/settings-page.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/sensors-page.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/cameras-page.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/settings-sensors.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/live-monitoring-page.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/zigbee-devices-page.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/device-management-page.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/help/index.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/docs-page.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/doc/system-architecture.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/doc/system-architecture-2.0.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/doc/overview.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/doc/code-quality.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/hooks/use-local-storage.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/pages/doc/installation.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/hooks/use-toast.ts - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/shared/schema.ts - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/card.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/button.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/form.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/input.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/tabs.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/toast.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/select.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/hooks/useSimpleMqtt.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/lib/utils.ts - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/layout/sidebar.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/session-management.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/switch.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/camera-grid.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/add-camera-dialog.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/badge.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/scroll-area.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/accordion.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/onboarding/tours-manager.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/alert.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/label.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/tooltip.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/camera-card.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/hooks/use-global-recording-time.ts - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/dialog.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/onboarding/tour-steps.ts - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/textarea.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/table.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/hooks/use-developer-mode.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/mqtt-status-indicator.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/collapsible.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/session-view-dialog.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/alert-dialog.tsx - Auth: true
+7:45:05 PM [auth] Deserializing user ID: 1
+7:45:05 PM [auth] Request GET /src/components/ui/progress.tsx - Auth: true
+7:45:06 PM [auth] Deserializing user ID: 1
+7:45:06 PM [auth] Request GET /api/user - Auth: true
+7:45:06 PM [auth] Sending user data for: user
+7:45:06 PM [express] GET /api/user 200 in 2ms :: {"username":"user","password":"4b4d82dace4746a3646c…
+7:45:06 PM [auth] Deserializing user ID: 1
+7:45:06 PM [auth] Request GET /api/sessions - Auth: true
+7:45:06 PM [express] GET /api/sessions 304 in 2ms :: [{"id":29,"userId":1,"name":"s4354","descriptio…
+7:45:06 PM [auth] Deserializing user ID: 1
+7:45:06 PM [auth] Request GET /api/cameras - Auth: true
+7:45:06 PM [express] GET /api/cameras 200 in 1ms :: [{"name":"c31","ipAddress":"192.168.0.31","usern…
+7:45:06 PM [auth] Deserializing user ID: 1
+7:45:06 PM [auth] Request GET /api/zigbee/devices - Auth: true
+[Zigbee] Enviando 7 dispositivos
+7:45:06 PM [express] GET /api/zigbee/devices 200 in 2ms :: [{"id":"0x00124b002a6b62b7","name":"Senso…
+7:45:06 PM [auth] Deserializing user ID: 1
+7:45:06 PM [auth] Request GET /api/influxdb/status - Auth: true
+7:45:06 PM [express] GET /api/influxdb/status 304 in 1ms :: {"connected":true}
+7:45:06 PM [auth] Deserializing user ID: 1
+7:45:06 PM [auth] Request GET /LOGO-LISAv2.0.png - Auth: true
+[2025-05-02T17:45:06.306Z] [websocket] WebSocket connection attempt from 192.168.0.25
+[2025-05-02T17:45:06.306Z] [websocket] New WebSocket connection for camera undefined
+[2025-05-02T17:45:06.306Z] [websocket] No camera ID provided, closing connection
+Datos MQTT guardados: 32 tópicos, 32 tópicos únicos

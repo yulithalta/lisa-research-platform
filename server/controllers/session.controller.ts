@@ -1,8 +1,9 @@
 import { Request, Response } from 'express';
 import { storage } from '../storage';
-import { archiveService } from '../services/archive.service';
-import * as path from 'path';
-import * as fs from 'fs';
+import { archiveService, ZipProgress } from '../services/archive.service';
+import { sessionService } from '../services/session.service';
+import path from 'path';
+import fs from 'fs';
 
 /**
  * Controlador para la gestión de sesiones
@@ -10,110 +11,184 @@ import * as fs from 'fs';
  */
 export const sessionController = {
   /**
-   * Descarga todos los archivos de una sesión en formato ZIP
+   * Obtiene el progreso de la exportación de una sesión
    */
-  downloadSession: async (req: Request, res: Response): Promise<void> => {
-    if (!req.isAuthenticated()) {
-      res.sendStatus(401);
-      return;
-    }
-
+  getExportProgress: async (req: Request, res: Response): Promise<void> => {
     try {
-      // Obtener ID de la sesión y datos de la base de datos
-      const sessionId = parseInt(req.params.id);
-      const session = await storage.getSessionById(sessionId);
+      if (!req.isAuthenticated()) {
+        res.status(401).json({ error: 'No autorizado' });
+        return;
+      }
       
+      const sessionId = parseInt(req.params.id);
+      if (isNaN(sessionId)) {
+        res.status(400).json({ error: 'ID de sesión inválido' });
+        return;
+      }
+      
+      const progress = archiveService.getZipProgress(sessionId);
+      if (!progress) {
+        res.status(404).json({ error: 'No se encontró información de progreso para esta sesión' });
+        return;
+      }
+      
+      res.json(progress);
+    } catch (error) {
+      console.error('Error al obtener progreso de exportación:', error);
+      res.status(500).json({ error: 'Error al obtener progreso de exportación' });
+    }
+  },
+  
+  /**
+   * Registra un archivo de grabación en una sesión
+   */
+  registerRecordingFile: async (req: Request, res: Response): Promise<void> => {
+    try {
+      if (!req.isAuthenticated()) {
+        res.status(401).json({ error: 'No autorizado' });
+        return;
+      }
+      
+      const { sessionId, filePath, cameraId } = req.body;
+      
+      if (!sessionId || !filePath) {
+        res.status(400).json({ error: 'Faltan parámetros requeridos' });
+        return;
+      }
+      
+      await sessionService.registerRecordingFile(
+        parseInt(sessionId), 
+        filePath, 
+        cameraId ? parseInt(cameraId) : undefined
+      );
+      
+      res.json({ success: true, message: 'Archivo registrado correctamente' });
+    } catch (error) {
+      console.error('Error al registrar archivo de grabación:', error);
+      res.status(500).json({ error: 'Error al registrar archivo de grabación' });
+    }
+  },
+  
+  /**
+   * Registra un archivo de datos de sensor en una sesión
+   */
+  registerSensorDataFile: async (req: Request, res: Response): Promise<void> => {
+    try {
+      if (!req.isAuthenticated()) {
+        res.status(401).json({ error: 'No autorizado' });
+        return;
+      }
+      
+      const { sessionId, filePath, sensorId } = req.body;
+      
+      if (!sessionId || !filePath) {
+        res.status(400).json({ error: 'Faltan parámetros requeridos' });
+        return;
+      }
+      
+      await sessionService.registerSensorDataFile(
+        parseInt(sessionId), 
+        filePath, 
+        sensorId
+      );
+      
+      res.json({ success: true, message: 'Archivo de datos registrado correctamente' });
+    } catch (error) {
+      console.error('Error al registrar archivo de datos de sensor:', error);
+      res.status(500).json({ error: 'Error al registrar archivo de datos de sensor' });
+    }
+  },
+  
+  /**
+   * Finaliza una sesión y consolida sus archivos
+   */
+  finalizeSession: async (req: Request, res: Response): Promise<void> => {
+    try {
+      if (!req.isAuthenticated()) {
+        res.status(401).json({ error: 'No autorizado' });
+        return;
+      }
+      
+      const sessionId = parseInt(req.params.id);
+      if (isNaN(sessionId)) {
+        res.status(400).json({ error: 'ID de sesión inválido' });
+        return;
+      }
+      
+      const session = await storage.getSessionById(sessionId);
       if (!session) {
-        console.error(`Session ${sessionId} not found in database`);
         res.status(404).json({ error: 'Sesión no encontrada' });
         return;
       }
       
-      console.log(`Preparing download for session ${sessionId}: ${session.name}`);
+      await sessionService.finalizeSession(sessionId, session);
       
-      // Asegurar que existe el directorio de la sesión
-      const SESSIONS_DIR = process.env.SESSIONS_DIR || path.join(process.cwd(), 'sessions');
-      const sessionDir = path.join(SESSIONS_DIR, `Session${sessionId}`);
+      // Actualizar el estado de la sesión en la base de datos
+      await storage.updateSession(sessionId, {
+        ...session,
+        status: 'completed',
+        endTime: session.endTime || new Date().toISOString()
+      });
       
-      if (!fs.existsSync(sessionDir)) {
-        fs.mkdirSync(sessionDir, { recursive: true });
-        console.log(`Created session directory: ${sessionDir}`);
+      res.json({ success: true, message: 'Sesión finalizada correctamente' });
+    } catch (error) {
+      console.error('Error al finalizar sesión:', error);
+      res.status(500).json({ error: 'Error al finalizar sesión' });
+    }
+  },
+  
+  /**
+   * Descarga todos los archivos de una sesión en formato ZIP
+   * Con barra de progreso y manejo mejorado de archivos
+   */
+  downloadSession: async (req: Request, res: Response): Promise<void> => {
+    if (!req.isAuthenticated()) {
+      res.status(401).json({ error: 'No autorizado' });
+      return;
+    }
+    
+    try {
+      // Obtener ID de la sesión desde los parámetros de la URL
+      const sessionId = parseInt(req.params.id);
+      if (isNaN(sessionId)) {
+        res.status(400).json({ error: 'ID de sesión inválido' });
+        return;
       }
       
-      // Obtener grabaciones asociadas a esta sesión
-      const sessionRecordings = await storage.getRecordingsBySessionId(sessionId);
-      console.log(`Encontradas ${sessionRecordings.length} grabaciones asociadas a la sesión ${sessionId}`);
-      
-      // Preparar lista de archivos para incluir en el ZIP
-      const files: { fileName: string }[] = [];
-      
-      // 1. Añadir grabaciones de la base de datos
-      for (const recording of sessionRecordings) {
-        if (recording.filePath) {
-          const fileName = path.basename(recording.filePath);
-          files.push({ fileName });
-          console.log(`Añadiendo archivo de grabación: ${fileName}`);
-        }
+      // Obtener datos de la sesión desde la base de datos
+      const session = await storage.getSessionById(sessionId);
+      if (!session) {
+        res.status(404).json({ error: 'Sesión no encontrada' });
+        return;
       }
       
-      // 2. Buscar archivos MP4 en directorios relacionados con la sesión
-      const RECORDINGS_DIR = process.env.RECORDINGS_DIR || path.join(process.cwd(), 'recordings');
-      const dirsToCheck = [
-        path.join(process.cwd(), 'sessions', `Session${sessionId}`, 'recordings'),
-        RECORDINGS_DIR
-      ];
+      console.log(`Iniciando descarga para sesión ${sessionId}: ${session.name}`);
       
-      for (const dir of dirsToCheck) {
-        if (!fs.existsSync(dir)) continue;
-        
-        try {
-          const dirFiles = fs.readdirSync(dir).filter(file => 
-            file.endsWith('.mp4') && 
-            (file.includes(`session${sessionId}`) || file.includes(`sess${sessionId}`))
-          );
-          
-          for (const file of dirFiles) {
-            files.push({ fileName: file });
-            console.log(`Añadiendo archivo MP4 encontrado: ${file}`);
-          }
-        } catch (err) {
-          console.error(`Error leyendo directorio ${dir}:`, err);
-        }
+      // Iniciar la creación del ZIP de forma asíncrona
+      const zipFilePath = await archiveService.createSessionZipAsync(sessionId, session);
+      
+      // Verificar si el archivo se creó correctamente
+      if (!fs.existsSync(zipFilePath)) {
+        res.status(500).json({ error: 'Error al crear el archivo ZIP' });
+        return;
       }
       
-      // 3. Buscar archivos de sensores
-      const sensorDataPath = path.join(sessionDir, 'sensor_data');
-      if (fs.existsSync(sensorDataPath)) {
-        try {
-          const sensorFiles = fs.readdirSync(sensorDataPath).filter(file => 
-            file.endsWith('.json') || file.endsWith('.csv')
-          );
-          
-          for (const file of sensorFiles) {
-            files.push({ fileName: file });
-            console.log(`Añadiendo archivo de sensor: ${file}`);
-          }
-        } catch (err) {
-          console.error(`Error leyendo directorio de sensores:`, err);
-        }
-      }
+      // Nombre del archivo para la descarga
+      const filename = path.basename(zipFilePath);
       
-      // 4. Usar el servicio de archivos para crear el ZIP
-      console.log(`Creando ZIP con ${files.length} archivos`);
+      // Configurar headers para la descarga
+      res.setHeader('Content-Type', 'application/zip');
+      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
       
-      try {
-        // Usar el servicio para crear el archivo ZIP
-        const zipBuffer = await archiveService.createSessionZip(session, files);
+      // Enviar el archivo como respuesta
+      const fileStream = fs.createReadStream(zipFilePath);
+      fileStream.pipe(res);
+      
+      // Eliminar el archivo temporal cuando se complete la descarga
+      fileStream.on('end', () => {
+        archiveService.cleanupTempFile(zipFilePath);
         
-        // Determinar el nombre del archivo ZIP
-        const zipFileName = `${session.name || `Session-${sessionId}`}.zip`;
-        
-        // Enviar la respuesta al cliente
-        res.setHeader('Content-Type', 'application/zip');
-        res.setHeader('Content-Disposition', `attachment; filename=${zipFileName}`);
-        res.send(zipBuffer);
-        
-        // Registrar actividad de descarga
+        // Registrar actividad de descarga exitosa
         try {
           storage.createAccessLog({
             userId: req.user?.id || 1,
@@ -122,7 +197,8 @@ export const sessionController = {
             resourceId: sessionId.toString(),
             details: {
               sessionId,
-              filesCount: files.length
+              sessionName: session.name,
+              downloadTime: new Date().toISOString()
             },
             success: true
           });
@@ -131,13 +207,21 @@ export const sessionController = {
         }
         
         console.log(`ZIP descargado exitosamente para la sesión ${sessionId}`);
-      } catch (zipError) {
-        console.error('Error creando ZIP:', zipError);
-        res.status(500).json({ error: 'Error al crear el archivo ZIP' });
-      }
+      });
+      
+      // Manejar errores en el stream
+      fileStream.on('error', (error) => {
+        console.error('Error al enviar el archivo ZIP:', error);
+        if (!res.headersSent) {
+          res.status(500).json({ error: 'Error al enviar el archivo ZIP' });
+        }
+        archiveService.cleanupTempFile(zipFilePath);
+      });
     } catch (error) {
-      console.error('Error downloading session:', error);
-      res.status(500).json({ error: "No se pudo descargar la sesión" });
+      console.error('Error al descargar sesión:', error);
+      if (!res.headersSent) {
+        res.status(500).json({ error: 'Error al descargar sesión' });
+      }
     }
   }
 };

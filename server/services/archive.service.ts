@@ -3,13 +3,17 @@ import path from 'path';
 import { promises as fsPromises } from 'fs';
 import AdmZip from 'adm-zip';
 import { Session } from '@shared/schema';
+import { sessionService } from './session.service';
 
 /**
- * Interfaz que define la estructura de un archivo a incluir en el ZIP
+ * Interfaz para monitorizar el progreso de creación de ZIP
  */
-interface SessionFile {
-  fileName: string;
-  folder?: string; // Carpeta opcional dentro del ZIP
+export interface ZipProgress {
+  total: number;
+  processed: number;
+  status: 'pending' | 'processing' | 'completed' | 'error';
+  message?: string;
+  error?: string;
 }
 
 /**
@@ -20,12 +24,17 @@ class ArchiveService {
   private recordingsDir: string;
   private sessionsDir: string;
   private uploadsDir: string;
+  private tempDir: string;
+  
+  // Mapa para guardar el progreso de creación de cada ZIP
+  private zipProgressMap: Map<number, ZipProgress> = new Map();
 
   constructor() {
     // Directorios base para búsqueda de archivos
     this.recordingsDir = path.join(process.cwd(), 'recordings');
     this.sessionsDir = path.join(process.cwd(), 'sessions');
     this.uploadsDir = path.join(process.cwd(), 'uploads');
+    this.tempDir = path.join(process.cwd(), 'temp');
     
     // Asegurar que existan los directorios
     this.ensureDirectories();
@@ -35,7 +44,12 @@ class ArchiveService {
    * Asegura que existan los directorios necesarios
    */
   private async ensureDirectories(): Promise<void> {
-    const directories = [this.recordingsDir, this.sessionsDir, this.uploadsDir];
+    const directories = [
+      this.recordingsDir, 
+      this.sessionsDir, 
+      this.uploadsDir,
+      this.tempDir
+    ];
     
     for (const dir of directories) {
       try {
@@ -48,143 +62,291 @@ class ArchiveService {
   }
 
   /**
-   * Crea un archivo ZIP con todos los archivos de una sesión
+   * Inicia el proceso de creación de ZIP para una sesión
+   * @param sessionId ID de la sesión
    * @param session Datos de la sesión
-   * @param files Lista de archivos a incluir
-   * @returns Buffer con el contenido del archivo ZIP
+   * @returns Ruta del archivo ZIP temporal
    */
-  async createSessionZip(session: Session, files: SessionFile[]): Promise<Buffer> {
-    const zip = new AdmZip();
+  async createSessionZipAsync(sessionId: number, session: Session): Promise<string> {
+    // Inicializar progreso
+    this.zipProgressMap.set(sessionId, {
+      total: 0,
+      processed: 0,
+      status: 'pending',
+      message: 'Iniciando creación del ZIP...'
+    });
     
-    // Crear estructura de carpetas en el ZIP
-    this.createZipFolderStructure(zip, session.id);
-    
-    // Contador para verificación
-    let addedFiles = 0;
-    
-    // Añadir cada archivo al ZIP
-    for (const file of files) {
-      try {
-        // Buscar el archivo en varias ubicaciones posibles
-        const filePath = await this.findFilePath(file.fileName, session.id);
-        
-        if (filePath) {
-          // Leer el contenido del archivo
-          const fileContent = await fsPromises.readFile(filePath);
-          
-          // Determinar la ruta dentro del ZIP basada en el tipo de archivo
-          const zipPath = this.determineZipPath(file.fileName, session.id);
-          
-          // Añadir el archivo al ZIP
-          zip.addFile(zipPath, fileContent);
-          console.log(`Añadido al ZIP: ${zipPath}`);
-          addedFiles++;
-        } else {
-          console.warn(`Archivo no encontrado: ${file.fileName}`);
-        }
-      } catch (error) {
-        console.error(`Error al añadir archivo ${file.fileName} al ZIP:`, error);
-      }
+    try {
+      // Verificar que el directorio de sesión exista
+      const sessionDir = await sessionService.getSessionDirectory(sessionId);
+      
+      // Obtener la lista de archivos de la sesión
+      const sessionFiles = await sessionService.getSessionFiles(sessionId);
+      
+      // Calcular el total de archivos para el progreso
+      const totalFiles = sessionFiles.recordings.length + sessionFiles.sensorData.length + 1; // +1 por el README
+      
+      // Actualizar progreso
+      this.zipProgressMap.set(sessionId, {
+        total: totalFiles,
+        processed: 0,
+        status: 'processing',
+        message: `Procesando ${totalFiles} archivos...`
+      });
+      
+      // Crear el ZIP
+      const zipFilePath = await this.generateSessionZip(sessionId, session, sessionFiles);
+      
+      // Marcar como completado
+      this.zipProgressMap.set(sessionId, {
+        total: totalFiles,
+        processed: totalFiles,
+        status: 'completed',
+        message: `ZIP creado exitosamente`
+      });
+      
+      return zipFilePath;
+    } catch (error) {
+      // Registrar error
+      this.zipProgressMap.set(sessionId, {
+        total: 0,
+        processed: 0,
+        status: 'error',
+        message: 'Error al crear el archivo ZIP',
+        error: error.message || 'Error desconocido'
+      });
+      
+      console.error(`Error al crear ZIP para sesión ${sessionId}:`, error);
+      throw error;
     }
-    
-    // Añadir README con información de la sesión
-    this.addReadmeFile(zip, session);
-    
-    console.log(`ZIP creado con ${addedFiles} archivos de ${files.length} solicitados`); 
-    
-    // Generar y devolver el buffer del ZIP
-    return zip.toBuffer();
+  }
+  
+  /**
+   * Obtiene el progreso actual de creación del ZIP
+   * @param sessionId ID de la sesión
+   */
+  getZipProgress(sessionId: number): ZipProgress | undefined {
+    return this.zipProgressMap.get(sessionId);
   }
 
   /**
-   * Crea la estructura de carpetas dentro del ZIP
+   * Genera el archivo ZIP con todos los archivos de la sesión
+   * @param sessionId ID de la sesión
+   * @param session Datos de la sesión
+   * @param sessionFiles Archivos de la sesión
+   * @returns Ruta del archivo ZIP generado
    */
-  private createZipFolderStructure(zip: AdmZip, sessionId?: number): void {
-    // Carpetas principales
+  private async generateSessionZip(
+    sessionId: number, 
+    session: Session, 
+    sessionFiles: {
+      recordings: {path: string, camera?: number}[],
+      sensorData: {path: string, sensor?: string}[]
+    }
+  ): Promise<string> {
+    const zip = new AdmZip();
+    
+    // Nombre seguro para el archivo basado en el nombre de la sesión
+    const safeName = (session.name || `Session${sessionId}`)
+      .replace(/[^a-z0-9]/gi, '_')
+      .replace(/_+/g, '_')
+      .toLowerCase();
+    
+    // Ruta temporal para el archivo ZIP
+    const zipFilePath = path.join(this.tempDir, `${safeName}.zip`);
+    
+    // Crear la estructura de carpetas
+    this.createSessionFolderStructure(zip, session);
+    
+    // Contador de archivos procesados
+    let processedCount = 0;
+    const totalFiles = sessionFiles.recordings.length + sessionFiles.sensorData.length;
+    
+    // Añadir grabaciones de vídeo
+    for (const recording of sessionFiles.recordings) {
+      try {
+        if (fs.existsSync(recording.path)) {
+          const fileName = path.basename(recording.path);
+          
+          // Añadir el archivo al ZIP
+          zip.addLocalFile(recording.path, 'recordings');
+          
+          console.log(`Añadido al ZIP: recordings/${fileName}`);
+          
+          // Actualizar progreso
+          processedCount++;
+          this.updateZipProgress(sessionId, processedCount, totalFiles);
+        } else {
+          console.warn(`Archivo de grabación no encontrado: ${recording.path}`);
+        }
+      } catch (error) {
+        console.error(`Error al añadir grabación al ZIP:`, error);
+      }
+    }
+    
+    // Añadir datos de sensores
+    for (const sensorData of sessionFiles.sensorData) {
+      try {
+        if (fs.existsSync(sensorData.path)) {
+          const fileName = path.basename(sensorData.path);
+          
+          // Añadir el archivo al ZIP
+          zip.addLocalFile(sensorData.path, 'sensors');
+          
+          console.log(`Añadido al ZIP: sensors/${fileName}`);
+          
+          // Actualizar progreso
+          processedCount++;
+          this.updateZipProgress(sessionId, processedCount, totalFiles);
+        } else {
+          console.warn(`Archivo de datos de sensor no encontrado: ${sensorData.path}`);
+        }
+      } catch (error) {
+        console.error(`Error al añadir datos de sensor al ZIP:`, error);
+      }
+    }
+    
+    // Añadir archivos adicionales
+    await this.addAdditionalSessionFiles(zip, sessionId, session);
+    
+    // Añadir README con información de la sesión
+    this.addSessionReadmeFile(zip, session);
+    
+    // Guardar el archivo ZIP
+    zip.writeZip(zipFilePath);
+    
+    console.log(`ZIP creado exitosamente en ${zipFilePath}`);
+    return zipFilePath;
+  }
+
+  /**
+   * Actualiza el progreso de creación del ZIP
+   */
+  private updateZipProgress(sessionId: number, processed: number, total: number): void {
+    const progress = this.zipProgressMap.get(sessionId);
+    if (progress) {
+      this.zipProgressMap.set(sessionId, {
+        ...progress,
+        processed,
+        total,
+        message: `Procesando archivos (${processed}/${total})...`
+      });
+    }
+  }
+
+  /**
+   * Crea la estructura de carpetas en el ZIP
+   */
+  private createSessionFolderStructure(zip: AdmZip, session: Session): void {
+    // Crear carpetas principales
     zip.addFile('recordings/', Buffer.from(''));
     zip.addFile('sensors/', Buffer.from(''));
     
-    // Si tenemos ID de sesión, añadir carpetas específicas
-    if (sessionId) {
-      zip.addFile(`session_${sessionId}/`, Buffer.from(''));
-      zip.addFile(`session_${sessionId}/recordings/`, Buffer.from(''));
-      zip.addFile(`session_${sessionId}/sensors/`, Buffer.from(''));
-    }
+    // Usar el nombre de la sesión para la carpeta principal
+    const sessionName = session.name || `Session${session.id}`;
+    const safeName = sessionName
+      .replace(/[^a-z0-9]/gi, '_')
+      .replace(/_+/g, '_')
+      .toLowerCase();
+    
+    // No es necesario crear la carpeta con el nombre de la sesión
+    // ya que usaremos la estructura plana recomendada
   }
 
   /**
-   * Determina la ruta adecuada dentro del ZIP basada en el tipo de archivo
+   * Añade archivos adicionales de la sesión al ZIP
    */
-  private determineZipPath(fileName: string, sessionId?: number): string {
-    let zipPath: string;
-    
-    if (fileName.endsWith('.mp4')) {
-      zipPath = sessionId ? 
-        `session_${sessionId}/recordings/${fileName}` : 
-        `recordings/${fileName}`;
-    } else if (fileName.endsWith('.csv') || fileName.endsWith('.json')) {
-      zipPath = sessionId ? 
-        `session_${sessionId}/sensors/${fileName}` : 
-        `sensors/${fileName}`;
-    } else {
-      // Para otros tipos de archivos, mantener en la raíz
-      zipPath = fileName;
-    }
-    
-    return zipPath;
-  }
-
-  /**
-   * Busca un archivo en diferentes ubicaciones posibles
-   * @returns Ruta completa del archivo si se encuentra, null en caso contrario
-   */
-  private async findFilePath(fileName: string, sessionId?: number): Promise<string | null> {
-    // Lista de ubicaciones posibles para buscar el archivo
-    const possibleLocations = [
-      path.join(this.uploadsDir, fileName),
-      path.join(this.recordingsDir, fileName)
-    ];
-    
-    // Añadir ubicaciones específicas de sesión si tenemos ID
-    if (sessionId) {
-      possibleLocations.push(
-        path.join(this.sessionsDir, `Session${sessionId}`, 'recordings', fileName),
-        path.join(this.sessionsDir, `Session${sessionId}`, 'sensor_data', fileName)
-      );
-    }
-    
-    // Buscar en todas las ubicaciones posibles
-    for (const location of possibleLocations) {
-      try {
-        await fsPromises.access(location);
-        return location;
-      } catch {
-        // Archivo no encontrado en esta ubicación, continuar con la siguiente
+  private async addAdditionalSessionFiles(zip: AdmZip, sessionId: number, session: Session): Promise<void> {
+    try {
+      const sessionDir = await sessionService.getSessionDirectory(sessionId);
+      
+      // Buscar archivo AllData.json
+      const allDataPath = path.join(sessionDir, 'AllData.json');
+      if (fs.existsSync(allDataPath)) {
+        zip.addLocalFile(allDataPath, 'sensors');
+        console.log('Añadido AllData.json al ZIP');
       }
+      
+      // Buscar archivo session_data.json
+      const sessionDataPath = path.join(sessionDir, 'session_data.json');
+      if (fs.existsSync(sessionDataPath)) {
+        zip.addLocalFile(sessionDataPath, 'sensors');
+        console.log('Añadido session_data.json al ZIP');
+      }
+      
+      // Buscar carpeta sensor_data y añadir todos los archivos JSON
+      const sensorDataDir = path.join(sessionDir, 'sensor_data');
+      if (fs.existsSync(sensorDataDir)) {
+        const sensorFiles = fs.readdirSync(sensorDataDir).filter(f => f.endsWith('.json'));
+        for (const file of sensorFiles) {
+          zip.addLocalFile(path.join(sensorDataDir, file), 'sensors');
+          console.log(`Añadido ${file} al ZIP`);
+        }
+      }
+    } catch (error) {
+      console.error('Error al añadir archivos adicionales al ZIP:', error);
     }
-    
-    return null;
   }
 
   /**
-   * Añade un archivo README.txt con información sobre la sesión
+   * Añade un archivo README.txt detallado con información sobre la sesión
    */
-  private addReadmeFile(zip: AdmZip, session: Session): void {
-    const readme = `SensorSessionTracker - Exportación de Sesión
+  private addSessionReadmeFile(zip: AdmZip, session: Session): void {
+    // Preparar datos de la sesión para el README
+    const startTime = session.startTime ? new Date(session.startTime).toLocaleString() : 'N/A';
+    const endTime = session.endTime ? new Date(session.endTime).toLocaleString() : 'N/A';
+    
+    // Calcular duración si hay tiempo de inicio y fin
+    let duration = 'N/A';
+    if (session.startTime && session.endTime) {
+      const start = new Date(session.startTime).getTime();
+      const end = new Date(session.endTime).getTime();
+      const durationMs = end - start;
+      
+      const hours = Math.floor(durationMs / 3600000);
+      const minutes = Math.floor((durationMs % 3600000) / 60000);
+      const seconds = Math.floor((durationMs % 60000) / 1000);
+      
+      duration = `${hours}h ${minutes}m ${seconds}s`;
+    }
+    
+    // Crear contenido del README
+    const readme = `SensorSessionTracker - Session Export
 ===================================
 
-ID de Sesión: ${session.id || 'N/A'}
-Nombre: ${session.name || 'Sin nombre'}
-Fecha de Exportación: ${new Date().toISOString()}
+Session ID: ${session.id}
+Session Name: ${session.name || `Session${session.id}`}
+Export Date: ${new Date().toISOString()}
 
-Contenido:
-- /recordings: Contiene grabaciones de vídeo (.mp4)
-- /sensors: Contiene archivos de datos de sensores (.csv, .json)
+Session Details:
+- Start Time: ${startTime}
+- End Time: ${endTime}
+- Duration: ${duration}
+- Description: ${session.description || 'No description provided'}
 
-Este archivo ZIP fue generado automáticamente por SensorSessionTracker.
+Contents:
+- /recordings: Contains video recordings (.mp4)
+- /sensors: Contains sensor data files (.csv, .json)
+
+This ZIP file was automatically generated by SensorSessionTracker.
 `;
     
     zip.addFile('README.txt', Buffer.from(readme));
+  }
+  
+  /**
+   * Limpia los archivos temporales
+   * @param filePath Ruta del archivo a eliminar
+   */
+  async cleanupTempFile(filePath: string): Promise<void> {
+    try {
+      if (fs.existsSync(filePath)) {
+        await fsPromises.unlink(filePath);
+        console.log(`Archivo temporal eliminado: ${filePath}`);
+      }
+    } catch (error) {
+      console.error(`Error al eliminar archivo temporal ${filePath}:`, error);
+    }
   }
 }
 
