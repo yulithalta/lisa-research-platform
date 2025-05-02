@@ -1427,9 +1427,19 @@ export function NewSessionContent() {
                   size="sm"
                   onClick={() => toggleSessionStatus(activeSession)}
                   className="bg-white border-red-300 hover:bg-red-50 text-red-600"
+                  disabled={stoppingSession}
                 >
-                  <Square className="h-4 w-4 mr-2" />
-                  End Session
+                  {stoppingSession ? (
+                    <>
+                      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                      Stopping...
+                    </>
+                  ) : (
+                    <>
+                      <Square className="h-4 w-4 mr-2" />
+                      End Session
+                    </>
+                  )}
                 </Button>
               </div>
             </div>
