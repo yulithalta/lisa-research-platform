@@ -572,44 +572,139 @@ class MqttClient {
   }
   
   /**
-   * Guarda datos en archivos
+   * Guarda datos en un único archivo JSON y un único CSV para análisis
    */
   private saveData() {
     try {
-      // Guardar caché de mensajes
-      const messagesData = JSON.stringify(Object.fromEntries(this.messageCache));
-      const tempMessagesPath = path.join(DATA_DIR, 'mqtt-messages.tmp.json');
-      const messagesPath = path.join(DATA_DIR, 'mqtt-messages.json');
+      // 1. Guardar todos los datos en un único archivo JSON
+      const allData = {
+        messages: Object.fromEntries(this.messageCache),
+        topics: Array.from(this.topics),
+        lastUpdated: new Date().toISOString(),
+        deviceCount: this.devicesList.length
+      };
       
-      // Escribir a archivo temporal primero (operación atómica)
-      fs.writeFileSync(tempMessagesPath, messagesData);
-      fs.renameSync(tempMessagesPath, messagesPath);
+      // Guardamos los datos en zigbee-data.json (principal)
+      const tempJsonPath = path.join(DATA_DIR, 'zigbee-data.tmp.json');
+      const jsonPath = path.join(DATA_DIR, 'zigbee-data.json');
       
-      // Guardar lista de tópicos
-      const topicsData = JSON.stringify(Array.from(this.topics));
-      const tempTopicsPath = path.join(DATA_DIR, 'mqtt-topics.tmp.json');
-      const topicsPath = path.join(DATA_DIR, 'mqtt-topics.json');
+      // Operación atómica usando archivo temporal
+      fs.writeFileSync(tempJsonPath, JSON.stringify(allData, null, 2));
+      fs.renameSync(tempJsonPath, jsonPath);
       
-      fs.writeFileSync(tempTopicsPath, topicsData);
-      fs.renameSync(tempTopicsPath, topicsPath);
+      // 2. Crear un único archivo CSV para análisis de sensores
+      const csvPath = path.join(DATA_DIR, 'zigbee-sensors.csv');
+      const tempCsvPath = path.join(DATA_DIR, 'zigbee-sensors.tmp.csv');
       
-      console.log(`Datos MQTT guardados: ${this.messageCache.size} tópicos, ${this.topics.size} tópicos únicos`);
+      // Cabecera del CSV (si no existe el archivo)
+      if (!fs.existsSync(csvPath)) {
+        const csvHeader = "timestamp,topic,device_id,temperature,humidity,motion,battery,linkquality,payload\n";
+        fs.writeFileSync(tempCsvPath, csvHeader);
+      } else {
+        // Copiar archivo existente al temporal
+        fs.copyFileSync(csvPath, tempCsvPath);
+      }
+      
+      // Procesar todos los mensajes y añadir los últimos al CSV
+      let csvContent = '';
+      this.messageCache.forEach((messages, topic) => {
+        // Tomar solo los últimos 5 mensajes para cada tópico
+        const recentMessages = messages.slice(-5);
+        
+        for (const msg of recentMessages) {
+          // Extra solo datos importantes de sensores para el CSV
+          const device_id = topic.split('/').pop() || '';
+          
+          // Extraer metadatos como temperature, humidity, etc. si existen
+          let temperature = '';
+          let humidity = '';
+          let motion = '';
+          let battery = '';
+          let linkquality = '';
+          
+          if (typeof msg.payload === 'object') {
+            temperature = msg.payload.temperature !== undefined ? msg.payload.temperature : '';
+            humidity = msg.payload.humidity !== undefined ? msg.payload.humidity : '';
+            motion = msg.payload.motion !== undefined ? msg.payload.motion : 
+                     msg.payload.occupancy !== undefined ? msg.payload.occupancy : '';
+            battery = msg.payload.battery !== undefined ? msg.payload.battery : '';
+            linkquality = msg.payload.linkquality !== undefined ? msg.payload.linkquality : '';
+          }
+          
+          // Escape CSV values properly
+          const escapeCsv = (value: any) => {
+            if (value === undefined || value === null) return '';
+            const str = String(value).replace(/"/g, '""');
+            return `"${str}"`;
+          };
+          
+          // Crear línea CSV
+          const csvLine = [
+            escapeCsv(msg.timestamp),
+            escapeCsv(topic),
+            escapeCsv(device_id),
+            escapeCsv(temperature),
+            escapeCsv(humidity),
+            escapeCsv(motion),
+            escapeCsv(battery),
+            escapeCsv(linkquality),
+            escapeCsv(JSON.stringify(msg.payload))
+          ].join(',') + '\n';
+          
+          csvContent += csvLine;
+        }
+      });
+      
+      // Añadir nuevas líneas al CSV temporal
+      fs.appendFileSync(tempCsvPath, csvContent);
+      // Renombrar para operación atómica
+      fs.renameSync(tempCsvPath, csvPath);
+      
+      // 3. Guardar bridge.json para compatibilidad
+      const bridgePath = path.join(DATA_DIR, 'bridge.json');
+      fs.writeFileSync(bridgePath, JSON.stringify({
+        state: "online",
+        updated: new Date().toISOString()
+      }));
+      
+      console.log(`Datos MQTT consolidados guardados: ${this.messageCache.size} tópicos, ${this.topics.size} tópicos únicos`);
     } catch (error) {
-      console.error('Error al guardar datos MQTT:', error);
+      console.error('Error al guardar datos MQTT consolidados:', error);
     }
   }
   
   /**
-   * Guarda la lista de dispositivos
+   * Guarda la lista de dispositivos como devices.json para archivo ZIP
    */
   private saveDevicesList() {
     try {
-      const devicesData = JSON.stringify(this.devicesList);
-      const tempPath = path.join(DATA_DIR, 'zigbee-devices.tmp.json');
-      const finalPath = path.join(DATA_DIR, 'zigbee-devices.json');
+      // Guardar los dispositivos Zigbee con un formato más amigable
+      const devices = this.devicesList.map(device => {
+        // Extraer datos relevantes para simplificar el archivo
+        return {
+          id: device.ieee_address || device.friendly_name || 'unknown',
+          name: device.friendly_name || device.ieee_address || 'unknown device',
+          type: device.type || 'unknown',
+          model: device.model_id || device.definition?.model || 'unknown model',
+          manufacturer: device.manufacturer || device.definition?.vendor || 'unknown vendor',
+          lastSeen: device.last_seen || new Date().toISOString(),
+          battery: device.battery,
+          linkquality: device.linkquality
+        };
+      });
       
-      fs.writeFileSync(tempPath, devicesData);
+      // 1. Guardar como devices.json (compatible con formato esperado)
+      const tempPath = path.join(DATA_DIR, 'devices.tmp.json');
+      const finalPath = path.join(DATA_DIR, 'devices.json');
+      
+      fs.writeFileSync(tempPath, JSON.stringify(devices, null, 2));
       fs.renameSync(tempPath, finalPath);
+      
+      // 2. Guardar también como zigbee-devices.json para compatibilidad
+      fs.writeFileSync(
+        path.join(DATA_DIR, 'zigbee-devices.json'), 
+        JSON.stringify(this.devicesList, null, 2)
+      );
       
       console.log(`Lista de dispositivos guardada: ${this.devicesList.length} dispositivos`);
     } catch (error) {

@@ -105,37 +105,41 @@ async function downloadSessionWithFileManager(req: any, res: any) {
       }
     }
     
-    // 3. Buscar archivos de sensores
-    const sensorDataPath = path.join(sessionDir, 'sensor_data');
-    if (fs.existsSync(sensorDataPath)) {
+    // 3. Buscar archivos de sensores en el directorio de datos (simplificado)
+    // Los datos de sensores se guardan en un único JSON (para datos completos) y un CSV (para análisis)
+    const dataDir = path.join(process.cwd(), 'data');
+    if (fs.existsSync(dataDir)) {
+      console.log(`Verificando directorio de datos: ${dataDir}`);
       try {
-        const sensorFiles = fs.readdirSync(sensorDataPath).filter(file => 
-          file.endsWith('.json') || file.endsWith('.csv')
-        );
-        
-        for (const file of sensorFiles) {
-          files.push({ fileName: file });
-          console.log(`Añadiendo archivo de sensor: ${file}`);
+        // Buscar archivos JSON y CSV en el directorio de datos
+        if (fs.existsSync(dataDir)) {
+          const dataFiles = fs.readdirSync(dataDir).filter(file => 
+            file.endsWith('.json') || file.endsWith('.csv')
+          );
+          
+          for (const file of dataFiles) {
+            files.push({ fileName: file });
+            console.log(`Añadiendo archivo de datos: ${file} (desde data/)`);
+          }
         }
       } catch (err) {
-        console.error(`Error leyendo directorio de sensores:`, err);
+        console.error(`Error leyendo directorio de datos:`, err);
       }
     }
     
-    // 4. Añadir archivos específicos que podrían existir en el directorio principal de datos
+    // 4. Añadir archivos específicos que deben ser incluidos
+    // Para datos de sensores Zigbee2mqtt
     const specificSensorFiles = [
-      'bridge.json',
-      'devices.json',
-      'humidity_sensors.csv',
-      'temperature_sensors.csv',
-      'motion_sensors.csv',
-      'AllData.json'
+      'zigbee-data.json',     // Para datos completos en JSON
+      'zigbee-sensors.csv',   // Para datos de análisis en CSV
+      'bridge.json',          // Configuración del puente Zigbee
+      'devices.json'          // Lista de dispositivos Zigbee
     ];
     
-    // Añadir explícitamente archivos de sensores específicos que son importantes
+    // Agregar directamente al zip los archivos de datos
     for (const fileName of specificSensorFiles) {
       files.push({ fileName });
-      console.log(`Añadiendo archivo de sensor: ${fileName}`);
+      console.log(`Añadiendo archivo requerido: ${fileName}`);
     }
     
     // 4. Usar la nueva implementación mejorada del fileManager para crear el ZIP
