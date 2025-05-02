@@ -122,6 +122,22 @@ async function downloadSessionWithFileManager(req: any, res: any) {
       }
     }
     
+    // 4. Añadir archivos específicos que podrían existir en el directorio principal de datos
+    const specificSensorFiles = [
+      'bridge.json',
+      'devices.json',
+      'humidity_sensors.csv',
+      'temperature_sensors.csv',
+      'motion_sensors.csv',
+      'AllData.json'
+    ];
+    
+    // Añadir explícitamente archivos de sensores específicos que son importantes
+    for (const fileName of specificSensorFiles) {
+      files.push({ fileName });
+      console.log(`Añadiendo archivo de sensor: ${fileName}`);
+    }
+    
     // 4. Usar la nueva implementación mejorada del fileManager para crear el ZIP
     console.log(`Creando ZIP con ${files.length} archivos usando fileManager`);
     

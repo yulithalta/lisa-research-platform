@@ -28,17 +28,95 @@ class FileManager {
 
   /**
    * Get the absolute file path for a given file name
+   * Busca el archivo en múltiples ubicaciones prioritarias
    */
   async getFilePath(fileName: string): Promise<string | null> {
-    const filePath = path.join(this.uploadsDir, fileName);
+    // Lista de directorios donde buscar, en orden de prioridad
+    const searchDirs = [
+      // Primero, en uploads (ubicación principal)
+      this.uploadsDir,
+      
+      // Directorio de datos
+      path.join(process.cwd(), 'data'),
+      
+      // Directorios de sesiones
+      path.join(process.cwd(), 'sessions'),
+      
+      // Buscar en sensor_data dentro de las carpetas de sesión
+      ...this.findSessionSensorDirs(),
+      
+      // Buscar en mqtt_data dentro de las carpetas de sesión
+      ...this.findSessionMqttDirs(),
+      
+      // Buscar en recordings
+      path.join(process.cwd(), 'recordings')
+    ];
+    
+    // Buscar el archivo en cada uno de los directorios
+    for (const dir of searchDirs) {
+      try {
+        const filePath = path.join(dir, fileName);
+        await fsPromises.access(filePath);
+        return filePath;
+      } catch (error) {
+        // Archivo no encontrado en este directorio, continuar con el siguiente
+      }
+    }
+    
+    console.error(`File not found in any location: ${fileName}`);
+    return null;
+  }
+  
+  /**
+   * Encuentra todos los directorios de sensor_data en las carpetas de sesión
+   */
+  private findSessionSensorDirs(): string[] {
+    const sessionsDir = path.join(process.cwd(), 'sessions');
+    const sensorDirs: string[] = [];
     
     try {
-      await fsPromises.access(filePath);
-      return filePath;
+      if (fs.existsSync(sessionsDir)) {
+        // Buscar carpetas de sesión (Session1, Session2, etc.)
+        const sessionFolders = fs.readdirSync(sessionsDir);
+        
+        for (const folder of sessionFolders) {
+          const sensorDataDir = path.join(sessionsDir, folder, 'sensor_data');
+          if (fs.existsSync(sensorDataDir)) {
+            sensorDirs.push(sensorDataDir);
+          }
+        }
+      }
     } catch (error) {
-      console.error(`File not found: ${filePath}`);
-      return null;
+      console.error('Error buscando directorios de sensor_data:', error);
     }
+    
+    return sensorDirs;
+  }
+  
+  /**
+   * Encuentra todos los directorios de mqtt_data en las carpetas de sesión
+   */
+  private findSessionMqttDirs(): string[] {
+    const sessionsDir = path.join(process.cwd(), 'sessions');
+    const mqttDirs: string[] = [];
+    
+    try {
+      if (fs.existsSync(sessionsDir)) {
+        // Buscar carpetas de sesión (Session1, Session2, etc.)
+        const sessionFolders = fs.readdirSync(sessionsDir);
+        
+        for (const folder of sessionFolders) {
+          const mqttDataDir = path.join(sessionsDir, folder, 'mqtt_data');
+          if (fs.existsSync(mqttDataDir)) {
+            mqttDirs.push(mqttDataDir);
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Error buscando directorios de mqtt_data:', error);
+    }
+    
+    return mqttDirs;
   }
 
   /**
