@@ -408,31 +408,49 @@ async function startRecording(camera: any, sessionId?: number) {
         
         // Crear una miniatura del video para la visualización en la interfaz
         try {
+          // Asegurarse de que el directorio de miniaturas exista
+          if (!fs.existsSync(THUMBNAILS_DIR)) {
+            fs.mkdirSync(THUMBNAILS_DIR, { recursive: true });
+            console.log(`Directorio de miniaturas creado: ${THUMBNAILS_DIR}`);
+          }
+
           const thumbnailFileName = path.basename(outputPath, '.mp4') + '.jpg';
           const thumbnailPath = path.join(THUMBNAILS_DIR, thumbnailFileName);
           
           console.log(`Generando miniatura en: ${thumbnailPath}`);
           
-          // Usar fluent-ffmpeg para generar la miniatura (ffmpeg está importado en la parte superior)
-          ffmpeg(outputPath)
-            .on('error', (err: any) => {
-              console.error(`Error generando miniatura para ${outputPath}:`, err);
-            })
-            .on('end', () => {
-              console.log(`✅ Miniatura generada exitosamente: ${thumbnailPath}`);
-              
-              // Actualizar la grabación con la URL relativa a la miniatura (para acceso web)
-              const thumbnailUrl = `/thumbnails/${thumbnailFileName}`;
-              storage.updateRecording(recording.id, {
-                thumbnailUrl: thumbnailUrl
-              }).catch(err => console.error(`Error al actualizar grabación con miniatura: ${err}`));
-            })
-            .screenshots({
-              count: 1,
-              folder: THUMBNAILS_DIR,
-              filename: thumbnailFileName,
-              size: '320x240'
-            });
+          // Usar la libreria importada como 'ffmpeg' para generar la miniatura
+          // No usar una función llamada 'ffmpeg2' que no existe
+          const ffmpegPromise = new Promise<void>((resolve, reject) => {
+            ffmpeg(outputPath)
+              .on('error', (err: any) => {
+                console.error(`Error generando miniatura para ${outputPath}:`, err);
+                reject(err);
+              })
+              .on('end', () => {
+                console.log(`✅ Miniatura generada exitosamente: ${thumbnailPath}`);
+                
+                // Actualizar la grabación con la URL relativa a la miniatura (para acceso web)
+                const thumbnailUrl = `/thumbnails/${thumbnailFileName}`;
+                storage.updateRecording(recording.id, {
+                  thumbnailUrl: thumbnailUrl
+                }).catch(err => console.error(`Error al actualizar grabación con miniatura: ${err}`));
+                
+                resolve();
+              })
+              .screenshots({
+                count: 1,
+                folder: THUMBNAILS_DIR,
+                filename: thumbnailFileName,
+                size: '320x240'
+              });
+          });
+          
+          // No esperamos a que termine la generación de la miniatura
+          // para no bloquear el proceso principal
+          ffmpegPromise.catch(err => {
+            console.error(`Error al generar miniatura: ${err}`);
+          });
         } catch (thumbnailError) {
           console.error(`Error al generar miniatura: ${thumbnailError}`);
         }
