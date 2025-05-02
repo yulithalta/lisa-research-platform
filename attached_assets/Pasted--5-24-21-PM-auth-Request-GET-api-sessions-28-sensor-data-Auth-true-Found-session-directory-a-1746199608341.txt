@@ -1,0 +1,191 @@
+
+5:24:21 PM [auth] Request GET /api/sessions/28/sensor-data - Auth: true
+Found session directory at /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session28
+Found sensor data at /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session28/session_28_sensors.json
+5:24:21 PM [express] GET /api/sessions/28/sensor-data 304 in 2ms :: {"sessionId":28,"startTime":"202…
+5:24:21 PM [auth] Deserializing user ID: 1
+5:24:21 PM [auth] Request GET /api/sessions/28/recordings - Auth: true
+5:24:21 PM [express] GET /api/sessions/28/recordings 304 in 1ms :: [{"cameraId":3,"userId":1,"status…
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /sessions - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/main.tsx?v=LMFoBfEh1KpL7XYUPQ9xt - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /@vite/client - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /@react-refresh - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/App.tsx?v=LMFoBfEh1KpL7XYUPQ9xt - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/index.css?v=LMFoBfEh1KpL7XYUPQ9xt - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/vite/dist/client/env.mjs - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/lib/queryClient.ts - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/hooks/use-auth.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/hooks/use-onboarding.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/toaster.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/home-page.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/auth-page.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/page404/index.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/lib/protected-route.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/layout/main-layout.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/lib/services/logger.ts - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/sessions-page.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/player-page.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/recording-player.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/settings-page.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/sensors-page.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/cameras-page.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/settings-sensors.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/zigbee-devices-page.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/live-monitoring-page.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/device-management-page.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/docs-page.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/help/index.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/doc/system-architecture.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/doc/system-architecture-2.0.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/doc/overview.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/doc/code-quality.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/pages/doc/installation.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/hooks/use-toast.ts - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/hooks/use-local-storage.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/toast.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/card.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/button.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/select.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/hooks/useSimpleMqtt.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/shared/schema.ts - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/form.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/input.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/tabs.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/lib/utils.ts - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/layout/sidebar.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/session-management.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/camera-grid.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/add-camera-dialog.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/badge.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/switch.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/scroll-area.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/accordion.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/onboarding/tours-manager.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/alert.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/label.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/camera-card.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/hooks/use-global-recording-time.ts - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/tooltip.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/dialog.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/textarea.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/table.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/hooks/use-developer-mode.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/mqtt-status-indicator.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/collapsible.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/session-view-dialog.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/onboarding/tour-steps.ts - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/alert-dialog.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /src/components/ui/progress.tsx - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /api/user - Auth: true
+5:24:23 PM [auth] Sending user data for: user
+5:24:23 PM [express] GET /api/user 304 in 1ms :: {"username":"user","password":"4b4d82dace4746a3646c…
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /LOGO-LISAv2.0.png - Auth: true
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /api/sessions - Auth: true
+5:24:23 PM [express] GET /api/sessions 304 in 1ms :: [{"id":28,"userId":1,"name":"fgb","description"…
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /api/cameras - Auth: true
+5:24:23 PM [express] GET /api/cameras 304 in 1ms :: [{"name":"c31","ipAddress":"192.168.0.31","usern…
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /api/zigbee/devices - Auth: true
+[Zigbee] Enviando 7 dispositivos
+5:24:23 PM [express] GET /api/zigbee/devices 200 in 2ms :: [{"id":"0x00124b002a6b62b7","name":"Senso…
+5:24:23 PM [auth] Deserializing user ID: 1
+5:24:23 PM [auth] Request GET /api/influxdb/status - Auth: true
+5:24:23 PM [express] GET /api/influxdb/status 304 in 1ms :: {"connected":true}
+[2025-05-02T15:24:23.483Z] [websocket] WebSocket connection attempt from 192.168.0.25
+[2025-05-02T15:24:23.484Z] [websocket] New WebSocket connection for camera undefined
+[2025-05-02T15:24:23.484Z] [websocket] No camera ID provided, closing connection
+5:24:27 PM [auth] Deserializing user ID: 1
+5:24:27 PM [auth] Request GET /api/sessions/28/download - Auth: true
+Preparing download for session 28: fgb
+Created config file: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session28/config.json
+Obtenido título de sesión desde config.json: "fgb"
+ZIP file name will be: fgb.zip
+⚠️ IMPORTANTE: Buscando archivos MP4 en: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session28/recordings
+✅ Directorio principal de la sesión encontrado: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session28
+✅ Directorio de grabaciones encontrado: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session28/recordings
+📁 Contenido del directorio de grabaciones:
+[2025-05-02T15:24:27.825Z] [INFO] Obteniendo grabaciones para la sesión 28 usando getRecordingsBySessionId
+Encontradas 1 grabaciones asociadas a la sesión 28
+Añadiendo grabación (encontrada): /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session28/recordings
+Se encontraron 0 archivos MP4 adicionales por patrón de nombre
+Archivo CSV de datos de sensores (root) agregado al ZIP: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session28/session_28_data.csv
+Creado archivo consolidado con datos de 0 sensores
+5:24:27 PM [express] GET /api/sessions/28/download 200 in 37ms
+Datos MQTT guardados: 32 tópicos, 32 tópicos únicos
+Datos MQTT guardados: 32 tópicos, 32 tópicos únicos
+Datos MQTT guardados: 32 tópicos, 32 tópicos únicos
+Datos MQTT guardados: 32 tópicos, 32 tópicos únicos
