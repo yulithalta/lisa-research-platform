@@ -1,0 +1,22 @@
+[
+  {
+    "id": "0x00158d00063a31a1",
+    "name": "sensor1",
+    "type": "EndDevice",
+    "model": "WSDCGQ11LM",
+    "manufacturer": "Xiaomi",
+    "lastSeen": "2025-05-02T18:31:00.000Z",
+    "battery": 87,
+    "linkquality": 96
+  },
+  {
+    "id": "0x00158d0006b8c1b2",
+    "name": "sensor2",
+    "type": "EndDevice",
+    "model": "RTCGQ11LM",
+    "manufacturer": "Xiaomi",
+    "lastSeen": "2025-05-02T18:31:05.000Z",
+    "battery": 92,
+    "linkquality": 97
+  }
+]

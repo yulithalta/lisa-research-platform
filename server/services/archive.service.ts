@@ -238,19 +238,32 @@ class ArchiveService {
    * Crea la estructura de carpetas en el ZIP
    */
   private createSessionFolderStructure(zip: AdmZip, session: Session): void {
-    // Crear carpetas principales
+    // Crear carpetas principales con una estructura simple y clara
     zip.addFile('recordings/', Buffer.from(''));
-    zip.addFile('sensors/', Buffer.from(''));
+    zip.addFile('data/', Buffer.from(''));
+    zip.addFile('data/sensor_data/', Buffer.from(''));
     
-    // Usar el nombre de la sesión para la carpeta principal
+    // Nombre seguro para el archivo ZIP
     const sessionName = session.name || `Session${session.id}`;
     const safeName = sessionName
       .replace(/[^a-z0-9]/gi, '_')
       .replace(/_+/g, '_')
       .toLowerCase();
     
-    // No es necesario crear la carpeta con el nombre de la sesión
-    // ya que usaremos la estructura plana recomendada
+    // Crear un archivo de metadatos con información básica de la sesión
+    const metadataContent = JSON.stringify({
+      id: session.id,
+      name: session.name,
+      description: session.description,
+      startTime: session.startTime,
+      endTime: session.endTime,
+      status: session.status,
+      exportDate: new Date().toISOString(),
+      exportVersion: '2.0.0'
+    }, null, 2);
+    
+    // Añadir el archivo de metadatos
+    zip.addFile('data/session_metadata.json', Buffer.from(metadataContent));
   }
 
   /**
@@ -262,17 +275,77 @@ class ArchiveService {
       const sessionDir = await sessionService.getSessionDirectory(sessionId);
       console.log(`📁 Directorio de sesión: ${sessionDir}`);
       
+      // Buscar los archivos consolidados primero (nuevos archivos unificados)
+      const dataDir = path.join(process.cwd(), 'data');
+      
+      // 1. Verificar y añadir zigbee-data.json (datos unificados JSON)
+      const zigbeeDataPath = path.join(dataDir, 'zigbee-data.json');
+      if (fs.existsSync(zigbeeDataPath)) {
+        zip.addLocalFile(zigbeeDataPath, 'data');
+        console.log('✅ Añadido zigbee-data.json (datos consolidados) al ZIP');
+      } else {
+        console.log('⚠️ No se encontró el archivo zigbee-data.json');
+      }
+      
+      // 2. Verificar y añadir zigbee-sensors.csv (datos unificados CSV)
+      const zigbeeSensorsPath = path.join(dataDir, 'zigbee-sensors.csv');
+      if (fs.existsSync(zigbeeSensorsPath)) {
+        zip.addLocalFile(zigbeeSensorsPath, 'data');
+        console.log('✅ Añadido zigbee-sensors.csv (datos consolidados) al ZIP');
+      } else {
+        console.log('⚠️ No se encontró el archivo zigbee-sensors.csv');
+      }
+      
+      // 3. Verificar y añadir devices.json (lista de dispositivos)
+      const devicesPath = path.join(dataDir, 'devices.json');
+      if (fs.existsSync(devicesPath)) {
+        zip.addLocalFile(devicesPath, 'data');
+        console.log('✅ Añadido devices.json (lista de dispositivos) al ZIP');
+      } else {
+        console.log('⚠️ No se encontró el archivo devices.json');
+      }
+      
+      // 4. Verificar y añadir bridge.json (estado del puente zigbee)
+      const bridgePath = path.join(dataDir, 'bridge.json');
+      if (fs.existsSync(bridgePath)) {
+        zip.addLocalFile(bridgePath, 'data');
+        console.log('✅ Añadido bridge.json (estado del puente) al ZIP');
+      } else {
+        console.log('⚠️ No se encontró el archivo bridge.json');
+      }
+      
+      // Buscar y añadir todos los archivos MP4 del directorio de grabaciones
+      const recordingsDir = path.join(process.cwd(), 'recordings');
+      if (fs.existsSync(recordingsDir)) {
+        console.log(`📁 Buscando grabaciones en: ${recordingsDir}`);
+        const recordingFiles = fs.readdirSync(recordingsDir);
+        console.log(`🔍 Encontrados ${recordingFiles.length} archivos en el directorio de grabaciones`);
+        
+        // Filtrar solo archivos MP4
+        const mp4Files = recordingFiles.filter(file => file.toLowerCase().endsWith('.mp4'));
+        console.log(`🔍 De los cuales ${mp4Files.length} son archivos MP4`);
+        
+        for (const file of mp4Files) {
+          const filePath = path.join(recordingsDir, file);
+          zip.addLocalFile(filePath, 'recordings');
+          console.log(`✅ Añadido archivo de vídeo: ${file}`);
+        }
+      } else {
+        console.log(`⚠️ No se encontró directorio de grabaciones: ${recordingsDir}`);
+      }
+      
+      // Buscar archivos de formato antiguo para compatibilidad
       // Buscar archivo AllData.json
       const allDataPath = path.join(sessionDir, 'AllData.json');
       if (fs.existsSync(allDataPath)) {
-        zip.addLocalFile(allDataPath, 'sensors');
+        zip.addLocalFile(allDataPath, 'data');
         console.log('✅ Añadido AllData.json al ZIP');
       }
       
       // Buscar archivo session_data.json
       const sessionDataPath = path.join(sessionDir, 'session_data.json');
       if (fs.existsSync(sessionDataPath)) {
-        zip.addLocalFile(sessionDataPath, 'sensors');
+        zip.addLocalFile(sessionDataPath, 'data');
         console.log('✅ Añadido session_data.json al ZIP');
       }
       
@@ -285,7 +358,7 @@ class ArchiveService {
         
         for (const file of sensorFiles) {
           const filePath = path.join(sensorDataDir, file);
-          zip.addLocalFile(filePath, 'sensors');
+          zip.addLocalFile(filePath, 'data/sensor_data');
           console.log(`✅ Añadido ${file} al ZIP`);
         }
       } else {
@@ -293,14 +366,14 @@ class ArchiveService {
       }
       
       // Buscar carpeta recordings y añadir todos los archivos MP4
-      const recordingsDir = path.join(sessionDir, 'recordings');
-      if (fs.existsSync(recordingsDir)) {
-        console.log(`📁 Directorio de grabaciones encontrado: ${recordingsDir}`);
-        const recordingFiles = fs.readdirSync(recordingsDir);
-        console.log(`🔍 ${recordingFiles.length} archivos encontrados en recordings`);
+      const sessionRecordingsDir = path.join(sessionDir, 'recordings');
+      if (fs.existsSync(sessionRecordingsDir)) {
+        console.log(`📁 Directorio de grabaciones de la sesión encontrado: ${sessionRecordingsDir}`);
+        const recordingFiles = fs.readdirSync(sessionRecordingsDir);
+        console.log(`🔍 ${recordingFiles.length} archivos encontrados en recordings de la sesión`);
         
         for (const file of recordingFiles) {
-          const filePath = path.join(recordingsDir, file);
+          const filePath = path.join(sessionRecordingsDir, file);
           zip.addLocalFile(filePath, 'recordings');
           console.log(`✅ Añadido ${file} al ZIP`);
         }
@@ -308,7 +381,7 @@ class ArchiveService {
         console.log(`⚠️ No se encontró carpeta recordings en ${sessionDir}`);
       }
       
-      // Buscar en el directorio de grabaciones generales por archivos de esta sesión
+      // Buscar en el directorio general de grabaciones por archivos de esta sesión
       try {
         const generalRecordingsDir = path.join(process.cwd(), 'recordings');
         if (fs.existsSync(generalRecordingsDir)) {
@@ -317,7 +390,10 @@ class ArchiveService {
           
           // Filtrar archivos que corresponden a esta sesión por nombrado
           const sessionRecordings = allRecordingFiles.filter(file => {
-            return file.includes(`_session${sessionId}`) || file.includes(`-session${sessionId}`);
+            return file.includes(`_session${sessionId}`) || 
+                   file.includes(`-session${sessionId}`) || 
+                   file.includes(`_s${sessionId}_`) || 
+                   file.includes(`-s${sessionId}-`);
           });
           
           console.log(`🔍 Encontrados ${sessionRecordings.length} archivos de grabación correspondientes a la sesión ${sessionId}`);
@@ -341,7 +417,10 @@ class ArchiveService {
           
           // Filtrar archivos que corresponden a esta sesión
           const sessionDataFiles = dataFiles.filter(file => {
-            return (file.includes(`_session${sessionId}`) || file.includes(`-session${sessionId}`)) && 
+            return (file.includes(`_session${sessionId}`) || 
+                    file.includes(`-session${sessionId}`) ||
+                    file.includes(`_s${sessionId}_`) || 
+                    file.includes(`-s${sessionId}-`)) && 
                    (file.endsWith('.csv') || file.endsWith('.json'));
           });
           
@@ -349,7 +428,7 @@ class ArchiveService {
           
           for (const file of sessionDataFiles) {
             const filePath = path.join(dataDir, file);
-            zip.addLocalFile(filePath, 'sensors');
+            zip.addLocalFile(filePath, 'data');
             console.log(`✅ Añadido archivo de datos: ${file}`);
           }
         }
@@ -440,10 +519,11 @@ ${session.notes || 'No notes provided'}
 
 Contents:
 - /recordings: Contains video recordings (.mp4)
-- /sensors: Contains sensor data files (.csv, .json)
-- session_form_data.json: Complete form data from session creation
-- session_metadata.json: All technical metadata for the session
-- session_summary.csv: Session summary in CSV format for easy import to Excel
+- /data: Contains sensor data files (.csv, .json)
+  - zigbee-data.json: Complete sensor data in JSON format
+  - zigbee-sensors.csv: Sensor data in CSV format for analysis
+  - devices.json: List of all devices
+  - session_metadata.json: Technical metadata for the session
 
 This ZIP file was automatically generated by SensorSessionTracker.
 `;
