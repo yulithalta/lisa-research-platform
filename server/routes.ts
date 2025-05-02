@@ -1972,13 +1972,29 @@ export async function registerRoutes(app: Express): Promise<Server> {
           // Añadir el archivo de video al ZIP
           if (fs.existsSync(recording.filePath)) {
             console.log(`Añadiendo video: ${recording.filePath}`);
-            archive.file(recording.filePath, { name: path.basename(recording.filePath) });
+            // Crear una estructura de carpetas más organizada dentro del ZIP
+            const recordingFileName = path.basename(recording.filePath);
+            const sessionFolder = recording.sessionId ? `session_${recording.sessionId}/` : '';
+            const destPath = `recordings/${sessionFolder}${recordingFileName}`;
+            
+            console.log(`Archivo de origen: ${recording.filePath}`);
+            console.log(`Ruta destino en ZIP: ${destPath}`);
+            
+            archive.file(recording.filePath, { name: destPath });
           }
           
           // Añadir el archivo de datos de sensores si existe
           if (recording.sensorDataPath && fs.existsSync(recording.sensorDataPath)) {
             console.log(`Añadiendo datos de sensores: ${recording.sensorDataPath}`);
-            archive.file(recording.sensorDataPath, { name: path.basename(recording.sensorDataPath) });
+            // Crear una estructura de carpetas organizada para datos de sensores
+            const sensorFileName = path.basename(recording.sensorDataPath);
+            const sessionFolder = recording.sessionId ? `session_${recording.sessionId}/` : '';
+            const destPath = `sensors/${sessionFolder}${sensorFileName}`;
+            
+            console.log(`Archivo de origen (sensores): ${recording.sensorDataPath}`);
+            console.log(`Ruta destino en ZIP (sensores): ${destPath}`);
+            
+            archive.file(recording.sensorDataPath, { name: destPath });
           } else {
             // Si no existe, crear un archivo JSON básico con información
             const sensorData = {
@@ -1988,7 +2004,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
               note: "No se encontraron datos de sensores para esta grabación"
             };
             
-            archive.append(JSON.stringify(sensorData, null, 2), { name: `sensors_${recording.id}.json` });
+            // Guardar en la carpeta de sensores con una estructura clara
+            const sessionFolder = recording.sessionId ? `session_${recording.sessionId}/` : '';
+            const destPath = `sensors/${sessionFolder}sensors_${recording.id}.json`;
+            console.log(`Creando archivo de sensores generado: ${destPath}`);
+            
+            archive.append(JSON.stringify(sensorData, null, 2), { name: destPath });
           }
           
           // Añadir un archivo README con información sobre la grabación
@@ -1999,10 +2020,13 @@ Cámara ID: ${recording.cameraId}
 Inicio: ${recording.startTime}
 Fin: ${recording.endTime || 'En progreso'}
 Estado: ${recording.status}
+${recording.sessionId ? `Sesión ID: ${recording.sessionId}` : ''}
           
 Este archivo ZIP contiene:
-1. Archivo de video de la grabación (.mp4)
-2. Datos de sensores capturados durante la grabación (.json)
+1. Carpeta /recordings/ - Archivos de video de la grabación (.mp4)
+   - Organizados por sesión (si aplica)
+2. Carpeta /sensors/ - Datos de sensores capturados durante la grabación (.json)
+   - Organizados por sesión (si aplica)
           
 Exportado el: ${new Date().toISOString()}
           `;
