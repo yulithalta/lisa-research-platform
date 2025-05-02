@@ -244,7 +244,7 @@ class MqttClient {
         messages.push(messageWithTimestamp);
       }
       
-      // Si hay sesiones activas, guardar mensajes para cada sesión (VERSIÓN MEJORADA Y SIMPLIFICADA)
+      // Si hay sesiones activas, guardar mensajes para cada sesión (VERSIÓN MEJORADA Y OPTIMIZADA)
       if (this.activeSessions.size > 0) {
         // Procesar mensaje para cada sesión activa
         this.activeSessions.forEach((sessionInfo, sessionId) => {
@@ -257,35 +257,97 @@ class MqttClient {
             if (shouldSave) {
               const sessionDir = path.dirname(sessionInfo.path);
               const sensorDataDir = path.join(sessionDir, 'sensor_data');
+              const mqttDataDir = path.join(sessionDir, 'mqtt_data');
               
-              // 1. Guardar en formato CSV directo para fácil importación
-              try {
-                const csvPath = path.join(sessionDir, `session_${sessionId}_data.csv`);
-                // Preparar payload para CSV
-                let csvPayload = '';
-                if (typeof parsedMessage === 'object') {
-                  csvPayload = JSON.stringify(parsedMessage).replace(/"/g, '""');
-                } else {
-                  csvPayload = String(parsedMessage).replace(/"/g, '""');
-                }
-                // Escribir línea CSV: topic,timestamp,payload
-                const csvLine = `"${topic}","${messageWithTimestamp.timestamp}","${csvPayload}"\n`;
-                fs.appendFileSync(csvPath, csvLine);
-              } catch (csvError) {
-                console.error(`Error escribiendo CSV para sesión ${sessionId}:`, csvError);
+              // Identificar el sensor a partir del tópico
+              let sensorId = '';
+              const topicParts = topic.split('/');
+              if (topicParts.length >= 2) {
+                sensorId = topicParts[topicParts.length - 2] || topicParts[topicParts.length - 1];
+              } else {
+                sensorId = topic.replace(/[^a-zA-Z0-9-_]/g, '_');
               }
               
-              // 2. Guardar en formato JSON específico por sensor
+              // Extraer metadatos de interés si es un objeto
+              let battery = '';
+              let linkquality = '';
+              let temperature = null;
+              let humidity = null;
+              let motion = null;
+              let presence = null;
+              let contact = null;
+              
+              if (typeof parsedMessage === 'object') {
+                battery = parsedMessage.battery !== undefined ? parsedMessage.battery : '';
+                linkquality = parsedMessage.linkquality !== undefined ? parsedMessage.linkquality : '';
+                temperature = parsedMessage.temperature !== undefined ? parsedMessage.temperature : null;
+                humidity = parsedMessage.humidity !== undefined ? parsedMessage.humidity : null;
+                motion = parsedMessage.motion !== undefined ? parsedMessage.motion : 
+                         parsedMessage.occupancy !== undefined ? parsedMessage.occupancy : null;
+                presence = parsedMessage.presence !== undefined ? parsedMessage.presence : null;
+                contact = parsedMessage.contact !== undefined ? parsedMessage.contact : null;
+              }
+              
+              // Preparar payload para CSV
+              let csvPayload = '';
+              if (typeof parsedMessage === 'object') {
+                csvPayload = JSON.stringify(parsedMessage).replace(/"/g, '""');
+              } else {
+                csvPayload = String(parsedMessage).replace(/"/g, '""');
+              }
+              
+              // 1. ACTUALIZAR ARCHIVO CSV PRINCIPAL PARA TODO EL TRÁFICO MQTT
               try {
-                // Identificar el sensor a partir del tópico
-                let sensorId = '';
-                const topicParts = topic.split('/');
-                if (topicParts.length >= 2) {
-                  sensorId = topicParts[topicParts.length - 2] || topicParts[topicParts.length - 1];
-                } else {
-                  sensorId = topic.replace(/[^a-zA-Z0-9-_]/g, '_');
+                if (sessionInfo.csvPath && fs.existsSync(mqttDataDir)) {
+                  const mqttCsvPath = sessionInfo.csvPath || path.join(mqttDataDir, `session_${sessionId}_mqtt_traffic.csv`);
+                  // Escribir línea CSV: timestamp,topic,payload,sensor_id,battery,linkquality
+                  const csvLine = `"${messageWithTimestamp.timestamp}","${topic}","${csvPayload}","${sensorId}","${battery}","${linkquality}"\n`;
+                  fs.appendFileSync(mqttCsvPath, csvLine);
                 }
-                
+              } catch (mqttCsvError) {
+                console.error(`Error escribiendo CSV MQTT para sesión ${sessionId}:`, mqttCsvError);
+              }
+              
+              // 2. ACTUALIZAR CSV ESPECÍFICOS POR TIPO DE SENSOR
+              try {
+                if (fs.existsSync(sensorDataDir)) {
+                  // Si hay datos de temperatura
+                  if (temperature !== null) {
+                    const tempCsvPath = path.join(sensorDataDir, 'temperature_sensors.csv');
+                    if (fs.existsSync(tempCsvPath)) {
+                      // timestamp,sensor_id,temperature,battery,linkquality
+                      const tempLine = `"${messageWithTimestamp.timestamp}","${sensorId}","${temperature}","${battery}","${linkquality}"\n`;
+                      fs.appendFileSync(tempCsvPath, tempLine);
+                    }
+                  }
+                  
+                  // Si hay datos de humedad
+                  if (humidity !== null) {
+                    const humCsvPath = path.join(sensorDataDir, 'humidity_sensors.csv');
+                    if (fs.existsSync(humCsvPath)) {
+                      // timestamp,sensor_id,humidity,battery,linkquality
+                      const humLine = `"${messageWithTimestamp.timestamp}","${sensorId}","${humidity}","${battery}","${linkquality}"\n`;
+                      fs.appendFileSync(humCsvPath, humLine);
+                    }
+                  }
+                  
+                  // Si hay datos de movimiento o presencia
+                  if (motion !== null || presence !== null) {
+                    const motionCsvPath = path.join(sensorDataDir, 'motion_sensors.csv');
+                    if (fs.existsSync(motionCsvPath)) {
+                      // timestamp,sensor_id,motion,battery,linkquality
+                      const motionVal = motion !== null ? motion : (presence !== null ? presence : false);
+                      const motionLine = `"${messageWithTimestamp.timestamp}","${sensorId}","${motionVal}","${battery}","${linkquality}"\n`;
+                      fs.appendFileSync(motionCsvPath, motionLine);
+                    }
+                  }
+                }
+              } catch (sensorCsvError) {
+                console.warn(`Error escribiendo CSV por tipo de sensor: ${sensorCsvError.message}`);
+              }
+              
+              // 3. ACTUALIZAR ARCHIVO JSON ESPECÍFICO POR SENSOR
+              try {
                 // Verificar si existe el directorio para datos de sensores
                 if (fs.existsSync(sensorDataDir)) {
                   // Ruta para archivo específico de este sensor
@@ -369,12 +431,6 @@ class MqttClient {
                       csvValue = String(parsedMessage).replace(/"/g, '""');
                     }
                     
-                    // Extraer batería y calidad de enlace
-                    const battery = typeof parsedMessage === 'object' && parsedMessage.battery !== undefined ? 
-                                    parsedMessage.battery : '';
-                    const linkquality = typeof parsedMessage === 'object' && parsedMessage.linkquality !== undefined ? 
-                                       parsedMessage.linkquality : '';
-                    
                     // Escribir línea CSV: timestamp,topic,value,battery,linkquality
                     const csvLine = `"${messageWithTimestamp.timestamp}","${topic}","${csvValue}","${battery}","${linkquality}"\n`;
                     fs.appendFileSync(sensorCsvFile, csvLine);
@@ -384,7 +440,68 @@ class MqttClient {
                 console.warn(`Error procesando datos específicos para sensor en tópico ${topic}:`, sensorError);
               }
               
-              // 3. Actualizar el archivo JSON principal (para compatibilidad)
+              // 4. ACTUALIZAR ARCHIVO JSON PRINCIPAL DE TRÁFICO MQTT
+              try {
+                if (sessionInfo.jsonPath && fs.existsSync(mqttDataDir)) {
+                  const mqttJsonPath = sessionInfo.jsonPath;
+                  
+                  // Leer datos actuales si el archivo existe
+                  if (fs.existsSync(mqttJsonPath)) {
+                    // Actualizar solo cada 20 mensajes para evitar sobrecarga
+                    if ((this.messageCounter % 20) === 0) {
+                      try {
+                        const mqttData = JSON.parse(fs.readFileSync(mqttJsonPath, 'utf8'));
+                        
+                        // Añadir mensaje
+                        if (!mqttData.messages) {
+                          mqttData.messages = [];
+                        }
+                        
+                        mqttData.messages.push(messageWithTimestamp);
+                        
+                        // Limitar tamaño para evitar archivos enormes
+                        if (mqttData.messages.length > 1000) {
+                          mqttData.messages = mqttData.messages.slice(-1000);
+                        }
+                        
+                        // Actualizar estadísticas
+                        mqttData.lastUpdateTime = new Date().toISOString();
+                        mqttData.messagesCount = (mqttData.messagesCount || 0) + 1;
+                        
+                        // Escribir a un archivo temporal y renombrar para evitar corrupción
+                        const tempPath = `${mqttJsonPath}.tmp`;
+                        fs.writeFileSync(tempPath, JSON.stringify(mqttData, null, 2));
+                        try {
+                          fs.renameSync(tempPath, mqttJsonPath);
+                        } catch (renameError) {
+                          // Intentar copiar si falla el renombrado
+                          fs.copyFileSync(tempPath, mqttJsonPath);
+                          try { fs.unlinkSync(tempPath); } catch (e) {}
+                        }
+                      } catch (jsonReadError) {
+                        console.error(`Error leyendo archivo JSON MQTT: ${jsonReadError.message}`);
+                      }
+                    }
+                  }
+                }
+              } catch (mqttJsonError) {
+                console.error(`Error actualizando archivo JSON MQTT para sesión ${sessionId}:`, mqttJsonError);
+              }
+              
+              // 5. ACTUALIZAR LOG DE MQTT PARA DEBUGGING
+              try {
+                if (sessionInfo.logPath && fs.existsSync(mqttDataDir)) {
+                  // Actualizar solo cada 100 mensajes para no saturar el log
+                  if ((this.messageCounter % 100) === 0) {
+                    const logMessage = `[${new Date().toISOString()}] Tópico: ${topic}, Sensor: ${sensorId}\n`;
+                    fs.appendFileSync(sessionInfo.logPath, logMessage);
+                  }
+                }
+              } catch (logError) {
+                // Error silencioso para el log
+              }
+              
+              // 6. ACTUALIZAR ARCHIVO JSON PRINCIPAL (PARA COMPATIBILIDAD)
               if (fs.existsSync(sessionInfo.path)) {
                 try {
                   // Leer datos actuales
@@ -617,7 +734,7 @@ class MqttClient {
    * @param selectedSensors Lista de sensores seleccionados (opcional)
    */
   registerSession(sessionId: number, dataPath: string, selectedSensors: string[] = []) {
-    console.log(`Registrando sesión ${sessionId} para captura de datos MQTT`);
+    console.log(`\n\n⚡ Registrando sesión ${sessionId} para captura de datos MQTT`);
     console.log(`Ruta de almacenamiento: ${dataPath}`);
     console.log(`Sensores seleccionados: ${selectedSensors.length ? selectedSensors.join(', ') : 'todos'}`);
     
@@ -636,16 +753,63 @@ class MqttClient {
         console.log(`Creado directorio para datos de sensores: ${sensorDataDir}`);
       }
       
-      // Crear archivo CSV para exportación directa
-      const csvPath = path.join(sessionDir, `session_${sessionId}_data.csv`);
-      fs.writeFileSync(csvPath, 'topic,timestamp,payload\n');
-      console.log(`Creado archivo CSV para captura directa: ${csvPath}`);
+      // Crear carpeta específica para datos MQTT
+      const mqttDataDir = path.join(sessionDir, 'mqtt_data');
+      if (!fs.existsSync(mqttDataDir)) {
+        fs.mkdirSync(mqttDataDir, { recursive: true });
+        console.log(`Creado directorio para datos MQTT: ${mqttDataDir}`);
+      }
       
-      // Registrar sesión activa
+      // 1. Crear archivo JSON completo para todo el tráfico MQTT
+      const mqttJsonPath = path.join(mqttDataDir, `session_${sessionId}_mqtt_traffic.json`);
+      fs.writeFileSync(mqttJsonPath, JSON.stringify({
+        sessionId,
+        startTime: new Date().toISOString(),
+        endTime: null,
+        messages: []
+      }, null, 2));
+      console.log(`✅ Creado archivo JSON para todo el tráfico MQTT: ${mqttJsonPath}`);
+      
+      // 2. Crear archivo CSV para todo el tráfico MQTT (fácil análisis Excel)
+      const mqttCsvPath = path.join(mqttDataDir, `session_${sessionId}_mqtt_traffic.csv`);
+      // Encabezado con campos relevantes para análisis
+      fs.writeFileSync(mqttCsvPath, 'timestamp,topic,payload,sensor_id,battery,linkquality\n');
+      console.log(`✅ Creado archivo CSV para tráfico MQTT: ${mqttCsvPath}`);
+      
+      // 3. Crear CSV por tipo de sensor (temperatura, humedad, etc) para gráficas
+      // Temperatura
+      fs.writeFileSync(
+        path.join(sensorDataDir, `temperature_sensors.csv`),
+        'timestamp,sensor_id,temperature,battery,linkquality\n'
+      );
+      // Humedad
+      fs.writeFileSync(
+        path.join(sensorDataDir, `humidity_sensors.csv`),
+        'timestamp,sensor_id,humidity,battery,linkquality\n'
+      );
+      // Movimiento/Presencia
+      fs.writeFileSync(
+        path.join(sensorDataDir, `motion_sensors.csv`),
+        'timestamp,sensor_id,motion,battery,linkquality\n'
+      );
+      console.log(`✅ Creados archivos CSV para tipos específicos de sensores`);
+      
+      // 4. Crear archivo de registro de datos MQTT
+      const mqttLogPath = path.join(mqttDataDir, `session_${sessionId}_mqtt.log`);
+      fs.writeFileSync(mqttLogPath, `[${new Date().toISOString()}] Iniciando captura de datos MQTT para sesión ${sessionId}\n`);
+      fs.appendFileSync(mqttLogPath, `[${new Date().toISOString()}] Sensores seleccionados: ${selectedSensors.length ? selectedSensors.join(', ') : 'todos'}\n`);
+      
+      // Registrar sesión activa con rutas actualizadas
       this.activeSessions.set(sessionId, {
         path: dataPath,
-        sensors: selectedSensors
+        jsonPath: mqttJsonPath,
+        csvPath: mqttCsvPath,
+        logPath: mqttLogPath,
+        sensors: selectedSensors,
+        startTime: new Date().toISOString()
       });
+      
+      console.log(`✅ Sesión ${sessionId} registrada exitosamente para captura de datos MQTT`);
       
       // Crear archivo inicial de datos JSON (para compatibilidad)
       if (!fs.existsSync(dataPath)) {
