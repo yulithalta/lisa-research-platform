@@ -173,8 +173,11 @@ export const sessionController = {
         return;
       }
       
-      // Nombre del archivo para la descarga
-      const filename = path.basename(zipFilePath);
+      // Nombre del archivo para la descarga basado en el nombre de la sesión
+      const sessionName = session.name ? 
+        session.name.replace(/[\\/:*?"<>|]/g, '_') : // Reemplazar caracteres inválidos
+        `Session_${sessionId}`;
+      const filename = `${sessionName}_${sessionId}.zip`;
       
       // Configurar headers para la descarga
       res.setHeader('Content-Type', 'application/zip');

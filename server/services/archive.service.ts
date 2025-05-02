@@ -208,19 +208,41 @@ class ArchiveService {
       const recordingsDir = this.recordingsDir;
       if (fs.existsSync(recordingsDir)) {
         const files = fs.readdirSync(recordingsDir);
-        const mp4Files = files.filter(file => {
-          return file.endsWith('.mp4') && (
-            file.includes(`session${sessionId}`) || 
-            file.includes(`s${sessionId}_`) ||
-            file.includes(`-session${sessionId}-`) ||
-            file.includes(`_${sessionId}_`) ||
-            file.includes(`-${sessionId}-`)
+        // Patrones de búsqueda para asociar archivos con la sesión
+        const sessionPatterns = [
+          `session${sessionId}`,
+          `s${sessionId}_`,
+          `-session${sessionId}-`,
+          `_${sessionId}_`,
+          `-${sessionId}-`,
+          `_${sessionId}.`,
+          `-${sessionId}.`,
+          `session_${sessionId}`,
+          `sesion${sessionId}`,
+          `sesion_${sessionId}`
+        ];
+        
+        // Extensiones de video soportadas
+        const videoExtensions = ['.mp4', '.mkv', '.avi', '.mov', '.webm', '.flv'];
+        
+        // Buscar archivos de video que coincidan con algún patrón de sesión
+        const videoFiles = files.filter(file => {
+          // Verificar si el archivo tiene una extensión de video
+          const hasVideoExtension = videoExtensions.some(ext => 
+            file.toLowerCase().endsWith(ext)
           );
+          
+          // Verificar si el archivo está asociado a la sesión
+          const matchesSession = sessionPatterns.some(pattern => 
+            file.includes(pattern)
+          );
+          
+          return hasVideoExtension && matchesSession;
         });
         
-        console.log(`Encontrados ${mp4Files.length} archivos MP4 para la sesión ${sessionId}`);
+        console.log(`Encontrados ${videoFiles.length} archivos de vídeo para la sesión ${sessionId}`);
         
-        for (const file of mp4Files) {
+        for (const file of videoFiles) {
           const filePath = path.join(recordingsDir, file);
           if (fs.existsSync(filePath) && fs.statSync(filePath).size > 0) {
             zip.addLocalFile(filePath, 'recordings');
@@ -228,6 +250,37 @@ class ArchiveService {
             recordingsCount++;
           } else {
             console.log(`⚠️ Archivo ${file} no existe o está vacío, saltando...`);
+          }
+        }
+        
+        // Buscar también subdirectorios que pudieran contener grabaciones de esta sesión
+        const subDirs = files.filter(item => {
+          const itemPath = path.join(recordingsDir, item);
+          return fs.existsSync(itemPath) && fs.statSync(itemPath).isDirectory() && [
+            `session${sessionId}`, `s${sessionId}`, `${sessionId}`
+          ].some(pattern => item.includes(pattern));
+        });
+        
+        if (subDirs.length > 0) {
+          console.log(`Encontrados ${subDirs.length} subdirectorios potencialmente relacionados con la sesión ${sessionId}`);
+          
+          for (const subDir of subDirs) {
+            const subDirPath = path.join(recordingsDir, subDir);
+            const subDirFiles = fs.readdirSync(subDirPath);
+            const subDirVideos = subDirFiles.filter(file => 
+              videoExtensions.some(ext => file.toLowerCase().endsWith(ext))
+            );
+            
+            console.log(`Encontrados ${subDirVideos.length} archivos de vídeo en subdirectorio ${subDir}`);
+            
+            for (const file of subDirVideos) {
+              const filePath = path.join(subDirPath, file);
+              if (fs.existsSync(filePath) && fs.statSync(filePath).size > 0) {
+                zip.addLocalFile(filePath, 'recordings');
+                console.log(`✅ Añadido archivo ${file} al ZIP (desde subdirectorio ${subDir})`);
+                recordingsCount++;
+              }
+            }
           }
         }
       } else {
@@ -275,11 +328,14 @@ class ArchiveService {
         
         if (fs.existsSync(sessionRecordingsDir)) {
           const recFiles = fs.readdirSync(sessionRecordingsDir);
-          const mp4Files = recFiles.filter(f => f.endsWith('.mp4'));
+          // Buscar todos los tipos de archivos de vídeo
+          const videoFiles = recFiles.filter(f => [
+            '.mp4', '.mkv', '.avi', '.mov', '.webm', '.flv'
+          ].some(ext => f.toLowerCase().endsWith(ext)));
           
-          console.log(`Encontrados ${mp4Files.length} archivos MP4 en directorio específico`);
+          console.log(`Encontrados ${videoFiles.length} archivos de vídeo en directorio específico`);
           
-          for (const file of mp4Files) {
+          for (const file of videoFiles) {
             const filePath = path.join(sessionRecordingsDir, file);
             if (fs.existsSync(filePath) && fs.statSync(filePath).size > 0) {
               zip.addLocalFile(filePath, 'recordings');
@@ -287,6 +343,26 @@ class ArchiveService {
               recordingsCount++;
             } else {
               console.log(`⚠️ Archivo ${file} no existe o está vacío, saltando...`);
+            }
+          }
+          
+          // Buscar también archivos de imágenes (thumbnails)
+          const imageFiles = recFiles.filter(f => [
+            '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'
+          ].some(ext => f.toLowerCase().endsWith(ext)));
+          
+          if (imageFiles.length > 0) {
+            console.log(`Encontrados ${imageFiles.length} archivos de imagen/thumbnails en directorio específico`);
+            
+            // Crear subdirectorio para thumbnails si hay imágenes
+            zip.addFile('recordings/thumbnails/', Buffer.from(''));
+            
+            for (const file of imageFiles) {
+              const filePath = path.join(sessionRecordingsDir, file);
+              if (fs.existsSync(filePath) && fs.statSync(filePath).size > 0) {
+                zip.addLocalFile(filePath, 'recordings/thumbnails');
+                console.log(`✅ Añadido thumbnail ${file} al ZIP`);
+              }
             }
           }
         } else {
@@ -368,6 +444,31 @@ class ArchiveService {
     const endTime = session.endTime ? new Date(session.endTime).toLocaleString() : 'En curso';
     const status = session.status || 'Desconocido';
     
+    // Obtener información adicional sobre etiquetas si existen
+    const tags = session.tags && Array.isArray(session.tags) && session.tags.length > 0 ?
+      session.tags.join(', ') : 'Sin etiquetas';
+    
+    // Obtener notas si existen
+    const notes = session.notes ? session.notes : 'Sin notas adicionales';
+    
+    // Construir rutas de búsqueda para que el usuario pueda entender dónde se buscan los archivos
+    const searchPaths = [
+      `- ${this.recordingsDir} (directorio principal de grabaciones)`,
+      `- ${path.join(this.sessionsDir, `Session${sessionId}`)} (directorio específico de la sesión)`,
+      `- ${path.join(this.sessionsDir, `Session${sessionId}`, 'recordings')} (grabaciones específicas de la sesión)`,
+      `- ${this.dataDir} (directorio de datos globales)`
+    ].join('\n      ');
+      
+    // Patrones de búsqueda para asociar archivos con esta sesión
+    const patternExamples = [
+      `session${sessionId}`,
+      `s${sessionId}_`,
+      `session_${sessionId}`,
+      `_${sessionId}_`,
+      `_${sessionId}.`,
+      `cam*_${sessionId}.mp4`
+    ].join('\n      - ');
+    
     const readme = 
       `# Datos exportados de sesión: ${sessionName}\n\n` +
       `## Información de la sesión\n` +
@@ -377,17 +478,30 @@ class ArchiveService {
       `- Fecha de creación: ${createDate}\n` +
       `- Hora de inicio: ${startTime}\n` +
       `- Hora de finalización: ${endTime}\n` +
-      `- Estado: ${status}\n\n` +
+      `- Estado: ${status}\n` +
+      `- Etiquetas: ${tags}\n` +
+      `- Notas: ${notes}\n\n` +
       `## Contenido\n` +
-      `- /recordings: Grabaciones de vídeo vinculadas a esta sesión\n` +
-      `- /data: Datos de sensores y metadatos\n` +
+      `- /recordings/: Grabaciones de vídeo vinculadas a esta sesión\n` +
+      `  - Incluye grabaciones MP4, MKV, AVI y otros formatos soportados\n` +
+      `  - Subdirectorio /thumbnails/ contiene imágenes y miniaturas si están disponibles\n` +
+      `- /data/: Datos de sensores y metadatos\n` +
       `  - zigbee-data.json: Datos completos en formato JSON\n` +
       `  - zigbee-sensors.csv: Datos en formato CSV para análisis\n` +
-      `  - session_metadata.json: Metadatos de la sesión\n\n` +
+      `  - session_metadata.json: Metadatos detallados de la sesión\n` +
+      `  - /sensor_data/: Datos específicos de sensores para esta sesión\n` +
+      `- export_summary.json: Resumen estadístico de los archivos exportados\n\n` +
+      `## Directorio de búsqueda\n` +
+      `Los archivos de esta sesión se han buscado en las siguientes ubicaciones:\n` +
+      `      ${searchPaths}\n\n` +
+      `## Patrones de identificación de archivos\n` +
+      `Las grabaciones se vinculan a esta sesión cuando sus nombres contienen alguno de estos patrones:\n` +
+      `      - ${patternExamples}\n\n` +
       `## Notas importantes\n` +
-      `- Las grabaciones se vinculan a la sesión cuando incluyen el ID ${sessionId} en su nombre\n` +
+      `- El ID de sesión ${sessionId} es clave para identificar archivos asociados\n` +
       `- Los archivos sin conexión directa a esta sesión no se incluyen en esta exportación\n` +
-      `- Para cambiar el formato de nombres de archivos, modifique la configuración de prefijos de cámara\n\n` +
+      `- Para cambiar el formato de nombres de archivos, modifique la configuración de prefijos de cámara\n` +
+      `- Si faltan grabaciones, verifique que están en alguna de las rutas listadas y tienen el ID de sesión en su nombre\n\n` +
       `Exportación generada el ${new Date().toLocaleString()}\n` +
       `Sistema: SensorSessionTracker v2.1\n`;
     
