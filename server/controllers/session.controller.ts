@@ -127,7 +127,7 @@ export const sessionController = {
       await storage.updateSession(sessionId, {
         ...session,
         status: 'completed',
-        endTime: session.endTime || new Date().toISOString()
+        endTime: session.endTime ? new Date(session.endTime) : new Date()
       });
       
       res.json({ success: true, message: 'Sesión finalizada correctamente' });
