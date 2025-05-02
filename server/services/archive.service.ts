@@ -27,7 +27,7 @@ class ArchiveService {
   private tempDir: string;
   
   // Mapa para guardar el progreso de creación de cada ZIP
-  private zipProgressMap: Map<number, ZipProgress> = new Map();
+  private zipProgressMap: Map<number | string, ZipProgress> = new Map();
 
   constructor() {
     // Directorios base para búsqueda de archivos
@@ -67,7 +67,7 @@ class ArchiveService {
    * @param session Datos de la sesión
    * @returns Ruta del archivo ZIP temporal
    */
-  async createSessionZipAsync(sessionId: number, session: Session): Promise<string> {
+  async createSessionZipAsync(sessionId: number | string, session: Session): Promise<string> {
     // Inicializar progreso
     this.zipProgressMap.set(sessionId, {
       total: 0,
@@ -125,7 +125,7 @@ class ArchiveService {
    * Obtiene el progreso actual de creación del ZIP
    * @param sessionId ID de la sesión
    */
-  getZipProgress(sessionId: number): ZipProgress | undefined {
+  getZipProgress(sessionId: number | string): ZipProgress | undefined {
     return this.zipProgressMap.get(sessionId);
   }
 
@@ -222,7 +222,7 @@ class ArchiveService {
   /**
    * Actualiza el progreso de creación del ZIP
    */
-  private updateZipProgress(sessionId: number, processed: number, total: number): void {
+  private updateZipProgress(sessionId: number | string, processed: number, total: number): void {
     const progress = this.zipProgressMap.get(sessionId);
     if (progress) {
       this.zipProgressMap.set(sessionId, {

@@ -65,7 +65,7 @@ class SessionService {
    * @param filePath Ruta del archivo MP4
    * @param cameraId ID de la cámara (opcional)
    */
-  async registerRecordingFile(sessionId: number, filePath: string, cameraId?: number): Promise<void> {
+  async registerRecordingFile(sessionId: number | string, filePath: string, cameraId?: number): Promise<void> {
     const sessionDir = await this.getSessionDirectory(sessionId);
     const sessionLogFile = path.join(sessionDir, 'session_files.json');
     
@@ -96,7 +96,7 @@ class SessionService {
    * @param filePath Ruta del archivo de datos
    * @param sensorId ID del sensor (opcional)
    */
-  async registerSensorDataFile(sessionId: number, filePath: string, sensorId?: string): Promise<void> {
+  async registerSensorDataFile(sessionId: number | string, filePath: string, sensorId?: string): Promise<void> {
     const sessionDir = await this.getSessionDirectory(sessionId);
     const sessionLogFile = path.join(sessionDir, 'session_files.json');
     
@@ -130,7 +130,7 @@ class SessionService {
    * @param sessionId ID de la sesión
    * @returns Lista de archivos de la sesión
    */
-  async getSessionFiles(sessionId: number): Promise<{
+  async getSessionFiles(sessionId: number | string): Promise<{
     recordings: {path: string, camera?: number}[],
     sensorData: {path: string, sensor?: string}[]
   }> {
@@ -163,7 +163,7 @@ class SessionService {
    * @param sessionId ID de la sesión
    * @param sessionData Datos de la sesión
    */
-  async finalizeSession(sessionId: number, sessionData: Session): Promise<void> {
+  async finalizeSession(sessionId: number | string, sessionData: Session): Promise<void> {
     const sessionDir = await this.getSessionDirectory(sessionId);
     
     // Crear un archivo JSON con los metadatos de la sesión
