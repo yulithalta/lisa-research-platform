@@ -892,8 +892,9 @@ export function NewSessionContent() {
     // Marcar la operación como en progreso
     setStoppingSession(true);
     
-    // Mostrar toast de progreso inmediatamente para feedback visual
-    const loadingToast = toast({
+    // No usaremos el toast para feedback progresivo, sino para notificar estados clave
+    // Mostramos un toast inicial
+    toast({
       title: "Stopping session",
       description: "Please wait while all recordings are being stopped...",
       duration: 10000, // Aumenta la duración para evitar que desaparezca antes de completar
@@ -942,13 +943,8 @@ export function NewSessionContent() {
             });
             
             completedCameras++;
-            // Actualizar el toast con el progreso
-            toast({
-              id: loadingToast.id,
-              title: "Stopping session",
-              description: `Stopped recording for ${completedCameras}/${totalCameras} cameras...`,
-              duration: 10000,
-            });
+            // Mostrar progreso en consola pero no actualizamos toast para evitar problemas
+            console.log(`Stopped recording for ${completedCameras}/${totalCameras} cameras...`);
             
             return { cameraId: cameraDevice.id, success: response.ok };
           } catch (error) {
