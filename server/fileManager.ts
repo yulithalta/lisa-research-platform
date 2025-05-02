@@ -72,6 +72,10 @@ class FileManager {
         const alternativePaths = [
           path.join(process.cwd(), 'recordings', file.fileName),
           path.join(process.cwd(), 'sessions', `Session${sessionId}`, 'recordings', file.fileName),
+          path.join(process.cwd(), 'sessions', `Session${sessionId}`, 'sensor_data', file.fileName),
+          path.join(process.cwd(), 'sessions', `Session${sessionId}`, file.fileName),
+          path.join(process.cwd(), 'sessions', `Session${sessionId}`, 'sensors', file.fileName),
+          path.join(process.cwd(), 'data', 'sensor_data', file.fileName),
           path.join(process.cwd(), file.fileName)
         ];
         
@@ -131,13 +135,33 @@ class FileManager {
       }
     }
     
+    // Obtener información de sesión para README más detallado
+    let sessionInfo = '';
+    try {
+      // Intentar leer el archivo session_form_data.json si existe
+      const sessionFormPath = path.join(process.cwd(), 'sessions', `Session${sessionId}`, 'session_form_data.json');
+      if (fs.existsSync(sessionFormPath)) {
+        const formData = JSON.parse(fs.readFileSync(sessionFormPath, 'utf-8'));
+        // Crear una sección con todos los detalles del formulario
+        sessionInfo = `\nSession Details:
+- Session Name: ${formData.name || 'N/A'}
+- Description: ${formData.description || 'N/A'}
+- Researcher: ${formData.researcher || 'N/A'}
+- Participants: ${Array.isArray(formData.participants) ? formData.participants.join(', ') : 'N/A'}
+- Tags: ${Array.isArray(formData.tags) ? formData.tags.join(', ') : 'N/A'}
+- Notes: ${formData.notes || 'N/A'}\n`;
+      }
+    } catch (error) {
+      console.warn('Error al leer datos del formulario para README:', error);
+    }
+
     // Añadir un archivo README.txt con información sobre la sesión
     const readme = `SensorSessionTracker - Session Export
 ===================================
 
 Session ID: ${sessionId || 'N/A'}
 Export Date: ${new Date().toISOString()}
-
+${sessionInfo}
 Contents:
 - /recordings: Contains video recordings (.mp4)
 - /sensors: Contains sensor data files (.csv, .json)
