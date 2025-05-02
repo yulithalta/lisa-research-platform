@@ -314,21 +314,241 @@ class ArchiveService {
         console.log('⚠️ No se encontró el archivo bridge.json');
       }
       
-      // Buscar y añadir todos los archivos MP4 del directorio de grabaciones
+      // Buscar y añadir solo los archivos MP4 relacionados con esta sesión
       const recordingsDir = path.join(process.cwd(), 'recordings');
       if (fs.existsSync(recordingsDir)) {
-        console.log(`📁 Buscando grabaciones en: ${recordingsDir}`);
+        console.log(`📁 Buscando grabaciones de la sesión ${sessionId} en: ${recordingsDir}`);
         const recordingFiles = fs.readdirSync(recordingsDir);
         console.log(`🔍 Encontrados ${recordingFiles.length} archivos en el directorio de grabaciones`);
         
-        // Filtrar solo archivos MP4
-        const mp4Files = recordingFiles.filter(file => file.toLowerCase().endsWith('.mp4'));
-        console.log(`🔍 De los cuales ${mp4Files.length} son archivos MP4`);
+        // Implementación mejorada para encontrar grabaciones de la sesión
+        // 1. Buscar en la base de datos de grabaciones para esta sesión
+        // 2. Buscar por patrones en nombres de archivo
+        // 3. Buscar por prefijos de cámara
+        // 4. Buscar por fechas coincidentes
+
+        // Obtener datos de selección de cámaras y metadatos
+        console.log(`💡 Analizando sesión ${sessionId} para buscar sus grabaciones específicas`);
+
+        // Obtener rango de fechas de la sesión
+        const sessionStartTime = session.startTime ? new Date(session.startTime) : null;
+        const sessionEndTime = session.endTime ? new Date(session.endTime) : new Date();
+        console.log(`📅 Rango de fechas de la sesión: ${sessionStartTime?.toISOString() || 'N/A'} - ${sessionEndTime.toISOString()}`);
+
+        // 1. ESTRATEGIA: Buscar por patrones en nombres de archivo
+        const sessionPatterns = [
+          `_session${sessionId}_`, 
+          `-session${sessionId}-`,
+          `_s${sessionId}_`, 
+          `-s${sessionId}-`,
+          `_sesion${sessionId}_`, 
+          `-sesion${sessionId}-`,
+          `session${sessionId}.mp4`,
+          `s${sessionId}.mp4`,
+        ];
+
+        // 2. ESTRATEGIA: Buscar por prefijos de cámara y metadatos de la sesión
+        const recordingPrefixes: string[] = [];
+        const selectedCameraIds: number[] = [];
+
+        try {
+          // Obtener las cámaras seleccionadas en la sesión
+          if (session.metadata && typeof session.metadata === 'object') {
+            const metadata = session.metadata as any;
+            if (metadata.selectedDevices && Array.isArray(metadata.selectedDevices.cameras)) {
+              // Agregar IDs de cámaras seleccionadas
+              metadata.selectedDevices.cameras.forEach((camera: any) => {
+                if (camera.id) {
+                  selectedCameraIds.push(Number(camera.id));
+                  console.log(`📷 Cámara seleccionada en la sesión: ID ${camera.id}`);
+                }
+                
+                // Agregar prefijos configurados
+                if (camera.recordingPrefix && typeof camera.recordingPrefix === 'string') {
+                  const prefix = camera.recordingPrefix.trim();
+                  if (prefix) {
+                    recordingPrefixes.push(prefix);
+                    console.log(`🔍 Prefijo de grabación encontrado: ${prefix}`);
+                  }
+                }
+                
+                // También usar nombres como posibles prefijos
+                if (camera.name && typeof camera.name === 'string') {
+                  const normalizedName = camera.name.toLowerCase().replace(/\s+/g, '-').trim();
+                  if (normalizedName && !recordingPrefixes.includes(normalizedName)) {
+                    recordingPrefixes.push(normalizedName);
+                    console.log(`🔍 Nombre de cámara usado como posible prefijo: ${normalizedName}`);
+                  }
+                }
+              });
+            }
+          }
+        } catch (prefixError) {
+          console.error('Error al extraer información de cámaras:', prefixError);
+        }
+
+        // También buscar cámaras con prefijos estándar si no encontramos configurados
+        if (recordingPrefixes.length === 0) {
+          // Prefijos estándar para cámaras
+          const standardPrefixes = [
+            'c32_livinglab', 'c32-livinglab', 'c32', 
+            'c31_patio', 'c31-patio', 'c31',
+            'camera_salon', 'camera-salon', 'camera'
+          ];
+          recordingPrefixes.push(...standardPrefixes);
+          console.log(`🔍 Añadidos ${standardPrefixes.length} prefijos estándar de cámara para búsqueda`);
+        }
+
+        // 3. ESTRATEGIA: Extraer todas las grabaciones y buscarlas con varios criterios
+        // Buscar grabaciones en la base de datos que coincidan con esta sesión
+        const recordingsFromStorage = [];
+        try {
+          // Importar bajo demanda para evitar dependencias circulares
+          const storage = await import('../storage').then(m => m.default || m);
+          if (storage.getRecordingsForSession) {
+            const sessionRecordings = await storage.getRecordingsForSession(sessionId);
+            if (sessionRecordings && sessionRecordings.length > 0) {
+              recordingsFromStorage.push(...sessionRecordings);
+              console.log(`💾 Encontradas ${sessionRecordings.length} grabaciones en la base de datos para la sesión ${sessionId}`);
+              
+              // Agregar los directorios y nombres de archivo explícitos
+              sessionRecordings.forEach(rec => {
+                if (rec.filePath) {
+                  // Extraer el nombre del archivo de la ruta completa
+                  const fileName = rec.filePath.split('/').pop() || '';
+                  console.log(`✅ Grabación encontrada en BD: ${fileName}`);
+                }
+              });
+            } else {
+              console.log(`⚠️ No se encontraron grabaciones en la base de datos para la sesión ${sessionId}`);
+            }
+          }
+        } catch (storageError) {
+          console.error('Error al buscar grabaciones en la base de datos:', storageError);
+        }
+
+        // 4. ESTRATEGIA: Obtener todos los archivos MP4 y filtrar por varios criterios
+        console.log(`🔍 Filtrado avanzado de ${recordingFiles.length} archivos en recordings/`);
         
-        for (const file of mp4Files) {
+        // Lista para almacenar los archivos relevantes
+        const relevantFiles: string[] = [];
+        
+        // Primero, añadir los archivos encontrados en la base de datos
+        const dbFilePaths = recordingsFromStorage
+          .filter(rec => rec.filePath)
+          .map(rec => rec.filePath.split('/').pop() || '');
+        
+        // Añadir archivos que coinciden exactamente con las rutas en la base de datos
+        for (const dbFile of dbFilePaths) {
+          if (dbFile && recordingFiles.includes(dbFile)) {
+            relevantFiles.push(dbFile);
+            console.log(`✅ Añadido archivo de la base de datos: ${dbFile}`);
+          }
+        }
+        
+        // Filtrar por criterios múltiples
+        for (const file of recordingFiles) {
+          // Evitar duplicados
+          if (relevantFiles.includes(file)) continue;
+          
+          // Solo procesar archivos MP4
+          if (!file.toLowerCase().endsWith('.mp4')) continue;
+          
+          // Comprobar si ya está incluido por coincidencia exacta con la base de datos
+          if (dbFilePaths.includes(file)) {
+            relevantFiles.push(file);
+            console.log(`✅ Coincidencia exacta con BD: ${file}`);
+            continue;
+          }
+          
+          // Comprobar si el nombre del archivo coincide con algún patrón de sesión
+          const matchesSessionPattern = sessionPatterns.some(pattern => file.includes(pattern));
+          if (matchesSessionPattern) {
+            relevantFiles.push(file);
+            console.log(`✅ Coincide con patrón de sesión: ${file}`);
+            continue;
+          }
+          
+          // Comprobar si el nombre del archivo coincide con algún prefijo de cámara
+          let prefixMatch = false;
+          for (const prefix of recordingPrefixes) {
+            if (
+              file.startsWith(prefix) || 
+              file.includes(`_${prefix}`) || 
+              file.includes(`-${prefix}`)
+            ) {
+              prefixMatch = true;
+              console.log(`✅ Coincide con prefijo de cámara '${prefix}': ${file}`);
+              break;
+            }
+          }
+          
+          if (prefixMatch) {
+            relevantFiles.push(file);
+            continue;
+          }
+          
+          // 5. ESTRATEGIA: Para sesiones recientes, usar el último archivo mp4 creado si coincide con la cámara seleccionada
+          if (sessionStartTime && (Date.now() - sessionStartTime.getTime() < 3600000)) { // 1 hora
+            // Si la sesión es reciente (menos de 1 hora), buscar las últimas grabaciones
+            try {
+              const filePath = path.join(recordingsDir, file);
+              const stats = fs.statSync(filePath);
+              
+              // Si el archivo fue creado durante o después del inicio de la sesión
+              if (stats.ctime >= sessionStartTime && stats.ctime <= new Date()) {
+                console.log(`✅ Archivo creado durante el período de la sesión: ${file}`);
+                relevantFiles.push(file);
+                continue;
+              }
+            } catch (statError) {
+              console.error(`Error al verificar fecha de archivo ${file}:`, statError);
+            }
+          }
+          
+          // 6. ESTRATEGIA: Buscar patrones adicionales como IDs de cámara
+          for (const cameraId of selectedCameraIds) {
+            // Patrones como cam3, camera-3, etc.
+            const cameraPatterns = [
+              `cam${cameraId}`, `cam-${cameraId}`, `cam_${cameraId}`,
+              `camera${cameraId}`, `camera-${cameraId}`, `camera_${cameraId}`,
+              `c${cameraId}`, `c-${cameraId}`, `c_${cameraId}`
+            ];
+            
+            const matchesCameraPattern = cameraPatterns.some(pattern => 
+              file.includes(pattern));
+              
+            if (matchesCameraPattern) {
+              console.log(`✅ Coincide con patrón de ID de cámara ${cameraId}: ${file}`);
+              relevantFiles.push(file);
+              break;
+            }
+          }
+        }
+        
+        console.log(`🔍 Encontrados ${relevantFiles.length} archivos relevantes para la sesión ${sessionId}`);
+        
+        for (const file of relevantFiles) {
           const filePath = path.join(recordingsDir, file);
           zip.addLocalFile(filePath, 'recordings');
           console.log(`✅ Añadido archivo de vídeo: ${file}`);
+        }
+        
+        // Si no hay archivos relevantes, intentar buscar en más ubicaciones o por otros patrones
+        if (relevantFiles.length === 0) {
+          // Fallback: buscar cualquier MP4 en caso de que los patrones fallen
+          console.log(`⚠️ No se encontraron archivos específicos para la sesión ${sessionId}. Buscando por extensión...`);
+          const mp4Files = recordingFiles.filter(file => file.toLowerCase().endsWith('.mp4'));
+          
+          // Limitar a máximo 5 archivos si no se encuentran coincidencias específicas
+          const limitedMp4Files = mp4Files.slice(0, 5);
+          console.log(`🔍 Usando ${limitedMp4Files.length} archivos MP4 como alternativa`);
+          
+          for (const file of limitedMp4Files) {
+            const filePath = path.join(recordingsDir, file);
+            zip.addLocalFile(filePath, 'recordings');
+            console.log(`✅ Añadido archivo de vídeo (alternativa): ${file}`);
+          }
         }
       } else {
         console.log(`⚠️ No se encontró directorio de grabaciones: ${recordingsDir}`);

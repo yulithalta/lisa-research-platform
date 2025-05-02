@@ -1,39 +1,116 @@
-# Archivos Duplicados o No Utilizados
+# Mejoras a la Exportación ZIP y Grabación de Cámaras
 
-Este documento mantiene un registro de los archivos que se han movido a la carpeta "deprecated" por ser redundantes o no estar en uso activo en el proyecto actual.
+## 1. Filtrado de Grabaciones por Sesión
 
-## Componentes de Gestión de Sesiones
+Se ha solucionado el problema que causaba que se descargaran TODAS las grabaciones del sistema en cada archivo ZIP, en lugar de solo las asociadas a la sesión seleccionada. Los cambios incluyen:
 
-Los siguientes archivos se han unificado en un único componente `session-management.tsx`:
+### Implementación de filtrado inteligente
 
-- `session-management-new.tsx` - Versión anterior del componente
-- `session-management-updated.tsx` - Renombrado a `session-management.tsx`
-- `sessions-management.tsx` - Versión anterior con distinto nombre
+- Se utiliza un sistema de patrones para detectar archivos relacionados con la sesión:
+  ```typescript
+  const sessionPatterns = [
+    `_session${sessionId}_`, 
+    `-session${sessionId}-`,
+    `_s${sessionId}_`, 
+    `-s${sessionId}-`,
+    `_sesion${sessionId}_`, 
+    `-sesion${sessionId}-`
+  ];
+  ```
 
-## Páginas No Utilizadas
+- Se extraen los prefijos de cámara de los metadatos de la sesión para encontrar archivos relacionados:
+  ```typescript
+  if (session.metadata && typeof session.metadata === 'object') {
+    const metadata = session.metadata as any;
+    if (metadata.selectedDevices && Array.isArray(metadata.selectedDevices.cameras)) {
+      metadata.selectedDevices.cameras.forEach((camera: any) => {
+        if (camera.recordingPrefix && typeof camera.recordingPrefix === 'string') {
+          recordingPrefixes.push(camera.recordingPrefix);
+        }
+      });
+    }
+  }
+  ```
 
-Estas páginas han sido movidas a la carpeta "deprecated" ya que han sido reemplazadas por las nuevas páginas con pestañas:
+- Se filtra la lista de archivos para incluir solo los relevantes para la sesión:
+  ```typescript
+  const relevantFiles = recordingFiles.filter(file => {
+    // Comprobar si coincide con patrón de sesión
+    const matchesSessionPattern = sessionPatterns.some(pattern => file.includes(pattern));
+    if (matchesSessionPattern) return true;
+    
+    // Comprobar si coincide con prefijo de cámara
+    const matchesPrefix = recordingPrefixes.some(prefix => 
+      file.startsWith(prefix) || file.includes(`_${prefix}`) || file.includes(`-${prefix}`)
+    );
+    if (matchesPrefix) return true;
+    
+    // Para compatibilidad, comprobar nombres con ID de sesión
+    if (file.includes(`_${sessionId}.mp4`) || file.includes(`-${sessionId}.mp4`)) return true;
+    
+    return false;
+  });
+  ```
 
-- `recordings-page.tsx` - Reemplazado por la funcionalidad en SessionsPage
-- `metrics-page.tsx` - Reemplazado por gráficas en el dashboard
+## 2. Uso del Prefijo de Grabación Configurado
 
-## Rutas Antiguas Mantenidas por Compatibilidad
+Se ha solucionado el problema donde el prefijo de grabación configurado en la interfaz de usuario no se estaba utilizando correctamente. Los cambios incluyen:
 
-Las siguientes rutas se mantienen en App.tsx por compatibilidad, pero dirigen a las nuevas páginas con pestañas:
+### Lógica mejorada para asignar prefijos
 
-- `/cameras` → Ahora parte de `/device-management`
-- `/sensors` → Ahora parte de `/live-monitoring`
-- `/settings/sensors` → Ahora parte de `/device-management`
-- `/player` → Ahora parte de `/live-monitoring`
+- Se prioriza el prefijo configurado por el usuario:
+  ```typescript
+  let prefix;
+  // Paso 1: Verificar si hay un prefijo de grabación explícito y usarlo primero
+  if (camera.recordingPrefix && typeof camera.recordingPrefix === 'string' && camera.recordingPrefix.trim() !== '') {
+    prefix = camera.recordingPrefix.trim();
+    console.log(`Usando prefijo de grabación configurado: ${prefix}`);
+  }
+  // Paso 2: Si no hay prefijo, usar el nombre de la cámara
+  else if (camera.name && typeof camera.name === 'string' && camera.name.trim() !== '') {
+    prefix = camera.name.toLowerCase().replace(/\s+/g, '-');
+    console.log(`Usando nombre de cámara como prefijo: ${prefix}`);
+  }
+  // Paso 3: Último recurso, usar el ID
+  else {
+    prefix = `cam${camera.id}`;
+    console.log(`Usando ID de cámara como prefijo: ${prefix}`);
+  }
+  ```
 
-## Componentes con Inconsistencias de Nomenclatura
+- Se utiliza el prefijo correctamente en todas las operaciones relevantes:
+  ```typescript
+  const sessionPart = activeSessionId ? `_session${activeSessionId}` : '';
+  const fileName = `${prefix}${sessionPart}-${timestamp}.mp4`;
+  ```
 
-Se corrigieron las siguientes inconsistencias de nomenclatura:
+- Se corrige el uso del prefijo también en el título de la grabación:
+  ```typescript
+  const recording = await storage.createRecording({
+    cameraId: camera.id,
+    filePath: outputPath,
+    startTime: new Date(),
+    title: prefix ? `${prefix} ${timestamp}` : undefined,
+    sensorDataPath, 
+    sessionId: activeSessionId
+  });
+  ```
 
-- `SensorCard.tsx` → Renombrado a `sensor-card.tsx` para seguir la convención kebab-case
+## 3. Mejoras Adicionales
 
-## Próximas Mejoras
+- Se ha mejorado el logging para facilitar la depuración
+- Se ha añadido una lógica de respaldo (fallback) para cuando no se encuentren archivos específicos de la sesión
+- Se ha optimizado el sistema de búsqueda de archivos para ser más eficiente
+- Se han tipado correctamente las variables para evitar errores de TypeScript
 
-- Revisar y actualizar importaciones en todo el proyecto
-- Unificar nombres de archivos siguiendo la convención kebab-case
-- Eliminar completamente las rutas antiguas cuando ya no sean necesarias
+## Pruebas y Verificación
+
+Para verificar que estos cambios funcionan correctamente:
+
+1. Configura el prefijo de grabación para una cámara (por ejemplo, "c32_livinglab")
+2. Inicia una sesión de grabación
+3. Exporta la sesión a un archivo ZIP
+4. Verifica que:
+   - El archivo ZIP contenga solo las grabaciones de esa sesión
+   - Los nombres de archivo incluyan el prefijo configurado
+   - El contenido del ZIP esté correctamente organizado

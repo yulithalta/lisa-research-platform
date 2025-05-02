@@ -408,17 +408,26 @@ async function startRecording(camera: any, sessionId?: number) {
 
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
     // Usar el prefijo de grabación definido en la cámara, o un valor predeterminado basado en el ID
-    // Priorizar nombres reales y legibles para los archivos
-    const prefix = camera.name 
-      ? camera.name.toLowerCase().replace(/\s+/g, '-') 
-      : (camera.recordingPrefix 
-          ? `${camera.recordingPrefix}` 
-          : `cam${camera.id}`);
+    // Priorizar el prefijo definido por usuario, luego el nombre, y finalmente un valor predeterminado
+    let prefix;
+    // Paso 1: Verificar si hay un prefijo de grabación explícito y usarlo primero
+    if (camera.recordingPrefix && typeof camera.recordingPrefix === 'string' && camera.recordingPrefix.trim() !== '') {
+      prefix = camera.recordingPrefix.trim();
+      console.log(`Usando prefijo de grabación configurado: ${prefix}`);
+    }
+    // Paso 2: Si no hay prefijo, usar el nombre de la cámara
+    else if (camera.name && typeof camera.name === 'string' && camera.name.trim() !== '') {
+      prefix = camera.name.toLowerCase().replace(/\s+/g, '-');
+      console.log(`Usando nombre de cámara como prefijo: ${prefix}`);
+    }
+    // Paso 3: Último recurso, usar el ID
+    else {
+      prefix = `cam${camera.id}`;
+      console.log(`Usando ID de cámara como prefijo: ${prefix}`);
+    }
     
     // Formato de nombre de archivo que incluye el ID de sesión si está disponible
-    // CORRECCIÓN: La forma en que formamos el nombre del archivo no afecta la ubicación donde se guarda
-    // pero es bueno para identificación. Sin embargo, es el outputDirectory el que realmente
-    // determina dónde se guarda el archivo físicamente.
+    // El prefijo es crítico para la identificación de archivos en la exportación ZIP
     const sessionPart = activeSessionId ? `_session${activeSessionId}` : '';
     const fileName = `${prefix}${sessionPart}-${timestamp}.mp4`;
     
@@ -484,7 +493,7 @@ async function startRecording(camera: any, sessionId?: number) {
       cameraId: camera.id,
       filePath: outputPath,
       startTime: new Date(),
-      title: camera.recordingPrefix ? `${camera.recordingPrefix} ${timestamp}` : undefined,
+      title: prefix ? `${prefix} ${timestamp}` : undefined,
       sensorDataPath, // Guardar referencia al archivo de datos de sensores
       sessionId: activeSessionId // Usar el ID de sesión que hemos determinado
     });

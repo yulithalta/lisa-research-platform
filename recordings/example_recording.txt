@@ -2,7 +2,7 @@ Este archivo simula una grabación MP4 para pruebas.
 Contendrá datos de vídeo almacenados en formato MP4.
 En un sistema real, este sería un archivo binary MP4 grabado por las cámaras.
 
-Fecha: 2025-05-02
+Fecha: 5/2/2025
 Duración: 00:02:30
 Resolución: 1280x720
 FPS: 25
