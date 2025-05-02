@@ -1,0 +1,128 @@
+[2025-04-04T08:12:33.559Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+warn @ logger.ts:25
+(anonymous) @ use-mqtt.ts:409
+setTimeout
+attemptConnection @ use-mqtt.ts:397
+(anonymous) @ use-mqtt.ts:424
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=b1526646:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=b1526646:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=b1526646:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=b1526646:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=b1526646:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=b1526646:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=b1526646:19447
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=b1526646:18868
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=b1526646:9119
+commitRootImpl @ chunk-RPCDYKBN.js?v=b1526646:19432
+commitRoot @ chunk-RPCDYKBN.js?v=b1526646:19277
+finishConcurrentRender @ chunk-RPCDYKBN.js?v=b1526646:18805
+performConcurrentWorkOnRoot @ chunk-RPCDYKBN.js?v=b1526646:18718
+workLoop @ chunk-RPCDYKBN.js?v=b1526646:197
+flushWork @ chunk-RPCDYKBN.js?v=b1526646:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=b1526646:384Understand this warningAI
+sessions-page.tsx:364 Configuración de sesión para sensores: {selectedSensors: Array(4), sensorCount: 5, selectedCount: 4}
+sessions-page.tsx:372 Cámaras disponibles: 4
+queryClient.ts:15 
+            
+            
+           POST http://mforum-livinglab:5000/api/sessions 500 (Internal Server Error)
+apiRequest @ queryClient.ts:15
+startSession @ sessions-page.tsx:378
+callCallback2 @ chunk-RPCDYKBN.js?v=b1526646:3674
+invokeGuardedCallbackDev @ chunk-RPCDYKBN.js?v=b1526646:3699
+invokeGuardedCallback @ chunk-RPCDYKBN.js?v=b1526646:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-RPCDYKBN.js?v=b1526646:3736
+executeDispatch @ chunk-RPCDYKBN.js?v=b1526646:7014
+processDispatchQueueItemsInOrder @ chunk-RPCDYKBN.js?v=b1526646:7034
+processDispatchQueue @ chunk-RPCDYKBN.js?v=b1526646:7043
+dispatchEventsForPlugins @ chunk-RPCDYKBN.js?v=b1526646:7051
+(anonymous) @ chunk-RPCDYKBN.js?v=b1526646:7174
+batchedUpdates$1 @ chunk-RPCDYKBN.js?v=b1526646:18913
+batchedUpdates @ chunk-RPCDYKBN.js?v=b1526646:3579
+dispatchEventForPluginEventSystem @ chunk-RPCDYKBN.js?v=b1526646:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-RPCDYKBN.js?v=b1526646:5478
+dispatchEvent @ chunk-RPCDYKBN.js?v=b1526646:5472
+dispatchDiscreteEvent @ chunk-RPCDYKBN.js?v=b1526646:5449Understand this errorAI
+sessions-page.tsx:435 Error al iniciar sesión: Error: 500: {"message":"Failed to create session"}
+    at throwIfResNotOk (queryClient.ts:6:11)
+    at async apiRequest (queryClient.ts:22:3)
+    at async startSession (sessions-page.tsx:378:24)
+overrideMethod @ hook.js:608
+startSession @ sessions-page.tsx:435
+await in startSession
+callCallback2 @ chunk-RPCDYKBN.js?v=b1526646:3674
+invokeGuardedCallbackDev @ chunk-RPCDYKBN.js?v=b1526646:3699
+invokeGuardedCallback @ chunk-RPCDYKBN.js?v=b1526646:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-RPCDYKBN.js?v=b1526646:3736
+executeDispatch @ chunk-RPCDYKBN.js?v=b1526646:7014
+processDispatchQueueItemsInOrder @ chunk-RPCDYKBN.js?v=b1526646:7034
+processDispatchQueue @ chunk-RPCDYKBN.js?v=b1526646:7043
+dispatchEventsForPlugins @ chunk-RPCDYKBN.js?v=b1526646:7051
+(anonymous) @ chunk-RPCDYKBN.js?v=b1526646:7174
+batchedUpdates$1 @ chunk-RPCDYKBN.js?v=b1526646:18913
+batchedUpdates @ chunk-RPCDYKBN.js?v=b1526646:3579
+dispatchEventForPluginEventSystem @ chunk-RPCDYKBN.js?v=b1526646:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-RPCDYKBN.js?v=b1526646:5478
+dispatchEvent @ chunk-RPCDYKBN.js?v=b1526646:5472
+dispatchDiscreteEvent @ chunk-RPCDYKBN.js?v=b1526646:5449Understand this errorAI
+logger.ts:17 [2025-04-04T08:12:59.892Z] [INFO] Intento 6: Conectando a MQTT broker en ws://192.168.0.20:9001
+logger.ts:17 [2025-04-04T08:12:59.997Z] [INFO] 🟢 Conectado a broker MQTT: ws://192.168.0.20:9001
+logger.ts:17 [2025-04-04T08:12:59.997Z] [INFO] Subscribing to MQTT topics...
+logger.ts:17 [2025-04-04T08:12:59.999Z] [INFO] Suscrito a #
+logger.ts:17 [2025-04-04T08:13:00.002Z] [INFO] Recibida lista de dispositivos zigbee2mqtt
+logger.ts:17 [2025-04-04T08:13:00.003Z] [INFO] Recibidos 5 sensores de Zigbee2MQTT
+logger.ts:17 [2025-04-04T08:13:00.020Z] [INFO] Suscrito a zigbee2mqtt/#
+logger.ts:17 [2025-04-04T08:13:00.022Z] [INFO] Recibida lista de dispositivos zigbee2mqtt
+logger.ts:17 [2025-04-04T08:13:00.022Z] [INFO] Recibidos 5 sensores de Zigbee2MQTT
+logger.ts:17 [2025-04-04T08:13:00.043Z] [INFO] Suscrito a zigbee2mqtt/+
+logger.ts:17 [2025-04-04T08:13:00.043Z] [INFO] Suscrito a zigbee2mqtt/+/+
+logger.ts:17 [2025-04-04T08:13:00.044Z] [INFO] Recibida lista de dispositivos zigbee2mqtt
+logger.ts:17 [2025-04-04T08:13:00.044Z] [INFO] Recibidos 5 sensores de Zigbee2MQTT
+logger.ts:17 [2025-04-04T08:13:00.049Z] [INFO] Suscrito a zigbee2mqtt/+/+/+
+logger.ts:17 [2025-04-04T08:13:00.049Z] [INFO] Suscrito a zigbee2mqtt/+/+/+/+
+logger.ts:17 [2025-04-04T08:13:00.049Z] [INFO] Suscrito a zigbee2mqtt/bridge/+
+logger.ts:17 [2025-04-04T08:13:00.050Z] [INFO] Recibida lista de dispositivos zigbee2mqtt
+logger.ts:17 [2025-04-04T08:13:00.050Z] [INFO] Recibidos 5 sensores de Zigbee2MQTT
+logger.ts:17 [2025-04-04T08:13:00.056Z] [INFO] Suscrito a zigbee2mqtt/bridge/devices
+logger.ts:17 [2025-04-04T08:13:00.056Z] [INFO] Recibida lista de dispositivos zigbee2mqtt
+logger.ts:17 [2025-04-04T08:13:00.057Z] [INFO] Recibidos 5 sensores de Zigbee2MQTT
+logger.ts:17 [2025-04-04T08:13:00.057Z] [INFO] Suscrito a zigbee2mqtt/bridge/state
+logger.ts:17 [2025-04-04T08:13:00.057Z] [INFO] Suscrito a zigbee2mqtt/bridge/info
+logger.ts:17 [2025-04-04T08:13:00.058Z] [INFO] Suscrito a zigbee2mqtt/bridge/logging
+logger.ts:17 [2025-04-04T08:13:00.058Z] [INFO] Suscrito a zigbee2mqtt/bridge/config
+logger.ts:17 [2025-04-04T08:13:00.058Z] [INFO] Suscrito a zigbee2mqtt/bridge/response/+
+logger.ts:17 [2025-04-04T08:13:00.058Z] [INFO] Suscrito a zigbee2mqtt/bridge/request/+
+logger.ts:17 [2025-04-04T08:13:00.058Z] [INFO] Suscrito a zigbee2mqtt/bridge/event/+
+logger.ts:17 [2025-04-04T08:13:00.058Z] [INFO] Suscrito a zigbee2mqtt/livinglab/#
+logger.ts:17 [2025-04-04T08:13:00.059Z] [INFO] Suscrito a livinglab/#
+logger.ts:17 [2025-04-04T08:13:00.059Z] [INFO] Suscrito a livinglab/device/#
+logger.ts:25 [2025-04-04T08:13:04.906Z] [WARN] Conexión MQTT fallida después de 5 segundos. Reintentando...
+overrideMethod @ hook.js:608
+warn @ logger.ts:25
+(anonymous) @ use-mqtt.ts:399
+setTimeout
+attemptConnection @ use-mqtt.ts:397
+setTimeout
+(anonymous) @ use-mqtt.ts:407
+setTimeout
+attemptConnection @ use-mqtt.ts:397
+(anonymous) @ use-mqtt.ts:424
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=b1526646:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=b1526646:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=b1526646:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=b1526646:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=b1526646:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=b1526646:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=b1526646:19447
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=b1526646:18868
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=b1526646:9119
+commitRootImpl @ chunk-RPCDYKBN.js?v=b1526646:19432
+commitRoot @ chunk-RPCDYKBN.js?v=b1526646:19277
+finishConcurrentRender @ chunk-RPCDYKBN.js?v=b1526646:18805
+performConcurrentWorkOnRoot @ chunk-RPCDYKBN.js?v=b1526646:18718
+workLoop @ chunk-RPCDYKBN.js?v=b1526646:197
+flushWork @ chunk-RPCDYKBN.js?v=b1526646:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=b1526646:384Understand this warningAI
+logger.ts:17 [2025-04-04T08:13:04.906Z] [INFO] Cliente MQTT desconectado y limpiado
+logger.ts:17 [2025-04-04T08:13:04.906Z] [INFO] Reintentando en 30 segundos...

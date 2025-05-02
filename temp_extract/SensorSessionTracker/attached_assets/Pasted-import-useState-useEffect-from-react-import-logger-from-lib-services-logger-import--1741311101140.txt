@@ -1,0 +1,151 @@
+import { useState, useEffect } from "react";
+import { logger } from "@/lib/services/logger";
+import type { MqttClient, IClientOptions } from 'mqtt';
+
+interface SensorMessage {
+  topic: string;
+  payload: {
+    contact?: boolean | string | number;
+    battery?: number;
+    linkquality?: number;
+    [key: string]: any;
+  };
+  timestamp: Date;
+}
+
+export function useMqtt() {
+  const [sensorMessages, setSensorMessages] = useState<SensorMessage[]>([]);
+  const [isConnected, setIsConnected] = useState(false);
+  const [connectionError, setConnectionError] = useState<string | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
+
+  useEffect(() => {
+    let client: MqttClient | null = null;
+    const MAX_RETRIES = 3;
+
+    const connect = async () => {
+      try {
+        logger.info('Loading MQTT module...');
+        const { connect } = await import('mqtt');
+
+        // Intentar primero el puerto WebSocket MQTT estándar
+        const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+        const host = window.location.hostname;
+        const port = 1883; // Puerto MQTT estándar
+        const wsUrl = `${protocol}://${host}:${port}/mqtt`;
+
+        logger.info(`Connecting to MQTT broker (attempt ${retryCount + 1})`, { url: wsUrl });
+
+        const options: IClientOptions = {
+          clientId: `zigbee_${Math.random().toString(16).substr(2, 8)}`,
+          keepalive: 30,
+          clean: true,
+          reconnectPeriod: 2000,
+          connectTimeout: 4000,
+          rejectUnauthorized: false,
+          protocolVersion: 4
+        };
+
+        client = connect(wsUrl, options);
+
+        client.on('connect', () => {
+          logger.info('Successfully connected to MQTT broker');
+          setIsConnected(true);
+          setConnectionError(null);
+          setRetryCount(0);
+
+          client?.subscribe('zigbee2mqtt/#', (err) => {
+            if (err) {
+              logger.error('Failed to subscribe to topics', { error: err.message });
+              return;
+            }
+            logger.info('Successfully subscribed to zigbee2mqtt/#');
+          });
+        });
+
+        client.on('message', (topic: string, message: Buffer) => {
+          try {
+            const payload = JSON.parse(message.toString());
+            logger.debug('Received MQTT message', { topic, payload });
+
+            setSensorMessages((prev) => {
+              const newMessage = {
+                topic,
+                payload: {
+                  ...payload,
+                  contact: typeof payload.contact === 'boolean' ? 
+                    (payload.contact ? 0 : 1) : 
+                    (payload.contact === 'on' || payload.contact === 'open' ? 1 : 0),
+                  battery: payload.battery ?? 0,
+                  linkquality: payload.linkquality ?? 0
+                },
+                timestamp: new Date()
+              };
+
+              const updatedMessages = [...prev, newMessage];
+              return updatedMessages.slice(-100); // Keep last 100 messages
+            });
+          } catch (error) {
+            logger.error('Failed to process MQTT message', {
+              error: error instanceof Error ? error.message : 'Unknown error',
+              topic,
+              rawMessage: message.toString()
+            });
+          }
+        });
+
+        client.on('error', (error: Error) => {
+          logger.error('MQTT connection error', { error: error.message });
+
+          if (retryCount < MAX_RETRIES) {
+            setRetryCount(prev => prev + 1);
+            client?.end();
+            setTimeout(connect, 2000);
+          } else {
+            setIsConnected(false);
+            setConnectionError(`Error de conexión MQTT: ${error.message}`);
+          }
+        });
+
+        client.on('close', () => {
+          logger.info('MQTT connection closed');
+          setIsConnected(false);
+
+          if (retryCount < MAX_RETRIES) {
+            setRetryCount(prev => prev + 1);
+            setTimeout(connect, 2000);
+          }
+        });
+
+        client.on('offline', () => {
+          logger.warn('MQTT client went offline');
+          setIsConnected(false);
+        });
+
+      } catch (error) {
+        const errorMsg = error instanceof Error ? error.message : 'Unknown error';
+        logger.error('Failed to initialize MQTT connection', { error: errorMsg });
+        setConnectionError(`Error al inicializar MQTT: ${errorMsg}`);
+        setIsConnected(false);
+
+        if (retryCount < MAX_RETRIES) {
+          setRetryCount(prev => prev + 1);
+          setTimeout(connect, 2000);
+        }
+      }
+    };
+
+    connect();
+
+    return () => {
+      if (client) {
+        logger.info('Cleaning up MQTT connection');
+        client.end();
+      }
+    };
+  }, [retryCount]);
+
+  return { sensorMessages, isConnected, connectionError };
+}
+
+export default useMqtt;

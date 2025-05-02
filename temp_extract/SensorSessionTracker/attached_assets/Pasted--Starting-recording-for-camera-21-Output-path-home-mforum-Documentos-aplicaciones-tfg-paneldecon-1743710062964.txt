@@ -1,0 +1,144 @@
+
+Starting recording for camera 21
+Output path: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/recordings/cam21-21-2025-04-03T19-53-39-382Z.mp4
+Created sensor data file: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/recordings/cam21-21-2025-04-03T19-53-39-382Z-sensors.json
+[2025-04-03T19:53:39.382Z] [INFO] Guardando estado...
+[2025-04-03T19:53:39.383Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/users.json
+[2025-04-03T19:53:39.383Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/cameras.json
+[2025-04-03T19:53:39.383Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/sensors.json
+[2025-04-03T19:53:39.383Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/recordings.json
+[2025-04-03T19:53:39.383Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/sensor_events.json
+[2025-04-03T19:53:39.384Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/cameras.json
+[2025-04-03T19:53:39.384Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/sensors.json
+[2025-04-03T19:53:39.384Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/recordings.json
+[2025-04-03T19:53:39.384Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/sensor_events.json
+[2025-04-03T19:53:39.384Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/cameras.json
+[2025-04-03T19:53:39.384Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/sensors.json
+[2025-04-03T19:53:39.385Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/recordings.json
+[2025-04-03T19:53:39.385Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/sensor_events.json
+[2025-04-03T19:53:39.388Z] [INFO] Activity logged: cameraUpdated
+[2025-04-03T19:53:39.388Z] [INFO] Guardando estado...
+[2025-04-03T19:53:39.388Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/users.json
+[2025-04-03T19:53:39.388Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/cameras.json
+[2025-04-03T19:53:39.389Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/sensors.json
+[2025-04-03T19:53:39.389Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/recordings.json
+[2025-04-03T19:53:39.389Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/sensor_events.json
+[2025-04-03T19:53:39.389Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/cameras.json
+[2025-04-03T19:53:39.389Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/sensors.json
+[2025-04-03T19:53:39.390Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/recordings.json
+[2025-04-03T19:53:39.390Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/sensor_events.json
+[2025-04-03T19:53:39.390Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/cameras.json
+[2025-04-03T19:53:39.390Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/sensors.json
+[2025-04-03T19:53:39.390Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/recordings.json
+[2025-04-03T19:53:39.390Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/sensor_events.json
+[2025-04-03T19:53:39.395Z] [INFO] Activity logged: recordingCreated
+RTSP URL: rtsp://admin:admin123@192.168.0.34:554/h264Preview_01_main
+FFmpeg command: ffmpeg -y -rtsp_transport tcp -i rtsp://admin:admin123@192.168.0.34:554/h264Preview_01_main -c:v libx264 -preset ultrafast -tune zerolatency -b:v 1500k -maxrate 2M -bufsize 4M -vf scale=1280:720 -r 25 -g 50 -keyint_min 25 -sc_threshold 0 -an -f mp4 -movflags +faststart /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/recordings/cam21-21-2025-04-03T19-53-39-382Z.mp4
+[2025-04-03T19:53:39.406Z] [INFO] Guardando estado...
+[2025-04-03T19:53:39.407Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/users.json
+[2025-04-03T19:53:39.407Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/cameras.json
+[2025-04-03T19:53:39.407Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/sensors.json
+[2025-04-03T19:53:39.407Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/recordings.json
+[2025-04-03T19:53:39.408Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/sensor_events.json
+[2025-04-03T19:53:39.408Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/cameras.json
+[2025-04-03T19:53:39.408Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/sensors.json
+[2025-04-03T19:53:39.408Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/recordings.json
+[2025-04-03T19:53:39.408Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/sensor_events.json
+[2025-04-03T19:53:39.409Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/cameras.json
+[2025-04-03T19:53:39.409Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/sensors.json
+[2025-04-03T19:53:39.409Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/recordings.json
+[2025-04-03T19:53:39.409Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/sensor_events.json
+[2025-04-03T19:53:39.412Z] [INFO] Activity logged: cameraUpdated
+[2025-04-03T19:53:39.413Z] [INFO] No hay sensores para monitorear en la sesión 37fde232-24dd-4276-ae40-629160ca38ee
+9:53:39 PM [express] POST /api/sessions 201 in 34ms :: {"id":"37fde232-24dd-4276-ae40-629160ca38ee",…
+9:53:39 PM [auth] Deserializing user ID: 1
+9:53:39 PM [auth] Request GET /api/sessions - Auth: true
+9:53:39 PM [express] GET /api/sessions 200 in 3ms :: [{"id":"37fde232-24dd-4276-ae40-629160ca38ee","…
+FFmpeg (Camera 21): ffmpeg version 4.4.2-0ubuntu0.22.04.1 Copyright (c) 2000-2021 the FFmpeg developers
+  built with gcc 11 (Ubuntu 11.2.0-19ubuntu1)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.22.04.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared
+  libavutil      56. 70.100 / 56. 70.100
+  libavcodec     58.134.100 / 58.134.100
+  libavformat    58. 76.100 / 58. 76.100
+  libavdevice    58. 13.100 / 58. 13.100
+  libavfilter     7.110.100 /  7.110.100
+  libswscale      5.  9.100 /  5.  9.100
+  libswresample   3.  9.100 /  3.  9.100
+  libpostproc    55.  9.100 / 55.  9.100
+
+FFmpeg (Camera 21): [tcp @ 0x55c092b034c0] Connection to tcp://192.168.0.34:554?timeout=0 failed: No route to host
+rtsp://admin:admin123@192.168.0.34:554/h264Preview_01_main: No route to host
+
+FFmpeg process closed for camera 21 with code 1
+Recording file was not created at /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/recordings/cam21-21-2025-04-03T19-53-39-382Z.mp4
+[2025-04-03T19:53:42.515Z] [INFO] Guardando estado...
+[2025-04-03T19:53:42.516Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/users.json
+[2025-04-03T19:53:42.516Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/cameras.json
+[2025-04-03T19:53:42.516Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/sensors.json
+[2025-04-03T19:53:42.516Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/recordings.json
+[2025-04-03T19:53:42.516Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/sensor_events.json
+[2025-04-03T19:53:42.517Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/cameras.json
+[2025-04-03T19:53:42.517Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/sensors.json
+[2025-04-03T19:53:42.517Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/recordings.json
+[2025-04-03T19:53:42.517Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/sensor_events.json
+[2025-04-03T19:53:42.517Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/cameras.json
+[2025-04-03T19:53:42.517Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/sensors.json
+[2025-04-03T19:53:42.518Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/recordings.json
+[2025-04-03T19:53:42.518Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/sensor_events.json
+[2025-04-03T19:53:42.522Z] [INFO] Activity logged: recordingUpdated
+[2025-04-03T19:53:44.160Z] [INFO] Topic MQTT recibido: zigbee2mqtt/livinglab/event, ID extraído: livinglab/event
+[2025-04-03T19:53:44.160Z] [INFO] Datos MQTT recibidos (sin sesiones activas): zigbee2mqtt/livinglab/event
+[2025-04-03T19:53:44.161Z] [INFO] Topic MQTT recibido: zigbee2mqtt/livinglab/device/0x00124b00292d93d5, ID extraído: livinglab/device/0x00124b00292d93d5
+[2025-04-03T19:53:44.161Z] [INFO] Datos MQTT recibidos (sin sesiones activas): zigbee2mqtt/livinglab/device/0x00124b00292d93d5
+[2025-04-03T19:53:44.161Z] [INFO] Topic MQTT recibido: zigbee2mqtt/livinglab/event_new, ID extraído: livinglab/event_new
+[2025-04-03T19:53:44.161Z] [INFO] Datos MQTT recibidos (sin sesiones activas): zigbee2mqtt/livinglab/event_new
+[2025-04-03T19:53:44.161Z] [INFO] Topic MQTT recibido: zigbee2mqtt/livinglab/sensors, ID extraído: livinglab/sensors
+[2025-04-03T19:53:44.161Z] [INFO] Datos MQTT recibidos (sin sesiones activas): zigbee2mqtt/livinglab/sensors
+[2025-04-03T19:53:44.161Z] [INFO] Topic MQTT recibido: zigbee2mqtt/livinglab/sensors_compatible, ID extraído: livinglab/sensors_compatible
+[2025-04-03T19:53:44.161Z] [INFO] Datos MQTT recibidos (sin sesiones activas): zigbee2mqtt/livinglab/sensors_compatible
+[2025-04-03T19:53:44.161Z] [INFO] Topic MQTT recibido: zigbee2mqtt/livinglab/simple_sensors, ID extraído: livinglab/simple_sensors
+[2025-04-03T19:53:44.162Z] [INFO] Datos MQTT recibidos (sin sesiones activas): zigbee2mqtt/livinglab/simple_sensors
+[2025-04-03T19:53:44.162Z] [INFO] Topic MQTT recibido: zigbee2mqtt/Nuevo-s5-Rosa, ID extraído: Nuevo-s5-Rosa
+[2025-04-03T19:53:44.162Z] [INFO] Datos MQTT recibidos (sin sesiones activas): zigbee2mqtt/Nuevo-s5-Rosa
+9:53:44 PM [auth] Deserializing user ID: 1
+9:53:44 PM [auth] Request GET /api/sessions - Auth: true
+9:53:44 PM [express] GET /api/sessions 304 in 2ms :: [{"id":"37fde232-24dd-4276-ae40-629160ca38ee","…
+[2025-04-03T19:53:44.617Z] [INFO] Topic MQTT recibido: zigbee2mqtt/livinglab/event, ID extraído: livinglab/event
+[2025-04-03T19:53:44.618Z] [INFO] Datos MQTT recibidos (sin sesiones activas): zigbee2mqtt/livinglab/event
+[2025-04-03T19:53:44.618Z] [INFO] Topic MQTT recibido: zigbee2mqtt/livinglab/device/0x00124b00292d93d5, ID extraído: livinglab/device/0x00124b00292d93d5
+[2025-04-03T19:53:44.618Z] [INFO] Datos MQTT recibidos (sin sesiones activas): zigbee2mqtt/livinglab/device/0x00124b00292d93d5
+[2025-04-03T19:53:44.618Z] [INFO] Topic MQTT recibido: zigbee2mqtt/livinglab/event_new, ID extraído: livinglab/event_new
+[2025-04-03T19:53:44.618Z] [INFO] Datos MQTT recibidos (sin sesiones activas): zigbee2mqtt/livinglab/event_new
+[2025-04-03T19:53:44.618Z] [INFO] Topic MQTT recibido: zigbee2mqtt/livinglab/sensors, ID extraído: livinglab/sensors
+[2025-04-03T19:53:44.618Z] [INFO] Datos MQTT recibidos (sin sesiones activas): zigbee2mqtt/livinglab/sensors
+[2025-04-03T19:53:44.619Z] [INFO] Topic MQTT recibido: zigbee2mqtt/livinglab/sensors_compatible, ID extraído: livinglab/sensors_compatible
+[2025-04-03T19:53:44.619Z] [INFO] Datos MQTT recibidos (sin sesiones activas): zigbee2mqtt/livinglab/sensors_compatible
+[2025-04-03T19:53:44.619Z] [INFO] Topic MQTT recibido: zigbee2mqtt/livinglab/simple_sensors, ID extraído: livinglab/simple_sensors
+[2025-04-03T19:53:44.619Z] [INFO] Datos MQTT recibidos (sin sesiones activas): zigbee2mqtt/livinglab/simple_sensors
+[2025-04-03T19:53:44.619Z] [INFO] Topic MQTT recibido: zigbee2mqtt/Nuevo-s5-Rosa, ID extraído: Nuevo-s5-Rosa
+[2025-04-03T19:53:44.619Z] [INFO] Datos MQTT recibidos (sin sesiones activas): zigbee2mqtt/Nuevo-s5-Rosa
+9:53:48 PM [auth] Deserializing user ID: 1
+9:53:48 PM [auth] Request DELETE /api/sessions/37fde232-24dd-4276-ae40-629160ca38ee - Auth: true
+[2025-04-03T19:53:48.425Z] [INFO] Guardando estado...
+[2025-04-03T19:53:48.426Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/users.json
+[2025-04-03T19:53:48.426Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/cameras.json
+[2025-04-03T19:53:48.426Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/sensors.json
+[2025-04-03T19:53:48.426Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/recordings.json
+[2025-04-03T19:53:48.427Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_1/sensor_events.json
+[2025-04-03T19:53:48.427Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/cameras.json
+[2025-04-03T19:53:48.427Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/sensors.json
+[2025-04-03T19:53:48.427Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/recordings.json
+[2025-04-03T19:53:48.427Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_2/sensor_events.json
+[2025-04-03T19:53:48.428Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/cameras.json
+[2025-04-03T19:53:48.428Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/sensors.json
+[2025-04-03T19:53:48.428Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/recordings.json
+[2025-04-03T19:53:48.428Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/data/user_3/sensor_events.json
+[2025-04-03T19:53:48.431Z] [INFO] Activity logged: cameraUpdated
+[2025-04-03T19:53:48.432Z] [WARN] Intento de desregistrar sesión inexistente: 37fde232-24dd-4276-ae40-629160ca38ee
+Unregistered session 37fde232-24dd-4276-ae40-629160ca38ee from MQTT data capture
+Session 37fde232-24dd-4276-ae40-629160ca38ee successfully completed
+9:53:48 PM [express] DELETE /api/sessions/37fde232-24dd-4276-ae40-629160ca38ee 200 in 9ms :: {"messa…
+9:53:48 PM [auth] Deserializing user ID: 1
+9:53:48 PM [auth] Request GET /api/sessions - Auth: true
+9:53:48 PM [express] GET /api/sessions 200 in 3ms :: [{"id":"37fde232-24dd-4276-ae40-629160ca38ee","…
+9:53:48 PM [auth] Deserializing user ID: 1

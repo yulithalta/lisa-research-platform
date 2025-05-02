@@ -1,0 +1,39 @@
+logger.ts:17 [2025-04-02T10:42:04.517Z] [INFO] Application starting
+logger.ts:17 [2025-04-02T10:42:04.518Z] [INFO] Initializing router
+logger.ts:17 [2025-04-02T10:42:04.706Z] [INFO] Connected to MQTT broker
+client:536 WebSocket connection to 'ws://mforum-livinglab:5000/?token=jQS3_aokAroU' failed: 
+setupWebSocket @ client:536
+hook.js:608 Error loading services: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+overrideMethod @ hook.js:608
+client:536 Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'ws://localhost:undefined/?token=jQS3_aokAroU' is invalid.
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)
+hook.js:608 Error loading services: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+overrideMethod @ hook.js:608
+hook.js:608 Error loading services: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+overrideMethod @ hook.js:608
+hook.js:608 Error loading services: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+overrideMethod @ hook.js:608
+sessions-page.tsx:78 Connecting to WebSocket at ws://mforum-livinglab:5000/ws
+logger.ts:17 [2025-04-02T10:43:41.788Z] [INFO] Connected to MQTT broker
+hook.js:608 Warning: Each child in a list should have a unique "key" prop.
+
+Check the render method of `SessionsPage`. See https://reactjs.org/link/warning-keys for more information.
+    at _c9 (http://mforum-livinglab:5000/src/components/ui/table.tsx:96:12)
+    at SessionsPage (http://mforum-livinglab:5000/src/pages/sessions-page.tsx:49:29)
+    at div
+    at main
+    at div
+    at div
+    at MainLayout (http://mforum-livinglab:5000/src/components/layout/main-layout.tsx:19:30)
+    at component
+    at ProtectedRoute (http://mforum-livinglab:5000/src/lib/protected-route.tsx:22:3)
+    at Switch (http://mforum-livinglab:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/node_modules/.vite/deps/wouter.js?v=ed152b8b:336:17)
+    at Router
+    at AuthProvider (http://mforum-livinglab:5000/src/hooks/use-auth.tsx:26:32)
+    at QueryClientProvider (http://mforum-livinglab:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/node_modules/.vite/deps/@tanstack_react-query.js?v=ed152b8b:2881:3)
+    at App
+overrideMethod @ hook.js:608
+sessions-page.tsx:82 Connected to WebSocket server
+sessions-page.tsx:117 WebSocket connection closed

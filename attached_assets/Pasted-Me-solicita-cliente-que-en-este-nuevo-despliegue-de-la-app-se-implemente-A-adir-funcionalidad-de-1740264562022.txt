@@ -1,0 +1,37 @@
+Me solicita cliente que en este nuevo despliegue de la app se implemente:
+
+- Añadir funcionalidad de etiquetado de videos antes de empezar a grabar [OK]
+- Implementar visualización de estadísticas de rendimiento de cámaras [OK]
+- Implementar una visualización en tiempo real mientras se graba en los cuadros que se marcaron en la imagen cada uno de su respectiva cámara registrada [OK]
+- Desea que tenga un estado más moderno y colores más llamativos para el público que lo use, el dashboard que monitoriza el hardware lo han diseñado de la siguiente forma (adjunto imagen) [OK]
+- Añadir un botón de 'reproducción rápida' para grabaciones recientes
+- Panel de configuración de usuario más intuitivo, permitir al usuario cambiar datos de configuración de forma intuitiva, por ejemplo, el lugar de almacenamiento de las grabaciones.
+- Implementar validación de campos en formularios de configuración
+- Añadir feedback visual para acciones del usuario
+- La ventana de 'Metricas' se desea ver es casillas actualizando en tiempo real con los valores de la terminal mientras se graba: fps, bitrate, time, Datos guardados [KO-]
+
+Ejemplo:  
+fps= 31  
+bitrate=1963.9kbits/s  
+time=00:00:29.90  
+Datos guardados en =./recordings (Dato proveniente de la pestaña ajustes)
+```log
+7Unchecked runtime.lastError: The message port closed before a response was received.Understand this errorAI
+metrics:134 Unchecked runtime.lastError: The message port closed before a response was received.Understand this errorAI
+metrics:134 Unchecked runtime.lastError: The message port closed before a response was received.Understand this errorAI
+metrics:1 Unchecked runtime.lastError: The message port closed before a response was received.Understand this errorAI
+metrics:1 Unchecked runtime.lastError: The message port closed before a response was received.Understand this errorAI
+metrics:1 Unchecked runtime.lastError: The message port closed before a response was received.Understand this errorAI
+metrics:1 Unchecked runtime.lastError: The message port closed before a response was received.Understand this errorAI
+metrics:1 Unchecked runtime.lastError: The message port closed before a response was received.Understand this errorAI
+client:536 WebSocket connection to 'ws://192.168.0.10:5000/?token=7F8do7QkV7Bk' failed: 
+setupWebSocket @ client:536Understand this errorAI
+api/recordings/34/thumbnail:1                         
+           Failed to load resource: the server responded with a status of 500 (Internal Server Error)Understand this errorAI
+api/recordings/33/thumbnail:1                        
+           Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+```
+
+
+> PMO solicita que realicemos una carpeta 'doc' donde documentemos todo el proyecto hasta la fecha  [OK]
+> ¿Empezamos?

@@ -1,0 +1,202 @@
+import concurrent.futures
+import subprocess
+import signal
+import sys
+import os
+import time
+import curses
+from enum import Enum
+from datetime import datetime
+
+
+# Configuration
+USER = "admin"
+PASSWORD = "admin123"
+IP_BASE = "192.168.0."
+START_INDEX = 20
+END_INDEX = 25
+FRAME_RATE = 30
+BITRATE = 4096  # Bitrate in kbps
+
+if len(sys.argv) <3:
+    print(f'USAGE {sys.argv[0]} <numero_sujeto> <numero_repeticion> <numero_particion>')
+    sys.exit(1)
+
+SUJETO = sys.argv[1]
+REPETICION = sys.argv[2]
+PARTICION = sys.argv[3]
+
+class Posiciones (Enum):
+
+    CEN = 4
+    LAT= 3
+    FRONT = 2
+    OBV = 5
+
+
+class LatencyView:
+    _instance = None
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+
+    def medir_latencia(self, ip):
+        try:
+            result = subprocess.run(['latencyview', ip], stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=2)
+            if result.returncode == 0:
+                output = result.stdout.decode()
+                latency = output.splitlines()[-1].strip().split()[0]
+                return float(latency)
+            else:
+                return None
+        except Exception as e:
+            return None
+
+latency_view = LatencyView()
+
+processes = []
+statuses = []
+terminate_flag = False
+
+def verificar_accesibilidad_rtsp(ip):
+    try:
+        result = subprocess.run(['timeout', '5', 'bash', '-c', f'</dev/tcp/{ip}/554'],
+                                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        return result.returncode == 0
+    except Exception as e:
+        return False
+
+def capturar_flujo(ip, mp4_file, index, start_time):
+    try:
+        if not verificar_accesibilidad_rtsp(ip):
+            statuses[index] = f"[ERROR] Cannot access {ip}:554. Skipping..."
+            return False
+
+        statuses[index] = f"[INFO] Waiting to start capture from {ip}"
+
+        while time.time() < start_time:
+            time.sleep(0.01)
+
+        latency = latency_view.medir_latencia(ip) or 100  # Default to 100ms if measurement fails
+        buffer_size = max(int(latency * FRAME_RATE / 1000), 1)
+
+        command = [
+            "gst-launch-1.0",
+            "-e",
+            f"rtspsrc location=rtsp://{USER}:{PASSWORD}@{ip}:554/h264Preview_01_main latency={int(latency)} !",
+            "rtph264depay ! h264parse ! avdec_h264 ! videorate ! video/x-raw,framerate=30/1 !",
+            "videoconvert ! videoscale ! video/x-raw,width=1280,height=720 !",
+            f"x264enc bitrate={BITRATE} speed-preset=ultrafast !",
+            f"queue max-size-buffers={buffer_size} ! h264parse !",
+            f"mp4mux ! filesink location={mp4_file}"
+        ]
+
+        process = subprocess.Popen(" ".join(command), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        processes.append(process)
+        frame_count = 0
+
+        while not terminate_flag and process.poll() is None:
+            time.sleep(1)
+            frame_count += FRAME_RATE
+            elapsed_time = time.time() - start_time
+            fps = frame_count / elapsed_time if elapsed_time > 0 else 0
+            current_latency = latency_view.medir_latencia(ip) or latency
+            statuses[index] = f"[INFO] Recording {ip} - Time: {elapsed_time:.2f} s - FPS: {fps:.2f} - Latency: {current_latency:.2f} ms"
+
+        if terminate_flag:
+            process.terminate()
+            process.wait()
+
+        output, error = process.communicate()
+        if process.returncode != 0:
+            statuses[index] = f"[ERROR] Error capturing stream from {ip}: {error.decode('utf-8')}"
+            return False
+
+        statuses[index] = f"[INFO] Recording completed for {ip}"
+        return True
+
+    except Exception as e:
+        statuses[index] = f"[ERROR] Exception capturing stream from {ip}: {str(e)}"
+        return False
+
+def signal_handler(sig, frame):
+    global terminate_flag
+    terminate_flag = True
+    print("\n[!] Exiting...")
+    for process in processes:
+        if process.poll() is None:
+          process.terminate()
+          process.wait()
+    print("[INFO] All processes terminated. Exiting gracefully.")
+    sys.exit(0)
+
+output_dir = datetime.now().strftime("%d%m")
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
+signal.signal(signal.SIGINT, signal_handler)
+
+def actualizar_pantalla(stdscr):
+    global terminate_flag
+    curses.curs_set(0)
+    stdscr.nodelay(1)
+    stdscr.timeout(1000)
+
+    while not terminate_flag:
+        stdscr.clear()
+        for i, status in enumerate(statuses):
+            stdscr.addstr(i, 0, status)
+        stdscr.refresh()
+
+        if stdscr.getch() == ord('q'):
+            terminate_flag = True
+
+def calcularnomenclatura(ip):
+ #Coger el ultimo numero de la IP que identifica a cada camara
+ #IP ejemplo: 192.168.0.21
+ ultimonum = ip.split('.')[-1]
+ numerocamara = int(ultimonum[-1])
+ if numerocamara == 0 or numerocamara == 1:
+    return 0
+
+ print(f'Numero camara {numerocamara}')
+ posicioncamara= Posiciones(numerocamara).name
+
+ ##Determinar aqui la posicion de camara según su numero
+ ##No.Sujeto_Camara_No.Camara_PosicionCamara_NoRepeticion
+ ## Ejemplo: (S01_Cam03_Diag_R01)
+ nomenclatura = f' S{SUJETO}_Cam{numerocamara}_{posicioncamara}_P{PARTICION}_R{REPETICION} '
+ return nomenclatura.strip()
+
+
+def main(stdscr):
+    global statuses
+    statuses = [""] * (END_INDEX - START_INDEX + 1)
+
+    start_time = time.time() + 5  # Start capture 5 seconds in the future
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=END_INDEX - START_INDEX + 1) as executor:
+        futures = []
+        for i in range(START_INDEX, END_INDEX + 1):
+            ip = f"{IP_BASE}{i}"
+            timestamp = datetime.fromtimestamp(start_time).strftime('%H%M%S.%f')[:-3]
+            print(ip)
+
+            mp4_file = f"{output_dir}/{calcularnomenclatura(ip)}.mp4"
+
+            futures.append(executor.submit(capturar_flujo, ip, mp4_file, i - START_INDEX, start_time))
+
+        while not all(f.done() for f in futures):
+            actualizar_pantalla(stdscr)
+
+        for future in concurrent.futures.as_completed(futures):
+            if future.result():
+                print("[INFO] Capture completed successfully.")
+            else:
+                print("[ERROR] Capture failed for one or more cameras.")
+
+    print("[INFO] All cameras processed.")
+
+curses.wrapper(main)

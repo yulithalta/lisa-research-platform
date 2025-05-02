@@ -1,0 +1,50 @@
+{
+  "session": {
+    "id": 20,
+    "title": "Alcalá",
+    "startTime": "2025-05-01T15:01:50.518Z",
+    "endTime": "2025-05-01T15:06:56.109Z",
+    "devices": {
+      "cameras": [],
+      "sensors": []
+    },
+    "labTitle": "",
+    "researcher": "",
+    "participants": "",
+    "sessionDescription": "",
+    "exportDate": "2025-05-01T15:07:27.459Z",
+    "exactTitle": "Alcalá",
+    "exportInfo": {
+      "version": "1.0",
+      "exportedBy": "user",
+      "platform": "IP Camera and MQTT Monitoring System"
+    },
+    "name": "Alcalá",
+    "duration": {
+      "ms": 305591,
+      "formatted": "0h 5m 5s",
+      "hours": 0,
+      "minutes": 5,
+      "seconds": 5
+    },
+    "fileName": "alcal_.zip"
+  },
+  "formData": {
+    "id": 20,
+    "title": "Alcalá",
+    "researcher": "",
+    "participants": "",
+    "description": "",
+    "startTime": "2025-05-01T15:01:50.518Z",
+    "endTime": "2025-05-01T15:06:56.109Z",
+    "duration": {
+      "ms": 305591,
+      "formatted": "0h 5m 5s",
+      "hours": 0,
+      "minutes": 5,
+      "seconds": 5
+    },
+    "labTitle": "",
+    "tags": []
+  }
+}

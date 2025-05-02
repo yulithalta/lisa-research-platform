@@ -1,0 +1,34 @@
+
+9:41:53 PM [auth] Deserializing user ID: 1
+9:41:53 PM [auth] Request PATCH /api/sessions/6 - Auth: true
+Completing active session 6
+Found 0 recordings to stop for session 6
+Error stopping MQTT data collection for session 6: ReferenceError: require is not defined
+    at <anonymous> (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/server/routes.ts:686:36)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Session 6 completed at Wed Apr 23 2025 21:41:53 GMT+0200 (hora de verano de Europa central)
+[2025-04-23T19:41:53.753Z] [INFO] Guardando estado...
+[2025-04-23T19:41:53.753Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/users.json
+[2025-04-23T19:41:53.753Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/cameras.json
+[2025-04-23T19:41:53.754Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sensors.json
+[2025-04-23T19:41:53.754Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/recordings.json
+[2025-04-23T19:41:53.754Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sensor_events.json
+[2025-04-23T19:41:53.754Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sessions.json
+[2025-04-23T19:41:53.754Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/cameras.json
+[2025-04-23T19:41:53.754Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sensors.json
+[2025-04-23T19:41:53.754Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/recordings.json
+[2025-04-23T19:41:53.755Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sensor_events.json
+[2025-04-23T19:41:53.755Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sessions.json
+[2025-04-23T19:41:53.755Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/cameras.json
+[2025-04-23T19:41:53.755Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sensors.json
+[2025-04-23T19:41:53.755Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/recordings.json
+[2025-04-23T19:41:53.755Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sensor_events.json
+[2025-04-23T19:41:53.755Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sessions.json
+[2025-04-23T19:41:53.755Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/gdpr/consents.json
+[2025-04-23T19:41:53.755Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/gdpr/user_consents.json
+[2025-04-23T19:41:53.763Z] [INFO] Activity logged: sessionUpdated
+9:41:53 PM [express] PATCH /api/sessions/6 200 in 15ms :: {"id":6,"userId":1,"name":"2137","descript…
+9:41:53 PM [auth] Deserializing user ID: 1
+9:41:53 PM [auth] Request GET /api/sessions - Auth: true
+9:41:53 PM [express] GET /api/sessions 200 in 2ms :: [{"id":6,"userId":1,"name":"2137","description"…
+Datos MQTT guardados: 31 tópicos, 31 tópicos únicos

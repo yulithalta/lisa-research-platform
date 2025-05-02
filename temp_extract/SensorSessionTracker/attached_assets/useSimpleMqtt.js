@@ -1,0 +1,288 @@
+// hooks/useSimpleMqtt.js
+import { useState, useEffect, useRef } from "react";
+import mqtt from "mqtt";
+import { useLocalStorage } from "./useLocalStorage";
+
+// Obtener configuración de variables de entorno
+const getBrokerUrls = () => {
+    const envUrls = process.env.REACT_APP_MQTT_BROKER_URLS;
+    return envUrls ? envUrls.split(",") : ["ws://192.168.0.20:9001", "ws://127.0.0.1:9001"];
+};
+
+const getTopics = () => {
+    const envTopics = process.env.REACT_APP_MQTT_TOPICS;
+    return envTopics ? envTopics.split(",") : ["zigbee2mqtt/#"];
+};
+
+// Variables globales para persistencia entre renderizados
+let mqttClient = null;
+let isConnecting = false;
+let topicRegistry = new Set();
+let messagesByTopic = {};
+
+/**
+ * Hook simplificado de MQTT que conecta una vez y actualiza solo cuando hay nuevos datos
+ */
+const useSimpleMqtt = (options = {}) => {
+    // Configuración
+    const brokerUrls = options.brokerUrl || getBrokerUrls();
+    const topics = options.topics || getTopics();
+
+    // Estado
+    const [isConnected, setIsConnected] = useState(false);
+    const [isOfflineMode, setIsOfflineMode] = useLocalStorage("mqtt_offline_mode", false);
+    const [connectionError, setConnectionError] = useState(null);
+    const [availableTopics, setAvailableTopics] = useState([]);
+    const [forceUpdate, setForceUpdate] = useState(0);
+    const [currentBroker, setCurrentBroker] = useState("");
+
+    // Datos almacenados para modo offline
+    const [storedData, setStoredData] = useLocalStorage("mqtt_stored_data", {});
+
+    // Referencia al ciclo de vida del componente
+    const isMounted = useRef(true);
+
+    // Conectar al broker MQTT - una sola vez
+    useEffect(() => {
+        isMounted.current = true;
+
+        // Si estamos en modo offline, usar datos almacenados
+        if (isOfflineMode) {
+            if (Object.keys(storedData).length > 0) {
+                messagesByTopic = { ...storedData };
+                topicRegistry = new Set(Object.keys(storedData));
+                setAvailableTopics(Array.from(topicRegistry));
+
+                // Forzar actualización
+                setForceUpdate(prev => prev + 1);
+            }
+            return;
+        }
+
+        // Función para conectar a un broker
+        const connectToBroker = async (index = 0) => {
+            if (index >= brokerUrls.length) {
+                isConnecting = false;
+                if (isMounted.current) {
+                    setConnectionError("No se pudo conectar a ningún broker MQTT");
+                }
+                return;
+            }
+
+            const brokerUrl = Array.isArray(brokerUrls) ? brokerUrls[index] : brokerUrls;
+
+            try {
+                console.log(`🔄 Conectando a broker MQTT: ${brokerUrl}`);
+
+                // Crear cliente con opciones específicas
+                mqttClient = mqtt.connect(brokerUrl, {
+                    keepalive: 60,
+                    clientId: `zigbee_monitor_${Math.floor(Math.random() * 10000)}`,
+                    clean: true,
+                    reconnectPeriod: 5000,
+                    connectTimeout: 30000,
+                    queueQoSZero: false
+                });
+
+                // Conexión exitosa
+                mqttClient.on("connect", () => {
+                    console.log(`✅ Conectado a broker MQTT: ${brokerUrl}`);
+                    isConnecting = false;
+
+                    if (isMounted.current) {
+                        setIsConnected(true);
+                        setConnectionError(null);
+                        setCurrentBroker(brokerUrl);
+                    }
+
+                    // Suscribirse a cada tópico
+                    topics.forEach(topic => {
+                        mqttClient.subscribe(topic, (err) => {
+                            if (err) {
+                                console.error(`Error al suscribirse a ${topic}:`, err);
+                            } else {
+                                console.log(`✅ Suscrito a tópico: ${topic}`);
+                            }
+                        });
+                    });
+                });
+
+                // Manejar mensajes entrantes
+                mqttClient.on("message", (topic, payload) => {
+                    try {
+                        // Registrar tópico
+                        topicRegistry.add(topic);
+
+                        // Analizar mensaje
+                        const message = JSON.parse(payload.toString());
+
+                        // Procesar valor de contacto
+                        let contactValue = null;
+                        if (typeof message.contact === 'boolean') {
+                            contactValue = message.contact ? 0 : 1;
+                        } else if (['true', 'open', 'on', 0].includes(message.contact)) {
+                            contactValue = 0;
+                        } else if (['false', 'closed', 'off', 1].includes(message.contact)) {
+                            contactValue = 1;
+                        }
+
+                        // Normalizar mensaje
+                        const normalizedMessage = {
+                            x: new Date(),
+                            y: contactValue !== null ? contactValue : (message.contact || 0),
+                            battery: message.battery || 0,
+                            linkquality: message.linkquality || 0
+                        };
+
+                        // Almacenar mensaje por tópico
+                        if (!messagesByTopic[topic]) {
+                            messagesByTopic[topic] = [];
+                        }
+
+                        // Añadir nuevo mensaje y limitar a 20 entradas
+                        messagesByTopic[topic].push(normalizedMessage);
+                        if (messagesByTopic[topic].length > 20) {
+                            messagesByTopic[topic] = messagesByTopic[topic].slice(-20);
+                        }
+
+                        // Actualizar estado si el componente sigue montado
+                        if (isMounted.current) {
+                            setAvailableTopics(Array.from(topicRegistry));
+
+                            // Disparar un único re-renderizado
+                            setForceUpdate(prev => prev + 1);
+
+                            // Almacenar datos cada 30 segundos
+                            if (Date.now() % 30000 < 1000) {
+                                setStoredData({ ...messagesByTopic });
+                            }
+                        }
+                    } catch (error) {
+                        console.warn(`Error al procesar mensaje de ${topic}:`, error);
+                    }
+                });
+
+                // Manejar errores
+                mqttClient.on("error", (err) => {
+                    console.error("Error de conexión MQTT:", err);
+
+                    // Intentar con el siguiente broker
+                    connectToBroker(index + 1);
+
+                    if (isMounted.current) {
+                        setConnectionError(err.message);
+                    }
+                });
+
+                // Manejar desconexión
+                mqttClient.on("offline", () => {
+                    console.log("Cliente MQTT desconectado");
+                    if (isMounted.current) {
+                        setIsConnected(false);
+                    }
+                });
+
+                // Manejar reconexión
+                mqttClient.on("reconnect", () => {
+                    console.log("Intentando reconectar al broker MQTT");
+                });
+            } catch (error) {
+                console.error("Error al inicializar cliente MQTT:", error);
+                isConnecting = false;
+
+                // Intentar con el siguiente broker
+                connectToBroker(index + 1);
+
+                if (isMounted.current) {
+                    setConnectionError(error.message);
+                }
+            }
+        };
+
+        // Conectar solo si no hay conexión activa y no estamos conectando ya
+        if (!mqttClient && !isConnecting) {
+            isConnecting = true;
+            connectToBroker(0);
+        } else if (mqttClient && mqttClient.connected && isMounted.current) {
+            // Ya conectado, actualizar estado
+            setIsConnected(true);
+            setConnectionError(null);
+            setAvailableTopics(Array.from(topicRegistry));
+        }
+
+        // Limpiar
+        return () => {
+            isMounted.current = false;
+            // No desconectamos el cliente al desmontar ya que se comparte globalmente
+        };
+    }, [brokerUrls, topics, isOfflineMode, storedData]);
+
+    // Función manual de reconexión
+    const reconnect = () => {
+        if (mqttClient) {
+            try {
+                // Finalizar conexión existente
+                mqttClient.end(true);
+            } catch (error) {
+                console.error("Error al finalizar conexión MQTT:", error);
+            }
+            mqttClient = null;
+        }
+
+        isConnecting = false;
+        setIsOfflineMode(false);
+
+        // Forzar re-renderizado que disparará useEffect y reconectará
+        setForceUpdate(prev => prev + 1);
+    };
+
+    // Activar/desactivar modo offline
+    const toggleOfflineMode = () => {
+        setIsOfflineMode(prev => {
+            // Si activamos modo offline, guardar datos actuales
+            if (!prev) {
+                setStoredData({ ...messagesByTopic });
+            }
+            return !prev;
+        });
+    };
+
+    // Obtener datos de sensores para tópicos seleccionados
+    const getSensorData = (selectedTopics = null) => {
+        // Si no hay tópicos seleccionados, devolver todos los datos
+        if (!selectedTopics) return messagesByTopic;
+
+        // Filtrar por tópicos seleccionados
+        const filteredData = {};
+        selectedTopics.forEach(topic => {
+            if (messagesByTopic[topic]) {
+                filteredData[topic] = messagesByTopic[topic];
+            }
+        });
+
+        return filteredData;
+    };
+
+    // Guardar datos manualmente
+    const saveData = () => {
+        setStoredData({ ...messagesByTopic });
+        return true;
+    };
+
+    // Devolver la API del hook
+    return {
+        isConnected,
+        isOfflineMode,
+        connectionError,
+        availableTopics,
+        currentBroker,
+        reconnect,
+        toggleOfflineMode,
+        getSensorData,
+        saveData,
+        // Incluir forceUpdate como dependencia para componentes
+        _forceUpdate: forceUpdate
+    };
+};
+
+export default useSimpleMqtt;

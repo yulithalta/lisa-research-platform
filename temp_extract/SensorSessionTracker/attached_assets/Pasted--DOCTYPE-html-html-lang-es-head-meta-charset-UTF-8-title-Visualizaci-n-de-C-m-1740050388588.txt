@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Visualización de Cámaras</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="personalize.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Cámaras en tiempo real</h1>
+
+    <!-- Botones de re-escaneo y recargar -->
+    <div class="section">
+      <button onclick="forceScan()">Forzar re-escaneo</button>
+      <button onclick="loadCameras()">Recargar lista</button>
+    </div>
+
+    <!-- Contenedor de cámaras con Grid -->
+    <div class="container">
+      <div class="container_terminal"></div>
+        <div class="terminal_toolbar">
+            <div class="butt">
+                <button class="btn btn-color"></button>
+                <button class="btn"></button>
+                <button class="btn"></button>
+            </div>
+            <p class="user">Viewer Cam: ~</p>
+        </div>
+        <div class="terminal_body">
+            <div class="terminal_promt">
+              <div id="cameras-container" class="cameras-grid"></div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Añadir cámara manualmente -->
+    <div class="section">
+      <h2 class="section-title">Añadir cámara manualmente</h2>
+      <input type="text" id="ipInput" placeholder="192.168.0.X" />
+      <button onclick="addCamera()">Agregar</button>
+    </div>
+
+    <!-- Eliminar cámara -->
+    <div class="section">
+      <h2 class="section-title">Eliminar cámara</h2>
+      <input type="text" id="ipRemove" placeholder="192.168.0.X" />
+      <button class="danger" onclick="removeCamera()">Eliminar</button>
+    </div>
+  </div>
+
+  <!-- JSMpeg para streaming en canvas -->
+  <script src="jsmpeg/jsmpeg.min.js"></script>
+
+  <!-- Script de lógica -->
+  <script>
+    // Al cargar la página, obtenemos las cámaras disponibles
+    window.onload = () => {
+      loadCameras();
+    };
+
+    // Función para cargar las cámaras
+    async function loadCameras() {
+      try {
+        const res = await fetch('/api/cameras');
+        const cameras = await res.json();
+        const container = document.getElementById('cameras-container');
+        container.innerHTML = ''; // Limpiamos la lista antes de cargar nuevas
+
+        cameras.forEach(cam => {
+          const div = document.createElement('div');
+          div.className = 'camera-card';
+          div.innerHTML = `
+            <p><strong>IP:</strong> ${cam.ip}</p>
+            <p><strong>WS Port:</strong> ${cam.wsPort}</p>
+            <canvas id="canvas-${cam.wsPort}" class="camera-canvas"></canvas>
+          `;
+          container.appendChild(div);
+
+          // Conectamos el WebSocket a cada <canvas>
+          startStream(`ws://${location.hostname}:${cam.wsPort}`, `canvas-${cam.wsPort}`);
+        });
+      } catch (err) {
+        alert('Error al cargar cámaras: ' + err.message);
+      }
+    }
+
+    // Función para inicializar el stream en cada <canvas>
+    function startStream(wsUrl, canvasId) {
+      const canvas = document.getElementById(canvasId);
+      if (!canvas) return;
+
+      new JSMpeg.Player(wsUrl, {
+        canvas: canvas,
+        autoplay: true,
+        loop: true
+      });
+    }
+
+    // Forzar re-escaneo
+    async function forceScan() {
+      try {
+        const res = await fetch('/api/scan');
+        const data = await res.json();
+        alert(data.message);
+        loadCameras(); // Recargamos la lista tras escaneo
+      } catch (err) {
+        alert('Error en re-escaneo: ' + err.message);
+      }
+    }
+
+    // Añadir cámara manualmente
+    async function addCamera() {
+      const ip = document.getElementById('ipInput').value.trim();
+      if (!ip) {
+        return alert('Ingresa una IP válida');
+      }
+      try {
+        const res = await fetch('/api/cameras', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ip })
+        });
+        const data = await res.json();
+        if (res.ok) {
+          alert(`Cámara agregada: ${data.ip} (wsPort=${data.wsPort})`);
+          loadCameras();
+        } else {
+          alert(data.error || data.message);
+        }
+      } catch (err) {
+        alert('Error al añadir cámara: ' + err.message);
+      }
+    }
+
+    // Eliminar cámara
+    async function removeCamera() {
+      const ip = document.getElementById('ipRemove').value.trim();
+      if (!ip) {
+        return alert('Ingresa la IP a eliminar');
+      }
+      try {
+        const res = await fetch('/api/cameras/' + ip, { method: 'DELETE' });
+        const data = await res.json();
+        if (res.ok) {
+          alert(data.message);
+          loadCameras();
+        } else {
+          alert(data.error || data.message);
+        }
+      } catch (err) {
+        alert('Error al eliminar cámara: ' + err.message);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+**Hola equipo de desarrollo,**
+
+Desde la PMO queremos comunicaros los lineamientos y expectativas para la **nueva gran funcionalidad** que integra la gestión de sensores en nuestro dashboard de cámaras. El objetivo es ampliar el alcance de la plataforma sin comprometer la estabilidad ni el rendimiento.
+
+---
+
+### 1. Alcance del nuevo servicio de sensores
+1. **Desarrollo inicial con JSON**  
+   - Se implementará un **repositorio de datos en JSON** de forma provisional, para manejar una cantidad mínima de dispositivos (p.ej. 2 sensores).  
+   - Esto nos permitirá avanzar en la lógica de lectura/escritura y la integración con el front-end React sin bloquear la entrega mientras la BD definitiva se prepara.
+2. **Migración a PostgreSQL**  
+   - Tan pronto la base de datos esté disponible, se llevará a cabo un **plan de migración** para que todos los datos (históricos, configuraciones, eventos) pasen a Postgres.  
+   - Se diseñarán tablas específicas (por ejemplo `sensors` y `sensor_events`) para almacenar los dispositivos y sus registros.  
+   - Mantendremos **transacciones**, **índices** y **bloqueos** adecuados para asegurar la consistencia de datos y el rendimiento en producción.
+
+---
+
+### 2. Recomendaciones técnicas claves
+1. **Capa de abstracción de datos**  
+   - Implementar un **módulo de repositorio** (p.ej. `SensorRepository`) con métodos genéricos (`get_sensors()`, `save_sensor_data()`, etc.).  
+   - Inicialmente usaremos `SensorRepositoryJSON` para archivos. Más adelante sustituiremos internamente la implementación por `SensorRepositoryPostgres` sin que el resto del sistema se vea afectado.
+2. **Control de concurrencia**  
+   - Por ahora, con JSON, asegurar que sólo un proceso/hilo realice escrituras en el archivo para evitar corruptelas.  
+   - En la fase Postgres, se delegan transacciones y bloqueos a la BD, garantizando integridad y alta disponibilidad.
+3. **Estructura JSON y migración**  
+   - Definir un formato JSON claro (versionado, objetos bien estructurados) para facilitar el **script de migración** que insertará datos en la base de datos.  
+   - Evitar acumular históricos enormes en un solo archivo; limitarlo o repartirlo si fuera necesario.
+4. **Integración en el front-end React**  
+   - Los usuarios deben poder ver cámaras y sensores en el **mismo dashboard**, reutilizando el sistema de autenticación y permisos.  
+   - Se sugiere exponer la información vía **API REST** o **WebSocket** para actualizaciones en tiempo real.
+5. **Escalabilidad**  
+   - Una vez en PostgreSQL, podremos manejar cientos de sensores (o más), preservando rendimiento y evitando pérdidas de información.  
+   - Planear índices y particionamiento si las tablas de eventos se vuelven muy grandes.
+
+---
+
+### 3. Fases y entregables
+
+1. **Fase 0 (Preparación)**  
+   - Confirmar requerimientos, diseñar capa de datos con interfaces genéricas y asegurar que la lógica de negocio no dependa directamente de archivos.
+2. **Fase 1 (Implantación con JSON)**  
+   - Crear el servicio de sensores que use `SensorRepositoryJSON`.  
+   - Validar flujos: emparejamiento de pocos dispositivos, actualización de estados, lectura desde el dashboard.
+3. **Fase 2 (Migración a Postgres)**  
+   - Diseño de tablas, índices y relaciones.  
+   - Desarrollo de `SensorRepositoryPostgres` + script de migración para trasladar datos desde los JSON.  
+   - Pruebas de estrés, validación de consistencia y rendimiento.
+4. **Fase 3 (Despliegue y consolidación)**  
+   - Integración final: adopción de la nueva BD, documentación actualizada.  
+   - Monitoreo de la aplicación con mayor volumen de sensores.
+
+---
+
+### 4. Criterios de éxito
+
+- **Integridad de datos**: Sin pérdidas ni duplicaciones de eventos en la transición de JSON a Postgres.  
+- **Escalabilidad**: Poder manejar decenas o cientos de sensores sin saturar ni el servicio ni el dashboard.  
+- **Experiencia de usuario unificada**: Una sola plataforma (React) para gestionar cámaras y sensores, con autenticación centralizada.  
+- **Mantenibilidad**: El cambio de JSON a Postgres debe requerir mínimos ajustes en la lógica global, gracias a la capa de abstracción en el repositorio.
+
+---
+
+Cualquier duda adicional o requerimiento específico, estamos disponibles para coordinar. Confiamos en que estos lineamientos ayuden a **un despliegue ordenado** de la nueva función y sienten bases sólidas para el crecimiento futuro.
+
+**¡Gracias y adelante con el desarrollo!**
+
+**Atentamente,**  
+*PMO - Proyecto de Monitoreo Unificado*

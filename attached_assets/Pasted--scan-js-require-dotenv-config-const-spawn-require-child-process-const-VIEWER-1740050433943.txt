@@ -1,0 +1,114 @@
+// scan.js
+require('dotenv').config();
+const { spawn } = require('child_process');
+
+const VIEWER_USER = process.env.VIEWER_USER || 'viewer';
+const VIEWER_PASS = process.env.VIEWER_PASS || 'viewer123';
+const TIMEOUT_MS  = parseInt(process.env.FFMPEG_TIMEOUT_MS || '3000', 10);
+
+/**
+ * checkRtsp(ip): Verifica si en IP hay una cámara RTSP.
+ * - Lanza ffmpeg ~3s y busca errores en stderr.
+ */
+function checkRtsp(ip) {
+  return new Promise((resolve) => {
+    const rtspUrl = `rtsp://${VIEWER_USER}:${VIEWER_PASS}@${ip}:554/h264Preview_01_sub`;
+
+    // Regex con más mensajes de error
+    const errorRegex = /Connection refused|404 Not Found|timed out|No route to host|Could not find stream|Invalid data|401 Unauthorized|Server returned 400 Bad Request|RTSP input not accepted/i;
+
+    let foundFatalError = false;
+    let finished = false;
+
+    const ffmpeg = spawn('ffmpeg', [
+      '-rtsp_transport', 'tcp',
+      '-i', rtspUrl,
+      '-t', '3',             // probamos 3s de stream
+      '-f', 'null',
+      '-'
+    ]);
+
+    ffmpeg.stderr.on('data', (data) => {
+      const text = data.toString();
+      if (errorRegex.test(text)) {
+        foundFatalError = true;
+      }
+    });
+
+    ffmpeg.on('close', (code) => {
+      if (!finished) {
+        finished = true;
+        // code 0=OK, 1=error leve, etc.
+        if (foundFatalError) {
+          resolve(false);
+        } else {
+          // Podríamos exigir code===0, pero a veces 1 ocurre sin ser error real.
+          resolve(code === 0 || code === 1);
+        }
+      }
+    });
+
+    // Timeout manual
+    setTimeout(() => {
+      if (!finished) {
+        finished = true;
+        ffmpeg.kill('SIGKILL');
+        resolve(false);
+      }
+    }, TIMEOUT_MS);
+  });
+}
+
+/**
+ * Genera IPs entre startIp..endIp (asume /24)
+ */
+function getRangeIPs(startIp, endIp) {
+  const sParts = startIp.split('.');
+  const eParts = endIp.split('.');
+  const base = sParts.slice(0, 3).join('.');
+  const start = parseInt(sParts[3], 10);
+  const end = parseInt(eParts[3], 10);
+
+  const ips = [];
+  for (let i = start; i <= end; i++) {
+    ips.push(`${base}.${i}`);
+  }
+  return ips;
+}
+
+/**
+ * Escanea IPs con concurrencia
+ */
+async function scanRange({ startIp, endIp, concurrency = 5 }) {
+  const ips = getRangeIPs(startIp, endIp);
+  console.log(`Escaneando ${ips.length} IPs [${startIp}..${endIp}], concurrency=${concurrency}`);
+
+  const validIps = [];
+  let index = 0;
+
+  async function processBatch() {
+    const batch = ips.slice(index, index + concurrency);
+    index += concurrency;
+
+    const promises = batch.map(async (ip) => {
+      const ok = await checkRtsp(ip);
+      if (ok) {
+        validIps.push(ip);
+        console.log(`¡Cámara en ${ip}!`);
+      }
+    });
+    await Promise.all(promises);
+
+    if (index < ips.length) {
+      return processBatch();
+    }
+  }
+
+  await processBatch();
+  console.log('Escaneo finalizado. Cámaras encontradas:', validIps);
+  return validIps;
+}
+
+module.exports = {
+  scanRange
+};

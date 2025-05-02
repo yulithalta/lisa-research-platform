@@ -1,0 +1,425 @@
+class LivingLabMonitor {
+    constructor(zigbee, mqtt, state, publishEntityState, eventBus, enableDisableExtension, restartCallback, addExtension, settings, logger) {
+        this.zigbee = zigbee;
+        this.mqtt = mqtt;
+        this.state = state;
+        this.publishEntityState = publishEntityState;
+        this.logger = logger;
+        this.eventBus = eventBus;
+        this.restartCallback = restartCallback;
+        this.lastRestart = 0;
+        
+        // Configuración
+        this.config = {
+            prefix: 'livinglab',
+            sensorType: 'SNZB-04'
+        };
+        
+        // Estado interno
+        this.sensors = {};
+        
+        this.logger.info("✅ Living Lab Monitor v1.4 iniciado");
+        
+        // Programar publicación periódica de sensores cada 5 minutos
+        this.publishInterval = setInterval(() => {
+            this.publishSensorsList();
+        }, 5 * 60 * 1000);
+    }
+
+    start() {
+        try {
+            // Publicar estado inicial
+            this.mqtt.publish(`${this.config.prefix}/status`, JSON.stringify({
+                status: "online",
+                timestamp: Date.now(),
+                version: "1.4"
+            }), { retain: true });
+            
+            // Registrar métodos de callback correctamente con bind para preservar contexto
+            this.eventBus.onMQTTMessage(this, this.onMqttMessage.bind(this));
+            this.eventBus.onDeviceMessage(this, this.onDeviceMessage.bind(this));
+            this.eventBus.onStateChange(this, this.onStateChange.bind(this));
+            
+            // También escuchar el tema de inicialización para detectar nuevos dispositivos
+            this.mqtt.subscribe(`${this.config.prefix}/initialize`);
+            
+            // Publicar la lista de sensores inmediatamente al iniciar
+            setTimeout(() => {
+                this.publishSensorsList();
+            }, 5000);
+            
+            this.logger.info("🚀 Monitorización activa - Esperando eventos");
+        } catch (error) {
+            this.logger.error(`Error al iniciar: ${error.message}`);
+        }
+    }
+
+    stop() {
+        try {
+            // Limpiar el intervalo de publicación
+            if (this.publishInterval) {
+                clearInterval(this.publishInterval);
+            }
+            
+            this.eventBus.removeListeners(this);
+            
+            this.mqtt.publish(`${this.config.prefix}/status`, JSON.stringify({
+                status: "offline",
+                timestamp: Date.now()
+            }), { retain: true });
+            
+            this.logger.info("🛑 Monitorización detenida");
+        } catch (error) {
+            this.logger.error(`Error al detener: ${error.message}`);
+        }
+    }
+
+    // Manejador de cambios de estado
+    onStateChange(data) {
+        try {
+            if (!data || !data.entity) {
+                this.logger.debug("⚠️ Datos de cambio de estado incompletos");
+                return;
+            }
+            
+            const device = data.entity;
+            const ieeeAddr = device.ieeeAddr;
+            const friendlyName = device.name || device.friendlyName;
+            
+            // Log de todos los cambios de estado para depuración
+            this.logger.debug(`📊 Cambio de estado para ${friendlyName}: ${JSON.stringify(data.update)}`);
+            
+            // Si es un Sonoff o ya está en nuestra lista de sensores, procesar
+            if (this.isSonoffSensor(device) || this.sensors[ieeeAddr]) {
+                // Actualizar caché de sensores
+                if (!this.sensors[ieeeAddr]) {
+                    this.sensors[ieeeAddr] = {
+                        ieeeAddr,
+                        friendlyName,
+                        modelID: device.modelID || 'unknown',
+                        model: device.model || 'SNZB-04',
+                        manufacturerName: device.manufacturerName || 'unknown',
+                        firstSeen: Date.now()
+                    };
+                    this.logger.info(`📌 Nuevo sensor registrado: ${friendlyName} [${ieeeAddr}]`);
+                }
+                
+                // Actualizar con nueva información
+                this.sensors[ieeeAddr].lastUpdate = Date.now();
+                
+                // Fusionar el estado actual con la actualización
+                this.sensors[ieeeAddr].state = {
+                    ...(this.sensors[ieeeAddr].state || {}),
+                    ...data.update
+                };
+                
+                // Si hay un cambio en el contacto, publicar evento
+                if (data.update.contact !== undefined) {
+                    const contactOpen = !data.update.contact;
+                    
+                    this.logger.info(`📣 ${friendlyName}: ${contactOpen ? '🔴 ABIERTO' : '🟢 CERRADO'}`);
+                    
+                    // Formato compatible con la versión anterior
+                    const compatibleFormat = {
+                        battery: this.sensors[ieeeAddr].state.battery,
+                        battery_low: this.sensors[ieeeAddr].state.battery_low,
+                        contact: data.update.contact,
+                        device: {
+                            applicationVersion: device.applicationVersion || 5,
+                            dateCode: device.dateCode || "20230630",
+                            friendlyName: friendlyName,
+                            hardwareVersion: device.hardwareVersion || 1,
+                            ieeeAddr: ieeeAddr,
+                            manufacturerID: device.manufacturerID || 0,
+                            manufacturerName: device.manufacturerName || "eWeLink",
+                            model: device.model || "SNZB-04",
+                            networkAddress: device.networkAddress,
+                            powerSource: device.powerSource || "Battery",
+                            type: device.type || "EndDevice",
+                            zclVersion: device.zclVersion || 1
+                        },
+                        linkquality: this.sensors[ieeeAddr].state.linkquality,
+                        voltage: this.sensors[ieeeAddr].state.voltage
+                    };
+                    
+                    // Solo publicar si estamos seguros de que el convertidor externo no lo hará
+                    // Este enfoque evita duplicación de mensajes
+                    if (!this.hasExternalConverter(device)) {
+                        // Publicar en formato compatible
+                        this.mqtt.publish(`${this.config.prefix}/event`, JSON.stringify(compatibleFormat));
+                        
+                        // También publicar en tema específico del dispositivo para facilitar suscripciones
+                        this.mqtt.publish(`${this.config.prefix}/device/${ieeeAddr}`, JSON.stringify(compatibleFormat));
+                        
+                        // Publicar también formato nuevo para clientes que lo usen
+                        this.mqtt.publish(`${this.config.prefix}/event_new`, JSON.stringify({
+                            device: friendlyName,
+                            ieeeAddr: ieeeAddr,
+                            type: "contact",
+                            state: contactOpen ? "open" : "closed",
+                            battery: this.sensors[ieeeAddr].state.battery,
+                            voltage: this.sensors[ieeeAddr].state.voltage,
+                            timestamp: Date.now()
+                        }));
+                    }
+                }
+                
+                // Si se actualiza otro valor importante como batería, publicar también
+                if (data.update.battery !== undefined || data.update.voltage !== undefined) {
+                    this.logger.info(`🔋 ${friendlyName}: Batería ${data.update.battery || this.sensors[ieeeAddr].state.battery}%, Voltaje: ${data.update.voltage || this.sensors[ieeeAddr].state.voltage}V`);
+                }
+                
+                // Publicar la lista actualizada de sensores después de cada cambio
+                this.publishSensorsList();
+            }
+        } catch (error) {
+            this.logger.error(`Error procesando cambio de estado: ${error.message}`);
+        }
+    }
+
+    // Manejador de mensajes MQTT
+    onMqttMessage(data) {
+        try {
+            const topic = data.topic;
+            let message = data.message;
+            
+            this.logger.debug(`Mensaje MQTT recibido: ${topic}`);
+            
+            // Procesar mensaje desde los convertidores externos
+            if (topic === `${this.config.prefix}/initialize`) {
+                try {
+                    const payload = JSON.parse(message);
+                    if (payload && payload.ieeeAddr && payload.model === 'SNZB-04') {
+                        // Marcar este dispositivo como con convertidor externo
+                        if (!this.sensors[payload.ieeeAddr]) {
+                            this.sensors[payload.ieeeAddr] = {
+                                ieeeAddr: payload.ieeeAddr,
+                                friendlyName: payload.device,
+                                modelID: 'DS01',
+                                model: 'SNZB-04',
+                                manufacturerName: 'eWeLink',
+                                firstSeen: Date.now(),
+                                lastUpdate: Date.now(),
+                                state: {},
+                                hasExternalConverter: true
+                            };
+                            this.logger.info(`📌 Nuevo sensor registrado desde convertidor: ${payload.device} [${payload.ieeeAddr}]`);
+                        } else {
+                            // Actualizar flag para dispositivo existente
+                            this.sensors[payload.ieeeAddr].hasExternalConverter = true;
+                            this.logger.info(`🔄 Sensor existente ahora usa convertidor externo: ${payload.device} [${payload.ieeeAddr}]`);
+                        }
+                    }
+                } catch (e) {
+                    this.logger.error(`Error procesando mensaje de inicialización: ${e.message}`);
+                }
+            }
+            
+            // Reaccionar a comandos en nuestro tema
+            if (topic === `${this.config.prefix}/restart`) {
+                const now = Date.now();
+                if (now - this.lastRestart > 60000) {
+                    this.lastRestart = now;
+                    this.logger.info("♻️ Reiniciando Zigbee2MQTT por solicitud API");
+                    
+                    // Publicar confirmación
+                    this.mqtt.publish(`${this.config.prefix}/response`, JSON.stringify({
+                        command: "restart",
+                        status: "executing",
+                        timestamp: Date.now()
+                    }));
+                    
+                    // Reiniciar con retraso
+                    setTimeout(() => {
+                        this.restartCallback();
+                    }, 1000);
+                } else {
+                    this.logger.info("⚠️ Solicitud de reinicio bloqueada (protección de 60s)");
+                    
+                    this.mqtt.publish(`${this.config.prefix}/response`, JSON.stringify({
+                        command: "restart",
+                        status: "rejected",
+                        reason: "throttled",
+                        timestamp: Date.now()
+                    }));
+                }
+            }
+            
+            // Comando para listar sensores
+            if (topic === `${this.config.prefix}/getSensors` || topic === `${this.config.prefix}/get_sensors`) {
+                this.logger.info("📋 Solicitud para listar sensores recibida");
+                this.publishSensorsList();
+            }
+            
+            // Comando para depurar sensores
+            if (topic === `${this.config.prefix}/debug`) {
+                this.logger.info("🔍 Mostrando información de depuración");
+                for (const ieeeAddr in this.sensors) {
+                    const sensor = this.sensors[ieeeAddr];
+                    this.logger.info(`Sensor: ${sensor.friendlyName} [${sensor.ieeeAddr}]`);
+                    this.logger.info(`  Modelo: ${sensor.model}, ModelID: ${sensor.modelID}`);
+                    this.logger.info(`  Estado: ${JSON.stringify(sensor.state)}`);
+                    this.logger.info(`  Convertidor externo: ${sensor.hasExternalConverter ? 'Sí' : 'No'}`);
+                }
+            }
+        } catch (error) {
+            this.logger.error(`Error procesando mensaje MQTT: ${error.message}`);
+        }
+    }
+
+    // Manejador de mensajes de dispositivos
+    onDeviceMessage(data) {
+        try {
+            if (!data || !data.device) return;
+            
+            const device = data.device;
+            const ieeeAddr = device.ieeeAddr;
+            
+            // Log detallado para depuración
+            this.logger.debug(`Evento Zigbee de ${device.friendlyName || ieeeAddr}: tipo=${data.type}, cluster=${data.cluster}`);
+            
+            // Si es un mensaje de zona IAS (típico de sensores de contacto)
+            if (data.type === 'commandStatusChangeNotification' && 
+                data.cluster === 'ssIasZone') {
+                
+                // Zigbee2MQTT ya procesará este evento y emitirá un cambio de estado
+                // que capturaremos en onStateChange
+                this.logger.debug(`Evento de zona IAS recibido de ${device.friendlyName}: ${JSON.stringify(data.data)}`);
+                
+                // Si este dispositivo no está en nuestro registro, agregarlo
+                if (!this.sensors[ieeeAddr] && this.isSonoffSensor(device)) {
+                    const state = this.state.get(device);
+                    
+                    this.sensors[ieeeAddr] = {
+                        ieeeAddr,
+                        friendlyName: device.name || device.friendlyName,
+                        modelID: device.modelID || 'unknown',
+                        model: device.model || 'SNZB-04',
+                        manufacturerName: device.manufacturerName || 'unknown',
+                        firstSeen: Date.now(),
+                        lastUpdate: Date.now(),
+                        state: state || {}
+                    };
+                    
+                    this.logger.info(`📌 Sensor registrado desde evento: ${device.friendlyName} [${ieeeAddr}]`);
+                    
+                    // Publicar lista actualizada
+                    this.publishSensorsList();
+                }
+            }
+        } catch (error) {
+            this.logger.error(`Error procesando mensaje de dispositivo: ${error.message}`);
+        }
+    }
+
+    // Comprobar si un dispositivo tiene convertidor externo
+    hasExternalConverter(device) {
+        const ieeeAddr = device.ieeeAddr;
+        return this.sensors[ieeeAddr] && this.sensors[ieeeAddr].hasExternalConverter === true;
+    }
+
+    // Publica lista completa de sensores
+    publishSensorsList() {
+        try {
+            const sensorsList = [];
+            const compatibleSensors = {};
+            
+            // Recorrer todos los sensores para generar ambos formatos de datos
+            for (const ieeeAddr in this.sensors) {
+                const sensor = this.sensors[ieeeAddr];
+                
+                // Formato nuevo con datos procesados
+                sensorsList.push({
+                    ieeeAddr: sensor.ieeeAddr,
+                    friendlyName: sensor.friendlyName,
+                    modelID: sensor.modelID || 'unknown',
+                    model: sensor.model || 'SNZB-04',
+                    manufacturerName: sensor.manufacturerName || 'unknown',
+                    lastUpdate: sensor.lastUpdate,
+                    firstSeen: sensor.firstSeen,
+                    hasExternalConverter: sensor.hasExternalConverter || false,
+                    state: sensor.state || {},
+                    // Agregar estado procesado para facilitar uso
+                    processed: {
+                        contact: sensor.state.contact !== undefined ? !sensor.state.contact : null, // true = abierto, false = cerrado
+                        battery: sensor.state.battery,
+                        voltage: sensor.state.voltage,
+                        battery_low: sensor.state.battery_low,
+                        lastUpdateHuman: new Date(sensor.lastUpdate).toLocaleString()
+                    }
+                });
+                
+                // Formato compatible con la versión anterior
+                compatibleSensors[ieeeAddr] = {
+                    battery: sensor.state.battery,
+                    battery_low: sensor.state.battery_low,
+                    contact: sensor.state.contact,
+                    device: {
+                        applicationVersion: 5,
+                        dateCode: "20230630",
+                        friendlyName: sensor.friendlyName,
+                        hardwareVersion: 1,
+                        ieeeAddr: ieeeAddr,
+                        manufacturerID: 0,
+                        manufacturerName: sensor.manufacturerName || "eWeLink",
+                        model: sensor.model || "SNZB-04",
+                        networkAddress: 0,
+                        powerSource: "Battery",
+                        type: "EndDevice",
+                        zclVersion: 1
+                    },
+                    linkquality: sensor.state.linkquality,
+                    voltage: sensor.state.voltage
+                };
+            }
+            
+            // Publicar en un tema permanente (retenido)
+            this.mqtt.publish(`${this.config.prefix}/sensors`, JSON.stringify({
+                count: sensorsList.length,
+                sensors: sensorsList,
+                timestamp: Date.now()
+            }), { retain: true });
+            
+            // Publicar en formato compatible con versión anterior
+            this.mqtt.publish(`${this.config.prefix}/sensors_compatible`, JSON.stringify(compatibleSensors), { retain: true });
+            
+            // Objeto simplificado por dispositivo para facilitar la integración con otras plataformas
+            const simpleSensors = {};
+            sensorsList.forEach(sensor => {
+                simpleSensors[sensor.ieeeAddr] = {
+                    name: sensor.friendlyName,
+                    contact: sensor.processed.contact,
+                    battery: sensor.processed.battery,
+                    last_update: sensor.lastUpdate
+                };
+            });
+            
+            // Publicar versión simplificada
+            this.mqtt.publish(`${this.config.prefix}/simple_sensors`, JSON.stringify(simpleSensors), { retain: true });
+            
+            this.logger.info(`📋 Lista de ${sensorsList.length} sensores publicada`);
+            this.logger.debug(`Sensores: ${JSON.stringify(sensorsList.map(s => s.friendlyName))}`);
+        } catch (error) {
+            this.logger.error(`Error publicando lista de sensores: ${error.message}`);
+        }
+    }
+
+    // Verifica si un dispositivo es un sensor Sonoff SNZB-04
+    isSonoffSensor(device) {
+        // Verificación más completa
+        return (
+            // Por modelID
+            device.modelID === 'DS01' || 
+            // Por modelo específico
+            (device.model && device.model.includes('SNZB-04')) ||
+            // Por fabricante y modelID
+            (device.manufacturerName === 'eWeLink' && device.modelID === 'DS01') ||
+            // Por fabricante y modelo
+            (device.manufacturerName === 'eWeLink' && device.model && device.model.includes('SNZB-04')) ||
+            // Por estado (si tiene propiedad de contacto)
+            (this.state.get(device) && this.state.get(device).contact !== undefined)
+        );
+    }
+}
+
+module.exports = LivingLabMonitor;

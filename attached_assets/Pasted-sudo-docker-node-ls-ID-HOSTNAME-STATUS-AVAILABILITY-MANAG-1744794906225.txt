@@ -1,0 +1,100 @@
+sudo docker node ls
+ID                            HOSTNAME           STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+5uinnqfbl1usbgvki4fk4rc8q     mforum-livinglab   Ready     Active         Leader           26.1.3
+kz73jeo8wbihtrc59q3boq9sn *   mforumlivinglab    Ready     Active         Reachable        28.0.4
+mforum@mforumlivinglab:~$ sudo mkdir -p /db/postgres /db/redis /db/backups
+mforum@mforumlivinglab:~$ sudo chmod -R 755 /db
+sudo chown -R 999:999 /db/postgres
+mforum@mforumlivinglab:~$ sudo mkdir -p /opt/lisa/config
+sudo nano /opt/lisa/config/.env
+mforum@mforumlivinglab:~$ sudo nano /opt/lisa/config/database/docker-compose.yml
+mforum@mforumlivinglab:~$ sudo nano /opt/lisa/config/database/deploy-db.sh
+mforum@mforumlivinglab:~$
+mforum@mforumlivinglab:~$ sudo chmod +x /opt/lisa/config/database/deploy-db.sh
+mforum@mforumlivinglab:~$ sudo nano /opt/lisa/config/database/init-schema.sh
+mforum@mforumlivinglab:~$ sudo chmod +x /opt/lisa/config/database/init-schema.sh
+mforum@mforumlivinglab:~$ sudo nano /opt/lisa/config/database/migrate-data.sh
+mforum@mforumlivinglab:~$ sudo chmod +x /opt/lisa/config/database/migrate-data.sh
+mforum@mforumlivinglab:~$ sudo nano /opt/lisa/config/database/README.md
+mforum@mforumlivinglab:~$ sudo docker stack services lisa
+Nothing found in stack: lisa
+mforum@mforumlivinglab:~$ # Crear directorios para PostgreSQL, Redis y backups
+sudo mkdir -p /db/postgres /db/redis /db/backups
+
+# Establecer permisos adecuados
+sudo chmod -R 755 /db
+sudo chown -R 999:999 /db/postgres  # 999 es el usuario postgres dentro del contenedor
+mforum@mforumlivinglab:~$
+mforum@mforumlivinglab:~$ cd /opt/lisa/config/database/
+sudo docker stack deploy -c docker-compose.yml lisa
+Since --detach=false was not specified, tasks will be created in the background.
+In a future release, --detach=false will become the default.
+Creating service lisa_postgres
+Creating service lisa_redis
+Creating service lisa_pgadmin
+mforum@mforumlivinglab:/opt/lisa/config/database$ # Ver los servicios desplegados
+sudo docker stack services lisa
+
+# Ver los logs del servicio de PostgreSQL
+sudo docker service logs lisa_postgres
+
+# Ver los logs del servicio de Redis
+sudo docker service logs lisa_redis
+ID             NAME            MODE         REPLICAS   IMAGE                   PORTS
+ypperyy371dt   lisa_pgadmin    replicated   0/1        dpage/pgadmin4:latest   *:8080->80/tcp
+bowdatedjqqg   lisa_postgres   replicated   0/1        postgres:14-alpine      *:5432->5432/tcp
+4xtk266tz54p   lisa_redis      replicated   0/1        redis:7-alpine          *:6379->6379/tcp
+mforum@mforumlivinglab:/opt/lisa/config/database$ sudo docker stack services lisa
+ID             NAME            MODE         REPLICAS   IMAGE                   PORTS
+ypperyy371dt   lisa_pgadmin    replicated   1/1        dpage/pgadmin4:latest   *:8080->80/tcp
+bowdatedjqqg   lisa_postgres   replicated   1/1        postgres:14-alpine      *:5432->5432/tcp
+4xtk266tz54p   lisa_redis      replicated   1/1        redis:7-alpine          *:6379->6379/tcp
+mforum@mforumlivinglab:/opt/lisa/config/database$ # Ver los contenedores en ejecución
+sudo docker ps | grep postgres
+44a3e340c215   postgres:14-alpine       "docker-entrypoint.s…"   45 seconds ago   Up 44 seconds (healthy)   5432/tcp                                      lisa_postgres.1.wlpbnccbbu5yhe0nrfrogt0w3
+mforum@mforumlivinglab:/opt/lisa/config/database$ # Obtener el ID del contenedor de PostgreSQL
+POSTGRES_CONTAINER=$(sudo docker ps --filter "name=postgres" --format "{{.ID}}")
+
+# Copiar el archivo schema.sql al contenedor
+sudo docker cp /opt/lisa/config/database/schema.sql $POSTGRES_CONTAINER:/tmp/schema.sql
+
+# Ejecutar el script SQL
+sudo docker exec -it $POSTGRES_CONTAINER psql -U lisa_user -d lisa_db -f /tmp/schema.sql
+Successfully copied 10.2kB to 44a3e340c215:/tmp/schema.sql
+CREATE EXTENSION
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE FUNCTION
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE VIEW
+CREATE VIEW
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+INSERT 0 1
+mforum@mforumlivinglab:/opt/lisa/config/database$

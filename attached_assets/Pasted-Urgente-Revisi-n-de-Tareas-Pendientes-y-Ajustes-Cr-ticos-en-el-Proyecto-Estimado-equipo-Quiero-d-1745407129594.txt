@@ -1,0 +1,40 @@
+Urgente: Revisión de Tareas Pendientes y Ajustes Críticos en el Proyecto
+
+Estimado equipo,
+
+Quiero dirigirme a ustedes de manera clara y directa, ya que el cliente está cuestionando seriamente nuestra capacidad para completar este proyecto de manera exitosa, y se requiere que mejoremos significativamente nuestra eficiencia y efectividad en las tareas pendientes.
+
+1. Duplicación en la gráfica "Engagement Time"
+He notado que la gráfica "Engagement Time" ha sido duplicada. Este tipo de errores son inaceptables y deben corregirse de inmediato. Por favor, eliminen una de las gráficas duplicadas y asegúrense de que no haya más inconsistencias en las métricas presentadas.
+
+2. Integridad de los Datos y Sensores
+No podemos permitirnos falsear los datos, especialmente en un living lab médico donde la precisión y veracidad de la información es crítica. El número y listado de sensores debe solicitarse directamente a zigbee2mqtt, para obtener sus nombres y números totales. Esto es esencial para poder trabajar con los sensores en el apartado de sesiones. Actualmente no se muestra ningún sensor y esto debe resolverse de inmediato.
+
+Además, es crucial que podamos visualizar el estado real de la conexión con MQTT. Esta es una funcionalidad básica que debe estar operativa y no podemos seguir adelante sin esta verificación fundamental.
+
+3. Implementación de Ping para las Cámaras
+El cliente nos ha solicitado que implementemos la funcionalidad de comprobación de cámaras. Esta verificación debe realizarse en los siguientes apartados:
+
+New Session (Tabla de Cámaras).
+
+Device Management > Cameras (Botón "Check").
+
+Para esta funcionalidad, nos han dado la siguiente pista en los test: Solo 1 de las 5 cámaras registradas estará activa en cada sesión de prueba. Aunque no sabemos cuál será, el cliente nos ha proporcionado un pantallazo indicando que la cámara activa está en funcionamiento. Esta funcionalidad de comprobación de estado de las cámaras es vital para el éxito de las pruebas.
+
+Si no implementamos este tipo de checks de manera eficaz y eficiente, tanto para MQTT como para las cámaras, las pruebas no pasarán y el cliente no aceptará el proyecto.
+
+4. Recordatorio Importante
+Quiero reiterar la importancia de ser efectivos y eficientes en la implementación de estas tareas. El cliente ha dejado claro que si no vemos avances tangibles en estas áreas, se planteará seriamente continuar con un proyecto mayor. Estamos en una situación crítica, y es imperativo que nos alineemos y entreguemos lo que se requiere de manera profesional y dentro de los plazos establecidos.
+
+Acciones Inmediatas:
+Corregir la duplicación de la gráfica "Engagement Time".
+
+Solicitar y mostrar el listado de sensores desde zigbee2mqtt.
+
+Asegurarse de que la visualización del estado de la conexión con MQTT esté operativa.
+
+Implementar la funcionalidad de comprobación de las cámaras con el comportamiento mencionado.
+
+Confío en que podremos superar estos obstáculos si trabajamos de manera concentrada y priorizamos estas tareas críticas. Estoy a su disposición para cualquier duda o aclaración.
+
+Saludos,

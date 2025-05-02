@@ -1,0 +1,2453 @@
+[
+  {
+    "timestamp": "2025-03-18T19:10:12.246Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-18T19:10:12.242Z"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-03-19T08:06:15.746Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T08:06:15.741Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T08:50:17.584Z",
+    "userId": 1,
+    "activityType": "cameraCreated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "disconnected",
+        "lastSeen": null,
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        }
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T08:50:26.135Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T08:50:26.134Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T08:50:34.735Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T08:50:34.734Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T08:55:16.954Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T08:55:16.952Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T09:19:23.396Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T09:19:23.393Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T09:38:05.559Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T09:38:05.556Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T10:02:15.082Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T10:02:15.081Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T10:03:14.186Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T10:03:14.184Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T10:08:56.213Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T10:08:56.204Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T10:09:32.475Z",
+    "userId": 1,
+    "activityType": "cameraCreated",
+    "details": {
+      "camera": {
+        "name": "c31",
+        "ipAddress": "192.168.0.31",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 2,
+        "isRecording": false,
+        "status": "disconnected",
+        "lastSeen": null,
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        }
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T10:09:43.652Z",
+    "userId": 1,
+    "activityType": "cameraCreated",
+    "details": {
+      "camera": {
+        "name": "c32",
+        "ipAddress": "192.168.0.32",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 3,
+        "isRecording": false,
+        "status": "disconnected",
+        "lastSeen": null,
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        }
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T10:09:51.058Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c31",
+        "ipAddress": "192.168.0.31",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 2,
+        "isRecording": false,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T10:09:51.057Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "c31"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T10:09:58.187Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c32",
+        "ipAddress": "192.168.0.32",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 3,
+        "isRecording": false,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T10:09:58.186Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "c32_livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T10:17:06.996Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T10:17:06.991Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T10:19:41.070Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T10:19:41.067Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T10:24:26.173Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T10:24:26.171Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T10:27:37.381Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T10:27:37.373Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T10:27:51.411Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": true,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T10:27:51.410Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T10:27:51.414Z",
+    "userId": 1,
+    "activityType": "recordingCreated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/session_ec973e2c-cf2c-4d0b-8b3f-f098860db02b-1-2025-03-19T10-27-51-410Z.mp4",
+        "startTime": "2025-03-19T10:27:51.410Z",
+        "title": "session_ec973e2c-cf2c-4d0b-8b3f-f098860db02b 2025-03-19T10-27-51-410Z",
+        "id": 1,
+        "status": "recording",
+        "endTime": null,
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T10:28:23.900Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/session_ec973e2c-cf2c-4d0b-8b3f-f098860db02b-1-2025-03-19T10-27-51-410Z.mp4",
+        "startTime": "2025-03-19T10:27:51.410Z",
+        "title": "session_ec973e2c-cf2c-4d0b-8b3f-f098860db02b 2025-03-19T10-27-51-410Z",
+        "id": 1,
+        "status": "completed",
+        "endTime": "2025-03-19T10:28:23.898Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T10:28:23.996Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/session_ec973e2c-cf2c-4d0b-8b3f-f098860db02b-1-2025-03-19T10-27-51-410Z.mp4",
+        "startTime": "2025-03-19T10:27:51.410Z",
+        "title": "session_ec973e2c-cf2c-4d0b-8b3f-f098860db02b 2025-03-19T10-27-51-410Z",
+        "id": 1,
+        "status": "completed",
+        "endTime": "2025-03-19T10:28:23.995Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T19:40:36.383Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T19:40:36.376Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T19:40:55.894Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": true,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T19:40:55.893Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T19:40:55.895Z",
+    "userId": 1,
+    "activityType": "recordingCreated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/session_a896717a-2124-402d-b50d-6ebe6693937c-1-2025-03-19T19-40-55-892Z.mp4",
+        "startTime": "2025-03-19T19:40:55.893Z",
+        "title": "session_a896717a-2124-402d-b50d-6ebe6693937c 2025-03-19T19-40-55-892Z",
+        "id": 2,
+        "status": "recording",
+        "endTime": null,
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T19:40:59.645Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/session_a896717a-2124-402d-b50d-6ebe6693937c-1-2025-03-19T19-40-55-892Z.mp4",
+        "startTime": "2025-03-19T19:40:55.893Z",
+        "title": "session_a896717a-2124-402d-b50d-6ebe6693937c 2025-03-19T19-40-55-892Z",
+        "id": 2,
+        "status": "completed",
+        "endTime": "2025-03-19T19:40:59.644Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T19:40:59.650Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/session_a896717a-2124-402d-b50d-6ebe6693937c-1-2025-03-19T19-40-55-892Z.mp4",
+        "startTime": "2025-03-19T19:40:55.893Z",
+        "title": "session_a896717a-2124-402d-b50d-6ebe6693937c 2025-03-19T19-40-55-892Z",
+        "id": 2,
+        "status": "completed",
+        "endTime": "2025-03-19T19:40:59.649Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T22:05:18.908Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T22:05:18.904Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T22:05:34.187Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T22:05:34.185Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T22:05:38.701Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T22:05:38.700Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T22:06:20.357Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T22:06:20.356Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T22:06:22.246Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T22:06:22.245Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:00:35.364Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T23:00:35.362Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:02:18.280Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": true,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T23:02:18.278Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:02:18.283Z",
+    "userId": 1,
+    "activityType": "recordingCreated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/session_b3e7f9ed-cbd6-4d81-9057-20bf23821d19-1-2025-03-19T23-02-18-277Z.mp4",
+        "startTime": "2025-03-19T23:02:18.277Z",
+        "title": "session_b3e7f9ed-cbd6-4d81-9057-20bf23821d19 2025-03-19T23-02-18-277Z",
+        "id": 3,
+        "status": "recording",
+        "endTime": null,
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:02:18.317Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/session_b3e7f9ed-cbd6-4d81-9057-20bf23821d19-1-2025-03-19T23-02-18-277Z.mp4",
+        "startTime": "2025-03-19T23:02:18.277Z",
+        "title": "session_b3e7f9ed-cbd6-4d81-9057-20bf23821d19 2025-03-19T23-02-18-277Z",
+        "id": 3,
+        "status": "error",
+        "endTime": "2025-03-19T23:02:18.316Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:02:18.322Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/session_b3e7f9ed-cbd6-4d81-9057-20bf23821d19-1-2025-03-19T23-02-18-277Z.mp4",
+        "startTime": "2025-03-19T23:02:18.277Z",
+        "title": "session_b3e7f9ed-cbd6-4d81-9057-20bf23821d19 2025-03-19T23-02-18-277Z",
+        "id": 3,
+        "status": "error",
+        "endTime": "2025-03-19T23:02:18.321Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:02:21.968Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-19T23:02:21.967Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 1,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:02:28.604Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-19T23:02:28.603Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 2,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:02:45.725Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-19T23:02:45.724Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 3,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:02:46.476Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-19T23:02:46.475Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 4,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:02:46.783Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-19T23:02:46.782Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 5,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:02:46.976Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-19T23:02:46.975Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 6,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:03:32.713Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": true,
+        "status": "connected",
+        "lastSeen": "2025-03-19T23:03:32.712Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 6,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:03:32.714Z",
+    "userId": 1,
+    "activityType": "recordingCreated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/session_2ba738a6-d392-4933-be22-1eb448710aa9-1-2025-03-19T23-03-32-712Z.mp4",
+        "startTime": "2025-03-19T23:03:32.712Z",
+        "title": "session_2ba738a6-d392-4933-be22-1eb448710aa9 2025-03-19T23-03-32-712Z",
+        "id": 4,
+        "status": "recording",
+        "endTime": null,
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:03:32.732Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/session_2ba738a6-d392-4933-be22-1eb448710aa9-1-2025-03-19T23-03-32-712Z.mp4",
+        "startTime": "2025-03-19T23:03:32.712Z",
+        "title": "session_2ba738a6-d392-4933-be22-1eb448710aa9 2025-03-19T23-03-32-712Z",
+        "id": 4,
+        "status": "error",
+        "endTime": "2025-03-19T23:03:32.731Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:03:32.735Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/session_2ba738a6-d392-4933-be22-1eb448710aa9-1-2025-03-19T23-03-32-712Z.mp4",
+        "startTime": "2025-03-19T23:03:32.712Z",
+        "title": "session_2ba738a6-d392-4933-be22-1eb448710aa9 2025-03-19T23-03-32-712Z",
+        "id": 4,
+        "status": "error",
+        "endTime": "2025-03-19T23:03:32.734Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:03:53.904Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-19T23:03:53.903Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 7,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:26:46.766Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-19T23:26:46.764Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:33.515Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-19T23:27:33.514Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 8,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:58.422Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": true,
+        "status": "connected",
+        "lastSeen": "2025-03-19T23:27:58.420Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 8,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:58.426Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c31",
+        "ipAddress": "192.168.0.31",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 2,
+        "isRecording": true,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T23:27:58.424Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "c31"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:58.436Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c32",
+        "ipAddress": "192.168.0.32",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 3,
+        "isRecording": true,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T23:27:58.434Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "c32_livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:58.440Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": true,
+        "status": "connected",
+        "lastSeen": "2025-03-19T23:27:58.437Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 8,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:58.447Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c31",
+        "ipAddress": "192.168.0.31",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 2,
+        "isRecording": true,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T23:27:58.441Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "c31"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:58.448Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c32",
+        "ipAddress": "192.168.0.32",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 3,
+        "isRecording": true,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T23:27:58.447Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "c32_livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:58.450Z",
+    "userId": 1,
+    "activityType": "recordingCreated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/livinglab-1-2025-03-19T23-27-58-437Z.mp4",
+        "startTime": "2025-03-19T23:27:58.437Z",
+        "title": "livinglab 2025-03-19T23-27-58-437Z",
+        "id": 5,
+        "status": "recording",
+        "endTime": null,
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:58.459Z",
+    "userId": 1,
+    "activityType": "recordingCreated",
+    "details": {
+      "recording": {
+        "cameraId": 2,
+        "filePath": "/home/runner/workspace/recordings/c31-2-2025-03-19T23-27-58-437Z.mp4",
+        "startTime": "2025-03-19T23:27:58.437Z",
+        "title": "c31 2025-03-19T23-27-58-437Z",
+        "id": 6,
+        "status": "recording",
+        "endTime": null,
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:58.468Z",
+    "userId": 1,
+    "activityType": "recordingCreated",
+    "details": {
+      "recording": {
+        "cameraId": 3,
+        "filePath": "/home/runner/workspace/recordings/c32_livinglab-3-2025-03-19T23-27-58-437Z.mp4",
+        "startTime": "2025-03-19T23:27:58.437Z",
+        "title": "c32_livinglab 2025-03-19T23-27-58-437Z",
+        "id": 7,
+        "status": "recording",
+        "endTime": null,
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:58.504Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/livinglab-1-2025-03-19T23-27-58-437Z.mp4",
+        "startTime": "2025-03-19T23:27:58.437Z",
+        "title": "livinglab 2025-03-19T23-27-58-437Z",
+        "id": 5,
+        "status": "error",
+        "endTime": "2025-03-19T23:27:58.503Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:58.511Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 2,
+        "filePath": "/home/runner/workspace/recordings/c31-2-2025-03-19T23-27-58-437Z.mp4",
+        "startTime": "2025-03-19T23:27:58.437Z",
+        "title": "c31 2025-03-19T23-27-58-437Z",
+        "id": 6,
+        "status": "error",
+        "endTime": "2025-03-19T23:27:58.510Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:58.515Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 3,
+        "filePath": "/home/runner/workspace/recordings/c32_livinglab-3-2025-03-19T23-27-58-437Z.mp4",
+        "startTime": "2025-03-19T23:27:58.437Z",
+        "title": "c32_livinglab 2025-03-19T23-27-58-437Z",
+        "id": 7,
+        "status": "error",
+        "endTime": "2025-03-19T23:27:58.513Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:58.522Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 3,
+        "filePath": "/home/runner/workspace/recordings/c32_livinglab-3-2025-03-19T23-27-58-437Z.mp4",
+        "startTime": "2025-03-19T23:27:58.437Z",
+        "title": "c32_livinglab 2025-03-19T23-27-58-437Z",
+        "id": 7,
+        "status": "error",
+        "endTime": "2025-03-19T23:27:58.518Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:58.526Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 2,
+        "filePath": "/home/runner/workspace/recordings/c31-2-2025-03-19T23-27-58-437Z.mp4",
+        "startTime": "2025-03-19T23:27:58.437Z",
+        "title": "c31 2025-03-19T23-27-58-437Z",
+        "id": 6,
+        "status": "error",
+        "endTime": "2025-03-19T23:27:58.522Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:27:58.528Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/livinglab-1-2025-03-19T23-27-58-437Z.mp4",
+        "startTime": "2025-03-19T23:27:58.437Z",
+        "title": "livinglab 2025-03-19T23-27-58-437Z",
+        "id": 5,
+        "status": "error",
+        "endTime": "2025-03-19T23:27:58.527Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:28:05.892Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-19T23:28:05.890Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 8,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:28:05.894Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c31",
+        "ipAddress": "192.168.0.31",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 2,
+        "isRecording": false,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T23:28:05.892Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "c31"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:28:05.896Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c32",
+        "ipAddress": "192.168.0.32",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 3,
+        "isRecording": false,
+        "status": "disconnected",
+        "lastSeen": "2025-03-19T23:28:05.895Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "c32_livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-19T23:28:32.188Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-19T23:28:32.187Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 9,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-23T00:27:46.289Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-23T00:27:46.287Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-23T00:28:01.881Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-23T00:28:01.877Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 10,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-23T00:44:37.201Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-23T00:44:37.196Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 11,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-23T00:44:46.467Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-23T00:44:46.466Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 12,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-23T09:05:13.074Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-23T09:05:13.066Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-23T09:06:02.735Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": true,
+        "status": "connected",
+        "lastSeen": "2025-03-23T09:06:02.733Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 12,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-23T09:06:02.742Z",
+    "userId": 1,
+    "activityType": "recordingCreated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/livinglab-1-2025-03-23T09-06-02-733Z.mp4",
+        "startTime": "2025-03-23T09:06:02.733Z",
+        "title": "livinglab 2025-03-23T09-06-02-733Z",
+        "id": 8,
+        "status": "recording",
+        "endTime": null,
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-23T09:06:02.764Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/livinglab-1-2025-03-23T09-06-02-733Z.mp4",
+        "startTime": "2025-03-23T09:06:02.733Z",
+        "title": "livinglab 2025-03-23T09-06-02-733Z",
+        "id": 8,
+        "status": "error",
+        "endTime": "2025-03-23T09:06:02.763Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-23T09:06:02.767Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/livinglab-1-2025-03-23T09-06-02-733Z.mp4",
+        "startTime": "2025-03-23T09:06:02.733Z",
+        "title": "livinglab 2025-03-23T09-06-02-733Z",
+        "id": 8,
+        "status": "error",
+        "endTime": "2025-03-23T09:06:02.766Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-23T09:06:48.849Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-23T09:06:48.846Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 13,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-23T09:32:12.495Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-23T09:32:12.491Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-23T09:50:49.168Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-23T09:50:49.166Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-23T12:00:18.771Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-23T12:00:18.768Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-25T11:28:13.496Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-25T11:28:13.494Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-25T11:29:11.038Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": true,
+        "status": "connected",
+        "lastSeen": "2025-03-25T11:29:11.035Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 13,
+          "connectionErrors": 0,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-25T11:29:11.046Z",
+    "userId": 1,
+    "activityType": "recordingCreated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/cam1-1-2025-03-25T11-29-11-035Z.mp4",
+        "startTime": "2025-03-25T11:29:11.035Z",
+        "title": "cam1 2025-03-25T11-29-11-035Z",
+        "id": 9,
+        "status": "recording",
+        "endTime": null,
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-25T11:29:11.065Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "recording",
+        "lastSeen": "2025-03-25T11:29:11.063Z",
+        "metrics": {
+          "fps": 0,
+          "bitrate": 0,
+          "resolution": "",
+          "uptime": 0,
+          "connectionErrors": 1,
+          "lastErrorTime": "2025-03-25T11:29:11.063Z",
+          "lastErrorMessage": "Cámara desconectada"
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-25T11:29:11.076Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/cam1-1-2025-03-25T11-29-11-035Z.mp4",
+        "startTime": "2025-03-25T11:29:11.035Z",
+        "title": "cam1 2025-03-25T11-29-11-035Z",
+        "id": 9,
+        "status": "error",
+        "endTime": "2025-03-25T11:29:11.071Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-25T11:29:11.079Z",
+    "activityType": "recordingUpdated",
+    "details": {
+      "recording": {
+        "cameraId": 1,
+        "filePath": "/home/runner/workspace/recordings/cam1-1-2025-03-25T11-29-11-035Z.mp4",
+        "startTime": "2025-03-25T11:29:11.035Z",
+        "title": "cam1 2025-03-25T11-29-11-035Z",
+        "id": 9,
+        "status": "error",
+        "endTime": "2025-03-25T11:29:11.078Z",
+        "description": null,
+        "tags": [],
+        "aiAnalysis": null
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-25T11:33:44.221Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-25T11:33:44.217Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 1,
+          "connectionErrors": 1,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-25T22:01:55.528Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-25T22:01:55.526Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-25T22:13:00.723Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-25T22:13:00.712Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-25T22:39:15.683Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-25T22:39:15.677Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-25T23:45:45.090Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-25T23:45:45.089Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-26T01:17:48.155Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-26T01:17:48.152Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-26T02:09:13.719Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-26T02:09:13.717Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-26T02:54:15.352Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-26T02:54:15.342Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-26T03:00:52.132Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-26T03:00:52.126Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-26T03:08:53.522Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-26T03:08:53.518Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-26T03:12:02.915Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-26T03:12:02.913Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 2,
+          "connectionErrors": 1,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-26T03:12:13.465Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-26T03:12:13.463Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 3,
+          "connectionErrors": 1,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-26T03:12:50.354Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-26T03:12:50.353Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 4,
+          "connectionErrors": 1,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-26T03:13:06.737Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-26T03:13:06.736Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 5,
+          "connectionErrors": 1,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-26T03:13:08.777Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-26T03:13:08.776Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 6,
+          "connectionErrors": 1,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-31T22:00:59.490Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-31T22:00:59.481Z"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-31T22:01:07.705Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-31T22:01:07.703Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 7,
+          "connectionErrors": 1,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-31T22:01:12.364Z",
+    "userId": 1,
+    "activityType": "cameraUpdated",
+    "details": {
+      "camera": {
+        "name": "c35",
+        "ipAddress": "192.168.0.35",
+        "username": "admin",
+        "password": "admin123",
+        "streamPath": "h264Preview_01_main",
+        "port": "554",
+        "userId": 1,
+        "id": 1,
+        "isRecording": false,
+        "status": "connected",
+        "lastSeen": "2025-03-31T22:01:12.363Z",
+        "metrics": {
+          "fps": 30,
+          "bitrate": 2000,
+          "resolution": "1920x1080",
+          "uptime": 8,
+          "connectionErrors": 1,
+          "lastErrorTime": null,
+          "lastErrorMessage": null
+        },
+        "recordingPrefix": "livinglab"
+      }
+    },
+    "duration": 1
+  },
+  {
+    "timestamp": "2025-03-31T22:12:04.048Z",
+    "userId": 1,
+    "activityType": "userUpdated",
+    "details": {
+      "user": {
+        "username": "user",
+        "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+        "id": 1,
+        "lastLogin": "2025-03-31T22:12:04.046Z"
+      }
+    },
+    "duration": 1
+  }
+]

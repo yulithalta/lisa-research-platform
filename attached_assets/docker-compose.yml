@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  # Aplicación React Zigbee Dashboard
+  zigbee-dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: zigbee-live-dashboard
+    ports:
+      - "3002:3002"
+    volumes:
+      - ./data:/app/data
+      - ./src/topicsConfig.json:/app/build/topicsConfig.json
+    environment:
+      - NODE_ENV=production
+      - REACT_APP_MQTT_BROKER_URLS=ws://mqtt-broker:9001,ws://192.168.0.20:9001
+      - REACT_APP_MQTT_TOPICS=zigbee2mqtt/#
+    restart: unless-stopped
+    depends_on:
+      - mqtt-broker
+    networks:
+      - zigbee-network

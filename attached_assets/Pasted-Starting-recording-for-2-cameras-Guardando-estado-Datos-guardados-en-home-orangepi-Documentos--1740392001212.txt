@@ -1,0 +1,45 @@
+Starting recording for 2 cameras
+Guardando estado...
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/users.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/cameras.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/recordings.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/sensors.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/sensor_events.json
+Guardando estado...
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/users.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/cameras.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/recordings.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/sensors.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/sensor_events.json
+Starting recording for camera 1
+Output path: /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/recordings/cam31-1-2025-02-24T10-11-26-580Z.mp4
+Starting recording for camera 2
+Output path: /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/recordings/cam33-2-2025-02-24T10-11-26-581Z.mp4
+Error in startRecording: Error: Cannot start recording: camera 1 is disconnected
+    at MemStorage.createRecording (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/storage.ts:311:13)
+    at async startRecording (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:203:23)
+    at async <anonymous> (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:320:16)
+    at async Promise.all (index 0)
+    at async startAllRecordings (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:327:21)
+    at async <anonymous> (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:542:26)
+Error in startRecording: Error: Cannot start recording: camera 2 is disconnected
+    at MemStorage.createRecording (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/storage.ts:311:13)
+    at async startRecording (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:203:23)
+    at async <anonymous> (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:320:16)
+    at async Promise.all (index 1)
+    at async startAllRecordings (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:327:21)
+    at async <anonymous> (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:542:26)
+Error starting recording for camera 1: Error: Cannot start recording: camera 1 is disconnected
+    at MemStorage.createRecording (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/storage.ts:311:13)
+    at async startRecording (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:203:23)
+    at async <anonymous> (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:320:16)
+    at async Promise.all (index 0)
+    at async startAllRecordings (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:327:21)
+    at async <anonymous> (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:542:26)
+Error starting recording for camera 2: Error: Cannot start recording: camera 2 is disconnected
+    at MemStorage.createRecording (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/storage.ts:311:13)
+    at async startRecording (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:203:23)
+    at async <anonymous> (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:320:16)
+    at async Promise.all (index 1)
+    at async startAllRecordings (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:327:21)
+    at async <anonymous> (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/routes.ts:542:26)

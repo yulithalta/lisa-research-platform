@@ -1,0 +1,62 @@
+// Tarea para detectar alertas de sensores fuera de rango
+// Este script monitorea los datos de sensores y genera alertas cuando los valores
+// exceden los umbrales definidos.
+
+// Definir las variables de la base de datos
+var db = 'mqtt_data'
+
+// Definir los umbrales para diferentes tipos de sensores
+var temp_high = 30.0
+var temp_low = 10.0
+var humidity_high = 80.0
+var humidity_low = 20.0
+var motion_duration = 10m
+
+// Alertas para sensores de temperatura
+var temp_data = stream
+    |from()
+        .database(db)
+        .measurement('zigbee_sensor_state')
+        .groupBy('topic')
+    |filter(lambda: "temperature" != 0)
+    |window()
+        .period(5m)
+        .every(1m)
+    |alert()
+        .id('{{ index .Tags "topic" }}/temp')
+        .message('Temperatura fuera de rango: {{ .Level }} - Valor: {{ index .Fields "temperature" }}')
+        .warn(lambda: "temperature" > temp_high OR "temperature" < temp_low)
+        .crit(lambda: "temperature" > (temp_high + 10) OR "temperature" < (temp_low - 10))
+        .details('')
+        .topic('lisa/alerts/temperature')
+
+// Alertas para sensores de humedad
+var humidity_data = stream
+    |from()
+        .database(db)
+        .measurement('zigbee_sensor_state')
+        .groupBy('topic')
+    |filter(lambda: "humidity" != 0)
+    |window()
+        .period(5m)
+        .every(1m)
+    |alert()
+        .id('{{ index .Tags "topic" }}/humidity')
+        .message('Humedad fuera de rango: {{ .Level }} - Valor: {{ index .Fields "humidity" }}')
+        .warn(lambda: "humidity" > humidity_high OR "humidity" < humidity_low)
+        .crit(lambda: "humidity" > (humidity_high + 10) OR "humidity" < (humidity_low - 10))
+        .details('')
+        .topic('lisa/alerts/humidity')
+
+// Alertas para sensores de movimiento prolongado
+var motion_data = stream
+    |from()
+        .database(db)
+        .measurement('zigbee_sensor_state')
+        .groupBy('topic')
+    |filter(lambda: "occupancy" == TRUE OR "motion" == TRUE)
+    |deadman(0.0, motion_duration)
+        .id('{{ index .Tags "topic" }}/motion_extended')
+        .message('Movimiento detectado durante un periodo extendido en {{ index .Tags "topic" }}')
+        .level('WARNING')
+        .topic('lisa/alerts/motion')

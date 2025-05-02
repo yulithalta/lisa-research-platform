@@ -1,0 +1,164 @@
+Parece que estás enfrentando varios problemas diferentes relacionados con la conexión WebSocket, errores de autenticación, y algunos problemas en React. Vamos a abordar cada uno para tratar de solucionarlos.
+
+### **Problema 1: Error de WebSocket**
+
+El error de WebSocket:
+
+```plaintext
+WebSocket connection to 'ws://localhost:undefined/?token=FKCg7xgG24us' failed: 
+```
+
+Este error ocurre porque la URL del WebSocket está mal formada. La URL `ws://localhost:undefined/?token=FKCg7xgG24us` tiene un valor de `undefined` en lugar de un puerto o dirección específica. Esto puede suceder si el código que genera la URL del WebSocket no está configurado correctamente.
+
+#### Solución:
+1. Asegúrate de que la URL del WebSocket esté configurada correctamente. En tu código, puede haber algo así:
+
+   ```js
+   const wsUrl = `ws://${window.location.hostname}:${port}/?token=${token}`;
+   ```
+
+   Asegúrate de que `port` y `token` no sean `undefined`.
+
+2. Verifica si el puerto de WebSocket está correctamente configurado en tu servidor MQTT. Por ejemplo, si estás usando **Mosquitto** como broker MQTT, deberías tener configurado algo como esto en el archivo de configuración `mosquitto.conf`:
+
+   ```bash
+   listener 9001
+   protocol websockets
+   ```
+
+3. Si tu aplicación está configurada para trabajar con un **token** en la URL, asegúrate de que la variable `token` esté correctamente definida antes de intentar conectarte.
+
+   Ejemplo:
+
+   ```js
+   const token = "FKCg7xgG24us"; // Asegúrate de que este token esté presente
+   const wsUrl = `ws://localhost:9001/?token=${token}`;
+   ```
+
+### **Problema 2: Error de autenticación (401 Unauthorized)**
+
+El error:
+
+```plaintext
+Failed to load resource: the server responded with a status of 401 (Unauthorized)
+```
+
+Este error indica que tu aplicación está intentando acceder a un recurso (probablemente relacionado con una API o WebSocket) sin la autorización adecuada.
+
+#### Solución:
+1. Verifica las credenciales de autenticación que estás utilizando en la aplicación para asegurarte de que son correctas.
+   
+2. Asegúrate de que el token de autenticación esté correctamente configurado en el cliente. Si estás utilizando un token de autenticación para hacer peticiones, este token debería ser pasado de manera correcta en las cabeceras o en la URL de la petición.
+
+   Ejemplo de cómo incluir un token de autenticación:
+
+   ```js
+   fetch('https://yourapi.com/endpoint', {
+       headers: {
+           'Authorization': `Bearer ${token}`
+       }
+   });
+   ```
+
+3. Si estás trabajando con una API que requiere autenticación, revisa que el servidor esté configurado correctamente para aceptar esos tokens o credenciales.
+
+### **Problema 3: Error de React - Fewer Hooks than Expected**
+
+El error:
+
+```plaintext
+Uncaught Error: Rendered fewer hooks than expected. This may be caused by an accidental early return statement.
+```
+
+Este error es común en aplicaciones React cuando hay un **early return** dentro de un componente que interrumpe el ciclo de renderizado y hace que los hooks se llamen de manera incorrecta.
+
+#### Solución:
+1. Verifica que no tengas retornos anticipados (`return`) que estén interrumpiendo el ciclo de renderizado antes de que todos los hooks sean llamados. Por ejemplo:
+
+   ```js
+   if (!user) return null; // Esto puede causar el error si está antes de los hooks
+   ```
+
+   En su lugar, asegúrate de que el ciclo de renderizado esté completo y que los hooks se llamen siempre en el mismo orden. Puedes reorganizar tu componente para evitar los retornos prematuros.
+
+2. Si tienes algún `if` o `return` en el componente, asegúrate de que no interrumpa el orden de ejecución de los hooks. Los hooks deben ser llamados de manera consistente en cada renderizado, sin importar la lógica de control condicional.
+
+3. Revisa que los hooks de estado o efecto (`useState`, `useEffect`, etc.) se encuentren en la parte superior del componente y no dentro de bloques condicionales.
+
+   Ejemplo incorrecto:
+   ```js
+   if (condition) {
+       const [state, setState] = useState(0); // Esto generará el error de hooks
+   }
+   ```
+
+   Ejemplo correcto:
+   ```js
+   const [state, setState] = useState(0); // Siempre en la parte superior
+   if (condition) {
+       return <div>Condición activada</div>;
+   }
+   ```
+
+### **Alternativa rápida para la conexión MQTT**
+
+Si tu objetivo es establecer una conexión MQTT rápida para la web y solucionar los problemas mencionados, te sugiero que pruebes un enfoque alternativo con **`mqtt.js`** que conecte directamente a MQTT usando WebSockets sin complicaciones adicionales:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQTT Web Example</title>
+    <style>
+        #mqttData {
+            white-space: pre-wrap; /* Para que los datos se vean bien formateados */
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>MQTT Sensor Data</h1>
+    <div id="mqttData">Esperando datos...</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mqtt@4.2.0/dist/mqtt.min.js"></script>
+    <script>
+        // Configura la conexión al broker MQTT (ajusta el puerto y la URL según corresponda)
+        const mqttClient = mqtt.connect('ws://localhost:9001');  // Cambia la URL y puerto si es necesario
+
+        // Cuando el cliente MQTT se conecta
+        mqttClient.on('connect', function () {
+            console.log('Conectado al broker MQTT');
+            mqttClient.subscribe('zigbee2mqtt/#', { qos: 1 }, function (err) {
+                if (!err) {
+                    console.log('Suscripto a zigbee2mqtt/#');
+                }
+            });
+        });
+
+        // Cuando llega un mensaje en el tópico suscrito
+        mqttClient.on('message', function (topic, message) {
+            const payload = JSON.parse(message.toString());
+            console.log(`Mensaje recibido: ${topic}`, payload);
+
+            // Actualizar el contenido en el HTML con los datos recibidos
+            const dataElement = document.getElementById('mqttData');
+            dataElement.innerText = JSON.stringify(payload, null, 2); // Muestra los datos en formato bonito
+        });
+    </script>
+</body>
+</html>
+```
+
+Este código conecta tu navegador directamente a un broker MQTT, se suscribe a los tópicos `zigbee2mqtt/#` (todos los dispositivos) y actualiza la página con los datos de los sensores en tiempo real.
+
+### Resumen:
+1. Revisa la URL del WebSocket para asegurarte de que no esté `undefined`.
+2. Soluciona el error 401 con los parámetros de autenticación correctos.
+3. Corrige el error de React asegurándote de que los hooks se llamen en el orden correcto y no haya retornos anticipados que interrumpan el flujo de renderizado.
+
+Si necesitas más detalles o ayuda adicional con alguno de los errores, ¡avísame!

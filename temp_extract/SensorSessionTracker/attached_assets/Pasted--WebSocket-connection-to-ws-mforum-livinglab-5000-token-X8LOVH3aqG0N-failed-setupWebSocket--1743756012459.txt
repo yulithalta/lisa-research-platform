@@ -1,0 +1,1565 @@
+ WebSocket connection to 'ws://mforum-livinglab:5000/?token=X8LOVH3aqG0N' failed: 
+setupWebSocket @ client:536
+client:536 Uncaught (in promise) 
+ [2025-04-04T08:39:30.082Z] [INFO] Application starting
+ [2025-04-04T08:39:30.086Z] [INFO] Initializing router
+api/user:1  Failed to load resource: the server responded with a status of 401 (Unauthorized)
+ Warning: Cannot update a component (`Switch`) while rendering a different component (`AuthPage`). To locate the bad setState() call inside `AuthPage`, follow the stack trace as described in https://reactjs.org/link/setstate-in-render 
+overrideMethod @ installHook.js:1
+chunk-RPCDYKBN.js:11595 Uncaught 
+chunk-RPCDYKBN.js:11595 Uncaught 
+ [2025-04-04T08:39:36.711Z] [INFO] Intento 1: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:36.766Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:36.771Z] [INFO] Intento 2: Conectando a MQTT broker en ws://192.168.0.20:9001
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+WebSocket connection to 'ws:<URL>/' failed: WebSocket is closed before the connection is established.
+ [2025-04-04T08:39:36.790Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:36.794Z] [INFO] Intento 3: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:36.811Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:36.815Z] [INFO] Intento 4: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:36.831Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:36.843Z] [INFO] Intento 5: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:36.858Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:36.862Z] [INFO] Intento 6: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:36.878Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:36.881Z] [INFO] Intento 7: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:36.893Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:36.896Z] [INFO] Intento 8: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:36.906Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:36.908Z] [INFO] Intento 9: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:36.923Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:36.926Z] [INFO] Intento 10: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:36.941Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:36.944Z] [INFO] Intento 11: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:36.958Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:36.961Z] [INFO] Intento 12: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:36.974Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:36.977Z] [INFO] Intento 13: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:36.999Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.001Z] [INFO] Intento 14: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.012Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.014Z] [INFO] Intento 15: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.023Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.025Z] [INFO] Intento 16: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.033Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.035Z] [INFO] Intento 17: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.046Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.048Z] [INFO] Intento 18: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.055Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.057Z] [INFO] Intento 19: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.064Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.066Z] [INFO] Intento 20: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.075Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.077Z] [INFO] Intento 21: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.087Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.089Z] [INFO] Intento 22: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.097Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.099Z] [INFO] Intento 23: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.110Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.112Z] [INFO] Intento 24: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.126Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.128Z] [INFO] Intento 25: Conectando a MQTT broker en ws://192.168.0.20:9001
+ Error loading services: 
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:37.142Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.148Z] [INFO] Intento 26: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.159Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.162Z] [INFO] Intento 27: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.175Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.179Z] [INFO] Intento 28: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.191Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.194Z] [INFO] Intento 29: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.207Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.211Z] [INFO] Intento 30: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.224Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.231Z] [INFO] Intento 31: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.246Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.253Z] [INFO] Intento 32: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.261Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.266Z] [INFO] Intento 33: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.278Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.284Z] [INFO] Intento 34: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.298Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.305Z] [INFO] Intento 35: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.319Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.324Z] [INFO] Intento 36: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.332Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.336Z] [INFO] Intento 37: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.344Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.348Z] [INFO] Intento 38: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.357Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.362Z] [INFO] Intento 39: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.371Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.376Z] [INFO] Intento 40: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.383Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.386Z] [INFO] Intento 41: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.394Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.396Z] [INFO] Intento 42: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.402Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.404Z] [INFO] Intento 43: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.420Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.426Z] [INFO] Intento 44: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.441Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.446Z] [INFO] Intento 45: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.456Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.464Z] [INFO] Intento 46: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.485Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.497Z] [INFO] Intento 47: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.511Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.514Z] [INFO] Intento 48: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.526Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.529Z] [INFO] Intento 49: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.541Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.545Z] [INFO] Intento 50: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.558Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.562Z] [INFO] Intento 51: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.573Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.576Z] [INFO] Intento 52: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.583Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.585Z] [INFO] Intento 53: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.596Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.598Z] [INFO] Intento 54: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.608Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.610Z] [INFO] Intento 55: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.621Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.623Z] [INFO] Intento 56: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.629Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.631Z] [INFO] Intento 57: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.639Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.642Z] [INFO] Intento 58: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.649Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.651Z] [INFO] Intento 59: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.658Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.661Z] [INFO] Intento 60: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.671Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.674Z] [INFO] Intento 61: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.684Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.687Z] [INFO] Intento 62: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.698Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.701Z] [INFO] Intento 63: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.712Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.715Z] [INFO] Intento 64: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.727Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.732Z] [INFO] Intento 65: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.743Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.745Z] [INFO] Intento 66: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.752Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.755Z] [INFO] Intento 67: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.767Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.773Z] [INFO] Intento 68: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.781Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.785Z] [INFO] Intento 69: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.796Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.799Z] [INFO] Intento 70: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.809Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.812Z] [INFO] Intento 71: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.822Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.824Z] [INFO] Intento 72: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.834Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.837Z] [INFO] Intento 73: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.846Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.849Z] [INFO] Intento 74: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.861Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.865Z] [INFO] Intento 75: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.874Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.876Z] [INFO] Intento 76: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.882Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.884Z] [INFO] Intento 77: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.892Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.895Z] [INFO] Intento 78: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.905Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.909Z] [INFO] Intento 79: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.918Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.923Z] [INFO] Intento 80: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.931Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.934Z] [INFO] Intento 81: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.941Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.945Z] [INFO] Intento 82: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.954Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.957Z] [INFO] Intento 83: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.965Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.969Z] [INFO] Intento 84: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.976Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.979Z] [INFO] Intento 85: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.985Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:37.989Z] [INFO] Intento 86: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:37.998Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.003Z] [INFO] Intento 87: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.013Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.016Z] [INFO] Intento 88: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.024Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.032Z] [INFO] Intento 89: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.041Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.043Z] [INFO] Intento 90: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.050Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.052Z] [INFO] Intento 91: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.060Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.061Z] [INFO] Intento 92: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.067Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.069Z] [INFO] Intento 93: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.077Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.079Z] [INFO] Intento 94: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.085Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.088Z] [INFO] Intento 95: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.096Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.098Z] [INFO] Intento 96: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.104Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.106Z] [INFO] Intento 97: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.113Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.116Z] [INFO] Intento 98: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.123Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.125Z] [INFO] Intento 99: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.132Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.134Z] [INFO] Intento 100: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.141Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.143Z] [INFO] Intento 101: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.151Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.153Z] [INFO] Intento 102: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.162Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.165Z] [INFO] Intento 103: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.175Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.178Z] [INFO] Intento 104: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.188Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.190Z] [INFO] Intento 105: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.200Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.203Z] [INFO] Intento 106: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.214Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.218Z] [INFO] Intento 107: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.230Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.234Z] [INFO] Intento 108: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.241Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.244Z] [INFO] Intento 109: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.253Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.256Z] [INFO] Intento 110: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.268Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.270Z] [INFO] Intento 111: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.281Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.285Z] [INFO] Intento 112: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.294Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.296Z] [INFO] Intento 113: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.304Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.306Z] [INFO] Intento 114: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.313Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.315Z] [INFO] Intento 115: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.320Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.322Z] [INFO] Intento 116: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.329Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.331Z] [INFO] Intento 117: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.336Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.339Z] [INFO] Intento 118: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.345Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.348Z] [INFO] Intento 119: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.355Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.358Z] [INFO] Intento 120: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.369Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.372Z] [INFO] Intento 121: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.382Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.385Z] [INFO] Intento 122: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.393Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.395Z] [INFO] Intento 123: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.402Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.406Z] [INFO] Intento 124: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.416Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.418Z] [INFO] Intento 125: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.425Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.427Z] [INFO] Intento 126: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.435Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.439Z] [INFO] Intento 127: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.449Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.451Z] [INFO] Intento 128: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.457Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.460Z] [INFO] Intento 129: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.468Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.470Z] [INFO] Intento 130: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.478Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.480Z] [INFO] Intento 131: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.486Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.493Z] [INFO] Intento 132: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.499Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.501Z] [INFO] Intento 133: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.509Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.511Z] [INFO] Intento 134: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.518Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.521Z] [INFO] Intento 135: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.527Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.529Z] [INFO] Intento 136: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.534Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.536Z] [INFO] Intento 137: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.546Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.549Z] [INFO] Intento 138: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.557Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.560Z] [INFO] Intento 139: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.570Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.574Z] [INFO] Intento 140: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.581Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.583Z] [INFO] Intento 141: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.588Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.590Z] [INFO] Intento 142: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.597Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.600Z] [INFO] Intento 143: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.605Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.607Z] [INFO] Intento 144: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.614Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.615Z] [INFO] Intento 145: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.622Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.624Z] [INFO] Intento 146: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.630Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.632Z] [INFO] Intento 147: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.637Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.640Z] [INFO] Intento 148: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.647Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.649Z] [INFO] Intento 149: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.654Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.656Z] [INFO] Intento 150: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.662Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.664Z] [INFO] Intento 151: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.670Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.673Z] [INFO] Intento 152: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.681Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.683Z] [INFO] Intento 153: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.688Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.694Z] [INFO] Intento 154: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.700Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.702Z] [INFO] Intento 155: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.709Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.711Z] [INFO] Intento 156: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.718Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.720Z] [INFO] Intento 157: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.729Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.731Z] [INFO] Intento 158: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.737Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.741Z] [INFO] Intento 159: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.749Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.751Z] [INFO] Intento 160: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.758Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.760Z] [INFO] Intento 161: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.768Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.770Z] [INFO] Intento 162: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.776Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.777Z] [INFO] Intento 163: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.784Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.786Z] [INFO] Intento 164: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.800Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.803Z] [INFO] Intento 165: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.811Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.813Z] [INFO] Intento 166: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.823Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.825Z] [INFO] Intento 167: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.833Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.835Z] [INFO] Intento 168: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.844Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.846Z] [INFO] Intento 169: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.853Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.855Z] [INFO] Intento 170: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.862Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.864Z] [INFO] Intento 171: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.870Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.872Z] [INFO] Intento 172: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.879Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.881Z] [INFO] Intento 173: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.886Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.889Z] [INFO] Intento 174: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.896Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.898Z] [INFO] Intento 175: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.903Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.908Z] [INFO] Intento 176: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.917Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.919Z] [INFO] Intento 177: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.925Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.927Z] [INFO] Intento 178: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.936Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.940Z] [INFO] Intento 179: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.948Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.950Z] [INFO] Intento 180: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.955Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.957Z] [INFO] Intento 181: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.964Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.966Z] [INFO] Intento 182: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.972Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.974Z] [INFO] Intento 183: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.982Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.984Z] [INFO] Intento 184: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.990Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:38.991Z] [INFO] Intento 185: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:38.999Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.000Z] [INFO] Intento 186: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.006Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.008Z] [INFO] Intento 187: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.016Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.018Z] [INFO] Intento 188: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.025Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.027Z] [INFO] Intento 189: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.034Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.036Z] [INFO] Intento 190: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.042Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.044Z] [INFO] Intento 191: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.054Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.056Z] [INFO] Intento 192: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.064Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.067Z] [INFO] Intento 193: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.073Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.075Z] [INFO] Intento 194: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.084Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.087Z] [INFO] Intento 195: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.096Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.099Z] [INFO] Intento 196: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.108Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.111Z] [INFO] Intento 197: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.123Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.127Z] [INFO] Intento 198: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.134Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.136Z] [INFO] Intento 199: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.142Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.144Z] [INFO] Intento 200: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.151Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.153Z] [INFO] Intento 201: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.158Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.160Z] [INFO] Intento 202: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.167Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.169Z] [INFO] Intento 203: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.174Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.176Z] [INFO] Intento 204: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.183Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.185Z] [INFO] Intento 205: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.191Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.193Z] [INFO] Intento 206: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.199Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.201Z] [INFO] Intento 207: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.207Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.209Z] [INFO] Intento 208: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.215Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.217Z] [INFO] Intento 209: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.223Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.225Z] [INFO] Intento 210: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.231Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.233Z] [INFO] Intento 211: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.239Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.241Z] [INFO] Intento 212: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.247Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.249Z] [INFO] Intento 213: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.256Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.257Z] [INFO] Intento 214: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.264Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.266Z] [INFO] Intento 215: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.271Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.274Z] [INFO] Intento 216: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.280Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.282Z] [INFO] Intento 217: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.289Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.291Z] [INFO] Intento 218: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.297Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.299Z] [INFO] Intento 219: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.305Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.310Z] [INFO] Intento 220: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.316Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.318Z] [INFO] Intento 221: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.325Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.327Z] [INFO] Intento 222: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.333Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.335Z] [INFO] Intento 223: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.341Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.343Z] [INFO] Intento 224: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.350Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.352Z] [INFO] Intento 225: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.359Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.360Z] [INFO] Intento 226: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.368Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.369Z] [INFO] Intento 227: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.375Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.377Z] [INFO] Intento 228: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.383Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.385Z] [INFO] Intento 229: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.393Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.395Z] [INFO] Intento 230: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.401Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.402Z] [INFO] Intento 231: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.409Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.411Z] [INFO] Intento 232: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.417Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.418Z] [INFO] Intento 233: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.424Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.426Z] [INFO] Intento 234: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.432Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.434Z] [INFO] Intento 235: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.440Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.442Z] [INFO] Intento 236: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.448Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.449Z] [INFO] Intento 237: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.456Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.458Z] [INFO] Intento 238: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.464Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.466Z] [INFO] Intento 239: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.472Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.474Z] [INFO] Intento 240: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.480Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.482Z] [INFO] Intento 241: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.487Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.489Z] [INFO] Intento 242: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.501Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.504Z] [INFO] Intento 243: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.514Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.516Z] [INFO] Intento 244: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.523Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.525Z] [INFO] Intento 245: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.531Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.533Z] [INFO] Intento 246: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.538Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.540Z] [INFO] Intento 247: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.546Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.548Z] [INFO] Intento 248: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.553Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.554Z] [INFO] Intento 249: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.560Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.562Z] [INFO] Intento 250: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.568Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.569Z] [INFO] Intento 251: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.576Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.579Z] [INFO] Intento 252: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.589Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.591Z] [INFO] Intento 253: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.597Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.598Z] [INFO] Intento 254: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.603Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.606Z] [INFO] Intento 255: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.613Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.616Z] [INFO] Intento 256: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.625Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.627Z] [INFO] Intento 257: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.635Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.637Z] [INFO] Intento 258: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.647Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.649Z] [INFO] Intento 259: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.654Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.656Z] [INFO] Intento 260: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.662Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.664Z] [INFO] Intento 261: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.673Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.676Z] [INFO] Intento 262: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.686Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.690Z] [INFO] Intento 263: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.700Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.702Z] [INFO] Intento 264: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.712Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.714Z] [INFO] Intento 265: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.722Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.724Z] [INFO] Intento 266: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.731Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.733Z] [INFO] Intento 267: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.739Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.741Z] [INFO] Intento 268: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.747Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.749Z] [INFO] Intento 269: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.753Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.756Z] [INFO] Intento 270: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.762Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.764Z] [INFO] Intento 271: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.769Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.772Z] [INFO] Intento 272: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.778Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.780Z] [INFO] Intento 273: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.785Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.787Z] [INFO] Intento 274: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.793Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.795Z] [INFO] Intento 275: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.804Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.806Z] [INFO] Intento 276: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.815Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.817Z] [INFO] Intento 277: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.826Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.828Z] [INFO] Intento 278: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.837Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.839Z] [INFO] Intento 279: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.846Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.848Z] [INFO] Intento 280: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.853Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.855Z] [INFO] Intento 281: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.862Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.864Z] [INFO] Intento 282: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.869Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.871Z] [INFO] Intento 283: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.876Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.878Z] [INFO] Intento 284: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.884Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.885Z] [INFO] Intento 285: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.891Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.892Z] [INFO] Intento 286: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.898Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.903Z] [INFO] Intento 287: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.911Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.913Z] [INFO] Intento 288: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.917Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.919Z] [INFO] Intento 289: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.925Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.927Z] [INFO] Intento 290: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.933Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.935Z] [INFO] Intento 291: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.942Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.944Z] [INFO] Intento 292: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.954Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.957Z] [INFO] Intento 293: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.966Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.969Z] [INFO] Intento 294: Conectando a MQTT broker en ws://192.168.0.20:9001
+ [2025-04-04T08:39:39.978Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:39.982Z] [INFO] Intento 295: Conectando a MQTT broker en ws://192.168.0.20:9001
+ Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>. 
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:40.020Z] [INFO] Cliente MQTT desconectado y limpiado
+ [2025-04-04T08:39:40.026Z] [INFO] Conectando a broker MQTT: ws://192.168.0.20:9001
+ Connecting to WebSocket at ws://mforum-livinglab:5000/ws
+ Sensores seleccionados actualizados: Array(0)
+ [2025-04-04T08:39:40.168Z] [INFO] ✅ Conectado a broker MQTT: ws://192.168.0.20:9001
+ [2025-04-04T08:39:40.179Z] [INFO] ✅ Suscrito a tópico: zigbee2mqtt/#
+ [2025-04-04T08:39:40.188Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/bridge/info
+ [2025-04-04T08:39:40.188Z] [INFO] Contenido: {"commit":"ba337bd329aeb4ca17735c0cf09b31293c8cff06","config":{"advanced":{"cache_state":true,"cache_state_persistent":true,"cache_state_send_on_startup":true,"channel":11,"elapsed":false,"ext_pan_id"...
+ [2025-04-04T08:39:40.199Z] [INFO] Recibida lista de dispositivos zigbee2mqtt
+ [2025-04-04T08:39:40.199Z] [INFO] Recibidos 5 sensores de Zigbee2MQTT
+ [2025-04-04T08:39:40.219Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors
+ [2025-04-04T08:39:40.219Z] [INFO] Contenido: {"count":5,"sensors":[{"ieeeAddr":"0x00124b002a6b62b7","friendlyName":"Sensor-4-Sonoff-SNZB-04","modelID":"unknown","model":"SNZB-04","manufacturerName":"unknown","lastUpdate":1743755303751,"firstSeen...
+ [2025-04-04T08:39:40.219Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors_compatible
+ [2025-04-04T08:39:40.219Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"battery":100,"battery_low":false,"contact":false,"device":{"applicationVersion":5,"dateCode":"20230630","friendlyName":"Sensor-4-Sonoff-SNZB-04","hardwareVersion":1,"ieeeAddr":...
+ [2025-04-04T08:39:40.220Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/simple_sensors
+ [2025-04-04T08:39:40.220Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"name":"Sensor-4-Sonoff-SNZB-04","contact":true,"battery":100,"last_update":1743755303751},"0x00124b00292c38e7":{"name":"sensor-2","contact":false,"battery":92.5,"last_update":1...
+ [2025-04-04T08:39:40.220Z] [INFO] ✅ Suscrito a tópico: +/+/+
+ [2025-04-04T08:39:40.221Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/bridge/info
+ [2025-04-04T08:39:40.221Z] [INFO] Contenido: {"commit":"ba337bd329aeb4ca17735c0cf09b31293c8cff06","config":{"advanced":{"cache_state":true,"cache_state_persistent":true,"cache_state_send_on_startup":true,"channel":11,"elapsed":false,"ext_pan_id"...
+ [2025-04-04T08:39:40.221Z] [INFO] Recibida lista de dispositivos zigbee2mqtt
+ [2025-04-04T08:39:40.221Z] [INFO] Recibidos 5 sensores de Zigbee2MQTT
+ [2025-04-04T08:39:40.254Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors
+ [2025-04-04T08:39:40.254Z] [INFO] Contenido: {"count":5,"sensors":[{"ieeeAddr":"0x00124b002a6b62b7","friendlyName":"Sensor-4-Sonoff-SNZB-04","modelID":"unknown","model":"SNZB-04","manufacturerName":"unknown","lastUpdate":1743755303751,"firstSeen...
+ [2025-04-04T08:39:40.254Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors_compatible
+ [2025-04-04T08:39:40.254Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"battery":100,"battery_low":false,"contact":false,"device":{"applicationVersion":5,"dateCode":"20230630","friendlyName":"Sensor-4-Sonoff-SNZB-04","hardwareVersion":1,"ieeeAddr":...
+ [2025-04-04T08:39:40.255Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/simple_sensors
+ [2025-04-04T08:39:40.255Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"name":"Sensor-4-Sonoff-SNZB-04","contact":true,"battery":100,"last_update":1743755303751},"0x00124b00292c38e7":{"name":"sensor-2","contact":false,"battery":92.5,"last_update":1...
+ [2025-04-04T08:39:40.255Z] [INFO] ✅ Suscrito a tópico: 0x00124b002a6b62b7/#
+ [2025-04-04T08:39:40.255Z] [INFO] ✅ Suscrito a tópico: zigbee2mqtt/livinglab/device
+ [2025-04-04T08:39:40.255Z] [INFO] ✅ Suscrito a tópico: zigbee2mqtt/livinglab/event_new
+ [2025-04-04T08:39:40.255Z] [INFO] ✅ Suscrito a tópico: zigbee2mqtt/livinglab/event
+ [2025-04-04T08:39:40.256Z] [INFO] ✅ Suscrito a tópico: zigbee2mqtt/livinglab/sensors_compatible
+ [2025-04-04T08:39:40.256Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors_compatible
+ [2025-04-04T08:39:40.256Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"battery":100,"battery_low":false,"contact":false,"device":{"applicationVersion":5,"dateCode":"20230630","friendlyName":"Sensor-4-Sonoff-SNZB-04","hardwareVersion":1,"ieeeAddr":...
+ [2025-04-04T08:39:40.256Z] [INFO] ✅ Suscrito a tópico: zigbee2mqtt/+/+
+ [2025-04-04T08:39:40.257Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/bridge/info
+ [2025-04-04T08:39:40.257Z] [INFO] Contenido: {"commit":"ba337bd329aeb4ca17735c0cf09b31293c8cff06","config":{"advanced":{"cache_state":true,"cache_state_persistent":true,"cache_state_send_on_startup":true,"channel":11,"elapsed":false,"ext_pan_id"...
+ [2025-04-04T08:39:40.257Z] [INFO] Recibida lista de dispositivos zigbee2mqtt
+ [2025-04-04T08:39:40.257Z] [INFO] Recibidos 5 sensores de Zigbee2MQTT
+ [2025-04-04T08:39:40.281Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors
+ [2025-04-04T08:39:40.281Z] [INFO] Contenido: {"count":5,"sensors":[{"ieeeAddr":"0x00124b002a6b62b7","friendlyName":"Sensor-4-Sonoff-SNZB-04","modelID":"unknown","model":"SNZB-04","manufacturerName":"unknown","lastUpdate":1743755303751,"firstSeen...
+ [2025-04-04T08:39:40.281Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors_compatible
+ [2025-04-04T08:39:40.281Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"battery":100,"battery_low":false,"contact":false,"device":{"applicationVersion":5,"dateCode":"20230630","friendlyName":"Sensor-4-Sonoff-SNZB-04","hardwareVersion":1,"ieeeAddr":...
+ [2025-04-04T08:39:40.282Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/simple_sensors
+ [2025-04-04T08:39:40.282Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"name":"Sensor-4-Sonoff-SNZB-04","contact":true,"battery":100,"last_update":1743755303751},"0x00124b00292c38e7":{"name":"sensor-2","contact":false,"battery":92.5,"last_update":1...
+ [2025-04-04T08:39:40.282Z] [INFO] ✅ Suscrito a tópico: zigbee2mqtt/bridge/devices
+ [2025-04-04T08:39:40.283Z] [INFO] Recibida lista de dispositivos zigbee2mqtt
+ [2025-04-04T08:39:40.283Z] [INFO] Recibidos 5 sensores de Zigbee2MQTT
+ Connected to WebSocket server
+ WebSocket connection closed
+ Cambiando sensor 0x00124b002a6b62b7 a seleccionado
+ Estado previo de sensores: Array(0)
+ -> Sensor 0x00124b002a6b62b7 añadido a la selección
+ Sensores seleccionados actualizados: Array(1)
+ [2025-04-04T08:39:41.731Z] [WARN] Conexión MQTT fallida después de 5 segundos. Reintentando...
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:41.731Z] [INFO] Reintentando en 1 segundos...
+ [2025-04-04T08:39:41.774Z] [WARN] Conexión MQTT fallida después de 5 segundos. Reintentando...
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:41.774Z] [INFO] Reintentando en 2 segundos...
+ [2025-04-04T08:39:41.795Z] [WARN] Conexión MQTT fallida después de 5 segundos. Reintentando...
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:41.795Z] [INFO] Reintentando en 4 segundos...
+ [2025-04-04T08:39:41.822Z] [WARN] Conexión MQTT fallida después de 5 segundos. Reintentando...
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:41.822Z] [INFO] Reintentando en 8 segundos...
+ [2025-04-04T08:39:41.856Z] [WARN] Conexión MQTT fallida después de 5 segundos. Reintentando...
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:41.856Z] [INFO] Reintentando en 16 segundos...
+ [2025-04-04T08:39:41.872Z] [WARN] Conexión MQTT fallida después de 5 segundos. Reintentando...
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:41.873Z] [INFO] Reintentando en 30 segundos...
+ [2025-04-04T08:39:41.883Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:41.897Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:41.922Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:41.938Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:41.954Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:41.963Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:41.986Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.002Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.018Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.034Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.050Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.050Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.066Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.066Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.082Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.098Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.106Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.114Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.130Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.161Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.177Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.193Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.209Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.225Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.241Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.257Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.267Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.291Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.306Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.325Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.339Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.349Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.373Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.389Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.389Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.404Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.406Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.440Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.447Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.473Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.505Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.521Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.537Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.555Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.564Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.579Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.586Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.600Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.624Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.624Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.640Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.657Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.657Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.673Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.689Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.689Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.704Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.721Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.736Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.756Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.756Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.789Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.789Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.805Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.821Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.847Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.852Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.853Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ Verificación de cámara 18: connected
+ Camera 18 selected, status: connected
+ [2025-04-04T08:39:42.872Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.877Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.891Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.899Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.915Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.924Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.942Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.947Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.958Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.975Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.991Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:42.992Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.008Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.025Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.041Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.058Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.058Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.075Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.075Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.083Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.091Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.099Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.116Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.117Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.126Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.142Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.158Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.159Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.175Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.192Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.192Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.208Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.225Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.241Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.256Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.257Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.271Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.287Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.307Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.307Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.323Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.323Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.339Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.339Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.355Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.370Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.375Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.387Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.408Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.408Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.425Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.429Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.440Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.457Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.467Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.472Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.483Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.499Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.507Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.515Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.521Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.539Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.539Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.555Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.563Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.575Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.584Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.591Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.609Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.609Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.625Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.626Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.642Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.642Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.659Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.659Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.667Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.675Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.692Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.708Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.708Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.723Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.723Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.742Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.742Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.759Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.761Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.775Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.779Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.792Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.809Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.826Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.827Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.842Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.859Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.859Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.867Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.876Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.883Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.892Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.899Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.909Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.926Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.942Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.943Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.957Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.958Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.973Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.975Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.987Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:43.993Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.003Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.009Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.019Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.042Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.042Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.058Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.058Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.068Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.076Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.091Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.107Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.115Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.138Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.138Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.154Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.154Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.164Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.169Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.192Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.192Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.208Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.208Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.224Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+ [2025-04-04T08:39:44.224Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ installHook.js:1
+sessions-page.tsx:295 Cambiando sensor 0x00124b002a5705d0 a seleccionado
+sessions-page.tsx:296 Estado previo de sensores: Array(1)
+sessions-page.tsx:315 -> Sensor 0x00124b002a5705d0 añadido a la selección
+sessions-page.tsx:330 Sensores seleccionados actualizados: Array(2)
+hook.js:608 [2025-04-04T08:39:44.249Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.249Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.250Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.250Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.260Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.267Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.275Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.292Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.292Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.310Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.311Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.323Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.339Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.339Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.347Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.355Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.363Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.370Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.378Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.387Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.409Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.410Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.411Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.426Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.427Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.435Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.443Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.451Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.460Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.467Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.476Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.483Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.493Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.510Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.526Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.527Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.543Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.543Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.560Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.560Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.563Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.570Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.587Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.592Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.603Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.607Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.619Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.628Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.638Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.651Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.656Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.665Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.683Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.691Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.710Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.715Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.726Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.743Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.743Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.760Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.760Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.777Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.777Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.787Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.793Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.803Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.810Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.819Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.843Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.843Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.855Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.860Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.867Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.880Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.880Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.894Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.894Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.909Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.915Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.926Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.931Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.942Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.955Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.959Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.976Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+hook.js:608 [2025-04-04T08:39:44.993Z] [WARN] Demasiados intentos fallidos. Máximo 5 intentos alcanzado según requerimiento del usuario.
+overrideMethod @ hook.js:608
+sessions-page.tsx:364 Configuración de sesión para sensores: Object
+sessions-page.tsx:372 Cámaras disponibles: 4
+api/sessions:1 
+            
+            
+           Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+hook.js:608 Error al iniciar sesión: Error: 500: {"message":"Failed to create session"}
+    at throwIfResNotOk (queryClient.ts:6:11)
+    at async apiRequest (queryClient.ts:22:3)
+    at async startSession (sessions-page.tsx:378:24)
+overrideMethod @ hook.js:608

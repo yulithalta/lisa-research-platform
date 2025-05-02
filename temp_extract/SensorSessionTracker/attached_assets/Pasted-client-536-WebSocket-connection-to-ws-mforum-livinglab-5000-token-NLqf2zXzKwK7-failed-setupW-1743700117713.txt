@@ -1,0 +1,109 @@
+client:536 WebSocket connection to 'ws://mforum-livinglab:5000/?token=NLqf2zXzKwK7' failed: 
+setupWebSocket @ client:536
+(anonymous) @ client:531
+client:536 Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'ws://localhost:undefined/?token=NLqf2zXzKwK7' is invalid.
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)
+setupWebSocket @ client:536
+fallback @ client:509
+(anonymous) @ client:555
+logger.ts:17 [2025-04-03T17:07:23.831Z] [INFO] Application starting
+logger.ts:17 [2025-04-03T17:07:23.835Z] [INFO] Initializing router
+api/user:1 
+            
+            
+           Failed to load resource: the server responded with a status of 401 (Unauthorized)
+auth-page.tsx:31 Warning: Cannot update a component (`Switch`) while rendering a different component (`AuthPage`). To locate the bad setState() call inside `AuthPage`, follow the stack trace as described in https://reactjs.org/link/setstate-in-render Error Component Stack
+    at AuthPage (auth-page.tsx:27:53)
+    at Route (wouter.js?v=b1526646:280:16)
+    at Switch (wouter.js?v=b1526646:336:17)
+    at Router (<anonymous>)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=b1526646:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=b1526646:521
+error @ chunk-RPCDYKBN.js?v=b1526646:505
+warnAboutRenderPhaseUpdatesInDEV @ chunk-RPCDYKBN.js?v=b1526646:19793
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=b1526646:18546
+forceStoreRerender @ chunk-RPCDYKBN.js?v=b1526646:11999
+handleStoreChange @ chunk-RPCDYKBN.js?v=b1526646:11981
+history.<computed> @ wouter.js?v=b1526646:166
+navigate @ wouter.js?v=b1526646:156
+(anonymous) @ wouter.js?v=b1526646:209
+(anonymous) @ wouter.js?v=b1526646:120
+AuthPage @ auth-page.tsx:31
+renderWithHooks @ chunk-RPCDYKBN.js?v=b1526646:11548
+updateFunctionComponent @ chunk-RPCDYKBN.js?v=b1526646:14582
+beginWork @ chunk-RPCDYKBN.js?v=b1526646:15924
+beginWork$1 @ chunk-RPCDYKBN.js?v=b1526646:19753
+performUnitOfWork @ chunk-RPCDYKBN.js?v=b1526646:19198
+workLoopSync @ chunk-RPCDYKBN.js?v=b1526646:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=b1526646:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=b1526646:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=b1526646:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=b1526646:18627
+chunk-RPCDYKBN.js?v=b1526646:11595 Uncaught Error: Rendered fewer hooks than expected. This may be caused by an accidental early return statement.
+    at renderWithHooks (chunk-RPCDYKBN.js?v=b1526646:11595:19)
+    at updateFunctionComponent (chunk-RPCDYKBN.js?v=b1526646:14582:28)
+    at beginWork (chunk-RPCDYKBN.js?v=b1526646:15924:22)
+    at HTMLUnknownElement.callCallback2 (chunk-RPCDYKBN.js?v=b1526646:3674:22)
+    at Object.invokeGuardedCallbackDev (chunk-RPCDYKBN.js?v=b1526646:3699:24)
+    at invokeGuardedCallback (chunk-RPCDYKBN.js?v=b1526646:3733:39)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=b1526646:19765:15)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=b1526646:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=b1526646:19137:13)
+    at renderRootSync (chunk-RPCDYKBN.js?v=b1526646:19116:15)
+renderWithHooks @ chunk-RPCDYKBN.js?v=b1526646:11595
+updateFunctionComponent @ chunk-RPCDYKBN.js?v=b1526646:14582
+beginWork @ chunk-RPCDYKBN.js?v=b1526646:15924
+callCallback2 @ chunk-RPCDYKBN.js?v=b1526646:3674
+invokeGuardedCallbackDev @ chunk-RPCDYKBN.js?v=b1526646:3699
+invokeGuardedCallback @ chunk-RPCDYKBN.js?v=b1526646:3733
+beginWork$1 @ chunk-RPCDYKBN.js?v=b1526646:19765
+performUnitOfWork @ chunk-RPCDYKBN.js?v=b1526646:19198
+workLoopSync @ chunk-RPCDYKBN.js?v=b1526646:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=b1526646:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=b1526646:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=b1526646:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=b1526646:18627
+chunk-RPCDYKBN.js?v=b1526646:11595 Uncaught Error: Rendered fewer hooks than expected. This may be caused by an accidental early return statement.
+    at renderWithHooks (chunk-RPCDYKBN.js?v=b1526646:11595:19)
+    at updateFunctionComponent (chunk-RPCDYKBN.js?v=b1526646:14582:28)
+    at beginWork (chunk-RPCDYKBN.js?v=b1526646:15924:22)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=b1526646:19753:22)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=b1526646:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=b1526646:19137:13)
+    at renderRootSync (chunk-RPCDYKBN.js?v=b1526646:19116:15)
+    at performSyncWorkOnRoot (chunk-RPCDYKBN.js?v=b1526646:18874:28)
+    at flushSyncCallbacks (chunk-RPCDYKBN.js?v=b1526646:9119:30)
+    at chunk-RPCDYKBN.js?v=b1526646:18627:21
+renderWithHooks @ chunk-RPCDYKBN.js?v=b1526646:11595
+updateFunctionComponent @ chunk-RPCDYKBN.js?v=b1526646:14582
+beginWork @ chunk-RPCDYKBN.js?v=b1526646:15924
+beginWork$1 @ chunk-RPCDYKBN.js?v=b1526646:19753
+performUnitOfWork @ chunk-RPCDYKBN.js?v=b1526646:19198
+workLoopSync @ chunk-RPCDYKBN.js?v=b1526646:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=b1526646:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=b1526646:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=b1526646:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=b1526646:18627
+logger.ts:17 [2025-04-03T17:07:27.806Z] [INFO] Connected to MQTT broker
+home-page.tsx:134 Error loading services: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+overrideMethod @ hook.js:608
+loadServices @ home-page.tsx:134
+sessions-page.tsx:89 Connecting to WebSocket at ws://mforum-livinglab:5000/ws
+sessions-page.tsx:322 Sensores seleccionados actualizados: Array(0)
+logger.ts:17 [2025-04-03T17:07:30.391Z] [INFO] Connected to MQTT broker
+sessions-page.tsx:93 Connected to WebSocket server
+sessions-page.tsx:128 WebSocket connection closed
+sessions-page.tsx:225 Error verificando cámara 15: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+overrideMethod @ hook.js:608
+checkCameraStatus @ sessions-page.tsx:225
+sessions-page.tsx:225 Error verificando cámara 16: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+overrideMethod @ hook.js:608
+checkCameraStatus @ sessions-page.tsx:225
+sessions-page.tsx:225 Error verificando cámara 17: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+overrideMethod @ hook.js:608
+checkCameraStatus @ sessions-page.tsx:225

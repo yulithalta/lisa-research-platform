@@ -1,0 +1,58 @@
+const mqtt = require('mqtt');
+
+// MQTT broker connection details
+const MQTT_BROKER = 'mqtt://localhost'; // Replace with your broker's address
+const SENSOR_TOPIC_PATTERN = 'zigbee2mqtt/#'; // Subscribe to all sensor topics
+const PLUG_TOPIC = 'zigbee2mqtt/third-reality'; // Example plug topic to control
+
+// Connect to the MQTT broker
+const client = mqtt.connect(MQTT_BROKER);
+
+// Handle connection events
+client.on('connect', () => {
+    console.log('Connected to MQTT broker');
+    // Subscribe to all sensor topics with QoS 1
+    client.subscribe(SENSOR_TOPIC_PATTERN, { qos: 1 }, (err) => {
+        if (!err) {
+            console.log(`Subscribed to all sensor topics with QoS 1`);
+        } else {
+            console.error('Failed to subscribe to topics', err);
+        }
+    });
+});
+
+// Handle incoming messages
+client.on('message', (topic, message) => {
+    // Log the topic and payload for debugging purposes
+    console.log(`Received message on topic: ${topic}`);
+    console.log(`Payload: ${message.toString()}`);
+
+    try {
+        // Parse the JSON payload from Zigbee2MQTT
+        const payload = JSON.parse(message.toString());
+
+        // Check if the device is a contact sensor and process accordingly
+        if (payload.contact !== undefined) {
+            const contactStatus = payload.contact ? 'opened' : 'closed';
+            console.log(`Sensor ${topic} contact status: ${contactStatus}`);
+
+            // Example of performing an action based on contact sensor status
+            if (payload.contact) {
+                // Send a message to the plug's topic to toggle the switch with QoS 1
+                client.publish(`${PLUG_TOPIC}/set`, JSON.stringify({ "state": "TOGGLE" }), { qos: 1 });
+                console.log('Toggling the plug switch');
+            } else {
+                // Send a message to the plug's topic to turn off the switch with QoS 1
+                client.publish(`${PLUG_TOPIC}/set`, JSON.stringify({ state: 'OFF' }), { qos: 1 });
+                console.log('Turning off the plug switch');
+            }
+        }
+    } catch (err) {
+        console.error('Failed to parse message:', err.message);
+    }
+});
+
+// Handle errors
+client.on('error', (err) => {
+    console.error('MQTT error:', err);
+});

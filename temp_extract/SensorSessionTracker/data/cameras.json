@@ -1,0 +1,46 @@
+{
+  "1": {
+    "name": "192.168.0.31",
+    "ipAddress": "192.168.0.31",
+    "username": "admin",
+    "password": "admin123",
+    "streamPath": "h264Preview_01_main",
+    "port": "554",
+    "userId": 1,
+    "id": 1,
+    "isRecording": false,
+    "status": "disconnected",
+    "lastSeen": null,
+    "metrics": {
+      "fps": 0,
+      "bitrate": 0,
+      "resolution": "",
+      "uptime": 0,
+      "connectionErrors": 0,
+      "lastErrorTime": null,
+      "lastErrorMessage": null
+    }
+  },
+  "2": {
+    "name": "c33",
+    "ipAddress": "192.168.0.33",
+    "username": "admin",
+    "password": "admin123",
+    "streamPath": "h264Preview_01_main",
+    "port": "554",
+    "userId": 1,
+    "id": 2,
+    "isRecording": false,
+    "status": "disconnected",
+    "lastSeen": null,
+    "metrics": {
+      "fps": 0,
+      "bitrate": 0,
+      "resolution": "",
+      "uptime": 0,
+      "connectionErrors": 0,
+      "lastErrorTime": null,
+      "lastErrorMessage": null
+    }
+  }
+}

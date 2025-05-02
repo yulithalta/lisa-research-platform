@@ -1,0 +1,165 @@
+
+3:54:47 AM [express] GET /api/recordings 304 in 2ms :: [{"cameraId":1,"filePath":"/home/orangepi/Doc…
+Iniciando análisis para grabación 18 con ID de análisis recording_18_1740279288764
+Simulating AI analysis for /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/recordings/cam33-2-2025-02-23T01-50-33-657Z.mp4 with ID recording_18_1740279288764
+3:54:49 AM [express] POST /api/recordings/18/analyze 202 in 3ms :: {"message":"Análisis iniciado"}
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 21,
+  status: 'in progress',
+  framesAnalyzed: 21,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:54:52 AM [express] GET /api/analysis/recording_18_1740279288764/progress 200 in 11ms :: {"progress…
+3:54:52 AM [express] GET /api/recordings 304 in 4ms :: [{"cameraId":1,"filePath":"/home/orangepi/Doc…
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 41,
+  status: 'in progress',
+  framesAnalyzed: 41,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:54:54 AM [express] GET /api/analysis/recording_18_1740279288764/progress 200 in 6ms :: {"progress"…
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 60,
+  status: 'in progress',
+  framesAnalyzed: 60,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:54:56 AM [express] GET /api/analysis/recording_18_1740279288764/progress 200 in 3ms :: {"progress"…
+3:54:57 AM [express] GET /api/recordings 304 in 5ms :: [{"cameraId":1,"filePath":"/home/orangepi/Doc…
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 80,
+  status: 'in progress',
+  framesAnalyzed: 80,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:54:58 AM [express] GET /api/analysis/recording_18_1740279288764/progress 200 in 2ms :: {"progress"…
+Análisis completado para grabación 18 {
+  analysisId: 'recording_18_1740279288764',
+  result: 'Analysis complete'
+}
+Guardando estado...
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/users.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/cameras.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/recordings.json
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 100,
+  status: 'in progress',
+  framesAnalyzed: 100,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:55:00 AM [express] GET /api/analysis/recording_18_1740279288764/progress 200 in 1ms :: {"progress"…
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 100,
+  status: 'in progress',
+  framesAnalyzed: 100,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:55:02 AM [express] GET /api/analysis/recording_18_1740279288764/progress 304 in 2ms :: {"progress"…
+3:55:02 AM [express] GET /api/recordings 200 in 4ms :: [{"cameraId":1,"filePath":"/home/orangepi/Doc…
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 100,
+  status: 'in progress',
+  framesAnalyzed: 100,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:55:04 AM [express] GET /api/analysis/recording_18_1740279288764/progress 304 in 3ms :: {"progress"…
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 100,
+  status: 'in progress',
+  framesAnalyzed: 100,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:55:06 AM [express] GET /api/analysis/recording_18_1740279288764/progress 304 in 5ms :: {"progress"…
+3:55:07 AM [express] GET /api/recordings 304 in 7ms :: [{"cameraId":1,"filePath":"/home/orangepi/Doc…
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 100,
+  status: 'in progress',
+  framesAnalyzed: 100,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:55:08 AM [express] GET /api/analysis/recording_18_1740279288764/progress 304 in 3ms :: {"progress"…
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 100,
+  status: 'in progress',
+  framesAnalyzed: 100,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:55:10 AM [express] GET /api/analysis/recording_18_1740279288764/progress 304 in 4ms :: {"progress"…
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 100,
+  status: 'in progress',
+  framesAnalyzed: 100,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:55:12 AM [express] GET /api/analysis/recording_18_1740279288764/progress 304 in 4ms :: {"progress"…
+3:55:12 AM [express] GET /api/recordings 304 in 3ms :: [{"cameraId":1,"filePath":"/home/orangepi/Doc…
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 100,
+  status: 'in progress',
+  framesAnalyzed: 100,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:55:14 AM [express] GET /api/analysis/recording_18_1740279288764/progress 304 in 1ms :: {"progress"…
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 100,
+  status: 'in progress',
+  framesAnalyzed: 100,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:55:16 AM [express] GET /api/analysis/recording_18_1740279288764/progress 304 in 1ms :: {"progress"…
+3:55:17 AM [express] GET /api/recordings 304 in 6ms :: [{"cameraId":1,"filePath":"/home/orangepi/Doc…
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 100,
+  status: 'in progress',
+  framesAnalyzed: 100,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:55:18 AM [express] GET /api/analysis/recording_18_1740279288764/progress 304 in 4ms :: {"progress"…
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 100,
+  status: 'in progress',
+  framesAnalyzed: 100,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:55:20 AM [express] GET /api/analysis/recording_18_1740279288764/progress 304 in 3ms :: {"progress"…
+Consultando progreso del análisis recording_18_1740279288764
+Progreso del análisis recording_18_1740279288764: {
+  progress: 100,
+  status: 'in progress',
+  framesAnalyzed: 100,
+  totalFrames: 100,
+  errorMessage: null
+}
+3:55:22 AM [express] GET /api/analysis/recording_18_1740279288764/progress 304 in 4ms :: {"progress"…
+3:55:22 AM [express] GET /api/recordings 304 in 4ms :: [{"cameraId":1,"filePath":"/home/orangepi/Doc…
+Consultando progreso del análisis recording_18_1740279288764

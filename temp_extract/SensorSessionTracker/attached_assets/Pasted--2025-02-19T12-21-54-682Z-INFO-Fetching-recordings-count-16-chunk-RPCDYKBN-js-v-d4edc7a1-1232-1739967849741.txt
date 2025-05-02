@@ -1,0 +1,245 @@
+[2025-02-19T12:21:54.682Z] [INFO] Fetching recordings {"count":16}
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/1/thumbnail 500 (Internal Server Error)
+setValueForProperty @ chunk-RPCDYKBN.js?v=d4edc7a1:1232
+setInitialDOMProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7462
+setInitialProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7595
+finalizeInitialChildren @ chunk-RPCDYKBN.js?v=d4edc7a1:8345
+completeWork @ chunk-RPCDYKBN.js?v=d4edc7a1:16293
+completeUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19224
+performUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19206
+workLoopSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=d4edc7a1:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=d4edc7a1:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=d4edc7a1:18627Understand this errorAI
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/2/thumbnail 500 (Internal Server Error)
+setValueForProperty @ chunk-RPCDYKBN.js?v=d4edc7a1:1232
+setInitialDOMProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7462
+setInitialProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7595
+finalizeInitialChildren @ chunk-RPCDYKBN.js?v=d4edc7a1:8345
+completeWork @ chunk-RPCDYKBN.js?v=d4edc7a1:16293
+completeUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19224
+performUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19206
+workLoopSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=d4edc7a1:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=d4edc7a1:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=d4edc7a1:18627Understand this errorAI
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/3/thumbnail 500 (Internal Server Error)
+setValueForProperty @ chunk-RPCDYKBN.js?v=d4edc7a1:1232
+setInitialDOMProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7462
+setInitialProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7595
+finalizeInitialChildren @ chunk-RPCDYKBN.js?v=d4edc7a1:8345
+completeWork @ chunk-RPCDYKBN.js?v=d4edc7a1:16293
+completeUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19224
+performUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19206
+workLoopSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=d4edc7a1:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=d4edc7a1:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=d4edc7a1:18627Understand this errorAI
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/4/thumbnail 500 (Internal Server Error)
+setValueForProperty @ chunk-RPCDYKBN.js?v=d4edc7a1:1232
+setInitialDOMProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7462
+setInitialProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7595
+finalizeInitialChildren @ chunk-RPCDYKBN.js?v=d4edc7a1:8345
+completeWork @ chunk-RPCDYKBN.js?v=d4edc7a1:16293
+completeUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19224
+performUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19206
+workLoopSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=d4edc7a1:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=d4edc7a1:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=d4edc7a1:18627Understand this errorAI
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/5/thumbnail 500 (Internal Server Error)
+setValueForProperty @ chunk-RPCDYKBN.js?v=d4edc7a1:1232
+setInitialDOMProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7462
+setInitialProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7595
+finalizeInitialChildren @ chunk-RPCDYKBN.js?v=d4edc7a1:8345
+completeWork @ chunk-RPCDYKBN.js?v=d4edc7a1:16293
+completeUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19224
+performUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19206
+workLoopSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=d4edc7a1:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=d4edc7a1:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=d4edc7a1:18627Understand this errorAI
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/6/thumbnail 500 (Internal Server Error)
+setValueForProperty @ chunk-RPCDYKBN.js?v=d4edc7a1:1232
+setInitialDOMProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7462
+setInitialProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7595
+finalizeInitialChildren @ chunk-RPCDYKBN.js?v=d4edc7a1:8345
+completeWork @ chunk-RPCDYKBN.js?v=d4edc7a1:16293
+completeUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19224
+performUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19206
+workLoopSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=d4edc7a1:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=d4edc7a1:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=d4edc7a1:18627Understand this errorAI
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/15/thumbnail 500 (Internal Server Error)
+setValueForProperty @ chunk-RPCDYKBN.js?v=d4edc7a1:1232
+setInitialDOMProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7462
+setInitialProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7595
+finalizeInitialChildren @ chunk-RPCDYKBN.js?v=d4edc7a1:8345
+completeWork @ chunk-RPCDYKBN.js?v=d4edc7a1:16293
+completeUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19224
+performUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19206
+workLoopSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=d4edc7a1:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=d4edc7a1:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=d4edc7a1:18627Understand this errorAI
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/7/thumbnail 500 (Internal Server Error)
+setValueForProperty @ chunk-RPCDYKBN.js?v=d4edc7a1:1232
+setInitialDOMProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7462
+setInitialProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7595
+finalizeInitialChildren @ chunk-RPCDYKBN.js?v=d4edc7a1:8345
+completeWork @ chunk-RPCDYKBN.js?v=d4edc7a1:16293
+completeUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19224
+performUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19206
+workLoopSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=d4edc7a1:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=d4edc7a1:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=d4edc7a1:18627Understand this errorAI
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/8/thumbnail 500 (Internal Server Error)
+setValueForProperty @ chunk-RPCDYKBN.js?v=d4edc7a1:1232
+setInitialDOMProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7462
+setInitialProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7595
+finalizeInitialChildren @ chunk-RPCDYKBN.js?v=d4edc7a1:8345
+completeWork @ chunk-RPCDYKBN.js?v=d4edc7a1:16293
+completeUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19224
+performUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19206
+workLoopSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=d4edc7a1:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=d4edc7a1:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=d4edc7a1:18627Understand this errorAI
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/9/thumbnail 500 (Internal Server Error)
+setValueForProperty @ chunk-RPCDYKBN.js?v=d4edc7a1:1232
+setInitialDOMProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7462
+setInitialProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7595
+finalizeInitialChildren @ chunk-RPCDYKBN.js?v=d4edc7a1:8345
+completeWork @ chunk-RPCDYKBN.js?v=d4edc7a1:16293
+completeUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19224
+performUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19206
+workLoopSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=d4edc7a1:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=d4edc7a1:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=d4edc7a1:18627Understand this errorAI
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/10/thumbnail 500 (Internal Server Error)
+setValueForProperty @ chunk-RPCDYKBN.js?v=d4edc7a1:1232
+setInitialDOMProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7462
+setInitialProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7595
+finalizeInitialChildren @ chunk-RPCDYKBN.js?v=d4edc7a1:8345
+completeWork @ chunk-RPCDYKBN.js?v=d4edc7a1:16293
+completeUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19224
+performUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19206
+workLoopSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=d4edc7a1:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=d4edc7a1:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=d4edc7a1:18627Understand this errorAI
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/11/thumbnail 500 (Internal Server Error)
+setValueForProperty @ chunk-RPCDYKBN.js?v=d4edc7a1:1232
+setInitialDOMProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7462
+setInitialProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7595
+finalizeInitialChildren @ chunk-RPCDYKBN.js?v=d4edc7a1:8345
+completeWork @ chunk-RPCDYKBN.js?v=d4edc7a1:16293
+completeUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19224
+performUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19206
+workLoopSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=d4edc7a1:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=d4edc7a1:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=d4edc7a1:18627Understand this errorAI
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/12/thumbnail 500 (Internal Server Error)
+setValueForProperty @ chunk-RPCDYKBN.js?v=d4edc7a1:1232
+setInitialDOMProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7462
+setInitialProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7595
+finalizeInitialChildren @ chunk-RPCDYKBN.js?v=d4edc7a1:8345
+completeWork @ chunk-RPCDYKBN.js?v=d4edc7a1:16293
+completeUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19224
+performUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19206
+workLoopSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=d4edc7a1:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=d4edc7a1:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=d4edc7a1:18627Understand this errorAI
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/13/thumbnail 500 (Internal Server Error)
+setValueForProperty @ chunk-RPCDYKBN.js?v=d4edc7a1:1232
+setInitialDOMProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7462
+setInitialProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7595
+finalizeInitialChildren @ chunk-RPCDYKBN.js?v=d4edc7a1:8345
+completeWork @ chunk-RPCDYKBN.js?v=d4edc7a1:16293
+completeUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19224
+performUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19206
+workLoopSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=d4edc7a1:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=d4edc7a1:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=d4edc7a1:18627Understand this errorAI
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/14/thumbnail 500 (Internal Server Error)
+setValueForProperty @ chunk-RPCDYKBN.js?v=d4edc7a1:1232
+setInitialDOMProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7462
+setInitialProperties @ chunk-RPCDYKBN.js?v=d4edc7a1:7595
+finalizeInitialChildren @ chunk-RPCDYKBN.js?v=d4edc7a1:8345
+completeWork @ chunk-RPCDYKBN.js?v=d4edc7a1:16293
+completeUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19224
+performUnitOfWork @ chunk-RPCDYKBN.js?v=d4edc7a1:19206
+workLoopSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=d4edc7a1:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=d4edc7a1:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=d4edc7a1:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=d4edc7a1:18627Understand this errorAI
+chunk-RPCDYKBN.js?v=d4edc7a1:1232 
+            
+            
+           GET http://192.168.0.10:5000/api/recordings/16/thumbnail 500 (Internal Server Error)

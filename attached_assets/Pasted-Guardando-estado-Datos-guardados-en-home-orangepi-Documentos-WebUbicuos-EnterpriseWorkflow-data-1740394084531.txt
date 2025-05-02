@@ -1,0 +1,41 @@
+Guardando estado...
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/users.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/cameras.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/recordings.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/sensors.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/sensor_events.json
+11:47:42 AM [express] PATCH /api/cameras/1 200 in 2ms :: {"name":"192.168.0.31","ipAddress":"192.168.…
+11:47:42 AM [express] POST /api/cameras/verify 200 in 3ms
+Guardando estado...
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/users.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/cameras.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/recordings.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/sensors.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/sensor_events.json
+11:47:42 AM [express] PATCH /api/cameras/2 200 in 1ms :: {"name":"192.168.0.33","ipAddress":"192.168.…
+11:47:42 AM [express] GET /api/cameras 200 in 1ms :: [{"name":"192.168.0.31","ipAddress":"192.168.0.3…
+11:47:42 AM [express] POST /api/cameras/verify 200 in 3ms
+Guardando estado...
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/users.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/cameras.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/recordings.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/sensors.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/sensor_events.json
+11:47:42 AM [express] PATCH /api/cameras/1 200 in 2ms :: {"name":"192.168.0.31","ipAddress":"192.168.…
+11:47:42 AM [express] POST /api/cameras/verify 200 in 3ms
+Guardando estado...
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/users.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/cameras.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/recordings.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/sensors.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/sensor_events.json
+11:47:42 AM [express] PATCH /api/cameras/2 200 in 4ms :: {"name":"192.168.0.33","ipAddress":"192.168.…
+11:47:42 AM [express] GET /api/cameras 200 in 0ms :: [{"name":"192.168.0.31","ipAddress":"192.168.0.3…
+11:47:42 AM [express] POST /api/cameras/verify 200 in 3ms
+Guardando estado...
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/users.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/cameras.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/recordings.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/sensors.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/sensor_events.json
+11:47:42 AM [express] PATCH /api/cameras/1 200 in 3ms :: {"name":"192.168.0.31","ipAddress":"192.168.…

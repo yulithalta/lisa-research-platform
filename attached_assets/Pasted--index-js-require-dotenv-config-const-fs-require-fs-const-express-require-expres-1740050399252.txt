@@ -1,0 +1,219 @@
+// index.js
+require('dotenv').config();
+const fs = require('fs');
+const express = require('express');
+const path = require('path');
+const Stream = require('node-rtsp-stream');
+const { scanRange } = require('./scan');
+
+const VIEWER_USER = process.env.VIEWER_USER || 'viewer';
+const VIEWER_PASS = process.env.VIEWER_PASS || 'viewer123';
+
+const START_IP = process.env.START_IP || '192.168.0.29';
+const END_IP   = process.env.END_IP   || '192.168.0.34';
+const SCAN_CONCURRENCY = parseInt(process.env.SCAN_CONCURRENCY || '5', 10);
+
+const PORT = parseInt(process.env.PORT || '3032', 10);
+const WS_BASE_PORT = parseInt(process.env.WS_BASE_PORT || '9999', 10);
+
+// Intervalo de reescaneo (ms)
+const RESCAN_INTERVAL_MS = parseInt(process.env.RESCAN_INTERVAL_MS || '0', 10);
+
+// Archivo para persistir la lista de cámaras
+const CAMERAS_FILE = path.join(__dirname, 'cameras.json');
+
+// Estructura de la cámara:
+// {
+//   ip: string,
+//   wsPort: number,
+//   streamUrl: string,
+//   stream: node-rtsp-stream (no serializable)
+// }
+
+// Array en memoria
+let cameras = [];         
+let nextWsPort = WS_BASE_PORT;
+
+// Cargar cámaras desde JSON
+function loadCamerasFromFile() {
+  if (fs.existsSync(CAMERAS_FILE)) {
+    try {
+      const content = fs.readFileSync(CAMERAS_FILE, 'utf8');
+      const data = JSON.parse(content);
+      // data = [{ ip, wsPort, streamUrl }, ...]
+      cameras = data.map((cam) => ({
+        ip: cam.ip,
+        wsPort: cam.wsPort,
+        streamUrl: cam.streamUrl,
+        stream: null // lo crearemos al arrancar o al primer uso
+      }));
+      // Ajustar nextWsPort para que no colisione
+      const maxPort = Math.max(...cameras.map(c => c.wsPort), WS_BASE_PORT);
+      nextWsPort = maxPort + 1;
+      console.log(`Cargadas ${cameras.length} cámaras desde ${CAMERAS_FILE}`);
+    } catch (err) {
+      console.error(`Error leyendo ${CAMERAS_FILE}:`, err);
+    }
+  } else {
+    console.log(`No existe ${CAMERAS_FILE}, iniciamos sin cámaras persistidas.`);
+  }
+}
+
+// Guardar cámaras en JSON (sin incluir el objeto "stream")
+function saveCamerasToFile() {
+  // Serializamos solo ip, wsPort, streamUrl
+  const data = cameras.map(({ ip, wsPort, streamUrl }) => ({
+    ip, wsPort, streamUrl
+  }));
+  fs.writeFileSync(CAMERAS_FILE, JSON.stringify(data, null, 2), 'utf8');
+  console.log(`Cámaras guardadas en ${CAMERAS_FILE}`);
+}
+
+// Crea un node-rtsp-stream para una cámara
+function createStreamForCamera(cam) {
+  console.log(`Iniciando stream para IP=${cam.ip} en wsPort=${cam.wsPort}`);
+  const stream = new Stream({
+    name: `Cam-${cam.ip}`,
+    streamUrl: cam.streamUrl,
+    wsPort: cam.wsPort,
+    ffmpegOptions: {
+      '-stats': '',
+      '-r': 25
+    }
+  });
+  cam.stream = stream;
+}
+
+// Crea y registra una cámara en memoria + disco
+function addCamera(ip) {
+  // Evita duplicados
+  const exists = cameras.find(c => c.ip === ip);
+  if (exists) {
+    return exists;
+  }
+  const wsPort = nextWsPort++;
+  const streamUrl = `rtsp://${VIEWER_USER}:${VIEWER_PASS}@${ip}:554/h264Preview_01_sub`;
+
+  const cam = { ip, wsPort, streamUrl, stream: null };
+  cameras.push(cam);
+  createStreamForCamera(cam);
+
+  saveCamerasToFile();
+  return cam;
+}
+
+// Elimina la cámara y detiene ffmpeg si está corriendo
+function removeCameraByIp(ip) {
+  const index = cameras.findIndex(c => c.ip === ip);
+  if (index >= 0) {
+    const cam = cameras[index];
+    // Cerrar el proceso ffmpeg
+    if (cam.stream && cam.stream.mpeg1Muxer) {
+      // node-rtsp-stream usa .ffmpegProc para el proceso
+      cam.stream.mpeg1Muxer.ffmpegProc.kill('SIGKILL');
+    }
+    cameras.splice(index, 1);
+    saveCamerasToFile();
+    return true;
+  }
+  return false;
+}
+
+// Re-crea streams (node-rtsp-stream) para todas las cámaras en memoria
+// (por ejemplo tras arrancar, para que funcionen al recargar la app).
+function initAllStreams() {
+  cameras.forEach(cam => {
+    if (!cam.stream) {
+      createStreamForCamera(cam);
+    }
+  });
+}
+
+// Escanea la red, añade las nuevas cámaras
+async function scanAndAddCameras() {
+  console.log(`Escaneando red ${START_IP}..${END_IP}`);
+  const foundIps = await scanRange({
+    startIp: START_IP,
+    endIp: END_IP,
+    concurrency: SCAN_CONCURRENCY
+  });
+
+  // Para cada IP que no esté en la lista, la agregamos
+  foundIps.forEach(ip => {
+    if (!cameras.find(c => c.ip === ip)) {
+      addCamera(ip);
+    }
+  });
+}
+
+// ============ Servidor Express =============
+
+const app = express();
+app.use(express.json());
+
+// (Opcional) Endpoint para re-escaneo manual
+app.get('/api/scan', async (req, res) => {
+  await scanAndAddCameras();
+  res.json({ message: 'Re-escaneo completado', cameras });
+});
+
+// Lista de cámaras
+app.get('/api/cameras', (req, res) => {
+  // No incluimos el objeto .stream en la respuesta
+  const data = cameras.map(({ ip, wsPort, streamUrl }) => ({
+    ip, wsPort, streamUrl
+  }));
+  res.json(data);
+});
+
+// Añadir cámara manualmente
+app.post('/api/cameras', (req, res) => {
+  const { ip } = req.body;
+  if (!ip) {
+    return res.status(400).json({ error: 'Falta IP' });
+  }
+  // Podríamos hacer un check con FFmpeg si queremos validarla
+  const cam = addCamera(ip);
+  res.status(201).json({
+    ip: cam.ip,
+    wsPort: cam.wsPort,
+    streamUrl: cam.streamUrl
+  });
+});
+
+// Eliminar cámara
+app.delete('/api/cameras/:ip', (req, res) => {
+  const { ip } = req.params;
+  const ok = removeCameraByIp(ip);
+  if (!ok) {
+    return res.status(404).json({ error: 'Cámara no encontrada' });
+  }
+  res.json({ message: `Cámara ${ip} eliminada` });
+});
+
+// Servir estáticos
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.listen(PORT, async () => {
+  console.log(`Servidor HTTP escuchando en puerto ${PORT}`);
+
+  // 1) Cargar cámaras desde disco
+  loadCamerasFromFile();
+
+  // 2) (Re)Crear streams para las cámaras persistidas
+  initAllStreams();
+
+  // 3) Escaneo inicial
+  await scanAndAddCameras();
+  console.log(`Cámaras activas tras escaneo:`, cameras.map(c => c.ip));
+
+  // 4) Re-escaneo periódico (si RESCAN_INTERVAL_MS > 0)
+  if (RESCAN_INTERVAL_MS > 0) {
+    setInterval(() => {
+      console.log('Re-escaneo automático...');
+      scanAndAddCameras().catch(err => console.error('Error en re-escaneo:', err));
+    }, RESCAN_INTERVAL_MS);
+  }
+
+  console.log(`Listo! Ve a http://localhost:${PORT}/`);
+});

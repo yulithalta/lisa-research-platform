@@ -1,0 +1,121 @@
+logger.ts:164 [2025-04-08T08:58:49.301Z] [INFO] Application starting
+logger.ts:164 [2025-04-08T08:58:49.302Z] [INFO] Initializing router
+logger.ts:164 [2025-04-08T08:58:49.418Z] [INFO] Conectando a broker MQTT: ws://192.168.0.20:9001
+sessions-page.tsx:130 Connecting to WebSocket at ws://mforum-livinglab:5000/ws
+sessions-page.tsx:370 Sensores seleccionados actualizados: Array(0)
+client:536 WebSocket connection to 'ws://mforum-livinglab:5000/?token=wmZT5mv3OMei' failed: 
+setupWebSocket @ client:536
+client:536 Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'ws://localhost:undefined/?token=wmZT5mv3OMei' is invalid.
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)
+logger.ts:164 [2025-04-08T08:58:49.478Z] [INFO] ✅ Conectado a broker MQTT: ws://192.168.0.20:9001
+logger.ts:164 [2025-04-08T08:58:49.513Z] [INFO] ✅ Suscrito a tópico: zigbee2mqtt/#
+logger.ts:164 [2025-04-08T08:58:49.516Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/bridge/info
+logger.ts:164 [2025-04-08T08:58:49.516Z] [INFO] Contenido: {"commit":"ba337bd329aeb4ca17735c0cf09b31293c8cff06","config":{"advanced":{"cache_state":true,"cache_state_persistent":true,"cache_state_send_on_startup":true,"channel":11,"elapsed":false,"ext_pan_id"...
+logger.ts:164 [2025-04-08T08:58:49.534Z] [INFO] Recibida lista de dispositivos zigbee2mqtt
+logger.ts:164 [2025-04-08T08:58:49.535Z] [INFO] Recibidos 5 sensores de Zigbee2MQTT
+logger.ts:164 [2025-04-08T08:58:49.560Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors
+logger.ts:164 [2025-04-08T08:58:49.560Z] [INFO] Contenido: {"count":5,"sensors":[{"ieeeAddr":"0x00124b002a6b62b7","friendlyName":"Sensor-4-Sonoff-SNZB-04","modelID":"unknown","model":"SNZB-04","manufacturerName":"unknown","lastUpdate":1744102406479,"firstSeen...
+logger.ts:164 [2025-04-08T08:58:49.560Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors_compatible
+logger.ts:164 [2025-04-08T08:58:49.560Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"battery":100,"battery_low":false,"contact":true,"device":{"applicationVersion":5,"dateCode":"20230630","friendlyName":"Sensor-4-Sonoff-SNZB-04","hardwareVersion":1,"ieeeAddr":"...
+logger.ts:164 [2025-04-08T08:58:49.560Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/simple_sensors
+logger.ts:164 [2025-04-08T08:58:49.561Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"name":"Sensor-4-Sonoff-SNZB-04","contact":false,"battery":100,"last_update":1744102406479},"0x00124b00292c38e7":{"name":"sensor-2-cocina","contact":false,"battery":94.5,"last_u...
+logger.ts:164 [2025-04-08T08:58:49.561Z] [INFO] ✅ Suscrito a tópico: +/+/+
+logger.ts:164 [2025-04-08T08:58:49.562Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/bridge/info
+logger.ts:164 [2025-04-08T08:58:49.562Z] [INFO] Contenido: {"commit":"ba337bd329aeb4ca17735c0cf09b31293c8cff06","config":{"advanced":{"cache_state":true,"cache_state_persistent":true,"cache_state_send_on_startup":true,"channel":11,"elapsed":false,"ext_pan_id"...
+logger.ts:164 [2025-04-08T08:58:49.563Z] [INFO] Recibida lista de dispositivos zigbee2mqtt
+logger.ts:164 [2025-04-08T08:58:49.563Z] [INFO] Recibidos 5 sensores de Zigbee2MQTT
+logger.ts:164 [2025-04-08T08:58:49.609Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors
+logger.ts:164 [2025-04-08T08:58:49.609Z] [INFO] Contenido: {"count":5,"sensors":[{"ieeeAddr":"0x00124b002a6b62b7","friendlyName":"Sensor-4-Sonoff-SNZB-04","modelID":"unknown","model":"SNZB-04","manufacturerName":"unknown","lastUpdate":1744102406479,"firstSeen...
+logger.ts:164 [2025-04-08T08:58:49.609Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors_compatible
+logger.ts:164 [2025-04-08T08:58:49.609Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"battery":100,"battery_low":false,"contact":true,"device":{"applicationVersion":5,"dateCode":"20230630","friendlyName":"Sensor-4-Sonoff-SNZB-04","hardwareVersion":1,"ieeeAddr":"...
+logger.ts:164 [2025-04-08T08:58:49.609Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/simple_sensors
+logger.ts:164 [2025-04-08T08:58:49.609Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"name":"Sensor-4-Sonoff-SNZB-04","contact":false,"battery":100,"last_update":1744102406479},"0x00124b00292c38e7":{"name":"sensor-2-cocina","contact":false,"battery":94.5,"last_u...
+logger.ts:164 [2025-04-08T08:58:49.610Z] [INFO] ✅ Suscrito a tópico: 0x00124b002a6b62b7/#
+logger.ts:164 [2025-04-08T08:58:49.610Z] [INFO] ✅ Suscrito a tópico: zigbee2mqtt/livinglab/device
+logger.ts:164 [2025-04-08T08:58:49.610Z] [INFO] ✅ Suscrito a tópico: zigbee2mqtt/livinglab/event_new
+logger.ts:164 [2025-04-08T08:58:49.610Z] [INFO] ✅ Suscrito a tópico: zigbee2mqtt/livinglab/event
+logger.ts:164 [2025-04-08T08:58:49.610Z] [INFO] ✅ Suscrito a tópico: zigbee2mqtt/livinglab/sensors_compatible
+logger.ts:164 [2025-04-08T08:58:49.610Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors_compatible
+logger.ts:164 [2025-04-08T08:58:49.610Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"battery":100,"battery_low":false,"contact":true,"device":{"applicationVersion":5,"dateCode":"20230630","friendlyName":"Sensor-4-Sonoff-SNZB-04","hardwareVersion":1,"ieeeAddr":"...
+logger.ts:164 [2025-04-08T08:58:49.610Z] [INFO] ✅ Suscrito a tópico: zigbee2mqtt/+/+
+logger.ts:164 [2025-04-08T08:58:49.611Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/bridge/info
+logger.ts:164 [2025-04-08T08:58:49.611Z] [INFO] Contenido: {"commit":"ba337bd329aeb4ca17735c0cf09b31293c8cff06","config":{"advanced":{"cache_state":true,"cache_state_persistent":true,"cache_state_send_on_startup":true,"channel":11,"elapsed":false,"ext_pan_id"...
+logger.ts:164 [2025-04-08T08:58:49.611Z] [INFO] Recibida lista de dispositivos zigbee2mqtt
+logger.ts:164 [2025-04-08T08:58:49.611Z] [INFO] Recibidos 5 sensores de Zigbee2MQTT
+logger.ts:164 [2025-04-08T08:58:49.630Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors
+logger.ts:164 [2025-04-08T08:58:49.630Z] [INFO] Contenido: {"count":5,"sensors":[{"ieeeAddr":"0x00124b002a6b62b7","friendlyName":"Sensor-4-Sonoff-SNZB-04","modelID":"unknown","model":"SNZB-04","manufacturerName":"unknown","lastUpdate":1744102406479,"firstSeen...
+logger.ts:164 [2025-04-08T08:58:49.631Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors_compatible
+logger.ts:164 [2025-04-08T08:58:49.631Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"battery":100,"battery_low":false,"contact":true,"device":{"applicationVersion":5,"dateCode":"20230630","friendlyName":"Sensor-4-Sonoff-SNZB-04","hardwareVersion":1,"ieeeAddr":"...
+logger.ts:164 [2025-04-08T08:58:49.631Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/simple_sensors
+logger.ts:164 [2025-04-08T08:58:49.631Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"name":"Sensor-4-Sonoff-SNZB-04","contact":false,"battery":100,"last_update":1744102406479},"0x00124b00292c38e7":{"name":"sensor-2-cocina","contact":false,"battery":94.5,"last_u...
+logger.ts:164 [2025-04-08T08:58:49.632Z] [INFO] ✅ Suscrito a tópico: zigbee2mqtt/bridge/devices
+logger.ts:164 [2025-04-08T08:58:49.632Z] [INFO] Recibida lista de dispositivos zigbee2mqtt
+logger.ts:164 [2025-04-08T08:58:49.632Z] [INFO] Recibidos 5 sensores de Zigbee2MQTT
+sessions-page.tsx:134 Connected to WebSocket server
+sessions-page.tsx:169 WebSocket connection closed
+logger.ts:164 [2025-04-08T08:58:50.563Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/bridge/logging
+logger.ts:164 [2025-04-08T08:58:50.563Z] [INFO] Contenido: {"level":"info","message":"z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/livinglab/sensors', payload '{\"count\":5,\"sensors\":[{\"ieeeAddr\":\"0x00124b002a6b62b7\",\"friendlyName\":\"Sensor-4-Sonoff-SNZ...
+logger.ts:164 [2025-04-08T08:58:50.574Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors
+logger.ts:164 [2025-04-08T08:58:50.574Z] [INFO] Contenido: {"count":5,"sensors":[{"ieeeAddr":"0x00124b002a6b62b7","friendlyName":"Sensor-4-Sonoff-SNZB-04","modelID":"unknown","model":"SNZB-04","manufacturerName":"unknown","lastUpdate":1744102406479,"firstSeen...
+logger.ts:164 [2025-04-08T08:58:50.574Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/bridge/logging
+logger.ts:164 [2025-04-08T08:58:50.574Z] [INFO] Contenido: {"level":"info","message":"z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/livinglab/sensors_compatible', payload '{\"0x00124b002a6b62b7\":{\"battery\":100,\"battery_low\":false,\"contact\":true,\"device\"...
+logger.ts:164 [2025-04-08T08:58:50.574Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/sensors_compatible
+logger.ts:164 [2025-04-08T08:58:50.574Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"battery":100,"battery_low":false,"contact":true,"device":{"applicationVersion":5,"dateCode":"20230630","friendlyName":"Sensor-4-Sonoff-SNZB-04","hardwareVersion":1,"ieeeAddr":"...
+logger.ts:164 [2025-04-08T08:58:50.575Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/bridge/logging
+logger.ts:164 [2025-04-08T08:58:50.575Z] [INFO] Contenido: {"level":"info","message":"z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/livinglab/simple_sensors', payload '{\"0x00124b002a6b62b7\":{\"name\":\"Sensor-4-Sonoff-SNZB-04\",\"contact\":false,\"battery\":10...
+logger.ts:164 [2025-04-08T08:58:50.575Z] [INFO] ⭐ Recibido mensaje para sensor específico 0x00124b002a6b62b7 en tópico: zigbee2mqtt/livinglab/simple_sensors
+logger.ts:164 [2025-04-08T08:58:50.575Z] [INFO] Contenido: {"0x00124b002a6b62b7":{"name":"Sensor-4-Sonoff-SNZB-04","contact":false,"battery":100,"last_update":1744102406479},"0x00124b00292c38e7":{"name":"sensor-2-cocina","contact":false,"battery":94.5,"last_u...
+sessions-page.tsx:114 Uncaught TypeError: Cannot read properties of null (reading 'toLowerCase')
+    at sessions-page.tsx:114:18
+    at Array.some (<anonymous>)
+    at sessions-page.tsx:113:53
+    at Array.some (<anonymous>)
+    at sessions-page.tsx:97:24
+    at Array.filter (<anonymous>)
+    at SessionsPage (sessions-page.tsx:90:38)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=12970475:11548:26)
+    at updateFunctionComponent (chunk-RPCDYKBN.js?v=12970475:14582:28)
+    at beginWork (chunk-RPCDYKBN.js?v=12970475:15924:22)
+sessions-page.tsx:114 Uncaught TypeError: Cannot read properties of null (reading 'toLowerCase')
+    at sessions-page.tsx:114:18
+    at Array.some (<anonymous>)
+    at sessions-page.tsx:113:53
+    at Array.some (<anonymous>)
+    at sessions-page.tsx:97:24
+    at Array.filter (<anonymous>)
+    at SessionsPage (sessions-page.tsx:90:38)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=12970475:11548:26)
+    at updateFunctionComponent (chunk-RPCDYKBN.js?v=12970475:14582:28)
+    at beginWork (chunk-RPCDYKBN.js?v=12970475:15924:22)
+hook.js:608 The above error occurred in the <SessionsPage> component:
+
+    at SessionsPage (http://mforum-livinglab:5000/src/pages/sessions-page.tsx?t=1744099866111:65:29)
+    at div
+    at main
+    at div
+    at div
+    at MainLayout (http://mforum-livinglab:5000/src/components/layout/main-layout.tsx:19:30)
+    at component
+    at ProtectedRoute (http://mforum-livinglab:5000/src/lib/protected-route.tsx:22:3)
+    at Switch (http://mforum-livinglab:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.20/node_modules/.vite/deps/wouter.js?v=12970475:336:17)
+    at Router
+    at AuthProvider (http://mforum-livinglab:5000/src/hooks/use-auth.tsx:26:32)
+    at QueryClientProvider (http://mforum-livinglab:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.20/node_modules/.vite/deps/@tanstack_react-query.js?v=12970475:2881:3)
+    at App
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+overrideMethod @ hook.js:608
+chunk-RPCDYKBN.js?v=12970475:9129 Uncaught TypeError: Cannot read properties of null (reading 'toLowerCase')
+    at sessions-page.tsx:114:18
+    at Array.some (<anonymous>)
+    at sessions-page.tsx:113:53
+    at Array.some (<anonymous>)
+    at sessions-page.tsx:97:24
+    at Array.filter (<anonymous>)
+    at SessionsPage (sessions-page.tsx:90:38)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=12970475:11548:26)
+    at updateFunctionComponent (chunk-RPCDYKBN.js?v=12970475:14582:28)
+    at beginWork (chunk-RPCDYKBN.js?v=12970475:15924:22)

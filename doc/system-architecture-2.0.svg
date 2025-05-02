@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="900" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      src: url(data:font/woff2;base64,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) format('woff2');
+    }
+
+    .container {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 14px;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      text-anchor: middle;
+      fill: #1a202c;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      text-anchor: middle;
+      fill: #4a5568;
+    }
+
+    .header {
+      font-size: 20px;
+      font-weight: bold;
+      fill: #2d3748;
+    }
+
+    .cluster-box {
+      fill: #EDF2F7;
+      stroke: #CBD5E0;
+      stroke-width: 2;
+      rx: 10;
+      ry: 10;
+    }
+
+    .docker-box {
+      fill: #E6F6FF;
+      stroke: #63B3ED;
+      stroke-width: 2;
+      rx: 8;
+      ry: 8;
+    }
+
+    .service-box {
+      fill: #ffffff;
+      stroke: #A0AEC0;
+      stroke-width: 1.5;
+      rx: 6;
+      ry: 6;
+    }
+
+    .database-box {
+      fill: #FEEBC8;
+      stroke: #ED8936;
+      stroke-width: 1.5;
+      rx: 6;
+      ry: 6;
+    }
+
+    .redis-box {
+      fill: #FED7D7;
+      stroke: #F56565;
+      stroke-width: 1.5;
+      rx: 6;
+      ry: 6;
+    }
+
+    .mqtt-box {
+      fill: #E9D8FD;
+      stroke: #805AD5;
+      stroke-width: 1.5;
+      rx: 6;
+      ry: 6;
+    }
+
+    .client-box {
+      fill: #C6F6D5;
+      stroke: #38A169;
+      stroke-width: 1.5;
+      rx: 6;
+      ry: 6;
+    }
+
+    .connection {
+      stroke: #718096;
+      stroke-width: 1.5;
+      fill: none;
+      marker-end: url(#arrowhead);
+    }
+
+    .dashed-connection {
+      stroke: #718096;
+      stroke-width: 1.5;
+      stroke-dasharray: 4;
+      fill: none;
+      marker-end: url(#arrowhead);
+    }
+
+    .label {
+      font-size: 12px;
+      text-anchor: middle;
+      fill: #4a5568;
+    }
+
+    .service-label {
+      font-size: 14px;
+      font-weight: bold;
+      text-anchor: middle;
+      fill: #2d3748;
+    }
+
+    .note {
+      font-size: 12px;
+      text-anchor: middle;
+      fill: #718096;
+      font-style: italic;
+    }
+
+    .small-icon {
+      font-size: 14px;
+      font-weight: bold;
+      text-anchor: middle;
+      fill: #4a5568;
+    }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#718096" />
+    </marker>
+
+    <linearGradient id="app-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3182CE" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#3182CE" stop-opacity="0.6" />
+    </linearGradient>
+
+    <linearGradient id="db-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DD6B20" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#DD6B20" stop-opacity="0.6" />
+    </linearGradient>
+
+    <linearGradient id="redis-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E53E3E" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#E53E3E" stop-opacity="0.6" />
+    </linearGradient>
+
+    <linearGradient id="mqtt-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6B46C1" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#6B46C1" stop-opacity="0.6" />
+    </linearGradient>
+
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <g class="container">
+    <!-- Title -->
+    <text x="600" y="50" class="title">LISA System Architecture 2.0</text>
+    <text x="600" y="80" class="subtitle">Living-lab Integrated Sensing Architecture with PostgreSQL, Redis and Docker Swarm</text>
+
+    <!-- Docker Swarm Cluster -->
+    <rect x="100" y="120" width="1000" height="630" class="cluster-box" filter="url(#shadow)" />
+    <text x="155" y="150" class="header">Docker Swarm Cluster</text>
+
+    <!-- Docker Services -->
+    <g id="app-service">
+      <rect x="150" y="180" width="280" height="240" class="docker-box" filter="url(#shadow)" />
+      <text x="290" y="205" class="service-label">LISA Application</text>
+      
+      <rect x="175" y="220" width="230" height="70" class="service-box" filter="url(#shadow)" />
+      <text x="290" y="255" class="service-label">Express.js API</text>
+      <text x="290" y="275" class="label">RESTful API Endpoints</text>
+      
+      <rect x="175" y="300" width="230" height="50" class="service-box" filter="url(#shadow)" />
+      <text x="290" y="330" class="service-label">WebSocket Server</text>
+      
+      <rect x="175" y="360" width="110" height="50" class="service-box" filter="url(#shadow)" />
+      <text x="230" y="390" class="service-label">Storage</text>
+      
+      <rect x="295" y="360" width="110" height="50" class="service-box" filter="url(#shadow)" />
+      <text x="350" y="390" class="service-label">Auth</text>
+    </g>
+
+    <!-- PostgreSQL Service -->
+    <g id="postgres-service">
+      <rect x="150" y="450" width="280" height="140" class="docker-box" filter="url(#shadow)" />
+      <text x="290" y="475" class="service-label">PostgreSQL Database</text>
+      
+      <rect x="175" y="490" width="230" height="90" class="database-box" filter="url(#shadow)" />
+      <text x="290" y="520" class="service-label">Data Storage</text>
+      <text x="290" y="540" class="label">Users, Cameras, Sensors</text>
+      <text x="290" y="560" class="label">Sessions, Sensor Readings</text>
+    </g>
+
+    <!-- Redis Service -->
+    <g id="redis-service">
+      <rect x="150" y="610" width="280" height="110" class="docker-box" filter="url(#shadow)" />
+      <text x="290" y="635" class="service-label">Redis</text>
+      
+      <rect x="175" y="650" width="230" height="60" class="redis-box" filter="url(#shadow)" />
+      <text x="290" y="680" class="service-label">Session Management</text>
+      <text x="290" y="700" class="note">High-performance cache</text>
+    </g>
+
+    <!-- MQTT Service -->
+    <g id="mqtt-service">
+      <rect x="470" y="610" width="280" height="110" class="docker-box" filter="url(#shadow)" />
+      <text x="610" y="635" class="service-label">MQTT Broker</text>
+      
+      <rect x="495" y="650" width="230" height="60" class="mqtt-box" filter="url(#shadow)" />
+      <text x="610" y="680" class="service-label">Eclipse Mosquitto</text>
+      <text x="610" y="700" class="note">IoT Communication</text>
+    </g>
+
+    <!-- Backup Service -->
+    <g id="backup-service">
+      <rect x="470" y="450" width="280" height="140" class="docker-box" filter="url(#shadow)" />
+      <text x="610" y="475" class="service-label">Backup Service</text>
+      
+      <rect x="495" y="490" width="230" height="90" class="service-box" filter="url(#shadow)" />
+      <text x="610" y="520" class="service-label">Scheduled Backups</text>
+      <text x="610" y="540" class="label">Database Dumps</text>
+      <text x="610" y="560" class="label">Configuration Backups</text>
+    </g>
+
+    <!-- Frontend -->
+    <g id="frontend">
+      <rect x="470" y="180" width="600" height="240" class="docker-box" filter="url(#shadow)" />
+      <text x="770" y="205" class="service-label">Client-Side Application</text>
+      
+      <rect x="495" y="220" width="270" height="190" class="service-box" filter="url(#shadow)" />
+      <text x="630" y="245" class="service-label">React Application</text>
+      
+      <rect x="520" y="260" width="110" height="40" class="client-box" filter="url(#shadow)" />
+      <text x="575" y="285" class="label">Components</text>
+      
+      <rect x="640" y="260" width="110" height="40" class="client-box" filter="url(#shadow)" />
+      <text x="695" y="285" class="label">Hooks</text>
+      
+      <rect x="520" y="310" width="110" height="40" class="client-box" filter="url(#shadow)" />
+      <text x="575" y="335" class="label">Pages</text>
+      
+      <rect x="640" y="310" width="110" height="40" class="client-box" filter="url(#shadow)" />
+      <text x="695" y="335" class="label">State Management</text>
+      
+      <rect x="520" y="360" width="230" height="40" class="client-box" filter="url(#shadow)" />
+      <text x="635" y="385" class="label">API & WebSocket Clients</text>
+      
+      <rect x="775" y="220" width="270" height="190" class="service-box" filter="url(#shadow)" />
+      <text x="910" y="245" class="service-label">User Interface</text>
+      
+      <rect x="800" y="260" width="110" height="40" class="client-box" filter="url(#shadow)" />
+      <text x="855" y="285" class="label">Dashboard</text>
+      
+      <rect x="920" y="260" width="110" height="40" class="client-box" filter="url(#shadow)" />
+      <text x="975" y="285" class="label">Sessions</text>
+      
+      <rect x="800" y="310" width="110" height="40" class="client-box" filter="url(#shadow)" />
+      <text x="855" y="335" class="label">Monitoring</text>
+      
+      <rect x="920" y="310" width="110" height="40" class="client-box" filter="url(#shadow)" />
+      <text x="975" y="335" class="label">Device Mgmt</text>
+      
+      <rect x="800" y="360" width="110" height="40" class="client-box" filter="url(#shadow)" />
+      <text x="855" y="385" class="label">Help & Docs</text>
+      
+      <rect x="920" y="360" width="110" height="40" class="client-box" filter="url(#shadow)" />
+      <text x="975" y="385" class="label">Settings</text>
+    </g>
+
+    <!-- External Systems -->
+    <g id="external-systems">
+      <rect x="780" y="450" width="280" height="270" class="docker-box" filter="url(#shadow)" />
+      <text x="920" y="475" class="service-label">External Systems</text>
+      
+      <rect x="805" y="490" width="230" height="60" class="service-box" filter="url(#shadow)" />
+      <text x="920" y="520" class="service-label">IP Cameras</text>
+      <text x="920" y="540" class="label">RTSP/HTTP Streams</text>
+      
+      <rect x="805" y="560" width="110" height="60" class="mqtt-box" filter="url(#shadow)" />
+      <text x="860" y="590" class="service-label">Zigbee</text>
+      <text x="860" y="610" class="label">Sensors</text>
+      
+      <rect x="925" y="560" width="110" height="60" class="mqtt-box" filter="url(#shadow)" />
+      <text x="980" y="590" class="service-label">MQTT</text>
+      <text x="980" y="610" class="label">Devices</text>
+      
+      <rect x="805" y="630" width="230" height="60" class="service-box" filter="url(#shadow)" />
+      <text x="920" y="660" class="service-label">Third-Party Systems</text>
+      <text x="920" y="680" class="label">External APIs & Services</text>
+    </g>
+
+    <!-- Connections -->
+    <!-- App to Database -->
+    <path d="M290,430 L290,490" class="connection" />
+    <text x="300" y="460" class="label">CRUD Operations</text>
+    
+    <!-- App to Redis -->
+    <path d="M290,430 C290,500 200,550 230,650" class="connection" />
+    <text x="220" y="520" class="label">Sessions</text>
+    
+    <!-- App to MQTT -->
+    <path d="M290,330 C340,330 500,330 500,680 L495,680" class="connection" />
+    <text x="420" y="680" class="label">Pub/Sub</text>
+    
+    <!-- Backup to Database -->
+    <path d="M495,540 L405,540" class="dashed-connection" />
+    <text x="450" y="530" class="label">Backup</text>
+    
+    <!-- Frontend to App -->
+    <path d="M520,380 L405,380" class="connection" />
+    <text x="450" y="370" class="label">API Calls</text>
+    
+    <!-- Frontend to App (WebSocket) -->
+    <path d="M520,340 C480,340 450,325 405,325" class="connection" />
+    <text x="450" y="315" class="label">WebSocket</text>
+    
+    <!-- External Systems to App (Cameras) -->
+    <path d="M805,520 L435,520 C410,520 400,500 405,400 L405,360" class="dashed-connection" />
+    <text x="500" y="410" class="label">Camera Streams</text>
+    
+    <!-- External Systems to MQTT (Zigbee) -->
+    <path d="M860,620 L860,650 C860,680 780,700 725,680" class="dashed-connection" />
+    <text x="780" y="700" class="label">Sensor Data</text>
+    
+    <!-- External Systems to MQTT (MQTT) -->
+    <path d="M980,620 L980,650 C980,670 700,720 725,680" class="dashed-connection" />
+    <text x="835" y="710" class="label">MQTT Messages</text>
+    
+    <!-- MQTT to App -->
+    <path d="M610,650 C610,600 400,550 290,430" class="connection" />
+    <text x="400" y="600" class="label">Sensor Data</text>
+
+    <!-- Legend -->
+    <rect x="100" y="770" width="1000" height="80" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1" rx="5" ry="5" />
+    <text x="130" y="800" class="header">Legend:</text>
+    
+    <rect x="210" y="785" width="20" height="20" class="docker-box" />
+    <text x="240" y="800" class="label">Docker Service</text>
+    
+    <rect x="330" y="785" width="20" height="20" class="service-box" />
+    <text x="360" y="800" class="label">Application Component</text>
+    
+    <rect x="490" y="785" width="20" height="20" class="database-box" />
+    <text x="520" y="800" class="label">PostgreSQL</text>
+    
+    <rect x="600" y="785" width="20" height="20" class="redis-box" />
+    <text x="630" y="800" class="label">Redis</text>
+    
+    <rect x="700" y="785" width="20" height="20" class="mqtt-box" />
+    <text x="730" y="800" class="label">MQTT/IoT</text>
+    
+    <rect x="810" y="785" width="20" height="20" class="client-box" />
+    <text x="840" y="800" class="label">Client Component</text>
+    
+    <line x1="880" y1="795" x2="920" y2="795" class="connection" />
+    <text x="950" y="800" class="label">Direct Connection</text>
+    
+    <line x1="980" y1="795" x2="1020" y2="795" class="dashed-connection" />
+    <text x="1060" y="800" class="label">External Connection</text>
+  </g>
+</svg>

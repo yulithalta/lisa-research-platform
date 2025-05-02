@@ -1,0 +1,54 @@
+Descripción:
+La gestión de configuración del sistema debe asegurar que los usuarios y administradores puedan configurar permisos, roles, y acceso a datos y funcionalidades según sus necesidades y el contexto del sistema. Esto incluye ver y editar configuraciones de roles, gestionar accesos, activar y desactivar usuarios, y asegurar la autenticidad y confidencialidad de la información.
+
+Acciones que debe incluir el proyecto para esta nueva issue:
+
+Gestión de Usuarios (Roles y Permisos):
+
+Crear roles personalizados: Permitir la creación de roles y permisos específicos a nivel de administrador, con acceso a módulos particulares.
+
+
+Asignación de roles: Asignar o actualizar roles de usuarios en función de las acciones autorizadas.
+
+
+Verificación de permisos: Validar permisos a nivel de cada endpoint y acción en el sistema para garantizar la integridad de los datos y el acceso controlado.
+
+Seguridad de Acceso:
+
+Autenticación con JWT: Utilizar JSON Web Tokens (JWT) para la autenticación de usuario, con un sistema de renovación de token y gestión segura de sesiones.
+
+
+Cifrado y Almacenamiento Seguro de Contraseñas: Implementar un hashing de contraseñas, como bcrypt, y asegurar que el acceso a datos personales esté cifrado.
+
+
+Autenticación de Dos Factores (2FA): Proporcionar una capa adicional de seguridad para administradores mediante autenticación de dos factores en el inicio de sesión.
+
+Control de Configuración del Sistema:
+
+Configuración Modular: Habilitar o deshabilitar módulos y funcionalidades según el rol del usuario.
+
+
+Historial de Cambios: Llevar un registro de los cambios de configuración para auditar y revertir modificaciones según sea necesario.
+
+
+Control de Estado de Usuario (Activar/Desactivar): Activar o suspender usuarios con opciones de control a nivel de administrador para mitigar riesgos y garantizar el uso adecuado.
+
+Interfaz de Gestión de Usuarios y Configuración en Frontend (React, Astro):
+
+Visualización de Usuarios y Roles: Desplegar una vista de usuarios con sus roles y permisos, ajustada según el tipo de usuario (administrador o invitado).
+
+
+Detalles de Perfil y Configuración: Visualización de los detalles del perfil del usuario, permitiendo editar información sensible solo a administradores.
+
+
+Componentes Protegidos: Implementar componentes y rutas protegidas en el frontend, que restrinjan el acceso según roles y permisos.
+
+Documentación y Requisitos Adicionales:
+
+Ubicación de la Documentación: Toda la documentación de configuración del sistema se almacenará en Starlight con actualizaciones periódicas.
+
+
+Pruebas y Auditoría: Incluir pruebas de integración para validación de roles y acceso seguro en cada módulo del sistema.
+
+
+Requisitos No Funcionales: Escalabilidad para agregar roles y permisos sin afectar el rendimiento y cumplimiento de normativas de privacidad aplicables (e.g., GDPR).

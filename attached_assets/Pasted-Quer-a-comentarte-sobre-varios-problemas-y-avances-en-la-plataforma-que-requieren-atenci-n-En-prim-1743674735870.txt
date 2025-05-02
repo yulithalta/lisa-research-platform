@@ -1,0 +1,17 @@
+Quería comentarte sobre varios problemas y avances en la plataforma que requieren atención.
+
+En primer lugar, he encontrado un inconveniente con la integración de MQTT y Zigbee2MQTT en la plataforma. Aunque ambas tecnologías están funcionando correctamente, la interfaz no me permite interactuar adecuadamente con ellas. El problema principal es que no puedo seleccionar los sensores de manera efectiva, ya que la interfaz muestra una 'X' que impide realizar la selección de los sensores con los que el usuario desea trabajar. Este es un punto crítico, ya que, al no poder filtrar los sensores, la funcionalidad de seleccionar y trabajar exclusivamente con un conjunto específico de sensores no está disponible.
+
+La funcionalidad que intento implementar es que, una vez que el usuario seleccione los sensores deseados, se genere un archivo CSV que contenga únicamente los datos provenientes de esos sensores específicos de MQTT. Es decir, necesito asegurarme de que el archivo CSV solo contenga los mensajes correspondientes a los sensores seleccionados por el usuario, y no todo el flujo de datos de MQTT. Este problema es esencial para el correcto funcionamiento de la plataforma y el cumplimiento de los requisitos establecidos.
+
+Por otro lado, tras una revisión realizada por el cliente y sus diseñadores y programadores, se ha determinado que el sistema de pestañas en la sección de "Sesiones", tal como está implementado, es más adecuado y cumple con el principio de usabilidad de los "tres clics". Este enfoque mejora la eficiencia de interacción y reduce la carga cognitiva del usuario, lo que se alinea con las mejores prácticas de UI/UX. Por lo tanto, están prestando especial atención a la eficiencia de interacción y la reducción de la carga cognitiva del usuario en todo el proceso.
+
+Además, el cliente ha identificado varios problemas que aún persisten en la sección "Sesiones > Nueva Sesión", específicamente relacionados con la comprobación de las cámaras y la comunicación con los sensores. Los problemas detectados son los siguientes:
+
+Comprobación incorrecta del estado de las cámaras: Aunque se realizó un test de conectividad con cámaras tanto conectadas como desconectadas (pero previamente registradas), el sistema sigue indicando que todas las cámaras están OK, lo que no refleja su estado real de conectividad.
+
+Duplicación de cámaras con la misma IP: El sistema permite que se registren varias cámaras con la misma IP, lo cual debería estar restringido, ya que no se realiza una comprobación para verificar si esa IP ya está registrada en el sistema.
+
+Duplicación de cámaras con el mismo nombre: Similar al punto anterior, el sistema no impide que se registren varias cámaras con el mismo nombre, sin realizar una validación que garantice que ese nombre ya esté registrado.
+
+Adjunto la imagen proporcionada por el cliente que muestra los fallos detectados. Agradeceríamos tu orientación para resolver estos problemas de forma que el sistema garantice una correcta gestión y validación de las cámaras y sensores registrados.

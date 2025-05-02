@@ -1,0 +1,32 @@
+{
+  "id": "b01cf1bf-d7d6-4798-be91-6e2584e5cf5f",
+  "title": "Prueba001",
+  "startTime": "2025-04-09T15:37:59.942Z",
+  "devices": {
+    "cameras": [
+      {
+        "id": 1,
+        "prefix": "livinglab",
+        "recordingId": 24
+      },
+      {
+        "id": 2,
+        "prefix": "c31",
+        "recordingId": 25
+      },
+      {
+        "id": 3,
+        "prefix": "c32_livinglab",
+        "recordingId": 26
+      }
+    ],
+    "sensors": []
+  },
+  "status": "completed",
+  "sensorDataPath": "/home/runner/workspace/sessions/Sessionb01cf1bf-d7d6-4798-be91-6e2584e5cf5f/sensors-b01cf1bf-d7d6-4798-be91-6e2584e5cf5f.json",
+  "labTitle": "Prueba 001 ",
+  "sessionDescription": "Sesion de test para la prueba 001 ",
+  "participants": "Sandra",
+  "researcher": "Tester user Pau",
+  "endTime": "2025-04-09T16:08:45.868Z"
+}

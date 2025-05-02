@@ -1,0 +1,604 @@
+import mqtt from 'mqtt';
+import fs from 'fs';
+import path from 'path';
+import logger from './logger';
+import mqttFormattedExport from './mqtt-formatted-export';
+
+// Definición de constantes
+const SESSIONS_DIR = path.join(process.cwd(), 'data', 'sessions');
+const DATA_DIR = path.join(process.cwd(), 'data');
+
+// Asegurar que existen los directorios necesarios
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+}
+
+if (!fs.existsSync(SESSIONS_DIR)) {
+  fs.mkdirSync(SESSIONS_DIR, { recursive: true });
+}
+
+/**
+ * Cliente MQTT para el sistema LISA
+ * Implementa el patrón Singleton para asegurar una única instancia del cliente
+ * Integra manejo de sesiones y captura de datos para análisis posterior
+ */
+class MQTTClient {
+  private static instance: MQTTClient;
+  private client: mqtt.MqttClient | null = null;
+  private activeSessions: Map<string, string[]> = new Map(); // sessionId -> sensorIds
+  private detectedDevices: Set<string> = new Set(); // Almacena IDs de dispositivos detectados
+  private deviceDetails: Map<string, any> = new Map(); // Almacena detalles completos de dispositivos
+  private mqttSensors: any[] = []; // Lista de sensores MQTT detectados
+  private isConnected: boolean = false;
+  
+  // Configuración para reintentos de conexión
+  private maxRetryAttempts = 20;
+  private retryCount = 0;
+  private retryInterval = 5000; // 5 segundos
+  private reconnecting = false;
+
+  private constructor() {
+    // La inicialización se hará a través del método connect
+  }
+
+  public static getInstance(): MQTTClient {
+    if (!MQTTClient.instance) {
+      MQTTClient.instance = new MQTTClient();
+    }
+    return MQTTClient.instance;
+  }
+
+  /**
+   * Conecta al broker MQTT y configura la suscripción a topics
+   * @param brokerUrl URL del broker MQTT, si no se especifica se usa la configuración del entorno
+   * @returns Promise que resuelve a true si la conexión fue exitosa
+   */
+  public async connect(brokerUrl?: string): Promise<boolean> {
+    try {
+      if (this.client) {
+        await this.disconnect();
+      }
+
+      // Usar URL del broker proporcionada o configuración del entorno
+      const mqttHost = process.env.MQTT_HOST || '192.168.0.20';
+      const mqttPort = parseInt(process.env.MQTT_PORT || '1883');
+      
+      const url = brokerUrl || `mqtt://${mqttHost}:${mqttPort}`;
+      logger.info(`Connecting to MQTT broker at ${url}`);
+
+      // Opciones de conexión
+      const options: mqtt.IClientOptions = {
+        clientId: `lisa_mqtt_client_${Date.now()}`,
+        clean: true,
+        connectTimeout: 30000,
+        reconnectPeriod: 5000
+      };
+
+      // Conectar al broker
+      this.client = mqtt.connect(url, options);
+
+      return new Promise<boolean>((resolve) => {
+        if (!this.client) {
+          resolve(false);
+          return;
+        }
+
+        // Evento de conexión
+        this.client.on('connect', () => {
+          logger.info('Connected to MQTT broker');
+          this.isConnected = true;
+          this.retryCount = 0;
+          this.reconnecting = false;
+
+          // Suscribirse a todos los topics de Zigbee
+          this.client?.subscribe('zigbee2mqtt/#', { qos: 0 });
+          
+          // También posibles topicos personalizados
+          this.client?.subscribe('zigbee2mqtt/+/+/#', { qos: 0 }); 
+          this.client?.subscribe('zigbee2mqtt/livinglab/#', { qos: 0 });
+          this.client?.subscribe('zigbee2mqtt/livinglab/device/#', { qos: 0 });
+          
+          logger.info('Subscribed to Zigbee MQTT topics');
+          
+          resolve(true);
+        });
+
+        // Evento de error
+        this.client.on('error', (err) => {
+          logger.error('MQTT client error:', err);
+          this.isConnected = false;
+          if (!this.reconnecting) {
+            this.retryConnection();
+          }
+          resolve(false);
+        });
+
+        // Evento de cierre de conexión
+        this.client.on('close', () => {
+          logger.warn('MQTT connection closed');
+          this.isConnected = false;
+          if (!this.reconnecting) {
+            this.retryConnection();
+          }
+        });
+
+        // Evento de recepción de mensaje
+        this.client.on('message', async (topic, message) => {
+          await this.handleMessage(topic, message);
+        });
+      });
+    } catch (err) {
+      logger.error('Error connecting to MQTT broker:', err);
+      this.isConnected = false;
+      return false;
+    }
+  }
+
+  /**
+   * Gestiona reintentos de conexión
+   */
+  private retryConnection(): void {
+    if (this.reconnecting) return;
+    
+    this.reconnecting = true;
+    this.retryCount++;
+    
+    if (this.retryCount <= this.maxRetryAttempts) {
+      logger.info(`Intento ${this.retryCount}: Conectando a MQTT broker en ${this.retryInterval/1000} segundos`);
+      
+      setTimeout(async () => {
+        try {
+          await this.connect();
+        } catch (err) {
+          logger.error('Error en reintento de conexión MQTT:', err);
+          this.reconnecting = false;
+        }
+      }, this.retryInterval);
+    } else {
+      logger.error(`Máximo número de intentos (${this.maxRetryAttempts}) alcanzado. Deteniendo reintentos de conexión MQTT.`);
+      this.reconnecting = false;
+    }
+  }
+
+  /**
+   * Procesa mensajes MQTT recibidos
+   * @param topic Topic del mensaje
+   * @param message Contenido del mensaje
+   */
+  private async handleMessage(topic: string, message: Buffer): Promise<void> {
+    try {
+      // Intentar parsear el mensaje como JSON
+      let payload: any = null;
+      try {
+        payload = JSON.parse(message.toString());
+      } catch (e) {
+        // Si no es JSON válido, usar el mensaje como texto
+        payload = { value: message.toString() };
+      }
+
+      // Extraer ID del dispositivo del topic
+      const topicParts = topic.split('/');
+      let deviceId = '';
+      
+      if (topic.includes('zigbee2mqtt')) {
+        // Para zigbee2mqtt, el ID puede estar en diferentes posiciones según la estructura del topic
+        if (topic.includes('zigbee2mqtt/livinglab/device')) {
+          // zigbee2mqtt/livinglab/device/{id}
+          deviceId = topicParts[topicParts.length - 1];
+        } else if (topic.includes('zigbee2mqtt/')) {
+          // zigbee2mqtt/{id}
+          deviceId = topicParts[1];
+        }
+        
+        // Si el payload tiene friendly_name, usarlo como deviceId (más amigable)
+        if (payload.friendly_name) {
+          deviceId = payload.friendly_name;
+        } else if (payload.name) {
+          deviceId = payload.name;
+        }
+      } else {
+        // Para otros tipos de topics, asumir que el último segmento puede ser un ID
+        deviceId = topicParts[topicParts.length - 1];
+      }
+
+      // Si tenemos un ID de dispositivo, guardarlo en nuestras colecciones
+      if (deviceId) {
+        // Guardar en dispositivos detectados
+        this.detectedDevices.add(deviceId);
+        
+        // Determinar tipo de sensor y guardar detalles
+        const deviceType = this.detectSensorType(payload);
+        
+        // Añadir detalles a la colección
+        const timestamp = new Date().toISOString();
+        
+        // Obtener detalles existentes o crear nuevos
+        let details = this.deviceDetails.get(deviceId) || {
+          id: deviceId,
+          type: deviceType,
+          firstSeen: timestamp,
+          lastSeen: timestamp,
+          data: {}
+        };
+        
+        // Actualizar con datos nuevos
+        details.lastSeen = timestamp;
+        details.data = payload;
+        
+        // Actualizar en la colección
+        this.deviceDetails.set(deviceId, details);
+        
+        // Actualizar lista de sensores MQTT para la UI
+        this.updateMqttSensors();
+        
+        // Guardar datos para sesiones activas (si el dispositivo está incluido)
+        for (const [sessionId, sensorIds] of this.activeSessions.entries()) {
+          // Si es * (todos los sensores) o el sensor específico está incluido
+          if (sensorIds.includes('*') || sensorIds.includes(deviceId)) {
+            this.saveDataToSessionFile(sessionId, deviceId, topic, payload);
+            this.updateConsolidatedDataFile(sessionId, deviceId, payload);
+          }
+        }
+      }
+    } catch (err) {
+      logger.error('Error processing MQTT message:', err);
+    }
+  }
+
+  /**
+   * Detecta el tipo de sensor basado en el payload
+   * @param payload Datos del sensor
+   * @returns Tipo de sensor detectado
+   */
+  private detectSensorType(payload: any): string {
+    // Verificar si es un sensor de Zigbee2MQTT
+    if (payload.battery !== undefined || 
+        payload.linkquality !== undefined || 
+        payload.voltage !== undefined) {
+      return 'zigbee';
+    }
+    
+    // Verificar si es un sensor de temperatura/humedad
+    if (payload.temperature !== undefined || 
+        payload.humidity !== undefined) {
+      return 'environment';
+    }
+    
+    // Verificar si es un sensor de movimiento
+    if (payload.occupancy !== undefined || 
+        payload.presence !== undefined || 
+        payload.motion !== undefined) {
+      return 'motion';
+    }
+    
+    // Por defecto, tipo genérico
+    return 'sensor';
+  }
+
+  /**
+   * Actualiza la lista de sensores MQTT para la UI
+   */
+  private updateMqttSensors(): void {
+    try {
+      this.mqttSensors = [];
+      
+      for (const [id, details] of this.deviceDetails) {
+        // Crear objeto con la estructura requerida por la UI
+        const sensor = {
+          id: id,
+          name: details.data.friendly_name || details.data.name || id,
+          type: 'sensor',
+          deviceType: details.type,
+          status: 'online',
+          lastSeen: details.lastSeen,
+          data: details.data
+        };
+        
+        this.mqttSensors.push(sensor);
+      }
+    } catch (err) {
+      logger.error('Error updating MQTT sensors list:', err);
+    }
+  }
+
+  /**
+   * Guarda datos del sensor en un archivo JSON específico para la sesión
+   */
+  private saveDataToSessionFile(sessionId: string, sensorId: string, topic: string, payload: any): void {
+    try {
+      // Normalizar sessionId y sensorId para uso en ruta de archivos
+      const safeSessionId = sessionId.replace(/[^a-z0-9_-]/gi, '_');
+      const safeSensorId = sensorId.replace(/[^a-z0-9_-]/gi, '_');
+      
+      // Crear directorio de sesión si no existe
+      const sessionDir = path.join(SESSIONS_DIR, `Session${safeSessionId}`);
+      if (!fs.existsSync(sessionDir)) {
+        fs.mkdirSync(sessionDir, { recursive: true });
+      }
+      
+      // Crear directorio de sensores para la sesión
+      const sensorsDir = path.join(sessionDir, 'sensors');
+      if (!fs.existsSync(sensorsDir)) {
+        fs.mkdirSync(sensorsDir);
+      }
+      
+      // Ruta al archivo de datos del sensor
+      const dataFilePath = path.join(sensorsDir, `${safeSensorId}.json`);
+      
+      // Leer datos existentes o crear archivo vacío
+      let sensorData: any[] = [];
+      if (fs.existsSync(dataFilePath)) {
+        const fileContent = fs.readFileSync(dataFilePath, 'utf8');
+        try {
+          sensorData = JSON.parse(fileContent);
+        } catch (e) {
+          logger.error(`Error parsing sensor data file ${dataFilePath}:`, e);
+          // Continuar con array vacío
+        }
+      }
+      
+      // Añadir nueva lectura con timestamp
+      const datapoint = {
+        timestamp: new Date().toISOString(),
+        topic,
+        payload
+      };
+      
+      sensorData.push(datapoint);
+      
+      // Limitar el tamaño del histórico (últimas 500 lecturas)
+      const MAX_HISTORY = 500;
+      if (sensorData.length > MAX_HISTORY) {
+        sensorData = sensorData.slice(-MAX_HISTORY);
+      }
+      
+      // Guardar datos actualizados
+      fs.writeFileSync(dataFilePath, JSON.stringify(sensorData, null, 2));
+      
+      // Guardar en formato CSV estructurado para sensores Zigbee
+      if (topic.includes('zigbee2mqtt')) {
+        // Intentar obtener nombre amigable del payload o usar el sensorId
+        let friendlyName = sensorId;
+        if (payload.friendly_name) {
+          friendlyName = payload.friendly_name;
+        } else if (payload.name) {
+          friendlyName = payload.name;
+        }
+        
+        // Llamar al exportador formateado para sensores
+        mqttFormattedExport.saveSensorDataToFormattedCSV(sessionId, topic, payload, friendlyName);
+      }
+      
+    } catch (err) {
+      logger.error(`Error guardando datos de sensor ${sensorId} para sesión ${sessionId}:`, err);
+    }
+  }
+
+  /**
+   * Actualiza el archivo consolidado de datos de la sesión
+   */
+  private updateConsolidatedDataFile(sessionId: string, sensorId: string, payload: any): void {
+    try {
+      // Normalizar sessionId para ruta de archivo
+      const safeSessionId = sessionId.replace(/[^a-z0-9_-]/gi, '_');
+      const sessionDir = path.join(SESSIONS_DIR, `Session${safeSessionId}`);
+      
+      // Asegurar que existe el directorio
+      if (!fs.existsSync(sessionDir)) {
+        fs.mkdirSync(sessionDir, { recursive: true });
+      }
+      
+      // Ruta al archivo de datos consolidados
+      const sessionDataPath = path.join(sessionDir, 'session_data.json');
+      
+      // Leer datos existentes o crear estructura inicial
+      let sessionData: any = {
+        sessionId,
+        startTime: new Date().toISOString(),
+        lastUpdated: new Date().toISOString(),
+        sensors: {}
+      };
+      
+      if (fs.existsSync(sessionDataPath)) {
+        const fileContent = fs.readFileSync(sessionDataPath, 'utf8');
+        try {
+          sessionData = JSON.parse(fileContent);
+        } catch (e) {
+          logger.error(`Error parsing session data file ${sessionDataPath}:`, e);
+          // Continuar con estructura inicial
+        }
+      }
+      
+      // Añadir o actualizar datos del sensor
+      if (!sessionData.sensors[sensorId]) {
+        // Inicializar sensor si no existe
+        sessionData.sensors[sensorId] = {
+          id: sensorId,
+          firstSeen: new Date().toISOString(),
+          lastUpdated: new Date().toISOString(),
+          data: []
+        };
+      }
+      
+      // Añadir nueva lectura
+      const datapoint = {
+        timestamp: new Date().toISOString(),
+        payload
+      };
+      
+      sessionData.sensors[sensorId].data.push(datapoint);
+      
+      // Limitar número de puntos de datos por sensor
+      const MAX_DATA_POINTS = 100;
+      if (sessionData.sensors[sensorId].data.length > MAX_DATA_POINTS) {
+        sessionData.sensors[sensorId].data = sessionData.sensors[sensorId].data.slice(-MAX_DATA_POINTS);
+      }
+      
+      // Actualizar timestamps
+      sessionData.sensors[sensorId].lastUpdated = new Date().toISOString();
+      sessionData.lastUpdated = new Date().toISOString();
+      
+      // Guardar archivo actualizado
+      fs.writeFileSync(sessionDataPath, JSON.stringify(sessionData, null, 2));
+      
+    } catch (err) {
+      logger.error(`Error actualizando archivo de datos consolidados para sesión ${sessionId}:`, err);
+    }
+  }
+
+  /**
+   * Desconectar el cliente MQTT
+   */
+  public disconnect(): void {
+    if (this.client) {
+      this.client.end();
+      this.client = null;
+      this.isConnected = false;
+    }
+  }
+  
+  /**
+   * Verificar si el cliente está conectado
+   */
+  public isClientConnected(): boolean {
+    return this.isConnected && this.client !== null;
+  }
+
+  /**
+   * Obtener lista de dispositivos detectados
+   */
+  public getDetectedDevices(): string[] {
+    return Array.from(this.detectedDevices);
+  }
+
+  /**
+   * Obtener detalles completos de un dispositivo
+   */
+  public getDeviceDetails(deviceId: string): any {
+    return this.deviceDetails.get(deviceId);
+  }
+
+  /**
+   * Obtener detalles de todos los dispositivos
+   */
+  public getAllDevicesDetails(): any[] {
+    const devices: any[] = [];
+    for (const [id, details] of this.deviceDetails) {
+      devices.push({
+        id,
+        ...details
+      });
+    }
+    return devices;
+  }
+
+  /**
+   * Obtener lista de sensores MQTT para la UI
+   */
+  public getMqttSensors(): any[] {
+    return this.mqttSensors;
+  }
+
+  /**
+   * Iniciar una nueva sesión de grabación que incluya sensores específicos
+   */
+  public startSession(sessionId: string, sensorIds: string[] = []): boolean {
+    try {
+      // Normalizar sessionId para uso en ruta de archivos
+      const safeSessionId = sessionId.replace(/[^a-z0-9_-]/gi, '_');
+      
+      // Crear directorio de sesión
+      const sessionDir = path.join(SESSIONS_DIR, `Session${safeSessionId}`);
+      if (!fs.existsSync(sessionDir)) {
+        fs.mkdirSync(sessionDir, { recursive: true });
+      }
+      
+      // Si no se especifican sensores, incluir todos (*) para captura total
+      if (!sensorIds || sensorIds.length === 0) {
+        sensorIds = ['*']; // * significa todos los sensores
+      }
+      
+      // Registrar sesión activa
+      this.activeSessions.set(sessionId, sensorIds);
+      
+      // Crear archivo de metadatos de la sesión
+      const metadataPath = path.join(sessionDir, 'metadata.json');
+      const metadata = {
+        sessionId,
+        startTime: new Date().toISOString(),
+        sensorIds,
+        status: 'active'
+      };
+      
+      fs.writeFileSync(metadataPath, JSON.stringify(metadata, null, 2));
+      
+      logger.info(`Session ${sessionId} started with sensors: ${sensorIds.join(', ')}`);
+      return true;
+    } catch (err) {
+      logger.error(`Error starting session ${sessionId}:`, err);
+      return false;
+    }
+  }
+
+  /**
+   * Detener una sesión de grabación activa
+   */
+  public stopSession(sessionId: string): boolean {
+    try {
+      if (!this.activeSessions.has(sessionId)) {
+        logger.warn(`Session ${sessionId} not found or already stopped`);
+        return false;
+      }
+      
+      // Eliminar de sesiones activas
+      this.activeSessions.delete(sessionId);
+      
+      // Actualizar metadatos de la sesión
+      const safeSessionId = sessionId.replace(/[^a-z0-9_-]/gi, '_');
+      const sessionDir = path.join(SESSIONS_DIR, `Session${safeSessionId}`);
+      const metadataPath = path.join(sessionDir, 'metadata.json');
+      
+      if (fs.existsSync(metadataPath)) {
+        const metadataStr = fs.readFileSync(metadataPath, 'utf8');
+        const metadata = JSON.parse(metadataStr);
+        
+        metadata.endTime = new Date().toISOString();
+        metadata.status = 'completed';
+        
+        fs.writeFileSync(metadataPath, JSON.stringify(metadata, null, 2));
+      }
+      
+      logger.info(`Session ${sessionId} stopped`);
+      return true;
+    } catch (err) {
+      logger.error(`Error stopping session ${sessionId}:`, err);
+      return false;
+    }
+  }
+
+  /**
+   * Verificar si una sesión está activa
+   */
+  public isSessionActive(sessionId: string): boolean {
+    return this.activeSessions.has(sessionId);
+  }
+
+  /**
+   * Obtener lista de sesiones activas
+   */
+  public getActiveSessions(): string[] {
+    return Array.from(this.activeSessions.keys());
+  }
+
+  /**
+   * Obtener lista de sensores incluidos en una sesión
+   */
+  public getSessionSensors(sessionId: string): string[] | null {
+    const sensors = this.activeSessions.get(sessionId);
+    return sensors ? [...sensors] : null;
+  }
+}
+
+// Crear la instancia única del cliente MQTT
+const mqttClient = MQTTClient.getInstance();
+export default mqttClient;

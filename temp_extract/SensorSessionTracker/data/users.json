@@ -1,0 +1,16 @@
+{
+  "1": {
+    "username": "user",
+    "password": "4b4d82dace4746a3646c14df599b079e666279d9675437e479de18bd6f32c465c578959a14922051a4e633abfb0d7facc923bf09ef93498df33d401df8bbea78.9f195ee214df49c6a5fb22b12c09c6f7",
+    "id": 1,
+    "lastLogin": "2025-05-01T00:13:10.262Z"
+  },
+  "2": {
+    "username": "esteban",
+    "password": "f12fd40cef13231ff1516b4fd48deb765ef5fa9e5ed595956929280934b2f89c7ae8906c5ea52f8114597bcd5843dbffe2a512b6421483edbe97f1f2db0fa0df.89a5b57a4a0b3041b8305e51dc068754",
+    "role": "viewer",
+    "id": 2,
+    "lastLogin": "2025-04-24T21:25:34.907Z",
+    "preferences": {}
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "1": {
+    "id": 1,
+    "userId": 1,
+    "name": "Test Session InfluxDB",
+    "description": "Prueba de integración InfluxDB",
+    "startTime": "2025-04-21T11:30:00.000Z",
+    "endTime": null,
+    "status": "completed",
+    "notes": null,
+    "tags": [],
+    "metadata": {},
+    "influxDb": {
+      "bucket": "session_test",
+      "org": "lisa",
+      "retention": 90
+    }
+  },
+  "2": {
+    "id": 2,
+    "userId": 1,
+    "name": "grabacion de datos con camaras",
+    "description": "Grabando con camaras 35 y 31",
+    "startTime": "2025-04-22T08:06:51.885Z",
+    "endTime": null,
+    "status": "completed",
+    "notes": null,
+    "tags": [
+      "cameras",
+      "35",
+      "31",
+      "record"
+    ],
+    "metadata": {
+      "devices": [
+        {
+          "id": 1,
+          "name": "c35",
+          "type": "camera"
+        },
+        {
+          "id": 2,
+          "name": "c31",
+          "type": "camera"
+        }
+      ]
+    },
+    "influxDb": {
+      "bucket": "lisa_session_1745309211885",
+      "org": "lisa",
+      "retention": 90
+    }
+  },
+  "3": {
+    "id": 3,
+    "userId": 1,
+    "name": "esteban",
+    "description": "esteban bermudez",
+    "startTime": "2025-04-22T08:13:44.513Z",
+    "endTime": null,
+    "status": "completed",
+    "notes": null,
+    "tags": [
+      "probando varias sesiones",
+      "esteban",
+      "bermudez",
+      "32",
+      "34",
+      "cameras"
+    ],
+    "metadata": {
+      "devices": [
+        {
+          "id": 4,
+          "name": "camara 34",
+          "type": "camera"
+        },
+        {
+          "id": 3,
+          "name": "c32",
+          "type": "camera"
+        }
+      ]
+    },
+    "influxDb": {
+      "bucket": "lisa_session_1745309624513",
+      "org": "lisa",
+      "retention": 90
+    }
+  },
+  "4": {
+    "id": 4,
+    "userId": 1,
+    "name": "se",
+    "description": "",
+    "startTime": "2025-04-22T08:14:02.674Z",
+    "endTime": null,
+    "status": "completed",
+    "notes": null,
+    "tags": [],
+    "metadata": {
+      "devices": [
+        {
+          "id": 2,
+          "name": "c31",
+          "type": "camera"
+        },
+        {
+          "id": 3,
+          "name": "c32",
+          "type": "camera"
+        }
+      ]
+    },
+    "influxDb": {
+      "bucket": "lisa_session_1745309642674",
+      "org": "lisa",
+      "retention": 90
+    }
+  },
+  "5": {
+    "id": 5,
+    "userId": 1,
+    "name": "Nombre de sesion obligatoria",
+    "description": "Probando requisitos",
+    "startTime": "2025-04-22T08:15:44.893Z",
+    "endTime": null,
+    "status": "completed",
+    "notes": null,
+    "tags": [],
+    "metadata": {
+      "devices": [
+        {
+          "id": 3,
+          "name": "c32",
+          "type": "camera"
+        },
+        {
+          "id": 1,
+          "name": "c35",
+          "type": "camera"
+        }
+      ]
+    },
+    "influxDb": {
+      "bucket": "lisa_session_1745309744893",
+      "org": "lisa",
+      "retention": 90
+    }
+  },
+  "6": {
+    "id": 6,
+    "userId": 1,
+    "name": "Sin camaras",
+    "description": "",
+    "startTime": "2025-04-22T08:17:39.002Z",
+    "endTime": "2025-04-22T10:11:00.000Z",
+    "status": "completed",
+    "notes": null,
+    "tags": [],
+    "metadata": {
+      "devices": []
+    },
+    "influxDb": {
+      "bucket": "lisa_session_1745309859002",
+      "org": "lisa",
+      "retention": 90
+    }
+  },
+  "7": {
+    "id": 7,
+    "userId": 1,
+    "name": "Sin limite en descripcion",
+    "description": "Para implementar cuotas de servicio en una app React, controla las solicitudes en el backend, guardando el uso de cada usuario (por ejemplo, solicitudes o almacenamiento). Devuelve un error 429 cuando se exceda la cuota. En el frontend, maneja el error y deshabilita funcionalidades según sea necesar",
+    "startTime": "2025-04-22T08:47:42.867Z",
+    "endTime": "2025-04-22T10:10:00.000Z",
+    "status": "completed",
+    "notes": null,
+    "tags": [
+      "sin limites",
+      "descripcion"
+    ],
+    "metadata": {
+      "devices": [
+        {
+          "id": 2,
+          "name": "c31",
+          "type": "camera"
+        }
+      ],
+      "researcher": "Esteban",
+      "participant": "A"
+    },
+    "influxDb": {
+      "bucket": "lisa_session_1745311662867",
+      "org": "lisa",
+      "retention": 90
+    }
+  },
+  "8": {
+    "id": 8,
+    "userId": 1,
+    "name": "abc",
+    "description": "El Sol libera más energía en un segundo que toda la humanidad en toda su historia.\n\nPara ponerlo en perspectiva, ¡un segundo de energía solar es más que suficiente para abastecer a toda la Tierra durante más de 500,000 años! 🌞",
+    "startTime": "2025-04-22T10:08:50.393Z",
+    "endTime": "2025-04-22T10:15:00.000Z",
+    "status": "completed",
+    "notes": null,
+    "tags": [
+      "Sol",
+      "Energia"
+    ],
+    "metadata": {
+      "devices": [
+        {
+          "id": 2,
+          "name": "c31",
+          "type": "camera"
+        }
+      ],
+      "researcher": "HANA",
+      "participants": [
+        "Jana",
+        "Jena",
+        "Jina",
+        "Jona",
+        "Juna"
+      ]
+    },
+    "influxDb": {
+      "bucket": "lisa_session_1745316530393",
+      "org": "lisa",
+      "retention": 90
+    }
+  },
+  "9": {
+    "id": 9,
+    "userId": 1,
+    "name": "sesion de las 23h",
+    "description": " Las hormigas no duermen. Aunque no se puede decir que estén completamente inactivas, las hormigas pasan su tiempo descansando en lugar de dormir, y se organizan en turnos para trabajar sin detenerse. Las especies de hormigas varían en sus hábitos de descanso, pero en general, su \"descanso\" es más c",
+    "startTime": "2025-04-22T21:01:09.005Z",
+    "endTime": null,
+    "status": "completed",
+    "notes": null,
+    "tags": [
+      "23h"
+    ],
+    "metadata": {
+      "devices": [
+        {
+          "id": 2,
+          "name": "c31",
+          "type": "camera"
+        }
+      ],
+      "researcher": "Proxmox",
+      "participants": [
+        "Hormigas"
+      ]
+    },
+    "influxDb": {
+      "bucket": "lisa_session_1745355669005",
+      "org": "lisa",
+      "retention": 90
+    }
+  },
+  "10": {
+    "id": 10,
+    "userId": 1,
+    "name": "What Session",
+    "description": "El corazón de un camarón está en su cabeza. Específicamente, se encuentra justo detrás de sus ojos. Esto se debe a la forma en que está organizado su cuerpo, con sus órganos vitales concentrados en su parte anterior, y el resto de su cuerpo está dedicado a la movilidad y la alimentación.",
+    "startTime": "2025-04-22T23:06:00.623Z",
+    "endTime": null,
+    "status": "completed",
+    "notes": null,
+    "tags": [
+      "camaron"
+    ],
+    "metadata": {
+      "devices": [
+        {
+          "id": 2,
+          "name": "c31",
+          "type": "camera"
+        }
+      ],
+      "researcher": "WHO",
+      "participants": [
+        "What",
+        "Where",
+        "How",
+        "Who",
+        "Which"
+      ]
+    },
+    "influxDb": {
+      "bucket": "lisa_session_1745363160623",
+      "org": "lisa",
+      "retention": 90
+    }
+  },
+  "11": {
+    "id": 11,
+    "userId": 1,
+    "name": "134",
+    "description": "Los flamingos son rosados debido a su dieta. Su color rosado proviene de los carotenoides, que son compuestos de color rojo y amarillo presentes en los alimentos que comen, como algas y crustáceos. Si los flamingos no tuvieran esta dieta rica en carotenoides, serían de un color blanco.",
+    "startTime": "2025-04-22T23:34:53.814Z",
+    "endTime": null,
+    "status": "completed",
+    "notes": null,
+    "tags": [
+      "134",
+      "flamingos",
+      "rosa"
+    ],
+    "metadata": {
+      "devices": [
+        {
+          "id": 2,
+          "name": "c31",
+          "type": "camera"
+        },
+        {
+          "id": 3,
+          "name": "c32",
+          "type": "camera"
+        }
+      ],
+      "researcher": "134",
+      "participants": [
+        "Rosa Flaminga"
+      ]
+    },
+    "influxDb": {
+      "bucket": "lisa_session_1745364893814",
+      "org": "lisa",
+      "retention": 90
+    }
+  },
+  "12": {
+    "id": 12,
+    "userId": 1,
+    "name": "451",
+    "description": "",
+    "startTime": "2025-04-23T02:52:19.054Z",
+    "endTime": null,
+    "status": "completed",
+    "notes": null,
+    "tags": [
+      "451"
+    ],
+    "metadata": {
+      "devices": [
+        {
+          "id": 2,
+          "name": "c31",
+          "type": "camera"
+        }
+      ],
+      "researcher": "451",
+      "participants": [
+        "451"
+      ]
+    },
+    "influxDb": {
+      "bucket": "lisa_session_1745376739054",
+      "org": "lisa",
+      "retention": 90
+    }
+  }
+}

@@ -1,0 +1,48 @@
+[2025-03-05T02:03:29.238Z] [INFO] Application starting
+logger.ts:17 [2025-03-05T02:03:29.244Z] [INFO] Initializing router
+logger.ts:17 [2025-03-05T02:03:30.552Z] [INFO] Connecting to MQTT broker {"url":"ws://localhost:5000/mqtt"}
+client:536  WebSocket connection to 'ws://localhost:5000/?token=dIFOoRSIDJrO' failed: 
+setupWebSocket @ client:536
+(anónimo) @ client:531
+[NUEVO] Explicar errores de la consola con Copilot en Edge: haga clic
+         
+         para explicar un error.
+        Más información
+        No volver a mostrar
+client:536  Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'ws://localhost:undefined/?token=dIFOoRSIDJrO' is invalid.
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)
+setupWebSocket @ client:536
+fallback @ client:509
+(anónimo) @ client:555
+mqtt.ts:28  WebSocket connection to 'ws://localhost:5000/mqtt' failed: 
+dS @ mqtt.esm.js:5
+gS @ mqtt.esm.js:5
+o @ mqtt.esm.js:5
+connect @ mqtt.esm.js:2
+t @ mqtt.esm.js:2
+Eg @ mqtt.esm.js:5
+(anónimo) @ mqtt.ts:28
+connect @ mqtt.ts:21
+connectMQTT @ sensors-page.tsx:24
+(anónimo) @ sensors-page.tsx:55
+commitHookEffectListMount @ react-dom.development.js:23189
+commitPassiveMountOnFiber @ react-dom.development.js:24965
+commitPassiveMountEffects_complete @ react-dom.development.js:24930
+commitPassiveMountEffects_begin @ react-dom.development.js:24917
+commitPassiveMountEffects @ react-dom.development.js:24905
+flushPassiveEffectsImpl @ react-dom.development.js:27078
+flushPassiveEffects @ react-dom.development.js:27023
+commitRootImpl @ react-dom.development.js:26974
+commitRoot @ react-dom.development.js:26721
+performSyncWorkOnRoot @ react-dom.development.js:26156
+flushSyncCallbacks @ react-dom.development.js:12042
+(anónimo) @ react-dom.development.js:25690
+mqtt.esm.js:5  WebSocket connection to 'ws://localhost:5000/mqtt' failed: 
+dS @ mqtt.esm.js:5
+gS @ mqtt.esm.js:5
+o @ mqtt.esm.js:5
+connect @ mqtt.esm.js:2
+_reconnect @ mqtt.esm.js:2
+(anónimo) @ mqtt.esm.js:2

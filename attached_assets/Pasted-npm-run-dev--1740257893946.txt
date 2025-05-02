@@ -1,0 +1,50 @@
+npm run dev                                                                                                                                                                                          <main ✗>
+
+> rest-express@1.0.0 dev
+> tsx server/index.ts
+
+Inicializando MemStorage...
+Datos cargados desde /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/users.json
+Datos cargados desde /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/cameras.json
+Datos cargados desde /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/recordings.json
+IDs iniciales - Users: 4, Cameras: 4, Recordings: 16
+Guardando estado...
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/users.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/cameras.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/recordings.json
+9:55:14 PM [express] serving on port 5000
+9:55:21 PM [express] GET /api/user 401 in 2ms
+9:55:25 PM [express] POST /api/login 200 in 120ms :: {"username":"user","password":"b51dbd41b9724a8c…
+9:55:25 PM [express] GET /api/cameras 304 in 5ms :: [{"name":"192.168.0.31","ipAddress":"192.168.0.3…
+9:55:25 PM [express] GET /api/recordings/count 200 in 4ms :: 12
+9:55:25 PM [express] GET /api/cameras/1/recordings 200 in 6ms :: [{"cameraId":1,"filePath":"/home/or…
+9:55:25 PM [express] GET /api/cameras/2/recordings 200 in 5ms :: [{"cameraId":2,"filePath":"/home/or…
+9:55:36 PM [express] GET /api/recordings 200 in 4ms :: [{"cameraId":2,"filePath":"/home/orangepi/Doc…
+9:55:37 PM [express] GET /api/recordings/11/thumbnail 304 in 15ms
+9:55:37 PM [express] GET /api/recordings/10/thumbnail 304 in 12ms
+9:55:37 PM [express] GET /api/recordings/8/thumbnail 304 in 11ms
+9:55:37 PM [express] GET /api/recordings/6/thumbnail 304 in 11ms
+9:55:37 PM [express] GET /api/recordings/5/thumbnail 304 in 10ms
+9:55:37 PM [express] GET /api/recordings/7/thumbnail 304 in 10ms
+9:55:37 PM [express] GET /api/recordings/4/thumbnail 304 in 5ms
+9:55:37 PM [express] GET /api/recordings/2/thumbnail 304 in 5ms
+9:55:37 PM [express] GET /api/recordings/1/thumbnail 304 in 5ms
+9:55:37 PM [express] GET /api/recordings/3/thumbnail 304 in 5ms
+9:55:38 PM [express] GET /api/recordings/14/thumbnail 200 in 1301ms
+9:55:38 PM [express] GET /api/recordings/15/thumbnail 200 in 1308ms
+9:55:39 PM [express] GET /api/metrics 200 in 19ms
+9:55:44 PM [express] GET /api/metrics 200 in 7ms
+9:55:49 PM [express] GET /api/metrics 200 in 16ms
+9:55:59 PM [express] GET /api/metrics 200 in 5ms
+9:56:04 PM [express] GET /api/user 304 in 1ms :: {"username":"user","password":"b51dbd41b9724a8cb89c…
+9:56:04 PM [express] GET /api/metrics 200 in 6ms
+9:56:44 PM [express] GET /api/metrics 200 in 10ms
+9:56:59 PM [express] GET /api/metrics 200 in 4ms
+9:57:04 PM [express] GET /api/metrics 200 in 10ms
+9:57:09 PM [express] GET /api/metrics 200 in 4ms
+9:57:14 PM [express] GET /api/metrics 200 in 9ms
+9:57:19 PM [express] GET /api/metrics 200 in 5ms
+9:57:24 PM [express] GET /api/metrics 200 in 8ms
+9:57:29 PM [express] GET /api/metrics 200 in 8ms
+9:57:34 PM [express] GET /api/metrics 200 in 4ms
+9:57:39 PM [express] GET /api/metrics 200 in 8ms

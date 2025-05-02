@@ -1,0 +1,68 @@
+client:536 WebSocket connection to 'ws://mforum-livinglab:5000/?token=0EFRloWujEpv' failed: 
+setupWebSocket @ client:536
+client:536 Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'ws://localhost:undefined/?token=0EFRloWujEpv' is invalid.
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)
+logger.ts:17 [2025-04-03T10:20:15.016Z] [INFO] Application starting
+logger.ts:17 [2025-04-03T10:20:15.018Z] [INFO] Initializing router
+api/user:1 
+            
+            
+           Failed to load resource: the server responded with a status of 401 (Unauthorized)
+hook.js:608 Warning: Cannot update a component (`AuthPage`) while rendering a different component (`AuthPage`). To locate the bad setState() call inside `AuthPage`, follow the stack trace as described in https://reactjs.org/link/setstate-in-render Error Component Stack
+    at AuthPage (auth-page.tsx:27:53)
+    at Route (wouter.js?v=b1526646:280:16)
+    at Switch (wouter.js?v=b1526646:336:17)
+    at Router (<anonymous>)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=b1526646:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+chunk-RPCDYKBN.js?v=b1526646:11595 Uncaught Error: Rendered fewer hooks than expected. This may be caused by an accidental early return statement.
+    at renderWithHooks (chunk-RPCDYKBN.js?v=b1526646:11595:19)
+    at updateFunctionComponent (chunk-RPCDYKBN.js?v=b1526646:14582:28)
+    at beginWork (chunk-RPCDYKBN.js?v=b1526646:15924:22)
+    at HTMLUnknownElement.callCallback2 (chunk-RPCDYKBN.js?v=b1526646:3674:22)
+    at Object.invokeGuardedCallbackDev (chunk-RPCDYKBN.js?v=b1526646:3699:24)
+    at invokeGuardedCallback (chunk-RPCDYKBN.js?v=b1526646:3733:39)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=b1526646:19765:15)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=b1526646:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=b1526646:19137:13)
+    at renderRootSync (chunk-RPCDYKBN.js?v=b1526646:19116:15)
+chunk-RPCDYKBN.js?v=b1526646:11595 Uncaught Error: Rendered fewer hooks than expected. This may be caused by an accidental early return statement.
+    at renderWithHooks (chunk-RPCDYKBN.js?v=b1526646:11595:19)
+    at updateFunctionComponent (chunk-RPCDYKBN.js?v=b1526646:14582:28)
+    at beginWork (chunk-RPCDYKBN.js?v=b1526646:15924:22)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=b1526646:19753:22)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=b1526646:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=b1526646:19137:13)
+    at renderRootSync (chunk-RPCDYKBN.js?v=b1526646:19116:15)
+    at performSyncWorkOnRoot (chunk-RPCDYKBN.js?v=b1526646:18874:28)
+    at flushSyncCallbacks (chunk-RPCDYKBN.js?v=b1526646:9119:30)
+    at chunk-RPCDYKBN.js?v=b1526646:18627:21
+logger.ts:17 [2025-04-03T10:20:19.962Z] [INFO] Connected to MQTT broker
+hook.js:608 Error loading services: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+overrideMethod @ hook.js:608
+sessions-page.tsx:89 Connecting to WebSocket at ws://mforum-livinglab:5000/ws
+logger.ts:17 [2025-04-03T10:20:30.331Z] [INFO] Connected to MQTT broker
+hook.js:608 Warning: Each child in a list should have a unique "key" prop.
+
+Check the render method of `SessionsPage`. See https://reactjs.org/link/warning-keys for more information.
+    at _c9 (http://mforum-livinglab:5000/src/components/ui/table.tsx:96:12)
+    at SessionsPage (http://mforum-livinglab:5000/src/pages/sessions-page.tsx:57:29)
+    at div
+    at main
+    at div
+    at div
+    at MainLayout (http://mforum-livinglab:5000/src/components/layout/main-layout.tsx:19:30)
+    at component
+    at ProtectedRoute (http://mforum-livinglab:5000/src/lib/protected-route.tsx:22:3)
+    at Switch (http://mforum-livinglab:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/node_modules/.vite/deps/wouter.js?v=b1526646:336:17)
+    at Router
+    at AuthProvider (http://mforum-livinglab:5000/src/hooks/use-auth.tsx:26:32)
+    at QueryClientProvider (http://mforum-livinglab:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-2.5.1/node_modules/.vite/deps/@tanstack_react-query.js?v=b1526646:2881:3)
+    at App
+overrideMethod @ hook.js:608
+sessions-page.tsx:93 Connected to WebSocket server
+sessions-page.tsx:128 WebSocket connection closed

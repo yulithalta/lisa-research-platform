@@ -1,0 +1,1356 @@
+client:536 WebSocket connection to 'ws://lisa.local:5000/?token=5EJBcNmC-xwT' failed: 
+setupWebSocket @ client:536
+(anonymous) @ client:531
+client:536 Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'ws://localhost:undefined/?token=5EJBcNmC-xwT' is invalid.
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)
+setupWebSocket @ client:536
+fallback @ client:509
+(anonymous) @ client:555
+logger.ts:164 [2025-04-23T16:32:11.405Z] [INFO] Application starting
+logger.ts:164 [2025-04-23T16:32:11.410Z] [INFO] Initializing router
+useSimpleMqtt.tsx:105 🔄 Conectando a broker MQTT: ws://192.168.0.20:9001
+session-management.tsx:1743 Connecting to WebSocket at ws://lisa.local:5000/ws
+session-management.tsx:1747 Connected to WebSocket server
+session-management.tsx:1782 WebSocket connection closed
+useSimpleMqtt.tsx:120 ✅ Conectado a broker MQTT: ws://192.168.0.20:9001
+useSimpleMqtt.tsx:136 ✅ Suscrito a tópico: zigbee2mqtt/#
+useSimpleMqtt.tsx:136 ✅ Suscrito a tópico: zigbee2mqtt/+
+useSimpleMqtt.tsx:136 ✅ Suscrito a tópico: zigbee2mqtt/bridge/#
+useSimpleMqtt.tsx:136 ✅ Suscrito a tópico: zigbee2mqtt/+/set
+useSimpleMqtt.tsx:136 ✅ Suscrito a tópico: zigbee2mqtt/+/get
+useSimpleMqtt.tsx:136 ✅ Suscrito a tópico: zigbee2mqtt/livinglab/#
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384
+useSimpleMqtt.tsx:253 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=bb26cb27:336:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=bb26cb27:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=bb26cb27:521
+error @ chunk-RPCDYKBN.js?v=bb26cb27:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=bb26cb27:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=bb26cb27:12403
+(anonymous) @ useSimpleMqtt.tsx:253
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=bb26cb27:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=bb26cb27:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=bb26cb27:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=bb26cb27:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=bb26cb27:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=bb26cb27:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=bb26cb27:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=bb26cb27:19328
+workLoop @ chunk-RPCDYKBN.js?v=bb26cb27:197
+flushWork @ chunk-RPCDYKBN.js?v=bb26cb27:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=bb26cb27:384

@@ -1,0 +1,82 @@
+npm run dev                                                                                                                                                                                          <main ✗>
+
+> rest-express@1.0.0 dev
+> tsx server/index.ts
+
+Inicializando MemStorage...
+Datos cargados desde /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/users.json
+Datos cargados desde /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/cameras.json
+Datos cargados desde /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/recordings.json
+IDs iniciales - Users: 4, Cameras: 4, Recordings: 1
+Guardando estado...
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/users.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/cameras.json
+Datos guardados en /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/data/recordings.json
+express-session deprecated req.secret; provide secret option file:/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/auth.ts:1:1347
+1:16:04 AM [express] serving on port 5000
+Error: secret option required for sessions
+    at session (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express-session/index.js:204:12)
+    at Layer.handle [as handle_request] (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:328:13)
+    at /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:280:10)
+    at <anonymous> (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/index.ts:36:3)
+    at Layer.handle [as handle_request] (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:328:13)
+    at /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:286:9
+Error: secret option required for sessions
+    at session (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express-session/index.js:204:12)
+    at Layer.handle [as handle_request] (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:328:13)
+    at /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:280:10)
+    at <anonymous> (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/index.ts:36:3)
+    at Layer.handle [as handle_request] (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:328:13)
+    at /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:286:9
+Error: secret option required for sessions
+    at session (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express-session/index.js:204:12)
+    at Layer.handle [as handle_request] (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:328:13)
+    at /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:280:10)
+    at <anonymous> (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/index.ts:36:3)
+    at Layer.handle [as handle_request] (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:328:13)
+    at /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:286:9
+Error: secret option required for sessions
+    at session (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express-session/index.js:204:12)
+    at Layer.handle [as handle_request] (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:328:13)
+    at /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:280:10)
+    at <anonymous> (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/index.ts:36:3)
+    at Layer.handle [as handle_request] (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:328:13)
+    at /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:286:9
+Error: secret option required for sessions
+    at session (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express-session/index.js:204:12)
+    at Layer.handle [as handle_request] (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:328:13)
+    at /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:280:10)
+    at <anonymous> (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/index.ts:36:3)
+    at Layer.handle [as handle_request] (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:328:13)
+    at /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:286:9
+Error: secret option required for sessions
+    at session (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express-session/index.js:204:12)
+    at Layer.handle [as handle_request] (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:328:13)
+    at /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:280:10)
+    at <anonymous> (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/server/index.ts:36:3)
+    at Layer.handle [as handle_request] (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:328:13)
+    at /home/orangepi/Documentos/WebUbicuos/EnterpriseWorkflow/node_modules/express/lib/router/index.js:286:9

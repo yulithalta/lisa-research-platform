@@ -1,0 +1,101 @@
+
+3:32:13 AM [auth] Request GET /api/zigbee/devices - Auth: true
+3:32:13 AM [auth] Deserializing user ID: 1
+3:32:13 AM [auth] Request GET /api/influxdb/status - Auth: true
+[2025-04-23T01:32:13.355Z] [websocket] WebSocket connection attempt from 192.168.0.2
+[2025-04-23T01:32:13.356Z] [websocket] New WebSocket connection for camera undefined
+[2025-04-23T01:32:13.356Z] [websocket] No camera ID provided, closing connection
+Error connecting to InfluxDB: Error: getaddrinfo EAI_AGAIN influxdb
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+  errno: -3001,
+  code: 'EAI_AGAIN',
+  syscall: 'getaddrinfo',
+  hostname: 'influxdb'
+}
+3:32:13 AM [express] GET /api/influxdb/status 304 in 9ms :: {"connected":false}
+3:32:13 AM [auth] Deserializing user ID: 1
+3:32:13 AM [auth] Request GET /favicon.ico - Auth: true
+3:32:13 AM [express] GET /api/zigbee/devices 200 in 17ms
+3:34:13 AM [auth] Deserializing user ID: 1
+3:34:13 AM [auth] Request GET /api/zigbee/devices - Auth: true
+3:34:13 AM [express] GET /api/zigbee/devices 200 in 5ms
+3:34:55 AM [auth] Deserializing user ID: 1
+3:34:55 AM [auth] Request POST /api/sessions - Auth: true
+[2025-04-23T01:34:55.580Z] [INFO] Guardando estado...
+[2025-04-23T01:34:55.581Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/users.json
+[2025-04-23T01:34:55.581Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/cameras.json
+[2025-04-23T01:34:55.581Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sensors.json
+[2025-04-23T01:34:55.581Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/recordings.json
+[2025-04-23T01:34:55.582Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sensor_events.json
+[2025-04-23T01:34:55.582Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sessions.json
+[2025-04-23T01:34:55.582Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/cameras.json
+[2025-04-23T01:34:55.582Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sensors.json
+[2025-04-23T01:34:55.582Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/recordings.json
+[2025-04-23T01:34:55.582Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sensor_events.json
+[2025-04-23T01:34:55.582Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sessions.json
+[2025-04-23T01:34:55.583Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/cameras.json
+[2025-04-23T01:34:55.583Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sensors.json
+[2025-04-23T01:34:55.583Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/recordings.json
+[2025-04-23T01:34:55.583Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sensor_events.json
+[2025-04-23T01:34:55.583Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sessions.json
+[2025-04-23T01:34:55.583Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/gdpr/consents.json
+[2025-04-23T01:34:55.583Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/gdpr/user_consents.json
+[2025-04-23T01:34:55.587Z] [INFO] Activity logged: sessionCreated
+3:34:55 AM [express] POST /api/sessions 201 in 8ms :: {"id":1,"userId":1,"name":"abc","description":…
+3:34:55 AM [auth] Deserializing user ID: 1
+3:34:55 AM [auth] Request GET /api/sessions - Auth: true
+3:34:55 AM [express] GET /api/sessions 200 in 2ms :: [{"id":1,"userId":1,"name":"abc","description":…
+3:35:18 AM [auth] Deserializing user ID: 1
+3:35:18 AM [auth] Request PATCH /api/sessions/1 - Auth: true
+[2025-04-23T01:35:18.011Z] [INFO] Guardando estado...
+[2025-04-23T01:35:18.011Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/users.json
+[2025-04-23T01:35:18.011Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/cameras.json
+[2025-04-23T01:35:18.011Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sensors.json
+[2025-04-23T01:35:18.012Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/recordings.json
+[2025-04-23T01:35:18.012Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sensor_events.json
+[2025-04-23T01:35:18.012Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sessions.json
+[2025-04-23T01:35:18.012Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/cameras.json
+[2025-04-23T01:35:18.012Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sensors.json
+[2025-04-23T01:35:18.012Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/recordings.json
+[2025-04-23T01:35:18.012Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sensor_events.json
+[2025-04-23T01:35:18.012Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sessions.json
+[2025-04-23T01:35:18.013Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/cameras.json
+[2025-04-23T01:35:18.013Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sensors.json
+[2025-04-23T01:35:18.013Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/recordings.json
+[2025-04-23T01:35:18.013Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sensor_events.json
+[2025-04-23T01:35:18.013Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sessions.json
+[2025-04-23T01:35:18.013Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/gdpr/consents.json
+[2025-04-23T01:35:18.013Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/gdpr/user_consents.json
+[2025-04-23T01:35:18.016Z] [INFO] Activity logged: sessionUpdated
+3:35:18 AM [express] PATCH /api/sessions/1 200 in 7ms :: {"id":1,"userId":1,"name":"abc","descriptio…
+3:35:18 AM [auth] Deserializing user ID: 1
+3:35:18 AM [auth] Request GET /api/sessions - Auth: true
+3:35:18 AM [express] GET /api/sessions 200 in 2ms :: [{"id":1,"userId":1,"name":"abc","description":…
+3:36:30 AM [auth] Deserializing user ID: 1
+3:36:30 AM [auth] Request GET /api/zigbee/devices - Auth: true
+3:36:30 AM [express] GET /api/zigbee/devices 200 in 5ms
+3:36:48 AM [auth] Deserializing user ID: 1
+3:36:48 AM [auth] Request POST /api/sessions - Auth: true
+Error creando sesión: Error: Ya existe una sesión con el nombre "abc". Por favor utilice un nombre único.
+    at MemStorage.createSession (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/server/storage.ts:1198:13)
+    at <anonymous> (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/server/routes.ts:479:37)
+    at Layer.handle [as handle_request] (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/express/lib/router/layer.js:95:5)
+    at /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/express/lib/router/index.js:280:10)
+    at <anonymous> (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/server/auth.ts:64:5)
+    at Layer.handle [as handle_request] (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/express/lib/router/index.js:328:13)
+    at /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/express/lib/router/index.js:280:10)
+    at strategy.pass (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/passport/lib/middleware/authenticate.js:355:9)
+    at /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/passport/lib/strategies/session.js:120:12
+    at pass (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/passport/lib/authenticator.js:352:31)
+    at deserialized (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/node_modules/passport/lib/authenticator.js:364:7)
+    at <anonymous> (/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/server/auth.ts:105:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+3:36:48 AM [express] POST /api/sessions 500 in 11ms :: {"error":"Error creando sesión"}

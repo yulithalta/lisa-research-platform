@@ -1,0 +1,47 @@
+Asunto: Solicitud de Implementación de Comprobación de IPs en la Tabla de Cámaras
+
+Descripción del requerimiento:
+
+Necesito añadir una funcionalidad en la aplicación para comprobar si las IPs de las cámaras IP registradas están "vivas" antes de empezar a trabajar con ellas. La idea es realizar un "ping" a cada IP y mostrar el resultado en la tabla de cámaras, con los siguientes estados:
+
+Azul: "Comprobando..." (mientras se realiza el ping).
+
+Verde: "Disponible" (si la IP responde correctamente).
+
+Rojo: "No disponible" (si la IP no responde).
+
+Gris: "Error" (si hay algún problema al realizar el ping).
+
+Detalles técnicos:
+
+Backend (API):
+
+Crear un endpoint que reciba una IP y realice un ping a dicha IP.
+
+El backend debe realizar el ping a la IP varias veces (por ejemplo, 4 intentos) y calcular el porcentaje de éxito. Si más del 25% de los pings son exitosos, se considera que la IP está "OK". De lo contrario, será "FAIL".
+
+Responder con el estado de la IP: OK, FAIL, o ERROR (si no se puede hacer el ping).
+
+Frontend (Tabla de Cámaras):
+
+Incluir un botón "Comprobar IPs" que, al hacer clic, inicie el proceso de verificación para cada IP registrada en la tabla.
+
+En la tabla, mostrar el estado de cada IP con los colores mencionados.
+
+El estado de cada IP debe cambiar a "Comprobando..." mientras se realiza el ping y actualizarse a "Disponible", "No disponible", o "Error" según el resultado.
+
+Requisitos:
+
+Utilizar la función ping para hacer los intentos de verificación.
+
+El backend debe ser capaz de manejar múltiples solicitudes de ping de forma eficiente.
+
+El frontend debe actualizar los estados de las IPs en la tabla en tiempo real.
+
+Puntos importantes a considerar:
+El frontend y backend ya están conectados, solo es necesario añadir esta nueva funcionalidad.
+
+Asegurarse de que el backend devuelva un estado que pueda ser fácilmente interpretado por el frontend para actualizar la tabla.
+
+Se debe validar que las IPs respondan de manera confiable (por ejemplo, si la cámara está apagada o inaccesible).
+

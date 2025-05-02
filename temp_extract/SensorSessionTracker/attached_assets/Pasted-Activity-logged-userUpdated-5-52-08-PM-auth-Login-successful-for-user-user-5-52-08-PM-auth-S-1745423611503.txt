@@ -1,0 +1,145 @@
+Activity logged: userUpdated
+5:52:08 PM [auth] Login successful for user: user
+5:52:08 PM [auth] Serializing user: user
+5:52:08 PM [auth] Login successful for user: user
+5:52:08 PM [express] POST /api/login 200 in 57ms :: {"username":"user","password":"4b4d82dace4746a36…
+5:52:08 PM [auth] Deserializing user ID: 1
+5:52:08 PM [auth] Request GET /api/cameras - Auth: true
+5:52:08 PM [express] GET /api/cameras 200 in 6ms :: [{"name":"camara 31","ipAddress":"192.168.0.31",…
+5:52:08 PM [auth] Deserializing user ID: 1
+5:52:08 PM [auth] Request GET /api/sessions - Auth: true
+5:52:08 PM [express] GET /api/sessions 304 in 4ms :: [{"id":3,"userId":1,"name":"Medusa 1605","descr…
+5:52:08 PM [auth] Deserializing user ID: 1
+5:52:08 PM [auth] Request GET /api/recordings - Auth: true
+5:52:08 PM [express] GET /api/recordings 304 in 3ms :: [{"cameraId":20,"filePath":"/home/mforum/Docu…
+5:52:08 PM [auth] Deserializing user ID: 1
+5:52:08 PM [auth] Request GET /api/system/stats - Auth: true
+5:52:09 PM [express] GET /api/system/stats 200 in 348ms :: {"systemUsage":[{"date":"2025-01-22","hou…
+5:52:09 PM [auth] Deserializing user ID: 1
+5:52:09 PM [auth] Request GET /LOGO-LISAv2.0.png - Auth: true
+5:52:09 PM [auth] Deserializing user ID: 1
+5:52:09 PM [auth] Request GET /favicon.ico - Auth: true
+5:52:09 PM [auth] Deserializing user ID: 1
+5:52:09 PM [auth] Request GET /api/zigbee/devices - Auth: true
+[Zigbee] Enviando 7 dispositivos
+5:52:09 PM [express] GET /api/zigbee/devices 200 in 6ms :: [{"id":"0x00124b002a6b62b7","name":"Senso…
+5:52:16 PM [auth] Deserializing user ID: 1
+5:52:16 PM [auth] Request GET /api/influxdb/status - Auth: true
+5:52:16 PM [auth] Deserializing user ID: 1
+5:52:16 PM [auth] Request GET /favicon.ico - Auth: true
+Error conectando con InfluxDB: Error: getaddrinfo EAI_AGAIN influxdb
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+  errno: -3001,
+  code: 'EAI_AGAIN',
+  syscall: 'getaddrinfo',
+  hostname: 'influxdb'
+}
+5:52:16 PM [express] GET /api/influxdb/status 304 in 20ms :: {"connected":false}
+[2025-04-23T15:52:18.224Z] [websocket] WebSocket connection attempt from 192.168.0.2
+[2025-04-23T15:52:18.226Z] [websocket] New WebSocket connection for camera undefined
+[2025-04-23T15:52:18.226Z] [websocket] No camera ID provided, closing connection
+5:52:43 PM [auth] Deserializing user ID: 1
+5:52:43 PM [auth] Request GET /api/cameras/19/ping - Auth: true
+Iniciando verificación para cámara 19 (192.168.0.31)
+[2025-04-23T15:52:43.695Z] [INFO] Guardando estado...
+[2025-04-23T15:52:43.695Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/users.json
+[2025-04-23T15:52:43.695Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/cameras.json
+[2025-04-23T15:52:43.696Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sensors.json
+[2025-04-23T15:52:43.696Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/recordings.json
+[2025-04-23T15:52:43.696Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sensor_events.json
+[2025-04-23T15:52:43.696Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sessions.json
+[2025-04-23T15:52:43.696Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/cameras.json
+[2025-04-23T15:52:43.696Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sensors.json
+[2025-04-23T15:52:43.696Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/recordings.json
+[2025-04-23T15:52:43.697Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sensor_events.json
+[2025-04-23T15:52:43.697Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sessions.json
+[2025-04-23T15:52:43.697Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/cameras.json
+[2025-04-23T15:52:43.697Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sensors.json
+[2025-04-23T15:52:43.697Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/recordings.json
+[2025-04-23T15:52:43.697Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sensor_events.json
+[2025-04-23T15:52:43.697Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sessions.json
+[2025-04-23T15:52:43.698Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/gdpr/consents.json
+[2025-04-23T15:52:43.698Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/gdpr/user_consents.json
+[2025-04-23T15:52:43.703Z] [INFO] Activity logged: cameraUpdated
+Verificando cámara 19 (192.168.0.31) por ping simple
+Ejecutando: ping -c 1 -W 3 192.168.0.31
+Ping exitoso para cámara 19 (192.168.0.31), intento 1
+Ejecutando: ping -c 1 -W 3 192.168.0.31
+Ping exitoso para cámara 19 (192.168.0.31), intento 2
+Cámara 19 (192.168.0.31) resultados ping: 2/2 exitosos (100%)
+Verificación ping para cámara 19 (192.168.0.31): connected, Tasa de éxito: 100.0%
+[2025-04-23T15:52:44.232Z] [INFO] Guardando estado...
+[2025-04-23T15:52:44.232Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/users.json
+[2025-04-23T15:52:44.232Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/cameras.json
+[2025-04-23T15:52:44.232Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sensors.json
+[2025-04-23T15:52:44.232Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/recordings.json
+[2025-04-23T15:52:44.232Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sensor_events.json
+[2025-04-23T15:52:44.233Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sessions.json
+[2025-04-23T15:52:44.233Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/cameras.json
+[2025-04-23T15:52:44.233Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sensors.json
+[2025-04-23T15:52:44.233Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/recordings.json
+[2025-04-23T15:52:44.233Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sensor_events.json
+[2025-04-23T15:52:44.233Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sessions.json
+[2025-04-23T15:52:44.233Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/cameras.json
+[2025-04-23T15:52:44.233Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sensors.json
+[2025-04-23T15:52:44.233Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/recordings.json
+[2025-04-23T15:52:44.233Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sensor_events.json
+[2025-04-23T15:52:44.234Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sessions.json
+[2025-04-23T15:52:44.234Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/gdpr/consents.json
+[2025-04-23T15:52:44.234Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/gdpr/user_consents.json
+[2025-04-23T15:52:44.240Z] [INFO] Activity logged: cameraUpdated
+5:52:44 PM [express] GET /api/cameras/19/ping 304 in 546ms :: {"id":"19","ipAddress":"192.168.0.31",…
+[MQTT] Solicitando lista de dispositivos
+5:52:54 PM [auth] Deserializing user ID: 1
+5:52:54 PM [auth] Request GET /api/cameras/20/ping - Auth: true
+Iniciando verificación para cámara 20 (192.168.0.32)
+[2025-04-23T15:52:54.975Z] [INFO] Guardando estado...
+[2025-04-23T15:52:54.975Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/users.json
+[2025-04-23T15:52:54.976Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/cameras.json
+[2025-04-23T15:52:54.976Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sensors.json
+[2025-04-23T15:52:54.976Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/recordings.json
+[2025-04-23T15:52:54.976Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sensor_events.json
+[2025-04-23T15:52:54.976Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sessions.json
+[2025-04-23T15:52:54.976Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/cameras.json
+[2025-04-23T15:52:54.976Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sensors.json
+[2025-04-23T15:52:54.977Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/recordings.json
+[2025-04-23T15:52:54.977Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sensor_events.json
+[2025-04-23T15:52:54.977Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sessions.json
+[2025-04-23T15:52:54.977Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/cameras.json
+[2025-04-23T15:52:54.977Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sensors.json
+[2025-04-23T15:52:54.977Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/recordings.json
+[2025-04-23T15:52:54.977Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sensor_events.json
+[2025-04-23T15:52:54.977Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sessions.json
+[2025-04-23T15:52:54.977Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/gdpr/consents.json
+[2025-04-23T15:52:54.978Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/gdpr/user_consents.json
+[2025-04-23T15:52:54.983Z] [INFO] Activity logged: cameraUpdated
+Verificando cámara 20 (192.168.0.32) por ping simple
+Ejecutando: ping -c 1 -W 3 192.168.0.32
+Ping fallido para cámara 20 (192.168.0.32), intento 1: Command failed: ping -c 1 -W 3 192.168.0.32
+
+Ejecutando: ping -c 1 -W 3 192.168.0.32
+Ping fallido para cámara 20 (192.168.0.32), intento 2: Command failed: ping -c 1 -W 3 192.168.0.32
+
+Cámara 20 (192.168.0.32) resultados ping: 0/2 exitosos (0%)
+Verificación ping para cámara 20 (192.168.0.32): error, Tasa de éxito: 0.0%
+[2025-04-23T15:53:01.498Z] [INFO] Guardando estado...
+[2025-04-23T15:53:01.498Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/users.json
+[2025-04-23T15:53:01.499Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/cameras.json
+[2025-04-23T15:53:01.499Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sensors.json
+[2025-04-23T15:53:01.499Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/recordings.json
+[2025-04-23T15:53:01.499Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sensor_events.json
+[2025-04-23T15:53:01.499Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_1/sessions.json
+[2025-04-23T15:53:01.499Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/cameras.json
+[2025-04-23T15:53:01.499Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sensors.json
+[2025-04-23T15:53:01.500Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/recordings.json
+[2025-04-23T15:53:01.500Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sensor_events.json
+[2025-04-23T15:53:01.500Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_2/sessions.json
+[2025-04-23T15:53:01.500Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/cameras.json
+[2025-04-23T15:53:01.500Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sensors.json
+[2025-04-23T15:53:01.500Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/recordings.json
+[2025-04-23T15:53:01.500Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sensor_events.json
+[2025-04-23T15:53:01.501Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/user_3/sessions.json
+[2025-04-23T15:53:01.501Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/gdpr/consents.json
+[2025-04-23T15:53:01.501Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/data/gdpr/user_consents.json
+[2025-04-23T15:53:01.506Z] [INFO] Activity logged: cameraUpdated
+5:53:01 PM [express] GET /api/cameras/20/ping 200 in 6533ms :: {"id":"20","ipAddress":"192.168.0.32"…

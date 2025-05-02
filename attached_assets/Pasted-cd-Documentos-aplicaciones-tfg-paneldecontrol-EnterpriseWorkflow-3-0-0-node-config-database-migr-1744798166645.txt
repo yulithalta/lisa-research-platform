@@ -1,0 +1,95 @@
+cd ~/Documentos/aplicaciones/tfg/paneldecontrol/EnterpriseWorkflow-3.0.0/
+node config/database/migration.js data
+Buscando archivos JSON en: data
+Iniciando migración de datos JSON a PostgreSQL...
+Conexión a PostgreSQL establecida correctamente.
+Procesando directorio: data
+Procesando archivo data/cameras.json...
+El archivo data/cameras.json está vacío. Saltando.
+Procesando directorio: data/gdpr
+Procesando archivo data/gdpr/consents.json...
+El archivo data/gdpr/consents.json está vacío. Saltando.
+Procesando archivo data/gdpr/user_consents.json...
+El archivo data/gdpr/user_consents.json está vacío. Saltando.
+Procesando archivo data/recordings.json...
+Migrando 12 registros de data/recordings.json a tabla sessions...
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Migración de data/recordings.json completada: 0 registros insertados, 12 errores.
+Procesando archivo data/sensor_events.json...
+El archivo data/sensor_events.json está vacío. Saltando.
+Procesando archivo data/sensors.json...
+El archivo data/sensors.json está vacío. Saltando.
+Archivo servicios.json no está en el mapeo. Saltando.
+Procesando directorio: data/user_1
+Procesando archivo data/user_1/cameras.json...
+Migrando 5 registros de data/user_1/cameras.json a tabla cameras...
+Error insertando registro: null value in column "user_id" of relation "cameras" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "cameras" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "cameras" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "cameras" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "cameras" violates not-null constraint
+Migración de data/user_1/cameras.json completada: 0 registros insertados, 5 errores.
+Procesando archivo data/user_1/recordings.json...
+Migrando 24 registros de data/user_1/recordings.json a tabla sessions...
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Error insertando registro: null value in column "user_id" of relation "sessions" violates not-null constraint
+Migración de data/user_1/recordings.json completada: 0 registros insertados, 24 errores.
+Procesando archivo data/user_1/sensor_events.json...
+El archivo data/user_1/sensor_events.json está vacío. Saltando.
+Procesando archivo data/user_1/sensors.json...
+El archivo data/user_1/sensors.json está vacío. Saltando.
+Procesando directorio: data/user_2
+Procesando archivo data/user_2/cameras.json...
+El archivo data/user_2/cameras.json está vacío. Saltando.
+Procesando archivo data/user_2/recordings.json...
+El archivo data/user_2/recordings.json está vacío. Saltando.
+Procesando archivo data/user_2/sensor_events.json...
+El archivo data/user_2/sensor_events.json está vacío. Saltando.
+Procesando archivo data/user_2/sensors.json...
+El archivo data/user_2/sensors.json está vacío. Saltando.
+Procesando directorio: data/user_3
+Procesando archivo data/user_3/cameras.json...
+El archivo data/user_3/cameras.json está vacío. Saltando.
+Procesando archivo data/user_3/recordings.json...
+El archivo data/user_3/recordings.json está vacío. Saltando.
+Procesando archivo data/user_3/sensor_events.json...
+El archivo data/user_3/sensor_events.json está vacío. Saltando.
+Procesando archivo data/user_3/sensors.json...
+El archivo data/user_3/sensors.json está vacío. Saltando.
+Procesando archivo data/users.json...
+Migrando 3 registros de data/users.json a tabla users...
+Migración de data/users.json completada: 3 registros insertados, 0 errores.
+Migración completada exitosamente.

@@ -1,0 +1,291 @@
+ Browsing Topics API removed
+ WebSocket connection to 'wss://a5a8d67d-3abb-427f-8689-59b608778fc7-00-5iifxwlowm0j.riker.replit.dev/' failed: 
+setupWebSocket @ client:535
+client:535 Uncaught (in promise) 
+ [2025-04-03T11:29:55.232Z] [INFO] Application starting
+ [2025-04-03T11:29:55.233Z] [INFO] Initializing router
+api/user:1  Failed to load resource: the server responded with a status of 401 (Unauthorized)
+ Warning: Cannot update a component (`Switch`) while rendering a different component (`AuthPage`). To locate the bad setState() call inside `AuthPage`, follow the stack trace as described in https://reactjs.org/link/setstate-in-render 
+overrideMethod @ installHook.js:1
+chunk-RPCDYKBN.js?v=ec22f6d6:11595 Uncaught 
+chunk-RPCDYKBN.js?v=ec22f6d6:11595 Uncaught 
+ [2025-04-03T11:32:44.808Z] [INFO] Connecting to MQTT broker at ws://192.168.0.20:1883
+ Mixed Content: The page at 'https://a5a8d67d-3abb-427f-8689-59b608778fc7-00-5iifxwlowm0j.riker.replit.dev/' was loaded over HTTPS, but attempted to connect to the insecure WebSocket endpoint 'ws://192.168.0.20:1883/'. This request has been blocked; this endpoint must be available over WSS.
+dS @ mqtt.js?v=ec22f6d6:9849
+ [2025-04-03T11:32:44.812Z] [ERROR] Error setting up MQTT: {"error":"Failed to construct 'WebSocket': An insecure WebSocket connection may not be initiated from a page loaded over HTTPS."} 
+overrideMethod @ installHook.js:1
+chunk-RPCDYKBN.js?v=ec22f6d6:8452 Mixed Content: The page at 'https://a5a8d67d-3abb-427f-8689-59b608778fc7-00-5iifxwlowm0j.riker.replit.dev/' was loaded over HTTPS, but requested an insecure frame 'http://192.168.0.20:4000/'. This request has been blocked; the content must be served over HTTPS.
+chunk-RPCDYKBN.js?v=ec22f6d6:8452 Mixed Content: The page at 'https://a5a8d67d-3abb-427f-8689-59b608778fc7-00-5iifxwlowm0j.riker.replit.dev/' was loaded over HTTPS, but requested an insecure frame 'http://192.168.0.20:3001/status/estadoservicios'. This request has been blocked; the content must be served over HTTPS.
+bootstrap-autofill-overlay.js:711 Uncaught (in promise) 
+ Error loading services: 
+overrideMethod @ installHook.js:1
+ [2025-04-03T11:32:49.117Z] [INFO] Connecting to MQTT broker at ws://localhost:1883
+ Connecting to WebSocket at wss://a5a8d67d-3abb-427f-8689-59b608778fc7-00-5iifxwlowm0j.riker.replit.dev/ws
+ Sensores seleccionados actualizados: Array(0)
+ Connected to WebSocket server
+ WebSocket connection closed
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+ [2025-04-03T11:32:51.448Z] [INFO] MQTT client is offline
+ [2025-04-03T11:32:57.289Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+ [2025-04-03T11:33:05.294Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:33:13.301Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:33:21.290Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:33:29.303Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:33:37.294Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:33:45.300Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:33:53.294Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:34:01.302Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:34:09.294Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:34:17.302Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:34:25.292Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:34:33.301Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:34:41.292Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:34:49.301Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:34:57.293Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:35:05.293Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:35:13.299Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:35:21.297Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:35:29.303Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:35:37.305Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:35:45.294Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:35:53.295Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:36:01.292Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:36:09.293Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:36:17.290Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:36:25.298Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:36:33.291Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:36:41.299Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:36:50.291Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:36:58.299Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:37:06.290Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:37:14.294Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:37:22.290Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:37:30.299Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:37:38.289Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:37:46.311Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:37:54.291Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:38:02.298Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:38:10.291Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:38:18.297Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:38:26.304Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:38:34.295Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:38:42.289Z] [INFO] MQTT client is trying to reconnect
+ WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:38:50.297Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:38:58.289Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:39:06.296Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:39:14.304Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:39:22.296Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:39:30.303Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:39:38.296Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:39:46.315Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:39:54.296Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:40:02.303Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:40:10.291Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:40:18.303Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:40:26.295Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:40:34.303Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:40:42.295Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:40:51.289Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:40:59.297Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:41:07.301Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:41:15.294Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:41:23.292Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:41:31.295Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:41:39.304Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:41:47.294Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:41:55.304Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:42:03.293Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:42:11.302Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:42:19.290Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:42:27.303Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:42:35.293Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:42:43.299Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:42:52.294Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:43:00.302Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:43:08.294Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:43:16.303Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:43:24.293Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:43:32.295Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:43:40.296Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+sessions-page.tsx:209 Camera 2 selected, status: connected
+logger.ts:17 [2025-04-03T11:43:47.668Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+api/sessions:1 
+            
+            
+           Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+logger.ts:17 [2025-04-03T11:43:55.044Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+logger.ts:17 [2025-04-03T11:44:02.416Z] [INFO] MQTT client is trying to reconnect
+mqtt.js?v=ec22f6d6:9849 WebSocket connection to 'ws://localhost:1883/' failed: 
+dS @ mqtt.js?v=ec22f6d6:9849
+gS @ mqtt.js?v=ec22f6d6:9863
+o @ mqtt.js?v=ec22f6d6:10134
+connect @ mqtt.js?v=ec22f6d6:8310
+_reconnect @ mqtt.js?v=ec22f6d6:8522
+(anonymous) @ mqtt.js?v=ec22f6d6:8526

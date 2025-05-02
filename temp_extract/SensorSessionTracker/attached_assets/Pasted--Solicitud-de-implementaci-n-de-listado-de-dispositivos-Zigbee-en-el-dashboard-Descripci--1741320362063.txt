@@ -1,0 +1,115 @@
+
+### **Solicitud de implementación de listado de dispositivos Zigbee en el dashboard**
+
+**Descripción:**
+
+Se necesita integrar la funcionalidad en el frontend del dashboard para obtener y mostrar la lista de dispositivos Zigbee conectados a través de **Zigbee2MQTT**. Esta funcionalidad debe ser implementada utilizando MQTT para suscribirse al tema que publica la lista de dispositivos. La idea es mostrar el número total de sensores conectados y sus detalles (como el nombre del dispositivo y su estado) en el dashboard de React.
+
+**Pasos a seguir:**
+
+1. **Conexión al broker MQTT**:
+    
+    - Usar `mqtt.connect` para conectar al broker MQTT en `localhost:1883` (puerto predeterminado, ajustable si es necesario).
+2. **Suscripción al tema `zigbee2mqtt/bridge/devices`**:
+    
+    - El frontend debe suscribirse al tema `zigbee2mqtt/bridge/devices` que Zigbee2MQTT publica para obtener la lista de dispositivos conectados.
+    - El mensaje publicado en este tema contiene un objeto JSON con los dispositivos y su estado.
+3. **Manejo de los datos**:
+    
+    - Cuando el mensaje llega al frontend, se debe parsear el JSON para extraer la lista de dispositivos.
+    - Se debe mostrar la cantidad total de dispositivos conectados.
+    - Además, debe mostrarse información relevante de cada dispositivo, como el nombre amigable del dispositivo (`friendly_name`), la dirección IEEE (`ieee_addr`), y el estado (`state`).
+4. **Ejemplo de implementación con `mqtt.js`**:
+    
+    ```javascript
+    import React, { useState, useEffect } from 'react';
+    import mqtt from 'mqtt';
+    
+    const SensorDashboard = () => {
+      const [sensors, setSensors] = useState([]);
+    
+      useEffect(() => {
+        // Conexión al broker MQTT
+        const client = mqtt.connect('mqtt://localhost:1883'); // Cambia el puerto si es necesario
+    
+        client.on('connect', () => {
+          console.log('Conectado al broker MQTT');
+          
+          // Suscribirse al tema que publica la lista de dispositivos
+          client.subscribe('zigbee2mqtt/bridge/devices', (err) => {
+            if (err) {
+              console.error('Error al suscribirse:', err);
+            }
+          });
+        });
+    
+        client.on('message', (topic, message) => {
+          if (topic === 'zigbee2mqtt/bridge/devices') {
+            // La lista de dispositivos estará en el payload del mensaje
+            const devices = JSON.parse(message.toString());
+            console.log(devices);
+            setSensors(devices); // Almacenar los dispositivos en el estado
+          }
+        });
+    
+        return () => {
+          client.end(); // Cerrar la conexión cuando el componente se desmonte
+        };
+      }, []);
+    
+      return (
+        <div>
+          <h1>Dashboard de Sensores</h1>
+          <h2>Total de Sensores Conectados: {sensors.length}</h2>
+          <ul>
+            {sensors.map((sensor, index) => (
+              <li key={index}>
+                {sensor.friendly_name} (ID: {sensor.ieee_addr})
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    };
+    
+    export default SensorDashboard;
+    ```
+    
+
+**Detalles importantes:**
+
+- La respuesta de `zigbee2mqtt/bridge/devices` será un objeto donde cada clave es la dirección `ieee_addr` del dispositivo y el valor es un objeto con información detallada del dispositivo (nombre, estado, etc.).
+- El estado del dispositivo puede ser `OPEN` o `CLOSED` (dependiendo del tipo de sensor).
+
+**Ejemplo de la estructura del mensaje:**
+
+```json
+{
+  "0x00158d0001f5b57a": {
+    "friendly_name": "Sensor puerta",
+    "ieee_addr": "0x00158d0001f5b57a",
+    "model": "sensor",
+    "state": "OPEN",
+    "linkquality": 65
+  },
+  "0x00158d0002a7b66f": {
+    "friendly_name": "Sensor ventana",
+    "ieee_addr": "0x00158d0002a7b66f",
+    "model": "sensor",
+    "state": "CLOSED",
+    "linkquality": 75
+  }
+}
+```
+
+**Tareas principales:**
+
+- Implementar la suscripción al tema MQTT `zigbee2mqtt/bridge/devices`.
+- Parsear y mostrar la lista de dispositivos conectados y su estado en el frontend.
+- Mostrar la cantidad total de dispositivos conectados en el panel de control.
+
+**Notas adicionales:**
+
+- Actualmente no es necesario realizar autenticación para acceder al broker MQTT, y la URL del broker es `localhost:1883` (ajustar si es necesario).
+
+---

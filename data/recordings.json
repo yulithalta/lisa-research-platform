@@ -1,0 +1,138 @@
+{
+  "1": {
+    "cameraId": 1,
+    "filePath": "/home/runner/workspace/recordings/cam1-1-2025-02-22T16-59-42-218Z.mp4",
+    "startTime": "2025-02-22T16:59:42.218Z",
+    "title": null,
+    "id": 1,
+    "status": "completed",
+    "endTime": "2025-02-22T16:59:47.254Z",
+    "description": null,
+    "tags": null
+  },
+  "2": {
+    "cameraId": 1,
+    "filePath": "/home/runner/workspace/recordings/cam1-1-2025-02-22T20-50-59-548Z.mp4",
+    "startTime": "2025-02-22T20:50:59.548Z",
+    "title": null,
+    "id": 2,
+    "status": "completed",
+    "endTime": "2025-02-22T20:51:09.823Z",
+    "description": null,
+    "tags": null
+  },
+  "3": {
+    "cameraId": 2,
+    "filePath": "/home/runner/workspace/recordings/cam2-2-2025-02-22T20-50-59-549Z.mp4",
+    "startTime": "2025-02-22T20:50:59.549Z",
+    "title": null,
+    "id": 3,
+    "status": "completed",
+    "endTime": "2025-02-22T20:51:09.823Z",
+    "description": null,
+    "tags": null
+  },
+  "4": {
+    "cameraId": 1,
+    "filePath": "/home/runner/workspace/recordings/cam1-1-2025-02-22T20-51-47-803Z.mp4",
+    "startTime": "2025-02-22T20:51:47.803Z",
+    "title": null,
+    "id": 4,
+    "status": "completed",
+    "endTime": "2025-02-22T20:51:58.795Z",
+    "description": null,
+    "tags": null
+  },
+  "5": {
+    "cameraId": 2,
+    "filePath": "/home/runner/workspace/recordings/cam2-2-2025-02-22T20-51-47-803Z.mp4",
+    "startTime": "2025-02-22T20:51:47.803Z",
+    "title": null,
+    "id": 5,
+    "status": "completed",
+    "endTime": "2025-02-22T20:51:58.794Z",
+    "description": null,
+    "tags": null
+  },
+  "6": {
+    "cameraId": 1,
+    "filePath": "/home/runner/workspace/recordings/cam1-1-2025-02-22T21-53-54-918Z.mp4",
+    "startTime": "2025-02-22T21:53:54.918Z",
+    "title": null,
+    "id": 6,
+    "status": "completed",
+    "endTime": "2025-02-22T21:54:01.844Z",
+    "description": null,
+    "tags": null
+  },
+  "7": {
+    "cameraId": 1,
+    "filePath": "/home/runner/workspace/recordings/cam1-1-2025-02-23T01-15-01-513Z.mp4",
+    "startTime": "2025-02-23T01:15:01.514Z",
+    "title": null,
+    "id": 7,
+    "status": "completed",
+    "endTime": "2025-02-23T01:15:24.989Z",
+    "description": null,
+    "tags": null
+  },
+  "8": {
+    "cameraId": 2,
+    "filePath": "/home/runner/workspace/recordings/cam2-2-2025-02-23T01-15-01-514Z.mp4",
+    "startTime": "2025-02-23T01:15:01.514Z",
+    "title": null,
+    "id": 8,
+    "status": "completed",
+    "endTime": "2025-02-23T01:15:24.988Z",
+    "description": null,
+    "tags": null
+  },
+  "9": {
+    "cameraId": 1,
+    "filePath": "/home/runner/workspace/recordings/cam1-1-2025-02-23T02-42-28-539Z.mp4",
+    "startTime": "2025-02-23T02:42:28.539Z",
+    "title": null,
+    "id": 9,
+    "status": "completed",
+    "endTime": "2025-02-23T02:42:40.743Z",
+    "description": null,
+    "tags": null,
+    "aiAnalysis": null
+  },
+  "10": {
+    "cameraId": 2,
+    "filePath": "/home/runner/workspace/recordings/cam2-2-2025-02-23T02-42-28-547Z.mp4",
+    "startTime": "2025-02-23T02:42:28.547Z",
+    "title": null,
+    "id": 10,
+    "status": "completed",
+    "endTime": "2025-02-23T02:42:40.742Z",
+    "description": null,
+    "tags": null,
+    "aiAnalysis": null
+  },
+  "11": {
+    "cameraId": 1,
+    "filePath": "/home/runner/workspace/recordings/cam1-1-2025-02-23T02-42-41-945Z.mp4",
+    "startTime": "2025-02-23T02:42:41.946Z",
+    "title": null,
+    "id": 11,
+    "status": "completed",
+    "endTime": "2025-02-23T02:42:44.037Z",
+    "description": null,
+    "tags": null,
+    "aiAnalysis": null
+  },
+  "12": {
+    "cameraId": 2,
+    "filePath": "/home/runner/workspace/recordings/cam2-2-2025-02-23T02-42-41-947Z.mp4",
+    "startTime": "2025-02-23T02:42:41.948Z",
+    "title": null,
+    "id": 12,
+    "status": "completed",
+    "endTime": "2025-02-23T02:42:44.036Z",
+    "description": null,
+    "tags": null,
+    "aiAnalysis": null
+  }
+}

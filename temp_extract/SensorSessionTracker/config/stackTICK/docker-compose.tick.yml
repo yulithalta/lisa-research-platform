@@ -1,0 +1,113 @@
+version: '3.8'
+
+services:
+  # TICK Stack (Telegraf, InfluxDB, Chronograf, Kapacitor)
+  
+  # InfluxDB - Base de datos de series temporales
+  influxdb:
+    image: influxdb:2.7
+    container_name: lisa_influxdb
+    ports:
+      - "8086:8086"
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=${INFLUXDB_USER:-admin}
+      - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUXDB_PASSWORD:-admin123}
+      - DOCKER_INFLUXDB_INIT_ORG=${INFLUXDB_ORG:-lisaorganization}
+      - DOCKER_INFLUXDB_INIT_BUCKET=${INFLUXDB_BUCKET:-mqtt_data}
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=${INFLUXDB_TOKEN:-lisatokenadmin}
+      - DOCKER_INFLUXDB_INIT_RETENTION=${INFLUXDB_RETENTION:-90d}
+    volumes:
+      - influxdb-data:/var/lib/influxdb2
+      - ./influxdb-config:/docker-entrypoint-initdb.d
+    networks:
+      - tick_stack
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8086/ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+
+  # Telegraf - Recolector de métricas 
+  telegraf:
+    image: telegraf:1.27
+    container_name: lisa_telegraf
+    volumes:
+      - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - ./telegraf/telegraf.d:/etc/telegraf/telegraf.d
+    environment:
+      - INFLUXDB_TOKEN=${INFLUXDB_TOKEN:-lisatokenadmin}
+      - INFLUXDB_ORG=${INFLUXDB_ORG:-lisaorganization}
+      - INFLUXDB_BUCKET=${INFLUXDB_BUCKET:-mqtt_data}
+      - MQTT_HOST=${MQTT_HOST:-192.168.0.20}
+      - MQTT_PORT=${MQTT_PORT:-1883}
+    depends_on:
+      - influxdb
+    networks:
+      - tick_stack
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+
+  # Chronograf - Interfaz de visualización
+  chronograf:
+    image: chronograf:1.10
+    container_name: lisa_chronograf
+    ports:
+      - "8888:8888"
+    environment:
+      - INFLUXDB_URL=http://influxdb:8086
+      - INFLUXDB_TOKEN=${INFLUXDB_TOKEN:-lisatokenadmin}
+      - INFLUXDB_ORG=${INFLUXDB_ORG:-lisaorganization}
+    volumes:
+      - chronograf-data:/var/lib/chronograf
+    depends_on:
+      - influxdb
+    networks:
+      - tick_stack
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+
+  # Kapacitor - Procesamiento de datos y alertas
+  kapacitor:
+    image: kapacitor:1.6
+    container_name: lisa_kapacitor
+    environment:
+      - KAPACITOR_INFLUXDB_0_URLS_0=http://influxdb:8086
+      - KAPACITOR_INFLUXDB_0_TOKEN=${INFLUXDB_TOKEN:-lisatokenadmin}
+      - KAPACITOR_INFLUXDB_0_ORG=${INFLUXDB_ORG:-lisaorganization}
+    volumes:
+      - ./kapacitor/kapacitor.conf:/etc/kapacitor/kapacitor.conf:ro
+      - ./kapacitor/tasks:/var/lib/kapacitor/tasks
+      - kapacitor-data:/var/lib/kapacitor
+    depends_on:
+      - influxdb
+    networks:
+      - tick_stack
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+
+# Volúmenes para persistencia de datos
+volumes:
+  influxdb-data:
+  chronograf-data:
+  kapacitor-data:
+
+# Red interna para comunicación entre servicios
+networks:
+  tick_stack:
+    driver: bridge

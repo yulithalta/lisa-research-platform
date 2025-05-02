@@ -1,0 +1,1007 @@
+npm run dev                                                                                                                                                                                               ⏎
+
+> rest-express@1.0.0 dev
+> tsx server/index.ts
+
+[2025-05-01T00:25:07.100Z] [INFO] Inicializando MemStorage...
+[2025-05-01T00:25:07.100Z] [INFO] Datos cargados desde /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-01T00:25:07.101Z] [INFO] Datos cargados desde /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-01T00:25:07.101Z] [INFO] Datos cargados desde /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-01T00:25:07.101Z] [INFO] Datos cargados desde /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-01T00:25:07.101Z] [INFO] Datos cargados desde /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-01T00:25:07.101Z] [INFO] Datos cargados desde /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-01T00:25:07.101Z] [INFO] Datos cargados desde /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-01T00:25:07.102Z] [INFO] Datos cargados desde /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-01T00:25:07.102Z] [INFO] Datos cargados desde /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-01T00:25:07.102Z] [INFO] Datos cargados desde /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-01T00:25:07.102Z] [INFO] Datos cargados desde /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-01T00:25:07.102Z] [INFO] Datos cargados desde /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-01T00:25:07.102Z] [INFO] Datos cargados desde /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-01T00:25:07.103Z] [INFO] Guardando estado...
+[2025-05-01T00:25:07.103Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-01T00:25:07.104Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-01T00:25:07.104Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-01T00:25:07.104Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-01T00:25:07.104Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-01T00:25:07.104Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-01T00:25:07.105Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-01T00:25:07.105Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-01T00:25:07.105Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-01T00:25:07.105Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-01T00:25:07.105Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-01T00:25:07.106Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-01T00:25:07.106Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-01T00:25:07.227Z] [INFO] SensorDataMapper initialized
+2:25:07 AM [auth] Setting up session configuration
+2:25:07 AM [auth] Session configuration complete
+[2025-05-01T00:25:07.295Z] [INFO] Rutas de sensores registradas
+🔄 Conectando a broker MQTT: ws://192.168.0.20:9001
+Cargados 30 tópicos desde caché
+Cargados 30 tópicos únicos desde caché
+Cargados 7 dispositivos desde caché
+2:25:07 AM [express] Intentando conectar a MQTT broker en mqtt://mqtt:1883
+Cliente MQTT ya está conectado o intentando conectar
+2:25:07 AM [express] Conexión MQTT: Fallida
+2:25:07 AM [warn] La aplicación continuará sin funcionalidad de sensores MQTT
+2:25:07 AM [express] Server running on port 5000
+2:25:07 AM [express] Environment: development
+2:25:07 AM [express] Session secret configured: true
+✅ Conectado a broker MQTT: ws://192.168.0.20:9001
+Solicitando lista de dispositivos Zigbee
+Suscrito a tópico: zigbee2mqtt/#
+Recibida lista de 7 dispositivos
+Lista de dispositivos guardada: 7 dispositivos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Suscrito a tópico: zigbee2mqtt/livinglab/#
+Suscrito a tópico: zigbee2mqtt/+/get
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Suscrito a tópico: zigbee2mqtt/bridge/devices
+Recibida lista de 7 dispositivos
+Lista de dispositivos guardada: 7 dispositivos
+Suscrito a tópico: zigbee2mqtt/bridge/state
+Suscrito a tópico: livinglab/#
+Suscrito a tópico: sensors/#
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+2:25:28 AM [auth] Request GET /sessions - Auth: false
+2:25:28 AM [auth] Request GET /@vite/client - Auth: false
+2:25:28 AM [auth] Request GET /src/main.tsx?v=LmMoVofY364P1t7gQ2UZm - Auth: false
+2:25:28 AM [auth] Request GET /@react-refresh - Auth: false
+2:25:28 AM [auth] Request GET /@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/vite/dist/client/env.mjs - Auth: false
+2:25:28 AM [auth] Request GET /src/App.tsx?v=LmMoVofY364P1t7gQ2UZm - Auth: false
+2:25:28 AM [auth] Request GET /src/index.css?v=LmMoVofY364P1t7gQ2UZm - Auth: false
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2:25:29 AM [auth] Request GET /src/lib/queryClient.ts - Auth: false
+2:25:29 AM [auth] Request GET /src/hooks/use-auth.tsx - Auth: false
+2:25:29 AM [auth] Request GET /src/hooks/use-onboarding.tsx - Auth: false
+2:25:29 AM [auth] Request GET /src/components/ui/toaster.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/auth-page.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/page404/index.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/lib/protected-route.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/home-page.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/layout/main-layout.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/lib/services/logger.ts - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/sessions-page.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/settings-page.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/sensors-page.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/player-page.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/recording-player.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/zigbee-devices-page.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/live-monitoring-page.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/settings-sensors.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/cameras-page.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/docs-page.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/doc/system-architecture.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/doc/system-architecture-2.0.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/device-management-page.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/help/index.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/doc/code-quality.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/doc/installation.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/hooks/use-local-storage.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/hooks/use-toast.ts - Auth: false
+2:25:30 AM [auth] Request GET /src/pages/doc/overview.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/card.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/button.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/form.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/input.tsx - Auth: false
+2:25:30 AM [auth] Request GET /@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/shared/schema.ts - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/select.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/hooks/useSimpleMqtt.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/toast.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/lib/utils.ts - Auth: false
+2:25:30 AM [auth] Request GET /src/components/layout/sidebar.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/tabs.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/session-management.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/switch.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/badge.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/camera-grid.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/add-camera-dialog.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/accordion.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/onboarding/tours-manager.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/alert.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/label.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/tooltip.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/scroll-area.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/textarea.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/table.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/hooks/use-developer-mode.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/mqtt-status-indicator.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/collapsible.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/session-view-dialog.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/camera-card.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/dialog.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/onboarding/tour-steps.ts - Auth: false
+2:25:30 AM [auth] Request GET /src/hooks/use-global-recording-time.ts - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/alert-dialog.tsx - Auth: false
+2:25:30 AM [auth] Request GET /src/components/ui/progress.tsx - Auth: false
+2:25:30 AM [auth] Request GET /api/user - Auth: false
+2:25:30 AM [auth] Unauthorized access attempt to /api/user
+2:25:30 AM [express] GET /api/user 401 in 3ms
+2:25:30 AM [auth] Request GET /favicon.ico - Auth: false
+2:25:30 AM [auth] Request GET /favicon.ico - Auth: false
+2:25:34 AM [auth] Request POST /api/login - Auth: false
+2:25:34 AM [auth] Processing login request for user: user
+2:25:34 AM [auth] Attempting login for user: user
+[2025-05-01T00:25:34.627Z] [INFO] Guardando estado...
+[2025-05-01T00:25:34.627Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-01T00:25:34.627Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-01T00:25:34.628Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-01T00:25:34.628Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-01T00:25:34.628Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-01T00:25:34.628Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-01T00:25:34.628Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-01T00:25:34.629Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-01T00:25:34.629Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-01T00:25:34.629Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-01T00:25:34.629Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-01T00:25:34.629Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-01T00:25:34.629Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-01T00:25:34.630Z] [INFO] Activity logged: userUpdated
+2:25:34 AM [auth] Login successful for user: user
+2:25:34 AM [auth] Serializing user: user
+2:25:34 AM [auth] Login successful for user: user
+2:25:34 AM [express] POST /api/login 200 in 44ms :: {"username":"user","password":"4b4d82dace4746a36…
+2:25:34 AM [auth] Deserializing user ID: 1
+2:25:34 AM [auth] Request GET /api/cameras - Auth: true
+2:25:34 AM [express] GET /api/cameras 304 in 3ms :: [{"name":"c31","ipAddress":"192.168.0.31","usern…
+2:25:34 AM [auth] Deserializing user ID: 1
+2:25:34 AM [auth] Request GET /api/sessions - Auth: true
+2:25:34 AM [express] GET /api/sessions 304 in 4ms :: [{"id":17,"userId":1,"name":"c31 video","descri…
+2:25:34 AM [auth] Deserializing user ID: 1
+2:25:34 AM [auth] Request GET /api/recordings - Auth: true
+2:25:34 AM [auth] Deserializing user ID: 1
+2:25:34 AM [auth] Request GET /api/system/stats - Auth: true
+2:25:34 AM [auth] Deserializing user ID: 1
+2:25:34 AM [auth] Request GET /api/zigbee/devices - Auth: true
+[Zigbee] Enviando 7 dispositivos
+2:25:34 AM [express] GET /api/recordings 304 in 114ms :: [{"cameraId":2,"filePath":"/home/mforum/Doc…
+2:25:34 AM [express] GET /api/system/stats 304 in 115ms :: {"systemUsage":[{"date":"2025-01-31","hou…
+2:25:34 AM [express] GET /api/zigbee/devices 200 in 115ms :: [{"id":"0x00124b002a6b62b7","name":"Sen…
+2:25:34 AM [auth] Deserializing user ID: 1
+2:25:34 AM [auth] Request GET /LOGO-LISAv2.0.png - Auth: true
+[2025-05-01T00:25:59.655Z] [websocket] WebSocket connection attempt from 192.168.0.61
+[2025-05-01T00:25:59.656Z] [websocket] New WebSocket connection for camera undefined
+[2025-05-01T00:25:59.656Z] [websocket] No camera ID provided, closing connection
+2:25:59 AM [auth] Deserializing user ID: 1
+2:25:59 AM [auth] Request GET /api/influxdb/status - Auth: true
+2:25:59 AM [express] GET /api/influxdb/status 304 in 5ms :: {"connected":true}
+2:27:09 AM [auth] Deserializing user ID: 1
+2:27:09 AM [auth] Request GET /api/cameras/2/ping - Auth: true
+Iniciando verificación para cámara 2 (192.168.0.31)
+[2025-05-01T00:27:09.333Z] [INFO] Guardando estado...
+[2025-05-01T00:27:09.333Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-01T00:27:09.333Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-01T00:27:09.333Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-01T00:27:09.334Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-01T00:27:09.334Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-01T00:27:09.334Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-01T00:27:09.334Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-01T00:27:09.334Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-01T00:27:09.334Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-01T00:27:09.334Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-01T00:27:09.335Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-01T00:27:09.335Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-01T00:27:09.335Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-01T00:27:09.336Z] [INFO] Activity logged: cameraUpdated
+📷 Verificando cámara 2 (192.168.0.31) por ping, 3 intentos con timeout 2000ms
+Ejecutando: ping -c 1 -W 2 192.168.0.31
+✅ Ping exitoso para cámara 2 (192.168.0.31), intento 1
+Ejecutando: ping -c 1 -W 2 192.168.0.31
+✅ Ping exitoso para cámara 2 (192.168.0.31), intento 2
+Ejecutando: ping -c 1 -W 2 192.168.0.31
+✅ Ping exitoso para cámara 2 (192.168.0.31), intento 3
+📊 Cámara 2 (192.168.0.31) resultados ping: 3/3 exitosos (100%)
+Cámara 2 marcada como conectada con tasa de éxito 100.0%
+Verificación ping para cámara 2 (192.168.0.31): connected, Tasa de éxito: 100.0%
+[2025-05-01T00:27:09.969Z] [INFO] Guardando estado...
+[2025-05-01T00:27:09.970Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-01T00:27:09.970Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-01T00:27:09.970Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-01T00:27:09.970Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-01T00:27:09.970Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-01T00:27:09.971Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-01T00:27:09.971Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-01T00:27:09.971Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-01T00:27:09.972Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-01T00:27:09.972Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-01T00:27:09.972Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-01T00:27:09.972Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-01T00:27:09.972Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-01T00:27:09.973Z] [INFO] Activity logged: cameraUpdated
+2:27:09 AM [express] GET /api/cameras/2/ping 304 in 643ms :: {"id":"2","ipAddress":"192.168.0.31","s…
+2:27:09 AM [auth] Deserializing user ID: 1
+2:27:09 AM [auth] Request GET /api/cameras - Auth: true
+2:27:09 AM [express] GET /api/cameras 200 in 2ms :: [{"name":"c31","ipAddress":"192.168.0.31","usern…
+2:27:27 AM [auth] Deserializing user ID: 1
+2:27:27 AM [auth] Request POST /api/sessions - Auth: true
+Creating new session with data: {
+  "name": "Samsung 2.26 am",
+  "description": "Samsung tiene varios *living labs* enfocados en la innovación tecnológica, donde prueban productos y servicios en entornos reales. Un ejemplo destacado es el **Samsung Innovation Museum**, que no solo exhibe avances históricos, sino que también utiliza espacios como *living labs* para experimentar c",
+  "status": "active",
+  "startTime": "2025-05-01T00:27:23.744Z",
+  "metadata": {
+    "devices": [
+      {
+        "id": 2,
+        "name": "c31",
+        "type": "camera"
+      },
+      {
+        "id": "0x00124b002a6b62b7",
+        "name": "Sensor-4-despacho",
+        "type": "sensor"
+      },
+      {
+        "id": "0x00124b002a6b60a6",
+        "name": "Sensor-6-OLAF",
+        "type": "sensor"
+      },
+      {
+        "id": "0x00124b00292d93d5",
+        "name": "Nuevo-s5-etiqueta-Rosa",
+        "type": "sensor"
+      },
+      {
+        "id": "0x00124b002a5705d0",
+        "name": "sensor-3",
+        "type": "sensor"
+      }
+    ],
+    "researcher": "Samsung",
+    "participants": [
+      "Samsung Innovation Museum"
+    ]
+  },
+  "tags": [
+    "2:26 AM"
+  ],
+  "userId": 1,
+  "influxDb": {
+    "bucket": "lisa_session_1746059243744",
+    "org": "lisa",
+    "retention": 90
+  }
+}
+[2025-05-01T00:27:27.979Z] [INFO] Guardando estado...
+[2025-05-01T00:27:27.979Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-01T00:27:27.979Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-01T00:27:27.979Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-01T00:27:27.979Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-01T00:27:27.980Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-01T00:27:27.980Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-01T00:27:27.980Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-01T00:27:27.980Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-01T00:27:27.980Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-01T00:27:27.981Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-01T00:27:27.981Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-01T00:27:27.981Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-01T00:27:27.981Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-01T00:27:27.981Z] [INFO] Activity logged: sessionCreated
+Created session directory: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session18
+Created session recordings directory: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session18/recordings
+MQTT Client available: Yes
+Registering session with MQTT client. Selected sensors: 0
+Registrando sesión 18 para captura de datos MQTT
+Ruta de almacenamiento: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session18/session_18_sensors.json
+Sensores seleccionados: todos
+Creado directorio para datos de sensores: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session18/sensor_data
+Creado archivo CSV para captura directa: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session18/session_18_data.csv
+Archivo JSON de datos inicializado: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session18/session_18_sensors.json
+Solicitada actualización de estado de dispositivos para la sesión
+MQTT data collection started for session 18
+No cameras selected for recording in this session
+2:27:27 AM [express] POST /api/sessions 201 in 8ms :: {"id":18,"userId":1,"name":"Samsung 2.26 am","…
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+2:27:28 AM [auth] Deserializing user ID: 1
+2:27:28 AM [auth] Request POST /api/cameras/2/record - Auth: true
+2:27:28 AM [auth] Deserializing user ID: 1
+2:27:28 AM [auth] Request GET /api/sessions - Auth: true
+2:27:28 AM [express] GET /api/sessions 200 in 9ms :: [{"id":18,"userId":1,"name":"Samsung 2.26 am","…
+[2025-05-01T00:27:30.030Z] [INFO] Guardando estado...
+[2025-05-01T00:27:30.031Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-01T00:27:30.031Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-01T00:27:30.031Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-01T00:27:30.032Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-01T00:27:30.032Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-01T00:27:30.032Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-01T00:27:30.032Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-01T00:27:30.032Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-01T00:27:30.033Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-01T00:27:30.033Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-01T00:27:30.033Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-01T00:27:30.033Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-01T00:27:30.033Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-01T00:27:30.034Z] [INFO] Activity logged: cameraUpdated
+[2025-05-01T00:27:30.034Z] [INFO] Guardando estado...
+[2025-05-01T00:27:30.034Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-01T00:27:30.034Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-01T00:27:30.035Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-01T00:27:30.035Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-01T00:27:30.035Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-01T00:27:30.035Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-01T00:27:30.036Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-01T00:27:30.036Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-01T00:27:30.036Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-01T00:27:30.036Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-01T00:27:30.036Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-01T00:27:30.036Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-01T00:27:30.037Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-01T00:27:30.039Z] [INFO] Activity logged: recordingCreated
+Starting recording for camera 2
+Output path: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/recordings/c31-2-2025-05-01T00-27-30-039Z.mp4
+Created sensor data file: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/recordings/c31-2-2025-05-01T00-27-30-039Z-sensors.json
+[2025-05-01T00:27:30.039Z] [INFO] Guardando estado...
+[2025-05-01T00:27:30.039Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-01T00:27:30.040Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-01T00:27:30.040Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-01T00:27:30.040Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-01T00:27:30.040Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-01T00:27:30.040Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-01T00:27:30.040Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-01T00:27:30.041Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-01T00:27:30.041Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-01T00:27:30.041Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-01T00:27:30.041Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-01T00:27:30.041Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-01T00:27:30.041Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-01T00:27:30.042Z] [INFO] Activity logged: cameraUpdated
+[2025-05-01T00:27:30.042Z] [INFO] Guardando estado...
+[2025-05-01T00:27:30.042Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-01T00:27:30.042Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-01T00:27:30.042Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-01T00:27:30.042Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-01T00:27:30.043Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-01T00:27:30.043Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-01T00:27:30.043Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-01T00:27:30.043Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-01T00:27:30.044Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-01T00:27:30.044Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-01T00:27:30.044Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-01T00:27:30.044Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-01T00:27:30.044Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-01T00:27:30.045Z] [INFO] Activity logged: recordingCreated
+RTSP URL: rtsp://admin:admin123@192.168.0.31:554/h264Preview_01_main
+FFmpeg command: ffmpeg -y -rtsp_transport tcp -i rtsp://admin:admin123@192.168.0.31:554/h264Preview_01_main -c:v libx264 -preset ultrafast -tune zerolatency -b:v 1500k -maxrate 2M -bufsize 4M -vf scale=1280:720 -r 25 -g 50 -keyint_min 25 -sc_threshold 0 -an -f mp4 -movflags +faststart /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/recordings/c31-2-2025-05-01T00-27-30-039Z.mp4
+[2025-05-01T00:27:30.051Z] [INFO] Guardando estado...
+[2025-05-01T00:27:30.051Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-01T00:27:30.052Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-01T00:27:30.052Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-01T00:27:30.052Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-01T00:27:30.052Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-01T00:27:30.053Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-01T00:27:30.053Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-01T00:27:30.053Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-01T00:27:30.053Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-01T00:27:30.053Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-01T00:27:30.054Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-01T00:27:30.054Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-01T00:27:30.054Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-01T00:27:30.054Z] [INFO] Activity logged: cameraUpdated
+2:27:30 AM [express] POST /api/cameras/2/record 200 in 2040ms :: {"message":"Recording started succe…
+FFmpeg (Camera 2): ffmpeg version 4.4.2-0ubuntu0.22.04.1 Copyright (c) 2000-2021 the FFmpeg developers
+  built with gcc 11 (Ubuntu 11.2.0-19ubuntu1)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.22.04.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared
+
+FFmpeg (Camera 2):   libavutil      56. 70.100 / 56. 70.100
+  libavcodec     58.134.100 / 58.134.100
+  libavformat    58. 76.100 / 58. 76.100
+  libavdevice    58. 13.100 / 58. 13.100
+  libavfilter     7.110.100 /  7.110.100
+  libswscale      5.  9.100 /  5.  9.100
+  libswresample   3.  9.100 /  3.  9.100
+  libpostproc    55.  9.100 / 55.  9.100
+
+FFmpeg (Camera 2): Input #0, rtsp, from 'rtsp://admin:admin123@192.168.0.31:554/h264Preview_01_main':
+  Metadata:
+    title           : Session streamed by "preview"
+    comment         : reolink rtsp stream
+  Duration: N/A, start: 0.000000, bitrate: N/A
+  Stream #0:0
+FFmpeg (Camera 2): : Video: h264 (High), yuv420p(progressive), 2560x1920, 30 fps, 29.97 tbr, 90k tbn, 60 tbc
+  Stream #0:1: Audio: aac (LC), 16000 Hz, mono, fltp
+
+FFmpeg (Camera 2): Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+
+FFmpeg (Camera 2): [libx264 @ 0x55a4ed628bc0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+
+FFmpeg (Camera 2): [libx264 @ 0x55a4ed628bc0] profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+
+FFmpeg (Camera 2): [libx264 @ 0x55a4ed628bc0] 264 - core 163 r3060 5db6aa6 - H.264/MPEG-4 AVC codec - Copyleft 2003-2021 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=4 lookahead_threads=4 sliced_threads=1 slices=4 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=50 keyint_min=25 scenecut=0 intra_refresh=0 rc_lookahead=0 rc=abr mbtree=0 bitrate=1500 ratetol=1.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=2000 vbv_bufsize=4000 nal_hrd=none filler=0 ip_ratio=1.40 aq=0
+
+FFmpeg (Camera 2): Output #0, mp4, to '/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/recordings/c31-2-2025-05-01T00-27-30-039Z.mp4':
+  Metadata:
+    title           : Session streamed by "preview"
+    comment         : reolink rtsp stream
+    encoder         : Lavf58.76.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720, q=2-31, 1500 kb/s, 25 fps, 12800 tbn
+    Metadata:
+      encoder         : Lavc58.134.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 2000000/0/1500000 buffer size: 4000000 vbv_delay: N/A
+
+FFmpeg (Camera 2): frame=    6 fps=0.0 q=19.0 size=       0kB time=00:00:00.20 bitrate=   1.9kbits/s dup=5 drop=0 speed=11.1x
+FFmpeg (Camera 2): frame=   35 fps=0.0 q=17.0 size=       0kB time=00:00:01.36 bitrate=   0.3kbits/s dup=5 drop=10 speed=2.52x
+FFmpeg (Camera 2): frame=   48 fps= 46 q=17.0 size=     256kB time=00:00:01.88 bitrate=1115.7kbits/s dup=5 drop=13 speed=1.81x
+FFmpeg (Camera 2): frame=   60 fps= 39 q=19.0 size=     512kB time=00:00:02.36 bitrate=1777.4kbits/s dup=5 drop=15 speed=1.53x
+FFmpeg (Camera 2): frame=   73 fps= 36 q=18.0 size=     512kB time=00:00:02.88 bitrate=1456.4kbits/s dup=5 drop=17 speed=1.41x
+FFmpeg (Camera 2): frame=   86 fps= 34 q=17.0 size=     512kB time=00:00:03.40 bitrate=1233.7kbits/s dup=5 drop=20 speed=1.34x
+FFmpeg (Camera 2): frame=   98 fps= 32 q=18.0 size=     512kB time=00:00:03.88 bitrate=1081.1kbits/s dup=5 drop=23 speed=1.27x
+FFmpeg (Camera 2): frame=  112 fps= 31 q=18.0 size=     768kB time=00:00:04.44 bitrate=1417.1kbits/s dup=5 drop=25 speed=1.24x
+FFmpeg (Camera 2): frame=  125 fps= 30 q=17.0 size=     768kB time=00:00:04.96 bitrate=1268.5kbits/s dup=5 drop=28 speed= 1.2x
+FFmpeg (Camera 2): frame=  138 fps= 30 q=17.0 size=    1024kB time=00:00:05.48 bitrate=1530.8kbits/s dup=5 drop=30 speed=1.18x
+FFmpeg (Camera 2): frame=  150 fps= 29 q=17.0 size=    1024kB time=00:00:05.96 bitrate=1407.5kbits/s dup=5 drop=33 speed=1.15x
+FFmpeg (Camera 2): frame=  164 fps= 29 q=18.0 size=    1280kB time=00:00:06.52 bitrate=1608.3kbits/s dup=5 drop=36 speed=1.15x
+FFmpeg (Camera 2): frame=  177 fps= 29 q=17.0 size=    1280kB time=00:00:07.04 bitrate=1489.5kbits/s dup=5 drop=38 speed=1.14x
+FFmpeg (Camera 2): frame=  188 fps= 28 q=17.0 size=    1280kB time=00:00:07.48 bitrate=1401.9kbits/s dup=5 drop=40 speed=1.12x
+FFmpeg (Camera 2): frame=  201 fps= 28 q=14.0 size=    1536kB time=00:00:08.00 bitrate=1572.9kbits/s dup=5 drop=43 speed=1.11x
+FFmpeg (Camera 2): frame=  214 fps= 28 q=19.0 size=    1792kB time=00:00:08.52 bitrate=1723.0kbits/s dup=5 drop=45 speed=1.11x
+FFmpeg (Camera 2): frame=  226 fps= 28 q=18.0 size=    1792kB time=00:00:09.00 bitrate=1631.1kbits/s dup=5 drop=48 speed= 1.1x
+FFmpeg (Camera 2): frame=  233 fps= 27 q=17.0 size=    1792kB time=00:00:09.28 bitrate=1581.9kbits/s dup=5 drop=49 speed=1.06x
+FFmpeg (Camera 2): frame=  253 fps= 27 q=24.0 size=    2048kB time=00:00:10.08 bitrate=1664.4kbits/s dup=5 drop=53 speed=1.09x
+FFmpeg (Camera 2): frame=  265 fps= 27 q=18.0 size=    2048kB time=00:00:10.56 bitrate=1588.8kbits/s dup=5 drop=55 speed=1.09x
+FFmpeg (Camera 2): frame=  277 fps= 27 q=17.0 size=    2048kB time=00:00:11.04 bitrate=1519.7kbits/s dup=5 drop=58 speed=1.07x
+FFmpeg (Camera 2): frame=  289 fps= 27 q=17.0 size=    2304kB time=00:00:11.52 bitrate=1638.4kbits/s dup=5 drop=60 speed=1.07x
+FFmpeg (Camera 2): frame=  295 fps= 26 q=17.0 size=    2304kB time=00:00:11.76 bitrate=1605.0kbits/s dup=5 drop=62 speed=1.04x
+FFmpeg (Camera 2): frame=  299 fps= 25 q=17.0 size=    2304kB time=00:00:11.92 bitrate=1583.4kbits/s dup=5 drop=62 speed=1.01x
+FFmpeg (Camera 2): frame=  311 fps= 25 q=18.0 size=    2560kB time=00:00:12.40 bitrate=1691.3kbits/s dup=5 drop=64 speed=1.01x
+FFmpeg (Camera 2): frame=  342 fps= 27 q=17.0 size=    2560kB time=00:00:13.64 bitrate=1537.5kbits/s dup=5 drop=71 speed=1.06x
+FFmpeg (Camera 2): frame=  356 fps= 27 q=19.0 size=    2816kB time=00:00:14.20 bitrate=1624.6kbits/s dup=5 drop=73 speed=1.06x
+FFmpeg (Camera 2): frame=  368 fps= 26 q=18.0 size=    2816kB time=00:00:14.68 bitrate=1571.5kbits/s dup=5 drop=76 speed=1.05x
+FFmpeg (Camera 2): frame=  372 fps= 26 q=18.0 size=    2816kB time=00:00:14.84 bitrate=1554.5kbits/s dup=5 drop=77 speed=1.02x
+FFmpeg (Camera 2): frame=  377 fps= 25 q=18.0 size=    3072kB time=00:00:15.04 bitrate=1673.3kbits/s dup=5 drop=78 speed=0.999x
+FFmpeg (Camera 2): frame=  381 fps= 24 q=17.0 size=    3072kB time=00:00:15.20 bitrate=1655.7kbits/s dup=5 drop=78 speed=0.971x
+FFmpeg (Camera 2): frame=  422 fps= 26 q=18.0 size=    3328kB time=00:00:16.84 bitrate=1619.0kbits/s dup=5 drop=87 speed=1.04x
+FFmpeg (Camera 2): frame=  438 fps= 26 q=18.0 size=    3328kB time=00:00:17.48 bitrate=1559.7kbits/s dup=5 drop=90 speed=1.05x
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+FFmpeg (Camera 2): frame=  451 fps= 26 q=15.0 size=    3584kB time=00:00:18.00 bitrate=1631.1kbits/s dup=5 drop=92 speed=1.05x
+FFmpeg (Camera 2): frame=  464 fps= 26 q=18.0 size=    3584kB time=00:00:18.52 bitrate=1585.3kbits/s dup=5 drop=94 speed=1.05x
+FFmpeg (Camera 2): frame=  477 fps= 26 q=17.0 size=    3840kB time=00:00:19.04 bitrate=1652.2kbits/s dup=5 drop=97 speed=1.04x
+FFmpeg (Camera 2): frame=  490 fps= 26 q=18.0 size=    3840kB time=00:00:19.56 bitrate=1608.3kbits/s dup=5 drop=100 speed=1.04x
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+FFmpeg (Camera 2): frame=  503 fps= 26 q=21.0 size=    4096kB time=00:00:20.08 bitrate=1671.1kbits/s dup=5 drop=102 speed=1.04x
+FFmpeg (Camera 2): frame=  515 fps= 26 q=18.0 size=    4096kB time=00:00:20.56 bitrate=1632.0kbits/s dup=5 drop=105 speed=1.04x
+FFmpeg (Camera 2): frame=  527 fps= 26 q=17.0 size=    4096kB time=00:00:21.04 bitrate=1594.8kbits/s dup=5 drop=107 speed=1.04x
+FFmpeg (Camera 2): frame=  541 fps= 26 q=17.0 size=    4096kB time=00:00:21.60 bitrate=1553.5kbits/s dup=5 drop=110 speed=1.04x
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+FFmpeg (Camera 2): frame=  554 fps= 26 q=23.0 size=    4352kB time=00:00:22.12 bitrate=1611.7kbits/s dup=5 drop=112 speed=1.04x
+FFmpeg (Camera 2): frame=  566 fps= 26 q=18.0 size=    4352kB time=00:00:22.60 bitrate=1577.5kbits/s dup=5 drop=115 speed=1.04x
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+FFmpeg (Camera 2): frame=  579 fps= 26 q=18.0 size=    4608kB time=00:00:23.12 bitrate=1632.7kbits/s dup=5 drop=118 speed=1.04x
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+FFmpeg (Camera 2): frame=  592 fps= 26 q=17.0 size=    4608kB time=00:00:23.64 bitrate=1596.8kbits/s dup=5 drop=120 speed=1.04x
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+FFmpeg (Camera 2): frame=  606 fps= 26 q=20.0 size=    4864kB time=00:00:24.20 bitrate=1646.5kbits/s dup=5 drop=122 speed=1.04x
+FFmpeg (Camera 2): frame=  618 fps= 26 q=17.0 size=    4864kB time=00:00:24.68 bitrate=1614.5kbits/s dup=5 drop=125 speed=1.03x
+FFmpeg (Camera 2): frame=  630 fps= 26 q=18.0 size=    4864kB time=00:00:25.16 bitrate=1583.7kbits/s dup=5 drop=128 speed=1.03x
+FFmpeg (Camera 2): frame=  644 fps= 26 q=17.0 size=    5120kB time=00:00:25.72 bitrate=1630.8kbits/s dup=5 drop=130 speed=1.03x
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+FFmpeg (Camera 2): frame=  657 fps= 26 q=19.0 size=    5120kB time=00:00:26.24 bitrate=1598.4kbits/s dup=5 drop=132 speed=1.03x
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+FFmpeg (Camera 2): frame=  669 fps= 26 q=18.0 size=    5376kB time=00:00:26.72 bitrate=1648.2kbits/s dup=5 drop=135 speed=1.03x
+FFmpeg (Camera 2): frame=  682 fps= 26 q=17.0 size=    5376kB time=00:00:27.24 bitrate=1616.8kbits/s dup=5 drop=138 speed=1.03x
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+FFmpeg (Camera 2): frame=  694 fps= 26 q=17.0 size=    5376kB time=00:00:27.72 bitrate=1588.8kbits/s dup=5 drop=140 speed=1.03x
+FFmpeg (Camera 2): frame=  707 fps= 26 q=20.0 size=    5632kB time=00:00:28.24 bitrate=1633.8kbits/s dup=5 drop=143 speed=1.03x
+FFmpeg (Camera 2): frame=  720 fps= 26 q=18.0 size=    5632kB time=00:00:28.76 bitrate=1604.2kbits/s dup=5 drop=145 speed=1.03x
+FFmpeg (Camera 2): frame=  733 fps= 26 q=18.0 size=    5632kB time=00:00:29.28 bitrate=1575.7kbits/s dup=5 drop=148 speed=1.03x
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+FFmpeg (Camera 2): frame=  745 fps= 26 q=17.0 size=    5888kB time=00:00:29.76 bitrate=1620.8kbits/s dup=5 drop=150 speed=1.03x
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+FFmpeg (Camera 2): frame=  757 fps= 26 q=19.0 size=    5888kB time=00:00:30.24 bitrate=1595.1kbits/s dup=5 drop=152 speed=1.03x
+FFmpeg (Camera 2): frame=  771 fps= 26 q=17.0 size=    6144kB time=00:00:30.80 bitrate=1634.2kbits/s dup=5 drop=155 speed=1.03x
+FFmpeg (Camera 2): frame=  784 fps= 26 q=17.0 size=    6144kB time=00:00:31.32 bitrate=1607.0kbits/s dup=5 drop=158 speed=1.03x
+FFmpeg (Camera 2): frame=  796 fps= 26 q=17.0 size=    6144kB time=00:00:31.80 bitrate=1582.8kbits/s dup=5 drop=160 speed=1.03x
+FFmpeg (Camera 2): frame=  810 fps= 26 q=18.0 size=    6400kB time=00:00:32.36 bitrate=1620.2kbits/s dup=5 drop=163 speed=1.03x
+FFmpeg (Camera 2): frame=  823 fps= 26 q=18.0 size=    6400kB time=00:00:32.88 bitrate=1594.6kbits/s dup=5 drop=166 speed=1.03x
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+FFmpeg (Camera 2): frame=  836 fps= 26 q=17.0 size=    6656kB time=00:00:33.40 bitrate=1632.5kbits/s dup=5 drop=168 speed=1.03x
+FFmpeg (Camera 2): frame=  849 fps= 26 q=18.0 size=    6656kB time=00:00:33.92 bitrate=1607.5kbits/s dup=5 drop=171 speed=1.03x
+FFmpeg (Camera 2): frame=  861 fps= 26 q=18.0 size=    6912kB time=00:00:34.40 bitrate=1646.0kbits/s dup=5 drop=173 speed=1.02x
+FFmpeg (Camera 2): frame=  875 fps= 26 q=18.0 size=    6912kB time=00:00:34.96 bitrate=1619.7kbits/s dup=5 drop=176 speed=1.02x
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+FFmpeg (Camera 2): frame=  888 fps= 26 q=18.0 size=    6912kB time=00:00:35.48 bitrate=1595.9kbits/s dup=5 drop=179 speed=1.02x
+FFmpeg (Camera 2): frame=  900 fps= 26 q=18.0 size=    6912kB time=00:00:35.96 bitrate=1574.6kbits/s dup=5 drop=181 speed=1.02x
+FFmpeg (Camera 2): frame=  914 fps= 26 q=18.0 size=    7168kB time=00:00:36.52 bitrate=1607.9kbits/s dup=5 drop=184 speed=1.02x
+FFmpeg (Camera 2): frame=  926 fps= 26 q=17.0 size=    7168kB time=00:00:37.00 bitrate=1587.0kbits/s dup=5 drop=186 speed=1.02x
+FFmpeg (Camera 2): frame=  938 fps= 26 q=18.0 size=    7424kB time=00:00:37.48 bitrate=1622.7kbits/s dup=5 drop=189 speed=1.02x
+FFmpeg (Camera 2): frame=  951 fps= 26 q=15.0 size=    7680kB time=00:00:38.00 bitrate=1655.7kbits/s dup=5 drop=191 speed=1.02x
+FFmpeg (Camera 2): frame=  964 fps= 26 q=18.0 size=    7680kB time=00:00:38.52 bitrate=1633.3kbits/s dup=5 drop=194 speed=1.02x
+FFmpeg (Camera 2): frame=  977 fps= 26 q=17.0 size=    7680kB time=00:00:39.04 bitrate=1611.5kbits/s dup=5 drop=196 speed=1.02x
+FFmpeg (Camera 2): frame=  989 fps= 26 q=17.0 size=    7680kB time=00:00:39.52 bitrate=1592.0kbits/s dup=5 drop=198 speed=1.02x
+FFmpeg (Camera 2): frame= 1002 fps= 26 q=23.0 size=    7936kB time=00:00:40.04 bitrate=1623.7kbits/s dup=5 drop=201 speed=1.02x
+FFmpeg (Camera 2): frame= 1015 fps= 26 q=18.0 size=    7936kB time=00:00:40.56 bitrate=1602.9kbits/s dup=5 drop=204 speed=1.02x
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+FFmpeg (Camera 2): frame= 1028 fps= 26 q=17.0 size=    7936kB time=00:00:41.08 bitrate=1582.6kbits/s dup=5 drop=206 speed=1.02x
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos
+FFmpeg (Camera 2): frame= 1040 fps= 26 q=18.0 size=    8192kB time=00:00:41.56 bitrate=1614.8kbits/s dup=5 drop=209 speed=1.02x
+FFmpeg (Camera 2): frame= 1052 fps= 25 q=23.0 size=    8448kB time=00:00:42.04 bitrate=1646.2kbits/s dup=5 drop=211 speed=1.02x
+FFmpeg (Camera 2): frame= 1066 fps= 26 q=18.0 size=    8448kB time=00:00:42.60 bitrate=1624.6kbits/s dup=5 drop=214 speed=1.02x
+FFmpeg (Camera 2): frame= 1079 fps= 26 q=17.0 size=    8448kB time=00:00:43.12 bitrate=1605.0kbits/s dup=5 drop=216 speed=1.02x
+FFmpeg (Camera 2): frame= 1091 fps= 25 q=17.0 size=    8448kB time=00:00:43.60 bitrate=1587.3kbits/s dup=5 drop=219 speed=1.02x
+FFmpeg (Camera 2): frame= 1104 fps= 25 q=20.0 size=    8704kB time=00:00:44.12 bitrate=1616.1kbits/s dup=5 drop=221 speed=1.02x
+FFmpeg (Camera 2): frame= 1117 fps= 25 q=19.0 size=    8704kB time=00:00:44.64 bitrate=1597.3kbits/s dup=5 drop=224 speed=1.02x
+FFmpeg (Camera 2): frame= 1130 fps= 25 q=17.0 size=    8960kB time=00:00:45.16 bitrate=1625.3kbits/s dup=5 drop=226 speed=1.02x
+FFmpeg (Camera 2): frame= 1143 fps= 25 q=17.0 size=    8960kB time=00:00:45.68 bitrate=1606.8kbits/s dup=5 drop=229 speed=1.02x
+FFmpeg (Camera 2): frame= 1156 fps= 25 q=21.0 size=    9216kB time=00:00:46.20 bitrate=1634.1kbits/s dup=5 drop=231 speed=1.02x
+FFmpeg (Camera 2): frame= 1169 fps= 25 q=18.0 size=    9216kB time=00:00:46.72 bitrate=1616.0kbits/s dup=5 drop=234 speed=1.02x
+2:28:17 AM [auth] Deserializing user ID: 1
+2:28:17 AM [auth] Request GET /api/cameras/2/recordings - Auth: true
+2:28:17 AM [express] GET /api/cameras/2/recordings 200 in 2ms :: [{"cameraId":2,"filePath":"/home/mf…
+2:28:17 AM [auth] Deserializing user ID: 1
+2:28:17 AM [auth] Request GET /api/cameras/3/recordings - Auth: true
+2:28:17 AM [express] GET /api/cameras/3/recordings 304 in 2ms :: [{"cameraId":3,"filePath":"/home/ru…
+2:28:17 AM [auth] Deserializing user ID: 1
+2:28:17 AM [auth] Request GET /api/cameras/4/recordings - Auth: true
+2:28:17 AM [express] GET /api/cameras/4/recordings 304 in 1ms :: []
+FFmpeg (Camera 2): frame= 1182 fps= 25 q=18.0 size=    9216kB time=00:00:47.24 bitrate=1598.2kbits/s dup=5 drop=237 speed=1.02x
+FFmpeg (Camera 2): frame= 1195 fps= 25 q=18.0 size=    9216kB time=00:00:47.76 bitrate=1580.8kbits/s dup=5 drop=239 speed=1.02x
+FFmpeg (Camera 2): frame= 1208 fps= 25 q=19.0 size=    9472kB time=00:00:48.28 bitrate=1607.2kbits/s dup=5 drop=241 speed=1.02x
+FFmpeg (Camera 2): frame= 1221 fps= 25 q=17.0 size=    9472kB time=00:00:48.80 bitrate=1590.1kbits/s dup=5 drop=244 speed=1.02x
+FFmpeg (Camera 2): frame= 1234 fps= 25 q=17.0 size=    9728kB time=00:00:49.32 bitrate=1615.8kbits/s dup=5 drop=247 speed=1.02x
+FFmpeg (Camera 2): frame= 1247 fps= 25 q=18.0 size=    9728kB time=00:00:49.84 bitrate=1599.0kbits/s dup=5 drop=250 speed=1.02x
+FFmpeg (Camera 2): frame= 1260 fps= 25 q=19.0 size=    9984kB time=00:00:50.36 bitrate=1624.1kbits/s dup=5 drop=252 speed=1.02x
+FFmpeg (Camera 2): frame= 1272 fps= 25 q=18.0 size=    9984kB time=00:00:50.84 bitrate=1608.8kbits/s dup=5 drop=254 speed=1.02x
+FFmpeg (Camera 2): frame= 1285 fps= 25 q=18.0 size=    9984kB time=00:00:51.36 bitrate=1592.5kbits/s dup=5 drop=257 speed=1.02x
+FFmpeg (Camera 2): frame= 1298 fps= 25 q=18.0 size=    9984kB time=00:00:51.88 bitrate=1576.5kbits/s dup=5 drop=260 speed=1.02x
+FFmpeg (Camera 2): frame= 1310 fps= 25 q=19.0 size=   10240kB time=00:00:52.36 bitrate=1602.1kbits/s dup=5 drop=262 speed=1.02x
+FFmpeg (Camera 2): frame= 1323 fps= 25 q=18.0 size=   10496kB time=00:00:52.88 bitrate=1626.0kbits/s dup=5 drop=265 speed=1.02x
+FFmpeg (Camera 2): frame= 1336 fps= 25 q=17.0 size=   10496kB time=00:00:53.40 bitrate=1610.2kbits/s dup=5 drop=267 speed=1.02x
+FFmpeg (Camera 2): frame= 1349 fps= 25 q=17.0 size=   10496kB time=00:00:53.92 bitrate=1594.6kbits/s dup=5 drop=270 speed=1.02x
+FFmpeg (Camera 2): frame= 1362 fps= 25 q=18.0 size=   10752kB time=00:00:54.44 bitrate=1617.9kbits/s dup=5 drop=272 speed=1.02x
+FFmpeg (Camera 2): frame= 1375 fps= 25 q=18.0 size=   10752kB time=00:00:54.96 bitrate=1602.6kbits/s dup=5 drop=275 speed=1.02x
+FFmpeg (Camera 2): frame= 1388 fps= 25 q=17.0 size=   10752kB time=00:00:55.48 bitrate=1587.6kbits/s dup=5 drop=277 speed=1.02x
+FFmpeg (Camera 2): frame= 1401 fps= 25 q=15.0 size=   11008kB time=00:00:56.00 bitrate=1610.3kbits/s dup=5 drop=280 speed=1.01x
+FFmpeg (Camera 2): frame= 1415 fps= 25 q=18.0 size=   11008kB time=00:00:56.56 bitrate=1594.4kbits/s dup=5 drop=282 speed=1.02x
+FFmpeg (Camera 2): frame= 1427 fps= 25 q=18.0 size=   11264kB time=00:00:57.04 bitrate=1617.7kbits/s dup=5 drop=285 speed=1.01x
+FFmpeg (Camera 2): frame= 1440 fps= 25 q=17.0 size=   11264kB time=00:00:57.56 bitrate=1603.1kbits/s dup=5 drop=288 speed=1.01x
+FFmpeg (Camera 2): frame= 1453 fps= 25 q=21.0 size=   11520kB time=00:00:58.08 bitrate=1624.9kbits/s dup=5 drop=290 speed=1.01x
+[2025-05-01T00:28:28.790Z] [websocket] WebSocket connection attempt from 192.168.0.61
+[2025-05-01T00:28:28.791Z] [websocket] New WebSocket connection for camera undefined
+[2025-05-01T00:28:28.791Z] [websocket] No camera ID provided, closing connection
+FFmpeg (Camera 2): frame= 1466 fps= 25 q=18.0 size=   11520kB time=00:00:58.60 bitrate=1610.4kbits/s dup=5 drop=293 speed=1.01x
+FFmpeg (Camera 2): frame= 1479 fps= 25 q=17.0 size=   11520kB time=00:00:59.12 bitrate=1596.3kbits/s dup=5 drop=295 speed=1.01x
+FFmpeg (Camera 2): frame= 1491 fps= 25 q=18.0 size=   11520kB time=00:00:59.60 bitrate=1583.4kbits/s dup=5 drop=298 speed=1.01x
+FFmpeg (Camera 2): frame= 1504 fps= 25 q=20.0 size=   11776kB time=00:01:00.12 bitrate=1604.6kbits/s dup=5 drop=300 speed=1.01x
+FFmpeg (Camera 2): frame= 1517 fps= 25 q=18.0 size=   11776kB time=00:01:00.64 bitrate=1590.9kbits/s dup=5 drop=303 speed=1.01x
+FFmpeg (Camera 2): frame= 1530 fps= 25 q=17.0 size=   12032kB time=00:01:01.16 bitrate=1611.6kbits/s dup=5 drop=305 speed=1.01x
+FFmpeg (Camera 2): frame= 1543 fps= 25 q=17.0 size=   12032kB time=00:01:01.68 bitrate=1598.0kbits/s dup=5 drop=308 speed=1.01x
+FFmpeg (Camera 2): frame= 1554 fps= 25 q=20.0 size=   12288kB time=00:01:02.12 bitrate=1620.5kbits/s dup=5 drop=310 speed=1.01x
+FFmpeg (Camera 2): frame= 1568 fps= 25 q=18.0 size=   12288kB time=00:01:02.68 bitrate=1606.0kbits/s dup=5 drop=313 speed=1.01x
+2:28:33 AM [auth] Deserializing user ID: 1
+2:28:33 AM [auth] Request POST /api/cameras/2/stop-recording - Auth: true
+Stopping recording for camera 2
+[2025-05-01T00:28:33.287Z] [INFO] Guardando estado...
+[2025-05-01T00:28:33.287Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-01T00:28:33.288Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-01T00:28:33.288Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-01T00:28:33.288Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-01T00:28:33.288Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-01T00:28:33.288Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-01T00:28:33.288Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-01T00:28:33.289Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-01T00:28:33.289Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-01T00:28:33.289Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-01T00:28:33.289Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-01T00:28:33.289Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-01T00:28:33.289Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-01T00:28:33.290Z] [INFO] Activity logged: recordingUpdated
+[2025-05-01T00:28:33.290Z] [INFO] Guardando estado...
+[2025-05-01T00:28:33.290Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-01T00:28:33.291Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-01T00:28:33.291Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-01T00:28:33.291Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-01T00:28:33.291Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-01T00:28:33.292Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-01T00:28:33.292Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-01T00:28:33.292Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-01T00:28:33.292Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-01T00:28:33.292Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-01T00:28:33.293Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-01T00:28:33.293Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-01T00:28:33.293Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-01T00:28:33.294Z] [INFO] Activity logged: cameraUpdated
+2:28:33 AM [express] POST /api/cameras/2/stop-recording 200 in 9ms :: {"message":"Recording stopped …
+FFmpeg (Camera 2): [mp4 @ 0x55a4ed621800] Starting second pass: moving the moov atom to the beginning of the file
+
+FFmpeg (Camera 2): frame= 1571 fps= 25 q=17.0 Lsize=   12430kB time=00:01:02.80 bitrate=1621.4kbits/s dup=5 drop=313 speed=1.01x
+video:12418kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.096193%
+
+FFmpeg (Camera 2): [libx264 @ 0x55a4ed628bc0] frame I:32    Avg QP:15.34  size:158516
+[libx264 @ 0x55a4ed628bc0] frame P:1539  Avg QP:18.10  size:  4966
+[libx264 @ 0x55a4ed628bc0] mb I  I16..4: 100.0%  0.0%  0.0%
+[libx264 @ 0x55a4ed628bc0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4: 34.1%  0.0%  0.0%  0.0%  0.0%    skip:65.8%
+[libx264 @ 0x55a4ed628bc0] coded y,uvDC,uvAC intra: 96.2% 96.3% 93.6% inter: 6.4% 19.7% 0.5%
+[libx264 @ 0x55a4ed628bc0] i16 v,h,dc,p:  5%  5% 81%  8%
+[libx264 @ 0x55a4ed628bc0] i8c dc,h,v,p: 53% 21% 16% 10%
+[libx264 @ 0x55a4ed628bc0] kb/s:1618.77
+
+2:28:33 AM [auth] Deserializing user ID: 1
+2:28:33 AM [auth] Request PATCH /api/sessions/18 - Auth: true
+Completing active session 18
+Found 1 recordings to stop for session 18
+Stopping MQTT data collection for session 18
+Finalizando captura de datos MQTT para sesión 18
+Creando AllData.json con datos completos de sensores para sesión 18
+Archivo AllData.json creado con éxito en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session18/AllData.json con 6 sensores
+Datos de sesión 18 actualizados y marcados como completados
+MQTT data collection stopped for session 18
+Session 18 completed at Thu May 01 2025 02:28:33 GMT+0200 (hora de verano de Europa central)
+[2025-05-01T00:28:33.339Z] [INFO] Guardando estado...
+[2025-05-01T00:28:33.340Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-01T00:28:33.340Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-01T00:28:33.340Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-01T00:28:33.341Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-01T00:28:33.341Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-01T00:28:33.341Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-01T00:28:33.341Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-01T00:28:33.342Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-01T00:28:33.342Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-01T00:28:33.342Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-01T00:28:33.342Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-01T00:28:33.342Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-01T00:28:33.342Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-01T00:28:33.344Z] [INFO] Activity logged: sessionUpdated
+FFmpeg (Camera 2): Exiting normally, received signal 15.
+
+2:28:33 AM [express] PATCH /api/sessions/18 200 in 16ms :: {"id":18,"userId":1,"name":"Samsung 2.26 …
+FFmpeg process closed for camera 2 with code 255
+Recording file size: 12728356 bytes
+[2025-05-01T00:28:33.354Z] [INFO] Guardando estado...
+[2025-05-01T00:28:33.354Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/users.json
+[2025-05-01T00:28:33.355Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/cameras.json
+[2025-05-01T00:28:33.355Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensors.json
+[2025-05-01T00:28:33.355Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/recordings.json
+[2025-05-01T00:28:33.356Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sensor_events.json
+[2025-05-01T00:28:33.356Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_1/sessions.json
+[2025-05-01T00:28:33.356Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/cameras.json
+[2025-05-01T00:28:33.357Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensors.json
+[2025-05-01T00:28:33.357Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/recordings.json
+[2025-05-01T00:28:33.357Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sensor_events.json
+[2025-05-01T00:28:33.357Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/user_2/sessions.json
+[2025-05-01T00:28:33.358Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/consents.json
+[2025-05-01T00:28:33.358Z] [INFO] Datos guardados en /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/data/gdpr/user_consents.json
+[2025-05-01T00:28:33.360Z] [INFO] Activity logged: recordingUpdated
+2:28:33 AM [auth] Deserializing user ID: 1
+2:28:33 AM [auth] Request GET /api/sessions - Auth: true
+2:28:33 AM [express] GET /api/sessions 200 in 2ms :: [{"id":18,"userId":1,"name":"Samsung 2.26 am","…
+2:28:38 AM [auth] Deserializing user ID: 1
+2:28:38 AM [auth] Request GET /src/components/session-recordings-player.tsx - Auth: true
+2:28:38 AM [auth] Deserializing user ID: 1
+2:28:38 AM [auth] Request GET /src/components/sensor-data-viewer.tsx - Auth: true
+2:28:39 AM [auth] Deserializing user ID: 1
+2:28:39 AM [auth] Request GET /api/sessions/18/sensor-data - Auth: true
+Found session directory at /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session18
+Found sensor data at /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session18/session_18_sensors.json
+2:28:39 AM [express] GET /api/sessions/18/sensor-data 200 in 3ms :: {"sessionId":18,"startTime":"202…
+2:28:39 AM [auth] Deserializing user ID: 1
+2:28:39 AM [auth] Request GET /api/sessions/18/recordings - Auth: true
+2:28:39 AM [express] GET /api/sessions/18/recordings 200 in 2ms :: [{"cameraId":2,"userId":1,"status…
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /sessions - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /@vite/client - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/main.tsx?v=vMMkgu5vHVvDmNCvHGjLg - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /@react-refresh - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/App.tsx?v=vMMkgu5vHVvDmNCvHGjLg - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/vite/dist/client/env.mjs - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/index.css?v=vMMkgu5vHVvDmNCvHGjLg - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/lib/queryClient.ts - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/hooks/use-auth.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/hooks/use-onboarding.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/toaster.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/page404/index.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/home-page.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/lib/protected-route.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/layout/main-layout.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/lib/services/logger.ts - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/sessions-page.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/player-page.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/auth-page.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/recording-player.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/settings-page.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/sensors-page.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/cameras-page.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/settings-sensors.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/zigbee-devices-page.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/live-monitoring-page.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/device-management-page.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/help/index.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/docs-page.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/doc/system-architecture.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/doc/system-architecture-2.0.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/doc/overview.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/doc/code-quality.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/pages/doc/installation.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/hooks/use-toast.ts - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/toast.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/hooks/use-local-storage.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/card.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/button.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/select.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/hooks/useSimpleMqtt.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/lib/utils.ts - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/layout/sidebar.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/session-management.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/shared/schema.ts - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/form.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/input.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/tabs.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/switch.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/camera-grid.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/add-camera-dialog.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/badge.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/accordion.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/onboarding/tours-manager.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/scroll-area.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/alert.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/tooltip.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/label.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/textarea.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/table.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/hooks/use-developer-mode.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/mqtt-status-indicator.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/dialog.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/collapsible.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/session-view-dialog.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/camera-card.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/hooks/use-global-recording-time.ts - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/onboarding/tour-steps.ts - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/alert-dialog.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /src/components/ui/progress.tsx - Auth: true
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /api/user - Auth: true
+2:28:55 AM [auth] Sending user data for: user
+2:28:55 AM [express] GET /api/user 200 in 2ms :: {"username":"user","password":"4b4d82dace4746a3646c…
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /api/sessions - Auth: true
+2:28:55 AM [express] GET /api/sessions 304 in 2ms :: [{"id":18,"userId":1,"name":"Samsung 2.26 am","…
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /api/cameras - Auth: true
+2:28:55 AM [express] GET /api/cameras 200 in 2ms :: [{"name":"c31","ipAddress":"192.168.0.31","usern…
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /api/zigbee/devices - Auth: true
+[Zigbee] Enviando 7 dispositivos
+2:28:55 AM [express] GET /api/zigbee/devices 200 in 2ms :: [{"id":"0x00124b002a6b62b7","name":"Senso…
+[2025-05-01T00:28:55.724Z] [websocket] WebSocket connection attempt from 192.168.0.61
+[2025-05-01T00:28:55.725Z] [websocket] New WebSocket connection for camera undefined
+[2025-05-01T00:28:55.725Z] [websocket] No camera ID provided, closing connection
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /api/influxdb/status - Auth: true
+2:28:55 AM [express] GET /api/influxdb/status 304 in 3ms :: {"connected":true}
+2:28:55 AM [auth] Deserializing user ID: 1
+2:28:55 AM [auth] Request GET /LOGO-LISAv2.0.png - Auth: true
+2:28:59 AM [auth] Deserializing user ID: 1
+2:28:59 AM [auth] Request GET /src/components/session-recordings-player.tsx - Auth: true
+2:28:59 AM [auth] Deserializing user ID: 1
+2:28:59 AM [auth] Request GET /src/components/sensor-data-viewer.tsx - Auth: true
+2:29:14 AM [auth] Deserializing user ID: 1
+2:29:14 AM [auth] Request GET /api/sessions/18/download - Auth: true
+Preparing download for session 18: Samsung 2.26 am
+Created config file: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session18/config.json
+Obtenido título de sesión desde config.json: "Samsung 2.26 am"
+ZIP file name will be: Samsung 2.26 am.zip
+[2025-05-01T00:29:14.843Z] [INFO] Obteniendo grabaciones para la sesión 18 usando getRecordingsBySessionId
+Encontradas 1 grabaciones asociadas a la sesión 18
+Archivo de grabación no encontrado:
+Se encontraron 0 archivos MP4 adicionales por patrón de nombre
+Archivo CSV de datos de sensores (root) agregado al ZIP: /home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/sessions/Session18/session_18_data.csv
+Creado archivo consolidado con datos de 0 sensores
+2:29:14 AM [express] GET /api/sessions/18/download 200 in 86ms
+Datos MQTT guardados: 30 tópicos, 30 tópicos únicos

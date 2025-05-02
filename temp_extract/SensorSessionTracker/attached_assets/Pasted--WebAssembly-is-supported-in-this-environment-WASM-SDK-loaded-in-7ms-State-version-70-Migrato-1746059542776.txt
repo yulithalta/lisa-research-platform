@@ -1,0 +1,864 @@
+ WebAssembly is supported in this environment
+ WASM SDK loaded in 7ms
+ State version: 70
+ Migrator wv (to version 3) should migrate: false - up
+ Migrator Pm (to version 4) should migrate: false - up
+ Migrator Sf (to version 5) should migrate: false - up
+ Migrator cy (to version 6) should migrate: false - up
+ Migrator hv (to version 7) should migrate: false - up
+ Migrator yv (to version 8) should migrate: false - up
+ Migrator bv (to version 9) should migrate: false - up
+ Migrator Rp (to version 10) should migrate: false - up
+ Migrator Fp (to version 11) should migrate: false - up
+ Migrator Kp (to version 12) should migrate: false - up
+ Migrator Gp (to version 13) should migrate: false - up
+ Migrator Jp (to version 14) should migrate: false - up
+ Migrator eg (to version 15) should migrate: false - up
+ Migrator ng (to version 16) should migrate: false - up
+ Migrator sg (to version 17) should migrate: false - up
+ Migrator cg (to version 18) should migrate: false - up
+background.js:2 Migrator hg (to version 19) should migrate: false - up
+background.js:2 Migrator mg (to version 20) should migrate: false - up
+background.js:2 Migrator vg (to version 21) should migrate: false - up
+background.js:2 Migrator wg (to version 22) should migrate: false - up
+background.js:2 Migrator Sg (to version 23) should migrate: false - up
+background.js:2 Migrator Bg (to version 24) should migrate: false - up
+background.js:2 Migrator Pg (to version 25) should migrate: false - up
+background.js:2 Migrator _g (to version 26) should migrate: false - up
+background.js:2 Migrator Rg (to version 27) should migrate: false - up
+background.js:2 Migrator Fg (to version 28) should migrate: false - up
+background.js:2 Migrator Lg (to version 29) should migrate: false - up
+background.js:2 Migrator $g (to version 30) should migrate: false - up
+background.js:2 Migrator Wg (to version 31) should migrate: false - up
+background.js:2 Migrator Xg (to version 32) should migrate: false - up
+background.js:2 Migrator rm (to version 33) should migrate: false - up
+background.js:2 Migrator cm (to version 34) should migrate: false - up
+background.js:2 Migrator hm (to version 35) should migrate: false - up
+background.js:2 Migrator mm (to version 36) should migrate: false - up
+background.js:2 Migrator vm (to version 37) should migrate: false - up
+background.js:2 Migrator Em (to version 38) should migrate: false - up
+background.js:2 Migrator Dm (to version 39) should migrate: false - up
+background.js:2 Migrator Mm (to version 40) should migrate: false - up
+background.js:2 Migrator Um (to version 41) should migrate: false - up
+background.js:2 Migrator Vm (to version 42) should migrate: false - up
+background.js:2 Migrator Hm (to version 43) should migrate: false - up
+background.js:2 Migrator Ym (to version 44) should migrate: false - up
+background.js:2 Migrator nf (to version 45) should migrate: false - up
+background.js:2 Migrator sf (to version 46) should migrate: false - up
+background.js:2 Migrator yf (to version 47) should migrate: false - up
+background.js:2 Migrator Af (to version 48) should migrate: false - up
+background.js:2 Migrator If (to version 49) should migrate: false - up
+background.js:2 Migrator Df (to version 50) should migrate: false - up
+background.js:2 Migrator zf (to version 51) should migrate: false - up
+background.js:2 Migrator Tf (to version 52) should migrate: false - up
+background.js:2 Migrator Rf (to version 53) should migrate: false - up
+background.js:2 Migrator Uf (to version 54) should migrate: false - up
+background.js:2 Migrator $f (to version 55) should migrate: false - up
+background.js:2 Migrator Yf (to version 56) should migrate: false - up
+background.js:2 Migrator ey (to version 57) should migrate: false - up
+background.js:2 Migrator ny (to version 58) should migrate: false - up
+background.js:2 Migrator oy (to version 59) should migrate: false - up
+background.js:2 Migrator gy (to version 60) should migrate: false - up
+background.js:2 Migrator Ay (to version 61) should migrate: false - up
+background.js:2 Migrator By (to version 62) should migrate: false - up
+background.js:2 Migrator Ty (to version 63) should migrate: false - up
+background.js:2 Migrator Oy (to version 64) should migrate: false - up
+background.js:2 Migrator Gy (to version 65) should migrate: false - up
+background.js:2 Migrator ev (to version 66) should migrate: false - up
+background.js:2 Migrator nv (to version 67) should migrate: false - up
+background.js:2 Migrator sv (to version 68) should migrate: false - up
+background.js:2 Migrator uv (to version 69) should migrate: false - up
+background.js:2 Migrator mv (to version 70) should migrate: false - up
+background.js:2 Uncaught (in promise) Error: Duplicate script ID 'fido2-page-script-registration'
+background.js:2 Uncaught (in promise) Error: Frame with ID 0 is showing error page
+background.js:2 Uncaught (in promise) Error: Frame with ID 0 is showing error page
+background.js:2 Uncaught (in promise) Error: Frame with ID 0 is showing error page
+background.js:2 Uncaught (in promise) Error: Frame with ID 0 is showing error page
+background.js:2 Cannot find menu item with id copy-username
+write @ background.js:2
+background.js:2 Cannot find menu item with id copy-username
+write @ background.js:2
+background.js:2 Finished search indexing
+background.js:2 WebSocket connected to wss://notifications.bitwarden.com/hub?access_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IkJDMzZDMjE0REI0OEYyMzVCNzdEQTNGMTcyMEMxQTM1QTk2MkVBNDNSUzI1NiIsIng1dCI6InZEYkNGTnRJOGpXM2ZhUHhjZ3dhTmFsaTZrTSIsInR5cCI6ImF0K2p3dCJ9.eyJpc3MiOiJodHRwczovL2lkZW50aXR5LmJpdHdhcmRlbi5jb20iLCJuYmYiOjE3NDYwNTM4NDgsImlhdCI6MTc0NjA1Mzg0OCwiZXhwIjoxNzQ2MDU3NDQ4LCJzY29wZSI6WyJhcGkiLCJvZmZsaW5lX2FjY2VzcyJdLCJhbXIiOlsiQXBwbGljYXRpb24iXSwiY2xpZW50X2lkIjoiYnJvd3NlciIsInN1YiI6IjQzYjAyYmFiLTE5NGEtNDdkNy05ZTRlLWIwNDgwMGI4NmU5NiIsImF1dGhfdGltZSI6MTc0MzE3MzYwNiwiaWRwIjoiYml0d2FyZGVuIiwicHJlbWl1bSI6ZmFsc2UsImVtYWlsIjoicGFlc3RlOTUucGJAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInNzdGFtcCI6IjVIMlVTTU9WQU5JM1hHVU9DS05FWlNCU1NFWDZLR1FGIiwibmFtZSI6IlBhdSIsImRldmljZSI6IjJkMWQ1MzU0LTg1Y2EtNDBkMS04ZjYzLWIxOGRmYTM0ZmY4YyIsImRldmljZXR5cGUiOiJDaHJvbWVFeHRlbnNpb24iLCJqdGkiOiIxODgwMTJENDBFOTBGRTUzRTYxREEwQkRCOEExNzZENiJ9.hNdQKvYWzULzxvVyBcwLZjxaOM1CvFNjGoTRvWWjiGbzs80Et_UMEqZEHIJ2kNy-W0CjdJmoTJeUQdmV--zmB0_51Qo6wiILxYCrosUaZYZ_bBEt5uJ0sTsI5LEzCyGZgo5gvffn6J4ooApnppYI7WSTEXI_LhTnmRXNZNshAAzbd5abIiP2UpJozWBiYLY4tpLW4Zn21fDcvr15cJ2VAzmgYLg_Dr_NIc1XTCw_r9PbxVUy4uAa7012oh317TKJGVWPdks4MgugUwiG-j5iFUKUXQBYaTHdU7WS6kRVreHDwnGymVMO6T97oFrHnbCHoO93-0yuy76Yvh0-rURIz0ChealXsM9BSEZ5YuDnOsHvoKTj_31ySF6LcyoRGOXgG20RBqAvIHTIsJaKnnwQiFiTTVa3H7dpEfjkY9J7trDymlucQHZrZdF81FqO1XwTZUbGbRJ6qHeGUypyNeDm-zCs0ZoRChAGMpniabws9rVqBu91bYwXsg10GmPtYGVSIZO9-23MBbqkvObjHSb0QdD1_yEWGsqnBdf_aYNWWFke9pcaysafRCsusLycr1f_wIZSn0G5IKoJnOuSb0YdeBr3kaDM28zW3w-wnzULbAmJKd7qPEQE5Lljs7fJL-6nPsppSJGqMs2clkMxyQrvuKxv9eloBfNnwiRzvpHeaVg.
+background.js:2 Using HubProtocol 'messagepack'.
+Unchecked runtime.lastError: The page keeping the extension port is moved into back/forward cache, so the message channel is closed.
+Unchecked runtime.lastError: The page keeping the extension port is moved into back/forward cache, so the message channel is closed.
+Unchecked runtime.lastError: The page keeping the extension port is moved into back/forward cache, so the message channel is closed.
+Unchecked runtime.lastError: The page keeping the extension port is moved into back/forward cache, so the message channel is closed.
+Unchecked runtime.lastError: The page keeping the extension port is moved into back/forward cache, so the message channel is closed.
+Unchecked runtime.lastError: The page keeping the extension port is moved into back/forward cache, so the message channel is closed.
+Unchecked runtime.lastError: The page keeping the extension port is moved into back/forward cache, so the message channel is closed.
+Unchecked runtime.lastError: The page keeping the extension port is moved into back/forward cache, so the message channel is closed.
+background.js:2 Cannot find menu item with id root
+write @ background.js:2
+background.js:2 Cannot find menu item with id autofill
+write @ background.js:2
+background.js:2 Cannot find menu item with id autofill-identity
+write @ background.js:2
+background.js:2 Cannot find menu item with id autofill-card
+write @ background.js:2
+background.js:2 Cannot find menu item with id root
+write @ background.js:2
+background.js:2 Cannot find menu item with id autofill
+write @ background.js:2
+background.js:2 Cannot find menu item with id autofill
+write @ background.js:2
+background.js:2 Cannot find menu item with id autofill-identity
+write @ background.js:2
+background.js:2 Cannot find menu item with id autofill-identity
+write @ background.js:2
+background.js:2 Cannot find menu item with id autofill-card
+write @ background.js:2
+background.js:2 Cannot find menu item with id autofill-card
+write @ background.js:2
+background.js:2 Cannot find menu item with id root
+write @ background.js:2
+background.js:2 Cannot find menu item with id autofill
+write @ background.js:2
+background.js:2 Cannot find menu item with id autofill-identity
+write @ background.js:2
+background.js:2 Cannot find menu item with id autofill-card
+write @ background.js:2
+client:535 WebSocket connection to 'ws://lisa.local:5000/' failed: 
+setupWebSocket @ client:535
+(anonymous) @ client:530
+client:535 Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'ws://localhost:undefined/' is invalid.
+    at setupWebSocket (client:535:19)
+    at fallback (client:508:16)
+    at WebSocket.<anonymous> (client:551:7)
+setupWebSocket @ client:535
+fallback @ client:508
+(anonymous) @ client:551
+logger.ts:164 [2025-05-01T00:31:42.637Z] [INFO] Application starting
+logger.ts:164 [2025-05-01T00:31:42.642Z] [INFO] Initializing router
+queryClient.ts:32 
+            
+            
+           GET http://lisa.local:5000/api/user 401 (Unauthorized)
+(anonymous) @ queryClient.ts:32
+fetchFn @ @tanstack_react-query.js?v=39dcc104:842
+run @ @tanstack_react-query.js?v=39dcc104:493
+start @ @tanstack_react-query.js?v=39dcc104:535
+fetch @ @tanstack_react-query.js?v=39dcc104:929
+executeFetch_fn @ @tanstack_react-query.js?v=39dcc104:2247
+onSubscribe @ @tanstack_react-query.js?v=39dcc104:1934
+subscribe @ @tanstack_react-query.js?v=39dcc104:24
+(anonymous) @ @tanstack_react-query.js?v=39dcc104:3108
+subscribeToStore @ chunk-RPCDYKBN.js?v=39dcc104:11984
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=39dcc104:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=39dcc104:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=39dcc104:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=39dcc104:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=39dcc104:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=39dcc104:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=39dcc104:19447
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=39dcc104:18868
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=39dcc104:9119
+commitRootImpl @ chunk-RPCDYKBN.js?v=39dcc104:19432
+commitRoot @ chunk-RPCDYKBN.js?v=39dcc104:19277
+finishConcurrentRender @ chunk-RPCDYKBN.js?v=39dcc104:18805
+performConcurrentWorkOnRoot @ chunk-RPCDYKBN.js?v=39dcc104:18718
+workLoop @ chunk-RPCDYKBN.js?v=39dcc104:197
+flushWork @ chunk-RPCDYKBN.js?v=39dcc104:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=39dcc104:384
+auth-page.tsx:31 Warning: Cannot update a component (`Switch`) while rendering a different component (`AuthPage`). To locate the bad setState() call inside `AuthPage`, follow the stack trace as described in https://reactjs.org/link/setstate-in-render Error Component Stack
+    at AuthPage (auth-page.tsx:27:53)
+    at Route (wouter.js?v=39dcc104:323:16)
+    at Switch (wouter.js?v=39dcc104:379:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=39dcc104:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=39dcc104:521
+error @ chunk-RPCDYKBN.js?v=39dcc104:505
+warnAboutRenderPhaseUpdatesInDEV @ chunk-RPCDYKBN.js?v=39dcc104:19793
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=39dcc104:18546
+forceStoreRerender @ chunk-RPCDYKBN.js?v=39dcc104:11999
+handleStoreChange @ chunk-RPCDYKBN.js?v=39dcc104:11981
+history.<computed> @ wouter.js?v=39dcc104:224
+navigate @ wouter.js?v=39dcc104:214
+(anonymous) @ wouter.js?v=39dcc104:265
+(anonymous) @ wouter.js?v=39dcc104:178
+AuthPage @ auth-page.tsx:31
+renderWithHooks @ chunk-RPCDYKBN.js?v=39dcc104:11548
+updateFunctionComponent @ chunk-RPCDYKBN.js?v=39dcc104:14582
+beginWork @ chunk-RPCDYKBN.js?v=39dcc104:15924
+beginWork$1 @ chunk-RPCDYKBN.js?v=39dcc104:19753
+performUnitOfWork @ chunk-RPCDYKBN.js?v=39dcc104:19198
+workLoopSync @ chunk-RPCDYKBN.js?v=39dcc104:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=39dcc104:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=39dcc104:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=39dcc104:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=39dcc104:18627
+setTimeout
+scheduleFn @ @tanstack_react-query.js?v=39dcc104:554
+flush @ @tanstack_react-query.js?v=39dcc104:568
+batch @ @tanstack_react-query.js?v=39dcc104:586
+dispatch_fn @ @tanstack_react-query.js?v=39dcc104:999
+setData @ @tanstack_react-query.js?v=39dcc104:697
+setQueryData @ @tanstack_react-query.js?v=39dcc104:1691
+onSuccess @ use-auth.tsx:40
+execute @ @tanstack_react-query.js?v=39dcc104:1236
+await in execute
+mutate @ @tanstack_react-query.js?v=39dcc104:2661
+(anonymous) @ @tanstack_react-query.js?v=39dcc104:3386
+(anonymous) @ auth-page.tsx:69
+(anonymous) @ chunk-YABUFNLM.js?v=39dcc104:1675
+await in (anonymous)
+callCallback2 @ chunk-RPCDYKBN.js?v=39dcc104:3674
+invokeGuardedCallbackDev @ chunk-RPCDYKBN.js?v=39dcc104:3699
+invokeGuardedCallback @ chunk-RPCDYKBN.js?v=39dcc104:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-RPCDYKBN.js?v=39dcc104:3736
+executeDispatch @ chunk-RPCDYKBN.js?v=39dcc104:7014
+processDispatchQueueItemsInOrder @ chunk-RPCDYKBN.js?v=39dcc104:7034
+processDispatchQueue @ chunk-RPCDYKBN.js?v=39dcc104:7043
+dispatchEventsForPlugins @ chunk-RPCDYKBN.js?v=39dcc104:7051
+(anonymous) @ chunk-RPCDYKBN.js?v=39dcc104:7174
+batchedUpdates$1 @ chunk-RPCDYKBN.js?v=39dcc104:18913
+batchedUpdates @ chunk-RPCDYKBN.js?v=39dcc104:3579
+dispatchEventForPluginEventSystem @ chunk-RPCDYKBN.js?v=39dcc104:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-RPCDYKBN.js?v=39dcc104:5478
+dispatchEvent @ chunk-RPCDYKBN.js?v=39dcc104:5472
+dispatchDiscreteEvent @ chunk-RPCDYKBN.js?v=39dcc104:5449
+chunk-RPCDYKBN.js?v=39dcc104:11595 Uncaught Error: Rendered fewer hooks than expected. This may be caused by an accidental early return statement.
+    at renderWithHooks (chunk-RPCDYKBN.js?v=39dcc104:11595:19)
+    at updateFunctionComponent (chunk-RPCDYKBN.js?v=39dcc104:14582:28)
+    at beginWork (chunk-RPCDYKBN.js?v=39dcc104:15924:22)
+    at HTMLUnknownElement.callCallback2 (chunk-RPCDYKBN.js?v=39dcc104:3674:22)
+    at Object.invokeGuardedCallbackDev (chunk-RPCDYKBN.js?v=39dcc104:3699:24)
+    at invokeGuardedCallback (chunk-RPCDYKBN.js?v=39dcc104:3733:39)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=39dcc104:19765:15)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=39dcc104:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=39dcc104:19137:13)
+    at renderRootSync (chunk-RPCDYKBN.js?v=39dcc104:19116:15)
+renderWithHooks @ chunk-RPCDYKBN.js?v=39dcc104:11595
+updateFunctionComponent @ chunk-RPCDYKBN.js?v=39dcc104:14582
+beginWork @ chunk-RPCDYKBN.js?v=39dcc104:15924
+callCallback2 @ chunk-RPCDYKBN.js?v=39dcc104:3674
+invokeGuardedCallbackDev @ chunk-RPCDYKBN.js?v=39dcc104:3699
+invokeGuardedCallback @ chunk-RPCDYKBN.js?v=39dcc104:3733
+beginWork$1 @ chunk-RPCDYKBN.js?v=39dcc104:19765
+performUnitOfWork @ chunk-RPCDYKBN.js?v=39dcc104:19198
+workLoopSync @ chunk-RPCDYKBN.js?v=39dcc104:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=39dcc104:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=39dcc104:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=39dcc104:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=39dcc104:18627
+setTimeout
+scheduleFn @ @tanstack_react-query.js?v=39dcc104:554
+flush @ @tanstack_react-query.js?v=39dcc104:568
+batch @ @tanstack_react-query.js?v=39dcc104:586
+dispatch_fn @ @tanstack_react-query.js?v=39dcc104:999
+setData @ @tanstack_react-query.js?v=39dcc104:697
+setQueryData @ @tanstack_react-query.js?v=39dcc104:1691
+onSuccess @ use-auth.tsx:40
+execute @ @tanstack_react-query.js?v=39dcc104:1236
+await in execute
+mutate @ @tanstack_react-query.js?v=39dcc104:2661
+(anonymous) @ @tanstack_react-query.js?v=39dcc104:3386
+(anonymous) @ auth-page.tsx:69
+(anonymous) @ chunk-YABUFNLM.js?v=39dcc104:1675
+await in (anonymous)
+callCallback2 @ chunk-RPCDYKBN.js?v=39dcc104:3674
+invokeGuardedCallbackDev @ chunk-RPCDYKBN.js?v=39dcc104:3699
+invokeGuardedCallback @ chunk-RPCDYKBN.js?v=39dcc104:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-RPCDYKBN.js?v=39dcc104:3736
+executeDispatch @ chunk-RPCDYKBN.js?v=39dcc104:7014
+processDispatchQueueItemsInOrder @ chunk-RPCDYKBN.js?v=39dcc104:7034
+processDispatchQueue @ chunk-RPCDYKBN.js?v=39dcc104:7043
+dispatchEventsForPlugins @ chunk-RPCDYKBN.js?v=39dcc104:7051
+(anonymous) @ chunk-RPCDYKBN.js?v=39dcc104:7174
+batchedUpdates$1 @ chunk-RPCDYKBN.js?v=39dcc104:18913
+batchedUpdates @ chunk-RPCDYKBN.js?v=39dcc104:3579
+dispatchEventForPluginEventSystem @ chunk-RPCDYKBN.js?v=39dcc104:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-RPCDYKBN.js?v=39dcc104:5478
+dispatchEvent @ chunk-RPCDYKBN.js?v=39dcc104:5472
+dispatchDiscreteEvent @ chunk-RPCDYKBN.js?v=39dcc104:5449
+chunk-RPCDYKBN.js?v=39dcc104:11595 Uncaught Error: Rendered fewer hooks than expected. This may be caused by an accidental early return statement.
+    at renderWithHooks (chunk-RPCDYKBN.js?v=39dcc104:11595:19)
+    at updateFunctionComponent (chunk-RPCDYKBN.js?v=39dcc104:14582:28)
+    at beginWork (chunk-RPCDYKBN.js?v=39dcc104:15924:22)
+    at beginWork$1 (chunk-RPCDYKBN.js?v=39dcc104:19753:22)
+    at performUnitOfWork (chunk-RPCDYKBN.js?v=39dcc104:19198:20)
+    at workLoopSync (chunk-RPCDYKBN.js?v=39dcc104:19137:13)
+    at renderRootSync (chunk-RPCDYKBN.js?v=39dcc104:19116:15)
+    at performSyncWorkOnRoot (chunk-RPCDYKBN.js?v=39dcc104:18874:28)
+    at flushSyncCallbacks (chunk-RPCDYKBN.js?v=39dcc104:9119:30)
+    at chunk-RPCDYKBN.js?v=39dcc104:18627:21
+renderWithHooks @ chunk-RPCDYKBN.js?v=39dcc104:11595
+updateFunctionComponent @ chunk-RPCDYKBN.js?v=39dcc104:14582
+beginWork @ chunk-RPCDYKBN.js?v=39dcc104:15924
+beginWork$1 @ chunk-RPCDYKBN.js?v=39dcc104:19753
+performUnitOfWork @ chunk-RPCDYKBN.js?v=39dcc104:19198
+workLoopSync @ chunk-RPCDYKBN.js?v=39dcc104:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=39dcc104:19116
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=39dcc104:18874
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=39dcc104:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=39dcc104:18627
+setTimeout
+scheduleFn @ @tanstack_react-query.js?v=39dcc104:554
+flush @ @tanstack_react-query.js?v=39dcc104:568
+batch @ @tanstack_react-query.js?v=39dcc104:586
+dispatch_fn @ @tanstack_react-query.js?v=39dcc104:999
+setData @ @tanstack_react-query.js?v=39dcc104:697
+setQueryData @ @tanstack_react-query.js?v=39dcc104:1691
+onSuccess @ use-auth.tsx:40
+execute @ @tanstack_react-query.js?v=39dcc104:1236
+await in execute
+mutate @ @tanstack_react-query.js?v=39dcc104:2661
+(anonymous) @ @tanstack_react-query.js?v=39dcc104:3386
+(anonymous) @ auth-page.tsx:69
+(anonymous) @ chunk-YABUFNLM.js?v=39dcc104:1675
+await in (anonymous)
+callCallback2 @ chunk-RPCDYKBN.js?v=39dcc104:3674
+invokeGuardedCallbackDev @ chunk-RPCDYKBN.js?v=39dcc104:3699
+invokeGuardedCallback @ chunk-RPCDYKBN.js?v=39dcc104:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-RPCDYKBN.js?v=39dcc104:3736
+executeDispatch @ chunk-RPCDYKBN.js?v=39dcc104:7014
+processDispatchQueueItemsInOrder @ chunk-RPCDYKBN.js?v=39dcc104:7034
+processDispatchQueue @ chunk-RPCDYKBN.js?v=39dcc104:7043
+dispatchEventsForPlugins @ chunk-RPCDYKBN.js?v=39dcc104:7051
+(anonymous) @ chunk-RPCDYKBN.js?v=39dcc104:7174
+batchedUpdates$1 @ chunk-RPCDYKBN.js?v=39dcc104:18913
+batchedUpdates @ chunk-RPCDYKBN.js?v=39dcc104:3579
+dispatchEventForPluginEventSystem @ chunk-RPCDYKBN.js?v=39dcc104:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-RPCDYKBN.js?v=39dcc104:5478
+dispatchEvent @ chunk-RPCDYKBN.js?v=39dcc104:5472
+dispatchDiscreteEvent @ chunk-RPCDYKBN.js?v=39dcc104:5449
+useSimpleMqtt.tsx:100 🔄 Conectando a broker MQTT: ws://192.168.0.20:9001
+useSimpleMqtt.tsx:115 ✅ Conectado a broker MQTT: ws://192.168.0.20:9001
+useSimpleMqtt.tsx:131 ✅ Suscrito a tópico: zigbee2mqtt/#
+useSimpleMqtt.tsx:131 ✅ Suscrito a tópico: zigbee2mqtt/+
+useSimpleMqtt.tsx:131 ✅ Suscrito a tópico: zigbee2mqtt/bridge/#
+useSimpleMqtt.tsx:131 ✅ Suscrito a tópico: zigbee2mqtt/+/set
+useSimpleMqtt.tsx:131 ✅ Suscrito a tópico: zigbee2mqtt/+/get
+useSimpleMqtt.tsx:131 ✅ Suscrito a tópico: zigbee2mqtt/livinglab/#
+bootstrap-autofill-overlay.js:711 Uncaught (in promise) NotFoundError: Failed to execute 'insertBefore' on 'Node': The node before which the new node is to be inserted is not a child of this node.
+    at Ha.Node.insertBefore (bootstrap-autofill-overlay.js:711:13)
+    at AutofillInlineMenuContentService.<anonymous> (bootstrap-autofill-overlay.js:2190:30)
+    at Generator.next (<anonymous>)
+    at fulfilled (bootstrap-autofill-overlay.js:2061:58)
+Ha.Node.insertBefore @ bootstrap-autofill-overlay.js:711
+(anonymous) @ bootstrap-autofill-overlay.js:2190
+fulfilled @ bootstrap-autofill-overlay.js:2061
+Promise.then
+step @ bootstrap-autofill-overlay.js:2063
+(anonymous) @ bootstrap-autofill-overlay.js:2064
+autofill_inline_menu_content_service_awaiter @ bootstrap-autofill-overlay.js:2060
+AutofillInlineMenuContentService.processContainerElementMutation @ bootstrap-autofill-overlay.js:2162
+requestIdleCallbackPolyfill.timeout @ bootstrap-autofill-overlay.js:2154
+(anonymous) @ bootstrap-autofill-overlay.js:898
+requestIdleCallback
+requestIdleCallbackPolyfill @ bootstrap-autofill-overlay.js:898
+AutofillInlineMenuContentService.handleContainerElementMutationObserverUpdate @ bootstrap-autofill-overlay.js:2154
+childList
+Ha.Node.appendChild @ bootstrap-autofill-overlay.js:724
+openNotificationBar @ bootstrap-autofill-overlay.js:2645
+handleOpenNotificationBarMessage @ bootstrap-autofill-overlay.js:2591
+openNotificationBar @ bootstrap-autofill-overlay.js:2542
+AutofillInit.handleExtensionMessage @ bootstrap-autofill-overlay.js:8642
+session-management.tsx:1879 Connecting to WebSocket at ws://lisa.local:5000/ws
+session-management.tsx:1883 Connected to WebSocket server
+session-management.tsx:1918 WebSocket connection closed
+useSimpleMqtt.tsx:248 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=39dcc104:379:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=39dcc104:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=39dcc104:521
+error @ chunk-RPCDYKBN.js?v=39dcc104:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=39dcc104:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=39dcc104:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=39dcc104:12403
+(anonymous) @ useSimpleMqtt.tsx:248
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=39dcc104:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=39dcc104:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=39dcc104:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=39dcc104:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=39dcc104:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=39dcc104:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=39dcc104:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=39dcc104:19328
+workLoop @ chunk-RPCDYKBN.js?v=39dcc104:197
+flushWork @ chunk-RPCDYKBN.js?v=39dcc104:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=39dcc104:384
+useSimpleMqtt.tsx:248 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Sidebar (sidebar.tsx:31:22)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=39dcc104:379:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=39dcc104:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=39dcc104:521
+error @ chunk-RPCDYKBN.js?v=39dcc104:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=39dcc104:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=39dcc104:18533
+dispatchSetState @ chunk-RPCDYKBN.js?v=39dcc104:12403
+(anonymous) @ useSimpleMqtt.tsx:248
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=39dcc104:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=39dcc104:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=39dcc104:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=39dcc104:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=39dcc104:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=39dcc104:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=39dcc104:19447
+(anonymous) @ chunk-RPCDYKBN.js?v=39dcc104:19328
+workLoop @ chunk-RPCDYKBN.js?v=39dcc104:197
+flushWork @ chunk-RPCDYKBN.js?v=39dcc104:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=39dcc104:384
+hook.js:608 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render. Error Component Stack
+    at Presence (chunk-CJ52NQAI.js?v=39dcc104:24:11)
+    at Provider (chunk-YRL5WAL7.js?v=39dcc104:38:15)
+    at DialogPortal (chunk-IQOBQ777.js?v=39dcc104:109:11)
+    at _c3 (dialog.tsx:33:6)
+    at Provider (chunk-YRL5WAL7.js?v=39dcc104:38:15)
+    at Dialog (chunk-IQOBQ777.js?v=39dcc104:50:5)
+    at SessionViewDialog (session-view-dialog.tsx:40:37)
+    at div (<anonymous>)
+    at td (<anonymous>)
+    at _c13 (table.tsx:87:6)
+    at tr (<anonymous>)
+    at _c9 (table.tsx:57:6)
+    at tbody (<anonymous>)
+    at _c5 (table.tsx:30:6)
+    at table (<anonymous>)
+    at div (<anonymous>)
+    at _c (table.tsx:8:6)
+    at div (<anonymous>)
+    at _c9 (card.tsx:62:6)
+    at div (<anonymous>)
+    at _c (card.tsx:8:6)
+    at div (<anonymous>)
+    at HistoricalSessionsContent (session-management.tsx:1465:21)
+    at div (<anonymous>)
+    at chunk-RLTE5R7I.js?v=39dcc104:41:13
+    at Presence (chunk-CJ52NQAI.js?v=39dcc104:24:11)
+    at @radix-ui_react-tabs.js?v=39dcc104:448:13
+    at _c5 (tabs.tsx:41:6)
+    at div (<anonymous>)
+    at chunk-RLTE5R7I.js?v=39dcc104:41:13
+    at Provider (chunk-YRL5WAL7.js?v=39dcc104:38:15)
+    at @radix-ui_react-tabs.js?v=39dcc104:326:7
+    at div (<anonymous>)
+    at SessionManagement (session-management.tsx:1855:21)
+    at div (<anonymous>)
+    at SessionsPage (<anonymous>)
+    at div (<anonymous>)
+    at main (<anonymous>)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=39dcc104:379:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=39dcc104:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=39dcc104:521
+error @ chunk-RPCDYKBN.js?v=39dcc104:505
+checkForNestedUpdates @ chunk-RPCDYKBN.js?v=39dcc104:19665
+scheduleUpdateOnFiber @ chunk-RPCDYKBN.js?v=39dcc104:18533
+dispatchReducerAction @ chunk-RPCDYKBN.js?v=39dcc104:12351
+(anonymous) @ chunk-CJ52NQAI.js?v=39dcc104:63
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=39dcc104:16915
+commitLayoutEffectOnFiber @ chunk-RPCDYKBN.js?v=39dcc104:17002
+commitLayoutMountEffects_complete @ chunk-RPCDYKBN.js?v=39dcc104:17980
+commitLayoutEffects_begin @ chunk-RPCDYKBN.js?v=39dcc104:17969
+commitLayoutEffects @ chunk-RPCDYKBN.js?v=39dcc104:17920
+commitRootImpl @ chunk-RPCDYKBN.js?v=39dcc104:19353
+commitRoot @ chunk-RPCDYKBN.js?v=39dcc104:19277
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=39dcc104:18895
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=39dcc104:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=39dcc104:18627
+hook.js:608 Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}. Error Component Stack
+    at DescriptionWarning (chunk-IQOBQ777.js?v=39dcc104:328:29)
+    at chunk-IQOBQ777.js?v=39dcc104:232:13
+    at chunk-IQOBQ777.js?v=39dcc104:155:58
+    at Presence (chunk-CJ52NQAI.js?v=39dcc104:24:11)
+    at chunk-IQOBQ777.js?v=39dcc104:146:64
+    at chunk-UACHJROW.js?v=39dcc104:52:11
+    at chunk-UACHJROW.js?v=39dcc104:33:11
+    at chunk-RLTE5R7I.js?v=39dcc104:41:13
+    at chunk-54SOGMOD.js?v=39dcc104:258:22
+    at Presence (chunk-CJ52NQAI.js?v=39dcc104:24:11)
+    at Provider (chunk-YRL5WAL7.js?v=39dcc104:38:15)
+    at DialogPortal (chunk-IQOBQ777.js?v=39dcc104:109:11)
+    at _c3 (dialog.tsx:33:6)
+    at Provider (chunk-YRL5WAL7.js?v=39dcc104:38:15)
+    at Dialog (chunk-IQOBQ777.js?v=39dcc104:50:5)
+    at SessionViewDialog (session-view-dialog.tsx:40:37)
+    at div (<anonymous>)
+    at td (<anonymous>)
+    at _c13 (table.tsx:87:6)
+    at tr (<anonymous>)
+    at _c9 (table.tsx:57:6)
+    at tbody (<anonymous>)
+    at _c5 (table.tsx:30:6)
+    at table (<anonymous>)
+    at div (<anonymous>)
+    at _c (table.tsx:8:6)
+    at div (<anonymous>)
+    at _c9 (card.tsx:62:6)
+    at div (<anonymous>)
+    at _c (card.tsx:8:6)
+    at div (<anonymous>)
+    at HistoricalSessionsContent (session-management.tsx:1465:21)
+    at div (<anonymous>)
+    at chunk-RLTE5R7I.js?v=39dcc104:41:13
+    at Presence (chunk-CJ52NQAI.js?v=39dcc104:24:11)
+    at @radix-ui_react-tabs.js?v=39dcc104:448:13
+    at _c5 (tabs.tsx:41:6)
+    at div (<anonymous>)
+    at chunk-RLTE5R7I.js?v=39dcc104:41:13
+    at Provider (chunk-YRL5WAL7.js?v=39dcc104:38:15)
+    at @radix-ui_react-tabs.js?v=39dcc104:326:7
+    at div (<anonymous>)
+    at SessionManagement (session-management.tsx:1855:21)
+    at div (<anonymous>)
+    at SessionsPage (<anonymous>)
+    at div (<anonymous>)
+    at main (<anonymous>)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=39dcc104:379:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=39dcc104:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+(anonymous) @ chunk-IQOBQ777.js?v=39dcc104:336
+commitHookEffectListMount @ chunk-RPCDYKBN.js?v=39dcc104:16915
+commitPassiveMountOnFiber @ chunk-RPCDYKBN.js?v=39dcc104:18156
+commitPassiveMountEffects_complete @ chunk-RPCDYKBN.js?v=39dcc104:18129
+commitPassiveMountEffects_begin @ chunk-RPCDYKBN.js?v=39dcc104:18119
+commitPassiveMountEffects @ chunk-RPCDYKBN.js?v=39dcc104:18109
+flushPassiveEffectsImpl @ chunk-RPCDYKBN.js?v=39dcc104:19490
+flushPassiveEffects @ chunk-RPCDYKBN.js?v=39dcc104:19447
+commitRootImpl @ chunk-RPCDYKBN.js?v=39dcc104:19416
+commitRoot @ chunk-RPCDYKBN.js?v=39dcc104:19277
+performSyncWorkOnRoot @ chunk-RPCDYKBN.js?v=39dcc104:18895
+flushSyncCallbacks @ chunk-RPCDYKBN.js?v=39dcc104:9119
+(anonymous) @ chunk-RPCDYKBN.js?v=39dcc104:18627
+session-recordings-player.tsx:132 Warning: React has detected a change in the order of Hooks called by SessionRecordingsPlayer. This will lead to bugs and errors if not fixed. For more information, read the Rules of Hooks: https://reactjs.org/link/rules-of-hooks
+
+   Previous render            Next render
+   ------------------------------------------------------
+1. useState                   useState
+2. useEffect                  useEffect
+3. useState                   useState
+4. useContext                 useContext
+5. useContext                 useContext
+6. useContext                 useContext
+7. useEffect                  useEffect
+8. useState                   useState
+9. useCallback                useCallback
+10. useSyncExternalStore      useSyncExternalStore
+11. useEffect                 useEffect
+12. undefined                 useContext
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ Error Component Stack
+    at SessionRecordingsPlayer (session-recordings-player.tsx:40:51)
+    at Suspense (<anonymous>)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at chunk-RLTE5R7I.js?v=39dcc104:41:13
+    at chunk-54SOGMOD.js?v=39dcc104:59:7
+    at chunk-UACHJROW.js?v=39dcc104:52:11
+    at chunk-UACHJROW.js?v=39dcc104:33:11
+    at chunk-RLTE5R7I.js?v=39dcc104:41:13
+    at chunk-HNAA5AYG.js?v=39dcc104:29:5
+    at chunk-IQOBQ777.js?v=39dcc104:232:13
+    at chunk-IQOBQ777.js?v=39dcc104:155:58
+    at Presence (chunk-CJ52NQAI.js?v=39dcc104:24:11)
+    at chunk-IQOBQ777.js?v=39dcc104:146:64
+    at chunk-UACHJROW.js?v=39dcc104:52:11
+    at chunk-UACHJROW.js?v=39dcc104:33:11
+    at chunk-RLTE5R7I.js?v=39dcc104:41:13
+    at chunk-54SOGMOD.js?v=39dcc104:258:22
+    at Presence (chunk-CJ52NQAI.js?v=39dcc104:24:11)
+    at Provider (chunk-YRL5WAL7.js?v=39dcc104:38:15)
+    at DialogPortal (chunk-IQOBQ777.js?v=39dcc104:109:11)
+    at _c3 (dialog.tsx:33:6)
+    at Provider (chunk-YRL5WAL7.js?v=39dcc104:38:15)
+    at Dialog (chunk-IQOBQ777.js?v=39dcc104:50:5)
+    at SessionViewDialog (session-view-dialog.tsx:40:37)
+    at div (<anonymous>)
+    at td (<anonymous>)
+    at _c13 (table.tsx:87:6)
+    at tr (<anonymous>)
+    at _c9 (table.tsx:57:6)
+    at tbody (<anonymous>)
+    at _c5 (table.tsx:30:6)
+    at table (<anonymous>)
+    at div (<anonymous>)
+    at _c (table.tsx:8:6)
+    at div (<anonymous>)
+    at _c9 (card.tsx:62:6)
+    at div (<anonymous>)
+    at _c (card.tsx:8:6)
+    at div (<anonymous>)
+    at HistoricalSessionsContent (session-management.tsx:1465:21)
+    at div (<anonymous>)
+    at chunk-RLTE5R7I.js?v=39dcc104:41:13
+    at Presence (chunk-CJ52NQAI.js?v=39dcc104:24:11)
+    at @radix-ui_react-tabs.js?v=39dcc104:448:13
+    at _c5 (tabs.tsx:41:6)
+    at div (<anonymous>)
+    at chunk-RLTE5R7I.js?v=39dcc104:41:13
+    at Provider (chunk-YRL5WAL7.js?v=39dcc104:38:15)
+    at @radix-ui_react-tabs.js?v=39dcc104:326:7
+    at div (<anonymous>)
+    at SessionManagement (session-management.tsx:1855:21)
+    at div (<anonymous>)
+    at SessionsPage (<anonymous>)
+    at div (<anonymous>)
+    at main (<anonymous>)
+    at div (<anonymous>)
+    at div (<anonymous>)
+    at MainLayout (main-layout.tsx:10:30)
+    at component (<anonymous>)
+    at ProtectedRoute (protected-route.tsx:6:3)
+    at Switch (wouter.js?v=39dcc104:379:17)
+    at Router (<anonymous>)
+    at OnboardingProvider (use-onboarding.tsx:20:38)
+    at AuthProvider (use-auth.tsx:23:32)
+    at QueryClientProvider (@tanstack_react-query.js?v=39dcc104:2881:3)
+    at App (<anonymous>)
+overrideMethod @ hook.js:608
+printWarning @ chunk-RPCDYKBN.js?v=39dcc104:521
+error @ chunk-RPCDYKBN.js?v=39dcc104:505
+warnOnHookMismatchInDev @ chunk-RPCDYKBN.js?v=39dcc104:11495
+updateHookTypesDev @ chunk-RPCDYKBN.js?v=39dcc104:11465
+useContext @ chunk-RPCDYKBN.js?v=39dcc104:12697
+useContext @ chunk-QCHXOAYK.js?v=39dcc104:1062
+useQueryClient @ @tanstack_react-query.js?v=39dcc104:2871
+useBaseQuery @ @tanstack_react-query.js?v=39dcc104:3077
+useQuery @ @tanstack_react-query.js?v=39dcc104:3155
+SessionRecordingsPlayer @ session-recordings-player.tsx:132
+renderWithHooks @ chunk-RPCDYKBN.js?v=39dcc104:11548
+updateFunctionComponent @ chunk-RPCDYKBN.js?v=39dcc104:14582
+beginWork @ chunk-RPCDYKBN.js?v=39dcc104:15924
+beginWork$1 @ chunk-RPCDYKBN.js?v=39dcc104:19753
+performUnitOfWork @ chunk-RPCDYKBN.js?v=39dcc104:19198
+workLoopSync @ chunk-RPCDYKBN.js?v=39dcc104:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=39dcc104:19116
+performConcurrentWorkOnRoot @ chunk-RPCDYKBN.js?v=39dcc104:18678
+workLoop @ chunk-RPCDYKBN.js?v=39dcc104:197
+flushWork @ chunk-RPCDYKBN.js?v=39dcc104:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=39dcc104:384
+chunk-RPCDYKBN.js?v=39dcc104:11678 Uncaught Error: Rendered more hooks than during the previous render.
+    at updateWorkInProgressHook (chunk-RPCDYKBN.js?v=39dcc104:11678:21)
+    at updateEffectImpl (chunk-RPCDYKBN.js?v=39dcc104:12074:22)
+    at updateEffect (chunk-RPCDYKBN.js?v=39dcc104:12099:18)
+    at Object.useEffect (chunk-RPCDYKBN.js?v=39dcc104:12703:22)
+    at Object.useEffect (chunk-QCHXOAYK.js?v=39dcc104:1078:29)
+    at useClearResetErrorBoundary (@tanstack_react-query.js?v=39dcc104:2947:10)
+    at useBaseQuery (@tanstack_react-query.js?v=39dcc104:3095:3)
+    at useQuery (@tanstack_react-query.js?v=39dcc104:3155:10)
+    at SessionRecordingsPlayer (session-recordings-player.tsx:132:34)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=39dcc104:11548:26)
+updateWorkInProgressHook @ chunk-RPCDYKBN.js?v=39dcc104:11678
+updateEffectImpl @ chunk-RPCDYKBN.js?v=39dcc104:12074
+updateEffect @ chunk-RPCDYKBN.js?v=39dcc104:12099
+useEffect @ chunk-RPCDYKBN.js?v=39dcc104:12703
+useEffect @ chunk-QCHXOAYK.js?v=39dcc104:1078
+useClearResetErrorBoundary @ @tanstack_react-query.js?v=39dcc104:2947
+useBaseQuery @ @tanstack_react-query.js?v=39dcc104:3095
+useQuery @ @tanstack_react-query.js?v=39dcc104:3155
+SessionRecordingsPlayer @ session-recordings-player.tsx:132
+renderWithHooks @ chunk-RPCDYKBN.js?v=39dcc104:11548
+updateFunctionComponent @ chunk-RPCDYKBN.js?v=39dcc104:14582
+beginWork @ chunk-RPCDYKBN.js?v=39dcc104:15924
+callCallback2 @ chunk-RPCDYKBN.js?v=39dcc104:3674
+invokeGuardedCallbackDev @ chunk-RPCDYKBN.js?v=39dcc104:3699
+invokeGuardedCallback @ chunk-RPCDYKBN.js?v=39dcc104:3733
+beginWork$1 @ chunk-RPCDYKBN.js?v=39dcc104:19765
+performUnitOfWork @ chunk-RPCDYKBN.js?v=39dcc104:19198
+workLoopSync @ chunk-RPCDYKBN.js?v=39dcc104:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=39dcc104:19116
+performConcurrentWorkOnRoot @ chunk-RPCDYKBN.js?v=39dcc104:18678
+workLoop @ chunk-RPCDYKBN.js?v=39dcc104:197
+flushWork @ chunk-RPCDYKBN.js?v=39dcc104:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=39dcc104:384
+chunk-RPCDYKBN.js?v=39dcc104:11678 Uncaught Error: Rendered more hooks than during the previous render.
+    at updateWorkInProgressHook (chunk-RPCDYKBN.js?v=39dcc104:11678:21)
+    at updateEffectImpl (chunk-RPCDYKBN.js?v=39dcc104:12074:22)
+    at updateEffect (chunk-RPCDYKBN.js?v=39dcc104:12099:18)
+    at Object.useEffect (chunk-RPCDYKBN.js?v=39dcc104:12703:22)
+    at Object.useEffect (chunk-QCHXOAYK.js?v=39dcc104:1078:29)
+    at useClearResetErrorBoundary (@tanstack_react-query.js?v=39dcc104:2947:10)
+    at useBaseQuery (@tanstack_react-query.js?v=39dcc104:3095:3)
+    at useQuery (@tanstack_react-query.js?v=39dcc104:3155:10)
+    at SessionRecordingsPlayer (session-recordings-player.tsx:132:34)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=39dcc104:11548:26)
+updateWorkInProgressHook @ chunk-RPCDYKBN.js?v=39dcc104:11678
+updateEffectImpl @ chunk-RPCDYKBN.js?v=39dcc104:12074
+updateEffect @ chunk-RPCDYKBN.js?v=39dcc104:12099
+useEffect @ chunk-RPCDYKBN.js?v=39dcc104:12703
+useEffect @ chunk-QCHXOAYK.js?v=39dcc104:1078
+useClearResetErrorBoundary @ @tanstack_react-query.js?v=39dcc104:2947
+useBaseQuery @ @tanstack_react-query.js?v=39dcc104:3095
+useQuery @ @tanstack_react-query.js?v=39dcc104:3155
+SessionRecordingsPlayer @ session-recordings-player.tsx:132
+renderWithHooks @ chunk-RPCDYKBN.js?v=39dcc104:11548
+updateFunctionComponent @ chunk-RPCDYKBN.js?v=39dcc104:14582
+beginWork @ chunk-RPCDYKBN.js?v=39dcc104:15924
+callCallback2 @ chunk-RPCDYKBN.js?v=39dcc104:3674
+invokeGuardedCallbackDev @ chunk-RPCDYKBN.js?v=39dcc104:3699
+invokeGuardedCallback @ chunk-RPCDYKBN.js?v=39dcc104:3733
+beginWork$1 @ chunk-RPCDYKBN.js?v=39dcc104:19765
+performUnitOfWork @ chunk-RPCDYKBN.js?v=39dcc104:19198
+workLoopSync @ chunk-RPCDYKBN.js?v=39dcc104:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=39dcc104:19116
+recoverFromConcurrentError @ chunk-RPCDYKBN.js?v=39dcc104:18736
+performConcurrentWorkOnRoot @ chunk-RPCDYKBN.js?v=39dcc104:18684
+workLoop @ chunk-RPCDYKBN.js?v=39dcc104:197
+flushWork @ chunk-RPCDYKBN.js?v=39dcc104:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=39dcc104:384
+hook.js:608 The above error occurred in the <SessionRecordingsPlayer> component:
+
+    at SessionRecordingsPlayer (http://lisa.local:5000/src/components/session-recordings-player.tsx:39:51)
+    at Suspense
+    at div
+    at div
+    at div
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-RLTE5R7I.js?v=39dcc104:41:13
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-54SOGMOD.js?v=39dcc104:59:7
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-UACHJROW.js?v=39dcc104:52:11
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-UACHJROW.js?v=39dcc104:33:11
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-RLTE5R7I.js?v=39dcc104:41:13
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-HNAA5AYG.js?v=39dcc104:29:5
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-IQOBQ777.js?v=39dcc104:232:13
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-IQOBQ777.js?v=39dcc104:155:58
+    at Presence (http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-CJ52NQAI.js?v=39dcc104:24:11)
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-IQOBQ777.js?v=39dcc104:146:64
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-UACHJROW.js?v=39dcc104:52:11
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-UACHJROW.js?v=39dcc104:33:11
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-RLTE5R7I.js?v=39dcc104:41:13
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-54SOGMOD.js?v=39dcc104:258:22
+    at Presence (http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-CJ52NQAI.js?v=39dcc104:24:11)
+    at Provider (http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-YRL5WAL7.js?v=39dcc104:38:15)
+    at DialogPortal (http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-IQOBQ777.js?v=39dcc104:109:11)
+    at _c3 (http://lisa.local:5000/src/components/ui/dialog.tsx:49:12)
+    at Provider (http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-YRL5WAL7.js?v=39dcc104:38:15)
+    at Dialog (http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-IQOBQ777.js?v=39dcc104:50:5)
+    at SessionViewDialog (http://lisa.local:5000/src/components/session-view-dialog.tsx:51:37)
+    at div
+    at td
+    at _c13 (http://lisa.local:5000/src/components/ui/table.tsx:142:13)
+    at tr
+    at _c9 (http://lisa.local:5000/src/components/ui/table.tsx:96:12)
+    at tbody
+    at _c5 (http://lisa.local:5000/src/components/ui/table.tsx:53:12)
+    at table
+    at div
+    at _c (http://lisa.local:5000/src/components/ui/table.tsx:20:11)
+    at div
+    at _c9 (http://lisa.local:5000/src/components/ui/card.tsx:106:12)
+    at div
+    at _c (http://lisa.local:5000/src/components/ui/card.tsx:20:11)
+    at div
+    at HistoricalSessionsContent (http://lisa.local:5000/src/components/session-management.tsx:2250:21)
+    at div
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-RLTE5R7I.js?v=39dcc104:41:13
+    at Presence (http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-CJ52NQAI.js?v=39dcc104:24:11)
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/@radix-ui_react-tabs.js?v=39dcc104:448:13
+    at _c5 (http://lisa.local:5000/src/components/ui/tabs.tsx:68:12)
+    at div
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-RLTE5R7I.js?v=39dcc104:41:13
+    at Provider (http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/chunk-YRL5WAL7.js?v=39dcc104:38:15)
+    at http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/@radix-ui_react-tabs.js?v=39dcc104:326:7
+    at div
+    at SessionManagement (http://lisa.local:5000/src/components/session-management.tsx:2720:21)
+    at div
+    at SessionsPage
+    at div
+    at main
+    at div
+    at div
+    at MainLayout (http://lisa.local:5000/src/components/layout/main-layout.tsx:22:30)
+    at component
+    at ProtectedRoute (http://lisa.local:5000/src/lib/protected-route.tsx:22:3)
+    at Switch (http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/wouter.js?v=39dcc104:379:17)
+    at Router
+    at OnboardingProvider (http://lisa.local:5000/src/hooks/use-onboarding.tsx:23:38)
+    at AuthProvider (http://lisa.local:5000/src/hooks/use-auth.tsx:26:32)
+    at QueryClientProvider (http://lisa.local:5000/@fs/home/mforum/Documentos/aplicaciones/tfg/paneldecontrol/Lisa3.1.6-SensorSessionTracker/node_modules/.vite/deps/@tanstack_react-query.js?v=39dcc104:2881:3)
+    at App
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+overrideMethod @ hook.js:608
+logCapturedError @ chunk-RPCDYKBN.js?v=39dcc104:14032
+update.callback @ chunk-RPCDYKBN.js?v=39dcc104:14052
+callCallback @ chunk-RPCDYKBN.js?v=39dcc104:11248
+commitUpdateQueue @ chunk-RPCDYKBN.js?v=39dcc104:11265
+commitLayoutEffectOnFiber @ chunk-RPCDYKBN.js?v=39dcc104:17093
+commitLayoutMountEffects_complete @ chunk-RPCDYKBN.js?v=39dcc104:17980
+commitLayoutEffects_begin @ chunk-RPCDYKBN.js?v=39dcc104:17969
+commitLayoutEffects @ chunk-RPCDYKBN.js?v=39dcc104:17920
+commitRootImpl @ chunk-RPCDYKBN.js?v=39dcc104:19353
+commitRoot @ chunk-RPCDYKBN.js?v=39dcc104:19277
+finishConcurrentRender @ chunk-RPCDYKBN.js?v=39dcc104:18760
+performConcurrentWorkOnRoot @ chunk-RPCDYKBN.js?v=39dcc104:18718
+workLoop @ chunk-RPCDYKBN.js?v=39dcc104:197
+flushWork @ chunk-RPCDYKBN.js?v=39dcc104:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=39dcc104:384
+chunk-RPCDYKBN.js?v=39dcc104:11678 Uncaught Error: Rendered more hooks than during the previous render.
+    at updateWorkInProgressHook (chunk-RPCDYKBN.js?v=39dcc104:11678:21)
+    at updateEffectImpl (chunk-RPCDYKBN.js?v=39dcc104:12074:22)
+    at updateEffect (chunk-RPCDYKBN.js?v=39dcc104:12099:18)
+    at Object.useEffect (chunk-RPCDYKBN.js?v=39dcc104:12703:22)
+    at Object.useEffect (chunk-QCHXOAYK.js?v=39dcc104:1078:29)
+    at useClearResetErrorBoundary (@tanstack_react-query.js?v=39dcc104:2947:10)
+    at useBaseQuery (@tanstack_react-query.js?v=39dcc104:3095:3)
+    at useQuery (@tanstack_react-query.js?v=39dcc104:3155:10)
+    at SessionRecordingsPlayer (session-recordings-player.tsx:132:34)
+    at renderWithHooks (chunk-RPCDYKBN.js?v=39dcc104:11548:26)
+updateWorkInProgressHook @ chunk-RPCDYKBN.js?v=39dcc104:11678
+updateEffectImpl @ chunk-RPCDYKBN.js?v=39dcc104:12074
+updateEffect @ chunk-RPCDYKBN.js?v=39dcc104:12099
+useEffect @ chunk-RPCDYKBN.js?v=39dcc104:12703
+useEffect @ chunk-QCHXOAYK.js?v=39dcc104:1078
+useClearResetErrorBoundary @ @tanstack_react-query.js?v=39dcc104:2947
+useBaseQuery @ @tanstack_react-query.js?v=39dcc104:3095
+useQuery @ @tanstack_react-query.js?v=39dcc104:3155
+SessionRecordingsPlayer @ session-recordings-player.tsx:132
+renderWithHooks @ chunk-RPCDYKBN.js?v=39dcc104:11548
+updateFunctionComponent @ chunk-RPCDYKBN.js?v=39dcc104:14582
+beginWork @ chunk-RPCDYKBN.js?v=39dcc104:15924
+beginWork$1 @ chunk-RPCDYKBN.js?v=39dcc104:19753
+performUnitOfWork @ chunk-RPCDYKBN.js?v=39dcc104:19198
+workLoopSync @ chunk-RPCDYKBN.js?v=39dcc104:19137
+renderRootSync @ chunk-RPCDYKBN.js?v=39dcc104:19116
+recoverFromConcurrentError @ chunk-RPCDYKBN.js?v=39dcc104:18736
+performConcurrentWorkOnRoot @ chunk-RPCDYKBN.js?v=39dcc104:18684
+workLoop @ chunk-RPCDYKBN.js?v=39dcc104:197
+flushWork @ chunk-RPCDYKBN.js?v=39dcc104:176
+performWorkUntilDeadline @ chunk-RPCDYKBN.js?v=39dcc104:384
