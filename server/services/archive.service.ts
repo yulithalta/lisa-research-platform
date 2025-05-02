@@ -258,31 +258,106 @@ class ArchiveService {
    */
   private async addAdditionalSessionFiles(zip: AdmZip, sessionId: number | string, session: Session): Promise<void> {
     try {
+      console.log(`\n\n⚡ INICIANDO BÚSQUEDA EXHAUSTIVA DE ARCHIVOS PARA LA SESIÓN ${sessionId}`);
       const sessionDir = await sessionService.getSessionDirectory(sessionId);
+      console.log(`📁 Directorio de sesión: ${sessionDir}`);
       
       // Buscar archivo AllData.json
       const allDataPath = path.join(sessionDir, 'AllData.json');
       if (fs.existsSync(allDataPath)) {
         zip.addLocalFile(allDataPath, 'sensors');
-        console.log('Añadido AllData.json al ZIP');
+        console.log('✅ Añadido AllData.json al ZIP');
       }
       
       // Buscar archivo session_data.json
       const sessionDataPath = path.join(sessionDir, 'session_data.json');
       if (fs.existsSync(sessionDataPath)) {
         zip.addLocalFile(sessionDataPath, 'sensors');
-        console.log('Añadido session_data.json al ZIP');
+        console.log('✅ Añadido session_data.json al ZIP');
       }
       
       // Buscar carpeta sensor_data y añadir todos los archivos JSON
       const sensorDataDir = path.join(sessionDir, 'sensor_data');
       if (fs.existsSync(sensorDataDir)) {
-        const sensorFiles = fs.readdirSync(sensorDataDir).filter(f => f.endsWith('.json'));
+        console.log(`📁 Directorio de datos de sensores encontrado: ${sensorDataDir}`);
+        const sensorFiles = fs.readdirSync(sensorDataDir);
+        console.log(`🔍 ${sensorFiles.length} archivos encontrados en sensor_data`);
+        
         for (const file of sensorFiles) {
-          zip.addLocalFile(path.join(sensorDataDir, file), 'sensors');
-          console.log(`Añadido ${file} al ZIP`);
+          const filePath = path.join(sensorDataDir, file);
+          zip.addLocalFile(filePath, 'sensors');
+          console.log(`✅ Añadido ${file} al ZIP`);
         }
+      } else {
+        console.log(`⚠️ No se encontró carpeta sensor_data en ${sessionDir}`);
       }
+      
+      // Buscar carpeta recordings y añadir todos los archivos MP4
+      const recordingsDir = path.join(sessionDir, 'recordings');
+      if (fs.existsSync(recordingsDir)) {
+        console.log(`📁 Directorio de grabaciones encontrado: ${recordingsDir}`);
+        const recordingFiles = fs.readdirSync(recordingsDir);
+        console.log(`🔍 ${recordingFiles.length} archivos encontrados en recordings`);
+        
+        for (const file of recordingFiles) {
+          const filePath = path.join(recordingsDir, file);
+          zip.addLocalFile(filePath, 'recordings');
+          console.log(`✅ Añadido ${file} al ZIP`);
+        }
+      } else {
+        console.log(`⚠️ No se encontró carpeta recordings en ${sessionDir}`);
+      }
+      
+      // Buscar en el directorio de grabaciones generales por archivos de esta sesión
+      try {
+        const generalRecordingsDir = path.join(process.cwd(), 'recordings');
+        if (fs.existsSync(generalRecordingsDir)) {
+          console.log(`📁 Buscando en directorio general de grabaciones: ${generalRecordingsDir}`);
+          const allRecordingFiles = fs.readdirSync(generalRecordingsDir);
+          
+          // Filtrar archivos que corresponden a esta sesión por nombrado
+          const sessionRecordings = allRecordingFiles.filter(file => {
+            return file.includes(`_session${sessionId}`) || file.includes(`-session${sessionId}`);
+          });
+          
+          console.log(`🔍 Encontrados ${sessionRecordings.length} archivos de grabación correspondientes a la sesión ${sessionId}`);
+          
+          for (const file of sessionRecordings) {
+            const filePath = path.join(generalRecordingsDir, file);
+            zip.addLocalFile(filePath, 'recordings');
+            console.log(`✅ Añadido archivo de grabación general: ${file}`);
+          }
+        }
+      } catch (recordingsError: any) {
+        console.error('Error al buscar en directorio general de grabaciones:', recordingsError);
+      }
+            
+      // Buscar archivos .csv que puedan contener datos de sensores
+      try {
+        const dataDir = path.join(process.cwd(), 'data');
+        if (fs.existsSync(dataDir)) {
+          console.log(`📁 Buscando en directorio de datos: ${dataDir}`);
+          const dataFiles = fs.readdirSync(dataDir);
+          
+          // Filtrar archivos que corresponden a esta sesión
+          const sessionDataFiles = dataFiles.filter(file => {
+            return (file.includes(`_session${sessionId}`) || file.includes(`-session${sessionId}`)) && 
+                   (file.endsWith('.csv') || file.endsWith('.json'));
+          });
+          
+          console.log(`🔍 Encontrados ${sessionDataFiles.length} archivos de datos correspondientes a la sesión ${sessionId}`);
+          
+          for (const file of sessionDataFiles) {
+            const filePath = path.join(dataDir, file);
+            zip.addLocalFile(filePath, 'sensors');
+            console.log(`✅ Añadido archivo de datos: ${file}`);
+          }
+        }
+      } catch (dataError: any) {
+        console.error('Error al buscar en directorio de datos:', dataError);
+      }
+      
+      console.log(`⚡ BÚSQUEDA EXHAUSTIVA COMPLETADA PARA LA SESIÓN ${sessionId}\n\n`);
     } catch (error: any) {
       console.error('Error al añadir archivos adicionales al ZIP:', error);
     }

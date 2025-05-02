@@ -159,14 +159,14 @@ class SessionService {
       console.log(`Total de archivos de sensores registrados: ${sessionFiles.sensorData.length}`);
       
       // Verificar cada archivo de grabación
-      const validRecordings = sessionFiles.recordings.filter(rec => {
+      const validRecordings = sessionFiles.recordings.filter((rec: {path: string, camera?: number}) => {
         const exists = fs.existsSync(rec.path);
         console.log(`Grabación ${exists ? '✅' : '❌'}: ${rec.path}`);
         return exists;
       });
       
       // Verificar cada archivo de sensor
-      const validSensorData = sessionFiles.sensorData.filter(sensor => {
+      const validSensorData = sessionFiles.sensorData.filter((sensor: {path: string, sensor?: string}) => {
         const exists = fs.existsSync(sensor.path);
         console.log(`Datos sensor ${exists ? '✅' : '❌'}: ${sensor.path}`);
         return exists;
