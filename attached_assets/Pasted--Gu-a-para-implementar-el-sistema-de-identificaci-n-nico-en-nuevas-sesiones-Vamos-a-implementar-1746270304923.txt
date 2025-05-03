@@ -1,0 +1,307 @@
+# Guía para implementar el sistema de identificación único en nuevas sesiones
+
+Vamos a implementar una solución que asegure que cada sesión tenga un identificador único y que todos los archivos generados durante esa sesión compartan ese identificador. Esto mejorará significativamente la seguridad y evitará que se mezclen datos entre sesiones.
+
+## 1. Archivos a modificar
+
+Basado en el código que me mostraste, necesitamos modificar estos componentes:
+
+1. **`session.service.ts`** - Para generar y gestionar el hash único de sesión
+2. **`routes.ts`** - Específicamente donde se crea una nueva sesión 
+3. **`startRecording`** - La función que inicia las grabaciones para incluir el hash en el nombre
+4. **`mqtt-client-simple.ts`** - Para que los datos de sensores también usen el hash
+
+## 2. Implementación paso a paso
+
+### Paso 1: Modificar la creación de sesiones
+
+En el archivo `routes.ts` donde se procesa el endpoint POST `/api/sessions`:
+
+```javascript
+// Añadir al inicio del archivo:
+import { v4 as uuidv4 } from 'uuid';
+
+// Modificar donde se crea la sesión (dentro del handler POST "/api/sessions"):
+app.post("/api/sessions", async (req, res) => {
+  if (!req.isAuthenticated()) return res.sendStatus(401);
+
+  try {
+    // Generar un hash único para esta sesión (primeros 8 caracteres de un UUID v4)
+    const sessionHash = uuidv4().substring(0, 8);
+    
+    // Extraer resto del código existente...
+    const { title, devices, /* ... resto de campos ... */ } = req.body;
+    
+    // Crear el objeto de configuración incluyendo el hash
+    const config = {
+      id: sessionId,
+      sessionHash: sessionHash, // Añadir el hash aquí
+      title,
+      startTime: new Date(),
+      devices,
+      status: 'active',
+      // ... resto de campos ...
+    };
+    
+    // Guardar el hash en el archivo config.json para referencia futura
+    fs.writeFileSync(
+      path.join(sessionDir, 'config.json'),
+      JSON.stringify(config, null, 2)
+    );
+    
+    // También crear un archivo de índice vacío que se irá actualizando
+    const sessionIndex = {
+      sessionId: sessionId,
+      sessionHash: sessionHash,
+      files: {
+        recordings: [],
+        sensorData: []
+      },
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    };
+    
+    fs.writeFileSync(
+      path.join(sessionDir, 'session_files_index.json'),
+      JSON.stringify(sessionIndex, null, 2)
+    );
+    
+    // Continuar con el código existente...
+    
+    res.status(201).json(config);
+  } catch (error) {
+    // Manejo de errores...
+  }
+});
+```
+
+### Paso 2: Modificar la función startRecording
+
+En el archivo `routes.ts` donde se define la función startRecording:
+
+```javascript
+async function startRecording(camera: any, sessionId?: number) {
+  try {
+    // Código existente para asegurar directorios...
+    
+    // Obtener el hash de la sesión si existe
+    let sessionHash = '';
+    if (sessionId) {
+      try {
+        const sessionDir = path.join(process.cwd(), 'sessions', `Session${sessionId}`);
+        const configPath = path.join(sessionDir, 'config.json');
+        
+        if (fs.existsSync(configPath)) {
+          const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+          sessionHash = config.sessionHash || '';
+          console.log(`Usando hash de sesión: ${sessionHash} para grabación`);
+        }
+      } catch (error) {
+        console.error('Error al obtener hash de sesión:', error);
+      }
+    }
+
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    
+    // Incorporar el hash de la sesión en el nombre del archivo
+    const prefix = camera.name 
+      ? camera.name.toLowerCase().replace(/\s+/g, '-') 
+      : (camera.recordingPrefix 
+          ? `${camera.recordingPrefix}` 
+          : `cam${camera.id}`);
+    
+    // Nuevo formato de nombre de archivo con hash de sesión
+    const fileName = sessionHash 
+      ? `${prefix}_${sessionHash}_${timestamp}.mp4` 
+      : `${prefix}_${timestamp}.mp4`;
+    
+    const outputPath = path.join(outputDirectory, fileName);
+    
+    console.log(`Path completo de grabación: ${outputPath}`);
+    
+    // Resto del código de creación de grabación...
+    const recording = await storage.createRecording({/*...*/});
+    
+    // Actualizar el archivo de índice si hay sesión y hash
+    if (sessionId && sessionHash) {
+      try {
+        const sessionDir = path.join(process.cwd(), 'sessions', `Session${sessionId}`);
+        const indexPath = path.join(sessionDir, 'session_files_index.json');
+        
+        if (fs.existsSync(indexPath)) {
+          const sessionIndex = JSON.parse(fs.readFileSync(indexPath, 'utf-8'));
+          
+          // Añadir esta grabación al índice
+          sessionIndex.files.recordings.push({
+            id: recording.id,
+            fileName: fileName,
+            path: outputPath,
+            cameraId: camera.id,
+            timestamp: timestamp
+          });
+          
+          sessionIndex.updatedAt = new Date().toISOString();
+          
+          fs.writeFileSync(indexPath, JSON.stringify(sessionIndex, null, 2));
+          console.log(`Índice de sesión actualizado con nueva grabación: ${fileName}`);
+        }
+      } catch (indexError) {
+        console.error('Error al actualizar índice de sesión:', indexError);
+      }
+    }
+    
+    // Continuar con el código existente...
+
+    return recording;
+  } catch (error) {
+    console.error('Error in startRecording:', error);
+    throw error;
+  }
+}
+```
+
+### Paso 3: Modificar el servicio MQTT para datos de sensores
+
+En el archivo `mqtt-client-simple.ts`:
+
+```javascript
+// Dentro del método registerSession:
+registerSession(sessionId: number, dataPath: string, selectedSensors: string[] = []) {
+  console.log(`Registrando sesión ${sessionId} para captura de datos MQTT`);
+  
+  // Obtener el hash de la sesión si existe
+  let sessionHash = '';
+  try {
+    const sessionDir = path.join(process.cwd(), 'sessions', `Session${sessionId}`);
+    const configPath = path.join(sessionDir, 'config.json');
+    
+    if (fs.existsSync(configPath)) {
+      const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+      sessionHash = config.sessionHash || '';
+      console.log(`Usando hash de sesión: ${sessionHash} para datos MQTT`);
+    }
+  } catch (error) {
+    console.error('Error al obtener hash de sesión para MQTT:', error);
+  }
+  
+  // Resto del código...
+  
+  // Modificar nombres de archivos para incluir el hash
+  const sensorDataFileName = sessionHash 
+    ? `session_${sessionId}_${sessionHash}_sensors.json` 
+    : `session_${sessionId}_sensors.json`;
+  
+  // Guardar datos con el nuevo formato de nombre
+  
+  // Al guardar cada evento de sensor, actualizar el índice
+  if (sessionHash) {
+    try {
+      const sessionDir = path.join(process.cwd(), 'sessions', `Session${sessionId}`);
+      const indexPath = path.join(sessionDir, 'session_files_index.json');
+      
+      if (fs.existsSync(indexPath)) {
+        const sessionIndex = JSON.parse(fs.readFileSync(indexPath, 'utf-8'));
+        
+        // Añadir este archivo de sensor al índice
+        sessionIndex.files.sensorData.push({
+          fileName: sensorDataFileName,
+          path: path.join(sessionDir, sensorDataFileName),
+          sensor: sensorId,
+          timestamp: new Date().toISOString()
+        });
+        
+        sessionIndex.updatedAt = new Date().toISOString();
+        
+        fs.writeFileSync(indexPath, JSON.stringify(sessionIndex, null, 2));
+        console.log(`Índice de sesión actualizado con nuevo dato de sensor: ${sensorDataFileName}`);
+      }
+    } catch (indexError) {
+      console.error('Error al actualizar índice de sesión para sensor:', indexError);
+    }
+  }
+}
+```
+
+### Paso 4: Modificar el servicio de archivado para usar el índice
+
+En el archivo `archive-service.ts`:
+
+```javascript
+// Modificar el método addAdditionalSessionFiles:
+private async addAdditionalSessionFiles(zip: AdmZip, sessionId: number | string, session: Session): Promise<void> {
+  try {
+    console.log(`Iniciando búsqueda para la sesión ${sessionId}`);
+    const sessionDir = await sessionService.getSessionDirectory(sessionId);
+    
+    // USAR EL ÍNDICE SI EXISTE (NUEVA IMPLEMENTACIÓN)
+    const indexPath = path.join(sessionDir, 'session_files_index.json');
+    if (fs.existsSync(indexPath)) {
+      console.log(`📁 Índice de sesión encontrado: ${indexPath}`);
+      
+      try {
+        const sessionIndex = JSON.parse(fs.readFileSync(indexPath, 'utf-8'));
+        const sessionHash = sessionIndex.sessionHash;
+        
+        console.log(`🔍 Usando índice con hash: ${sessionHash}`);
+        
+        // Añadir grabaciones del índice
+        if (sessionIndex.files.recordings && sessionIndex.files.recordings.length > 0) {
+          console.log(`📊 Añadiendo ${sessionIndex.files.recordings.length} grabaciones del índice`);
+          
+          for (const recording of sessionIndex.files.recordings) {
+            if (fs.existsSync(recording.path)) {
+              zip.addLocalFile(recording.path, 'recordings');
+              console.log(`✅ Añadido archivo de video indexado: ${recording.fileName}`);
+            } else {
+              console.log(`⚠️ No se encontró el archivo indexado: ${recording.path}`);
+            }
+          }
+        }
+        
+        // Añadir datos de sensores del índice
+        if (sessionIndex.files.sensorData && sessionIndex.files.sensorData.length > 0) {
+          console.log(`📊 Añadiendo ${sessionIndex.files.sensorData.length} archivos de datos del índice`);
+          
+          for (const sensorData of sessionIndex.files.sensorData) {
+            if (fs.existsSync(sensorData.path)) {
+              zip.addLocalFile(sensorData.path, 'data/sensor_data');
+              console.log(`✅ Añadido archivo de datos indexado: ${sensorData.fileName}`);
+            } else {
+              console.log(`⚠️ No se encontró el archivo indexado: ${sensorData.path}`);
+            }
+          }
+        }
+        
+        // Añadir el propio archivo de índice
+        zip.addLocalFile(indexPath, 'data');
+        console.log(`✅ Añadido archivo de índice al ZIP`);
+        
+        // ¡IMPORTANTE! Detener aquí si encontramos un índice válido
+        // No mezclar con el método antiguo para evitar duplicados o archivos incorrectos
+        return;
+      } catch (indexError) {
+        console.error('Error al procesar índice de sesión:', indexError);
+        // Continuar con el método antiguo si hay algún problema con el índice
+      }
+    }
+    
+    // MÉTODO ANTIGUO (FALLBACK PARA SESIONES EXISTENTES)
+    console.log(`⚠️ No se encontró índice, usando método de búsqueda tradicional`);
+    
+    // Aquí continuaría el código original...
+    // [código de búsqueda existente]
+  } catch (error) {
+    console.error('Error al añadir archivos adicionales al ZIP:', error);
+  }
+}
+```
+
+## 3. Consideraciones adicionales
+
+1. **Retrocompatibilidad**: Las sesiones existentes seguirán usando el método actual, mientras que las nuevas sesiones usarán el sistema de hash e índice.
+
+2. **Depuración**: Añade registros detallados mientras implementas esto para asegurarte de que funciona correctamente.
+
+3. **Pruebas**: Antes de implementar en producción, prueba el sistema en un entorno controlado con diferentes tipos de sesiones.
+
+Esta implementación permitirá que a partir de ahora, todas las nuevas sesiones tengan un identificador único y todos sus archivos compartan ese identificador, lo que evitará problemas de mezcla de datos entre sesiones.

@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { promises as fsPromises } from 'fs';
 import { Session } from '@shared/schema';
+import { v4 as uuidv4 } from 'uuid';
 
 /**
  * Interfaz para monitorizar el progreso de creación de ZIP
