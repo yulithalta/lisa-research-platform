@@ -17,6 +17,31 @@ export interface ZipProgress {
 }
 
 /**
+ * Interfaz para el archivo de índice de sesión
+ */
+export interface SessionFileIndex {
+  sessionId: number | string;
+  sessionHash: string;
+  files: {
+    recordings: Array<{
+      id?: number | string;
+      fileName: string;
+      path: string;
+      cameraId?: number | string;
+      timestamp: string;
+    }>;
+    sensorData: Array<{
+      fileName: string;
+      path: string;
+      sensor?: string;
+      timestamp: string;
+    }>;
+  };
+  createdAt: string;
+  updatedAt: string;
+}
+
+/**
  * Servicio encargado de la gestión de archivos comprimidos (ZIP)
  */
 class ArchiveService {
@@ -130,6 +155,164 @@ class ArchiveService {
   }
 
   /**
+   * Genera un hash único para una sesión
+   * @param sessionId ID de la sesión
+   * @returns Hash único (primeros 8 caracteres de un UUID)
+   */
+  generateSessionHash(sessionId: number | string): string {
+    return uuidv4().substring(0, 8);
+  }
+
+  /**
+   * Crea o actualiza el archivo de índice de una sesión
+   * @param sessionId ID de la sesión
+   * @param sessionHash Hash único de la sesión
+   * @returns El índice de la sesión
+   */
+  async createOrUpdateSessionIndex(sessionId: number | string, sessionHash?: string): Promise<SessionFileIndex> {
+    try {
+      const sessionDir = path.join(this.sessionsDir, `Session${sessionId}`);
+      const indexPath = path.join(sessionDir, 'session_files_index.json');
+      
+      // Asegurar que el directorio de la sesión existe
+      if (!fs.existsSync(sessionDir)) {
+        fs.mkdirSync(sessionDir, { recursive: true });
+      }
+      
+      let sessionIndex: SessionFileIndex;
+      
+      // Verificar si ya existe un índice
+      if (fs.existsSync(indexPath)) {
+        try {
+          // Cargar el índice existente
+          sessionIndex = JSON.parse(fs.readFileSync(indexPath, 'utf-8'));
+          console.log(`Índice de sesión cargado: ${indexPath}`);
+          
+          // Si no tiene un hash, asignarle uno
+          if (!sessionIndex.sessionHash && sessionHash) {
+            sessionIndex.sessionHash = sessionHash;
+            console.log(`Asignado hash ${sessionHash} a sesión existente ${sessionId}`);
+          }
+        } catch (error) {
+          console.error('Error cargando índice existente, creando uno nuevo:', error);
+          // Si hay un error, crear un nuevo índice
+          sessionIndex = {
+            sessionId,
+            sessionHash: sessionHash || this.generateSessionHash(sessionId),
+            files: {
+              recordings: [],
+              sensorData: []
+            },
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString()
+          };
+        }
+      } else {
+        // Crear un nuevo índice
+        sessionIndex = {
+          sessionId,
+          sessionHash: sessionHash || this.generateSessionHash(sessionId),
+          files: {
+            recordings: [],
+            sensorData: []
+          },
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        };
+        console.log(`Creado nuevo índice para sesión ${sessionId} con hash ${sessionIndex.sessionHash}`);
+      }
+      
+      // Actualizar timestamp
+      sessionIndex.updatedAt = new Date().toISOString();
+      
+      // Guardar el índice
+      fs.writeFileSync(indexPath, JSON.stringify(sessionIndex, null, 2));
+      console.log(`Índice de sesión guardado: ${indexPath}`);
+      
+      return sessionIndex;
+    } catch (error) {
+      console.error(`Error creando/actualizando índice para sesión ${sessionId}:`, error);
+      throw error;
+    }
+  }
+
+  /**
+   * Registra un archivo de grabación en el índice de la sesión
+   * @param sessionId ID de la sesión
+   * @param recordingInfo Información de la grabación
+   */
+  async registerRecordingInIndex(sessionId: number | string, recordingInfo: { 
+    fileName: string, 
+    path: string, 
+    cameraId?: number | string,
+    timestamp?: string 
+  }): Promise<void> {
+    try {
+      const sessionDir = path.join(this.sessionsDir, `Session${sessionId}`);
+      const indexPath = path.join(sessionDir, 'session_files_index.json');
+      
+      if (fs.existsSync(indexPath)) {
+        const sessionIndex = JSON.parse(fs.readFileSync(indexPath, 'utf-8'));
+        
+        // Añadir grabación al índice
+        sessionIndex.files.recordings.push({
+          fileName: recordingInfo.fileName,
+          path: recordingInfo.path,
+          cameraId: recordingInfo.cameraId,
+          timestamp: recordingInfo.timestamp || new Date().toISOString()
+        });
+        
+        sessionIndex.updatedAt = new Date().toISOString();
+        
+        fs.writeFileSync(indexPath, JSON.stringify(sessionIndex, null, 2));
+        console.log(`Grabación registrada en índice: ${recordingInfo.fileName}`);
+      } else {
+        console.warn(`No se encontró índice para la sesión ${sessionId}, no se pudo registrar grabación`);
+      }
+    } catch (error) {
+      console.error(`Error registrando grabación en índice para sesión ${sessionId}:`, error);
+    }
+  }
+
+  /**
+   * Registra un archivo de datos de sensores en el índice de la sesión
+   * @param sessionId ID de la sesión
+   * @param sensorDataInfo Información del archivo de datos
+   */
+  async registerSensorDataInIndex(sessionId: number | string, sensorDataInfo: { 
+    fileName: string, 
+    path: string, 
+    sensor?: string,
+    timestamp?: string 
+  }): Promise<void> {
+    try {
+      const sessionDir = path.join(this.sessionsDir, `Session${sessionId}`);
+      const indexPath = path.join(sessionDir, 'session_files_index.json');
+      
+      if (fs.existsSync(indexPath)) {
+        const sessionIndex = JSON.parse(fs.readFileSync(indexPath, 'utf-8'));
+        
+        // Añadir datos de sensor al índice
+        sessionIndex.files.sensorData.push({
+          fileName: sensorDataInfo.fileName,
+          path: sensorDataInfo.path,
+          sensor: sensorDataInfo.sensor,
+          timestamp: sensorDataInfo.timestamp || new Date().toISOString()
+        });
+        
+        sessionIndex.updatedAt = new Date().toISOString();
+        
+        fs.writeFileSync(indexPath, JSON.stringify(sessionIndex, null, 2));
+        console.log(`Datos de sensor registrados en índice: ${sensorDataInfo.fileName}`);
+      } else {
+        console.warn(`No se encontró índice para la sesión ${sessionId}, no se pudo registrar datos de sensor`);
+      }
+    } catch (error) {
+      console.error(`Error registrando datos de sensor en índice para sesión ${sessionId}:`, error);
+    }
+  }
+
+  /**
    * Genera el archivo ZIP con todos los archivos de la sesión
    */
   private async generateSessionZip(
@@ -156,6 +339,73 @@ class ArchiveService {
     this.addReadmeFile(zip, session);
     
     try {
+      // Buscar si existe un índice de sesión
+      const sessionIndexDir = path.join(this.sessionsDir, `Session${sessionId}`);
+      const indexPath = path.join(sessionIndexDir, 'session_files_index.json');
+      
+      // PRIORIDAD 1: Usar el índice si existe (nuevo sistema)
+      if (fs.existsSync(indexPath)) {
+        try {
+          const sessionIndex = JSON.parse(fs.readFileSync(indexPath, 'utf-8'));
+          const sessionHash = sessionIndex.sessionHash;
+          
+          console.log(`🔍 Índice de sesión encontrado: ${indexPath}`);
+          console.log(`🔑 Usando hash de sesión: ${sessionHash}`);
+          
+          // Añadir grabaciones indexadas
+          if (sessionIndex.files.recordings && sessionIndex.files.recordings.length > 0) {
+            console.log(`📝 Añadiendo ${sessionIndex.files.recordings.length} grabaciones del índice`);
+            
+            for (const recording of sessionIndex.files.recordings) {
+              if (fs.existsSync(recording.path)) {
+                zip.addLocalFile(recording.path, 'recordings');
+                console.log(`✅ Añadido archivo de video indexado: ${recording.fileName}`);
+                recordingsCount++;
+              } else {
+                console.log(`⚠️ No se encontró el archivo indexado: ${recording.path}`);
+              }
+            }
+          }
+          
+          // Añadir datos de sensores indexados
+          if (sessionIndex.files.sensorData && sessionIndex.files.sensorData.length > 0) {
+            console.log(`📝 Añadiendo ${sessionIndex.files.sensorData.length} archivos de datos del índice`);
+            
+            for (const sensorData of sessionIndex.files.sensorData) {
+              if (fs.existsSync(sensorData.path)) {
+                zip.addLocalFile(sensorData.path, 'data/sensor_data');
+                console.log(`✅ Añadido archivo de datos indexado: ${sensorData.fileName}`);
+                sensorDataCount++;
+              } else {
+                console.log(`⚠️ No se encontró el archivo indexado: ${sensorData.path}`);
+              }
+            }
+          }
+          
+          // Añadir el propio archivo de índice
+          zip.addLocalFile(indexPath, 'data');
+          console.log(`✅ Añadido archivo de índice al ZIP`);
+          dataFilesCount++;
+          
+          // Añadir el archivo config.json si existe
+          const configPath = path.join(sessionIndexDir, 'config.json');
+          if (fs.existsSync(configPath)) {
+            zip.addLocalFile(configPath, 'data');
+            console.log(`✅ Añadido archivo de configuración al ZIP`);
+            dataFilesCount++;
+          }
+
+          // Añadir también los archivos globales 
+        } catch (indexError) {
+          console.error('Error al procesar índice de sesión:', indexError);
+          console.log('⚠️ Continuando con método de búsqueda tradicional');
+          // Continuar con el método antiguo si hay algún problema con el índice
+        }
+      } else {
+        console.log(`⚠️ No se encontró índice para la sesión ${sessionId}, usando método de búsqueda tradicional`);
+      }
+      
+      // PRIORIDAD 2: Método tradicional (compatibilidad con sesiones antiguas)
       // Añadir archivos de datos globales
       const dataDir = this.dataDir;
       console.log(`\n→ Buscando datos globales en: ${dataDir}`);
@@ -359,12 +609,12 @@ class ArchiveService {
       }
       
       // Buscar en directorio de sesiones si existe
-      const sessionDir = path.join(this.sessionsDir, `Session${sessionId}`);
-      console.log(`\n→ Buscando datos específicos de la sesión en: ${sessionDir}`);
+      const sessionSpecificDir = path.join(this.sessionsDir, `Session${sessionId}`);
+      console.log(`\n→ Buscando datos específicos de la sesión en: ${sessionSpecificDir}`);
       
-      if (fs.existsSync(sessionDir)) {
+      if (fs.existsSync(sessionSpecificDir)) {
         // Añadir session_data.json
-        const sessionDataPath = path.join(sessionDir, 'session_data.json');
+        const sessionDataPath = path.join(sessionSpecificDir, 'session_data.json');
         if (fs.existsSync(sessionDataPath)) {
           zip.addLocalFile(sessionDataPath, 'data');
           console.log('✅ Añadido session_data.json al ZIP');
@@ -374,7 +624,7 @@ class ArchiveService {
         }
         
         // Añadir datos de sensores si existen
-        const sensorDataDir = path.join(sessionDir, 'sensor_data');
+        const sensorDataDir = path.join(sessionSpecificDir, 'sensor_data');
         console.log(`→ Buscando datos de sensores en: ${sensorDataDir}`);
         
         if (fs.existsSync(sensorDataDir)) {
@@ -394,7 +644,7 @@ class ArchiveService {
         }
         
         // Añadir grabaciones del directorio específico de sesiones
-        const sessionRecordingsDir = path.join(sessionDir, 'recordings');
+        const sessionRecordingsDir = path.join(sessionSpecificDir, 'recordings');
         console.log(`→ Buscando grabaciones en directorio de sesión: ${sessionRecordingsDir}`);
         
         if (fs.existsSync(sessionRecordingsDir)) {
@@ -440,7 +690,7 @@ class ArchiveService {
           console.log('⚠️ Directorio de grabaciones específicas no encontrado');
         }
       } else {
-        console.log(`⚠️ Directorio de sesión no encontrado: ${sessionDir}`);
+        console.log(`⚠️ Directorio de sesión no encontrado: ${sessionSpecificDir}`);
       }
       
       // Añadir metadatos detallados
