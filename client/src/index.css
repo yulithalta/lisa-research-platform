@@ -10,4 +10,102 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+  
+  :root {
+    /* Superficies y texto */
+    --background: 0 0% 100%;
+    --foreground: 224 71% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    /* === Marca LISA: SKY + TEAL (educación/salud) === */
+    /* Tailwind sky-600 -> #0284c7 -> HSL(200 98% 39%) */
+    --primary: 200 98% 39%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Acento “médico” (teal-600 -> #0d9488 -> HSL(175 84% 32%)) */
+    --secondary: 175 84% 32%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Opcionales */
+    /* cyan-500 -> #06b6d4 -> HSL(189 94% 43%) */
+    --accent: 189 94% 43%;
+    --accent-foreground: 210 40% 98%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 200 98% 39%;
+
+    /* Sidebar (porque los usas en theme.colors.sidebar) */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 224 71% 4%;
+    --sidebar-primary: 200 98% 39%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 175 84% 32%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 200 98% 39%;
+
+    /* Paleta de gráficos (coherente con marca) */
+    --chart-1: 200 98% 39%;  /* sky-600 */
+    --chart-2: 189 94% 43%;  /* cyan-500 */
+    --chart-3: 175 84% 32%;  /* teal-600 */
+    --chart-4: 161 94% 30%;  /* emerald-600 */
+    --chart-5: 26 95% 53%;   /* amber-500 */
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Fondo oscuro y texto claro */
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 224 71% 6%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 71% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Sube un poco la L en dark para contraste */
+    --primary: 200 98% 45%;
+    --primary-foreground: 224 71% 4%;
+    --secondary: 175 84% 38%;
+    --secondary-foreground: 224 71% 4%;
+    --accent: 189 94% 50%;
+    --accent-foreground: 224 71% 4%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20% 65%;
+    --destructive: 0 63% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 223 47% 11%;
+    --input: 223 47% 11%;
+    --ring: 200 98% 50%;
+
+    --sidebar-background: 224 71% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 200 98% 50%;
+    --sidebar-primary-foreground: 224 71% 4%;
+    --sidebar-accent: 175 84% 45%;
+    --sidebar-accent-foreground: 224 71% 4%;
+    --sidebar-border: 223 47% 11%;
+    --sidebar-ring: 200 98% 50%;
+
+    --chart-1: 200 98% 50%;
+    --chart-2: 189 94% 55%;
+    --chart-3: 175 84% 45%;
+    --chart-4: 161 94% 40%;
+    --chart-5: 26 95% 60%;
+  }
+
 }
