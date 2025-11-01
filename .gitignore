@@ -1,5 +1,7 @@
 recordings
 temp
+public/thumbnails
+deprecated
 
 node_modules
 dist
@@ -90,7 +92,7 @@ Desktop.ini
 
 *~
 .nfs*
-
+*.mp4
 
 *.log
 logs/
