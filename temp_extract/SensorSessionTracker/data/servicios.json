@@ -1,5 +1,0 @@
-{
-  "Estado zigbee2mqtt": "http://192.168.0.20:8080/#/",
-  "Estado sensores": "http://192.168.0.20:3000/",
-  "Estado LiveNow Cámaras": "http://192.168.0.20:3001"
-}
