@@ -6,7 +6,7 @@
     "tailwind": {
       "config": "tailwind.config.ts",
       "css": "client/src/index.css",
-      "baseColor": "neutral",
+      "baseColor": "sky",
       "cssVariables": true,
       "prefix": ""
     },
