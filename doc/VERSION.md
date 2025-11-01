@@ -1,6 +1,7 @@
 # Control de Versiones
 
-## Versión Actual: v2.5.18
+## Versión Actual:  v3.0.0
+-	Gestión de la RGPD incluida
 
 ### Historial de Versiones
 
