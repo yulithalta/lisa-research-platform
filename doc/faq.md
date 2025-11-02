@@ -2,8 +2,8 @@
 
 ## **General**
 
-### **What is EnterpriseWorkflow?**
-EnterpriseWorkflow is an advanced system for managing synchronized recordings from IP cameras and capturing data from MQTT/Zigbee2MQTT sensors.  
+### **What is LISA?**
+LISA is an advanced system for managing synchronized recordings from IP cameras and capturing data from MQTT/Zigbee2MQTT sensors.  
 It is designed for professional environments that require maximum precision and reliability, such as clinical research and real-time monitoring.
 
 ### **What are the minimum system requirements?**
