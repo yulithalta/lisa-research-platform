@@ -1,276 +1,225 @@
-# IP Camera and MQTT/Zigbee2MQTT Monitoring System
+# LISA — Living-lab Integrated Sensing Architecture
 
-Advanced clinical-grade monitoring system for IP cameras and MQTT/Zigbee2MQTT sensors with comprehensive session management, real-time visualization, and data exports. Designed for research laboratory environments requiring precise data capture and synchronization.
+**Version:** 3.0.0  
+**Repository:** https://github.com/yulithalta/lisa-research-platform  
+**Contact:** Yulith.Altamirano@uclm.es
 
-## System Requirements
+LISA is an open-source system for time-aligned acquisition of IP video streams and MQTT-based sensor data in controlled research environments.  
+It enables reproducible session workflows, structured metadata, and export of synchronized datasets for offline analysis.
 
-- Node.js 20 or higher
-- NPM 10 or higher
-- MQTT Broker (Mosquitto, HiveMQ, etc.) for sensor connectivity
-- Zigbee2MQTT properly configured (for Zigbee device support)
-- IP cameras with RTSP or HTTP streaming capabilities
-- Environment variables properly configured (see Configuration section)
+This repository contains the reference implementation evaluated in the SoftwareX article.
 
-## Installation
+---
 
-1. Clone the repository:
+## 1. Scope
+
+LISA supports scenarios requiring:
+
+- Multi-camera video acquisition
+- Real-time MQTT and Zigbee2MQTT sensor monitoring
+- Timestamp-aligned data logging
+- Local data handling with configurable privacy controls
+
+LISA is not a clinical diagnosis system and must not be used as a certified medical device.
+
+---
+
+## 2. System Requirements
+
+| Component | Version | Notes |
+|----------|---------|------|
+| OS | Linux (Debian tested) | Reference environment: Debian 12 |
+| Node.js | ≥ 20 | Backend & development UI |
+| NPM | ≥ 10 | Dependency management |
+| Docker + Compose v2 | Optional infrastructure stack |
+| IP Cameras | RTSP/HTTP streams | 4 cameras tested |
+| Zigbee Coordinator | CC2531 or equivalent | Zigbee2MQTT interface |
+| MQTT Broker | MQTT v3.1+ | 50 sensors tested |
+
+Full compatibility details:  
+������ `docs/system-architecture.md`
+
+---
+
+## 3. Reproducibility and Experimental Setup
+
+The results reported in the article were obtained with:
+
+- **4 IP cameras** (1080p, synchronized start/stop)
+- **50 Zigbee sensors**
+- **Local MQTT broker + Zigbee2MQTT**
+- Standard LAN deployment in a living-lab room
+
+Environmental parameters required for reproducibility:  
+������ `docs/setup.md`  
+������ `docs/technical.md`
+
+---
+
+## 4. Installation
+
 ```bash
-git clone <repository-url>
-cd <directory-name>
-```
-
-2. Install dependencies:
-```bash
+git clone https://github.com/yulithalta/lisa-research-platform.git
+cd lisa-research-platform
 npm install
-```
-
-## Configuration
-
-1. Create a `.env` file in the project root based on `.env.example`:
-```bash
 cp .env.example .env
-```
+````
 
-2. Edit the `.env` file and configure the environment variables:
-```env
-# Generate a secure random value for SESSION_SECRET
-# You can use: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
-SESSION_SECRET=your_secret_here
+Configure `.env` minimally:
 
-# Server configuration
-NODE_ENV=development
-PORT=5000
+| Variable               | Description                |
+| ---------------------- | -------------------------- |
+| PORT                   | Default HTTP port: 5000    |
+| MQTT_BROKER            | e.g. mqtt://localhost:1883 |
+| ZIGBEE2MQTT_BASE_TOPIC | e.g. zigbee2mqtt           |
 
-# MQTT Broker configuration
-MQTT_BROKER=mqtt://your-mqtt-broker-ip
-MQTT_PORT=1883
-MQTT_USERNAME=your_username  # Optional
-MQTT_PASSWORD=your_password  # Optional
-MQTT_USE_TLS=false          # Set to true for secure connections
+Prepare local recordings directory:
 
-# Zigbee2MQTT topic configuration
-ZIGBEE2MQTT_BASE_TOPIC=zigbee2mqtt
-```
-
-3. Configure camera storage directories:
 ```bash
 mkdir -p recordings/sessions
 ```
 
-4. Make sure all dependencies are correctly installed:
+Full configuration guidance:
+������ `docs/config-guide.md`
+
+---
+
+## 5. Optional Docker Infrastructure
+
+Includes:
+
+* Zigbee2MQTT
+* Dozzle (container/log monitoring)
+* dashdot (system telemetry)
+
+Start development environment:
+
 ```bash
-npm install
+./run-lisa.sh dev
 ```
 
-## Running the Application
+Stop everything:
 
-To start the development server:
+```bash
+./run-lisa.sh down
+```
+
+Component configuration:
+������ `infrastructure/README.md`
+������ `docs/TICK_STACK.md` (experimental telemetry)
+
+Zigbee adapter presence is validated automatically; absence does not stop execution.
+
+---
+
+## 6. Development Execution
+
+### Live development (frontend + backend + WebSockets)
 
 ```bash
 npm run dev
 ```
 
-The server will be available at `http://localhost:5000` or the configured PORT environment variable.
-
-To build and start the production server:
+### Production build
 
 ```bash
 npm run build
 npm start
 ```
 
-For development purposes, the application automatically connects to configured MQTT brokers and scans for available IP cameras.
+Web UI:
 
-## Project Structure
+> [http://localhost:5000](http://localhost:5000)
 
-```
-├── client/                    # Frontend (React + TypeScript)
-│   ├── src/
-│   │   ├── components/        # React components
-│   │   │   ├── camera-card.tsx          # Individual camera component
-│   │   │   ├── camera-grid.tsx          # Grid layout for cameras
-│   │   │   ├── sensor-card.tsx          # Individual sensor component
-│   │   │   └── ui/                      # Shadcn UI components
-│   │   ├── hooks/            # Custom hooks
-│   │   │   ├── use-simple-mqtt.tsx      # MQTT connection hook
-│   │   │   └── use-toast.tsx            # Toast notifications
-│   │   ├── lib/              # Utilities and configuration
-│   │   │   ├── services/logger.ts       # Centralized logging service
-│   │   │   └── queryClient.ts           # TanStack Query setup
-│   │   └── pages/            # Application pages
-│   │       ├── cameras-page.tsx         # Camera management
-│   │       ├── sessions-page.tsx        # Session recording and history
-│   │       ├── device-management-page.tsx # Device configuration
-│   │       └── live-monitoring-page.tsx # Real-time monitoring
-├── server/                    # Backend (Express + TypeScript)
-│   ├── auth.ts                # Authentication configuration
-│   ├── routes.ts              # API routes
-│   ├── storage.ts             # Storage layer
-│   ├── mqtt-client.ts         # MQTT client integration
-│   └── vite.ts                # Vite configuration
-├── shared/                    # Shared code
-│   └── schema.ts              # Schemas and types
-├── recordings/                # Recording storage
-│   └── sessions/              # Organized by session
-└── data/                      # Application data storage
-    └── user_*/                # User-specific data
-```
+---
 
-## Key Features
+## 7. Data Handling
 
-### Session Management
-- Create monitoring sessions with synchronized camera recording and sensor data capture
-- Comprehensive session configuration with laboratory title, description, researcher name, and participant tags
-- Real-time monitoring with elapsed time tracking
-- Advanced session history with search and filter capabilities
-- Data visualization for recordings and sensor measurements
+| File Type | Format     | Location                    |
+| --------- | ---------- | --------------------------- |
+| Videos    | MP4        | `recordings/sessions/<id>/` |
+| Sensors   | JSON + CSV | `data/user_<id>/sessions`   |
+| Metadata  | JSON       | Included in exports         |
 
-### Camera Management
-- Add, verify, and configure IP cameras with RTSP/HTTP support
-- Camera health monitoring and status verification
-- Flexible stream configuration (resolution, FPS, format)
-- Centralized recording control
-- Automatic verification of camera availability
+ZIP export packages preserve:
 
-### MQTT/Zigbee2MQTT Integration
-- Connect to any MQTT broker (local or remote)
-- Auto-discover and monitor Zigbee sensors via Zigbee2MQTT
-- Support for various sensor types (temperature, humidity, motion, etc.)
-- Real-time data visualization
-- Comprehensive sensor data logging and export
+✅ timestamps
+✅ device metadata
+✅ file integrity for replication
 
-### Data Export
-- Export recordings and sensor data in ZIP format
-- Export sensor data as JSON or CSV
-- Synchronized timestamp correlation between video and sensor data
-- Customizable data export options
-- Comprehensive session metadata inclusion
+Data structure specification:
+������ `docs/technical.md` → *"Data Storage Model"*
 
-### Real-time Updates
-- WebSocket-based real-time communication for status updates
-- Live monitoring of active sessions
-- Camera and sensor status notifications
-- Session progress tracking
+---
 
-## API Endpoints
+## 8. Software Architecture
 
-### Authentication
-- `POST /api/register` - Register a new user
-- `POST /api/login` - User login
-- `POST /api/logout` - User logout
-- `GET /api/user` - Get current user
-- `PATCH /api/user/preferences` - Update user preferences
+* Backend: Express + WebSockets
+* Frontend: React + TypeScript + Vite
+* Data validation: Zod
+* State management: TanStack Query
+* Streaming: FFmpeg (via RTSP)
+* Messaging: MQTT.js
 
-### Cameras
-- `GET /api/cameras` - Get list of cameras
-- `POST /api/cameras` - Add new camera
-- `GET /api/cameras/:id` - Get camera details
-- `PATCH /api/cameras/:id` - Update existing camera
-- `DELETE /api/cameras/:id` - Delete camera
-- `POST /api/cameras/:id/verify` - Verify camera availability
-- `POST /api/cameras/:id/start` - Start camera recording
-- `POST /api/cameras/:id/stop` - Stop camera recording
+Diagram and data flows:
+������ `docs/API_ARCHITECTURE.md`
+������ `docs/system-architecture-2.0.svg`
 
-### Sensors
-- `GET /api/sensors` - Get list of all sensors
-- `GET /api/sensors/:id` - Get sensor details
-- `POST /api/sensors/scan` - Scan for available sensors
+---
 
-### Sessions
-- `GET /api/sessions` - Get list of all sessions
-- `GET /api/sessions/:id` - Get session details
-- `POST /api/sessions` - Create new session
-- `DELETE /api/sessions/:id` - Delete session
-- `GET /api/sessions/:id/download` - Download session data as ZIP
-- `GET /api/sessions/:id/export-csv` - Export sensor data as CSV
-- `GET /api/sessions/search` - Search sessions with filters (date, tags, etc.)
+## 9. Performance and Limitations
 
-### MQTT
-- `GET /api/mqtt/status` - Get MQTT connection status
-- `POST /api/mqtt/connect` - Connect to MQTT broker
-- `POST /api/mqtt/disconnect` - Disconnect from MQTT broker
+Validated performance for v3.0.0:
 
-### WebSocket Events
-- `/ws` - WebSocket connection endpoint
-- Events:
-  - `camera:status` - Camera status updates
-  - `sensor:data` - Real-time sensor data
-  - `session:status` - Session status updates
+| Test Condition       | Result                     |
+| -------------------- | -------------------------- |
+| Simultaneous cameras | 4 stable 1080p streams     |
+| Zigbee sensor load   | 50 sensors, <120ms latency |
+| Storage backend      | Local filesystem only      |
 
-## Development
+Current limitations:
 
-For local development, the project utilizes:
-- Vite for frontend development with hot module replacement
-- Express for the backend API server
-- TypeScript for type safety across the entire stack
-- WebSockets for real-time updates and communication
-- Zod for data validation and schema definitions
-- TanStack Query for state management and caching
-- Shadcn UI for consistent and accessible interface components
-- Chart.js for data visualization and metrics
-- MQTT.js for MQTT broker communication
+* No cloud storage or analytics
+* No automatic camera discovery
+* Evaluation performed on single-room deployments
 
-### Environment Variables
-The project uses environment variables for configuration. Ensure you:
-1. Never commit the `.env` file to version control
-2. Keep `.env.example` updated with all necessary variables
-3. Generate a secure and unique SESSION_SECRET for each instance
-4. Configure all MQTT-related variables correctly for your broker
+---
 
-## User Guide
+## 10. Ethical and Data Protection Considerations
 
-### Getting Started
-1. Configure your MQTT broker settings in the `.env` file
-2. Start the application with `npm run dev`
-3. Access the web interface at `http://localhost:5000`
-4. Navigate to Device Management to add cameras and verify sensors
-5. Create a new monitoring session from the Sessions page
+Research involving human subjects **must** adhere to:
 
-### Creating a Monitoring Session
-1. Navigate to the "Sessions" page
-2. Click "New Monitoring Session"
-3. Fill in session details:
-   - Laboratory Title
-   - Session Description
-   - Researcher Name
-   - Participant Tags (comma-separated)
-4. Select cameras and sensors to monitor
-5. Click "Start Session" to begin recording
-6. Monitor the session in real-time on the Live Monitoring page
-7. Stop the session when complete
+* GDPR, HIPAA or equivalent local regulations
+* Institutional Review Board / Ethics Committee approvals
 
-### Searching and Exporting Sessions
-1. Navigate to the "Sessions" page
-2. Use the search bar to filter by title, description, or participant
-3. Use date range filters to narrow results by time period
-4. Click on a session to view details
-5. Download the session data as a ZIP file
-6. Export sensor data as CSV for analysis
+Built-in features supporting compliance:
 
-## Accessibility Features
+* Local-only persistence by default
+* Removable personal identifiers in exports
+* Explicit session metadata handling
 
-- High contrast UI elements for better visibility
-- Keyboard navigable interface
-- Screen reader compatible components
-- Color-coding with alternative indicators
-- Responsive design for various device sizes
-- Clear error states and notifications
+Complete assessment:
+������ `docs/gdpr-compliance.md`
+������ `docs/objectives-compliance.md`
 
-## Contribution
+---
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## 11. Citation
 
-## Upcoming Features
+If using LISA for scientific publications:
 
-- [ ] Advanced scheduled recording system
-- [ ] Real-time video analysis capabilities
-- [ ] Notification and alert system
-- [ ] Enhanced data visualization and charting
-- [ ] Multi-language support
-- [ ] Device tagging system for better organization
-- [ ] Expanded sensor integration support (including additional protocol support)
-- [ ] Custom export format templates
+> Bermúdez et al.,
+> *LISA: Living-lab Integrated Sensing Architecture for synchronized acquisition of video and sensor data in research environments.*
+> SoftwareX, 2025. *(Under review)*
+
+BibTeX will be provided upon acceptance.
+
+---
+
+## 12. License
+
+Released under MIT License.
+
+The authors provide no warranty and accept no liability for medical or safety-critical use.
+
+---
