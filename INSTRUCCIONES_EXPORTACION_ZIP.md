@@ -1,71 +1,79 @@
-# Instrucciones para la Exportación de Sesiones
+# Session Export Instructions
 
-## ¿Qué es la exportación de sesiones?
+## What is session export?
 
-La exportación de sesiones permite empaquetar todos los datos relacionados con una sesión específica en un único archivo ZIP, incluyendo grabaciones de vídeo y datos de sensores. Esta funcionalidad es crucial para preservar y compartir los datos recolectados durante las sesiones de monitoreo.
+Session export allows packaging all data related to a specific monitoring session into a single ZIP file, including video recordings and sensor data. This functionality is essential for preserving and sharing collected data for further analysis or archival.
 
-## ¿Qué contiene el archivo ZIP?
+## What does the ZIP file include?
 
-Cada archivo ZIP de sesión contiene:
+Each session ZIP file contains:
 
-1. **Grabaciones de video** - Todos los archivos MP4 asociados a la sesión
-2. **Datos de sensores** - Archivos JSON y CSV con datos de sensores
-3. **Metadatos de la sesión** - Información sobre la sesión, fecha, y descripción
-4. **Archivo README.txt** - Explicación detallada del contenido del ZIP
+1. **Video recordings** — All MP4 files associated with the session
+2. **Sensor data** — JSON and CSV files with sensor information
+3. **Session metadata** — Session description, date/time, and context details
+4. **README.txt file** — Detailed explanation of the ZIP content and structure
 
-## Cómo se identifican las grabaciones por sesión
+## How are recordings linked to a session?
 
-El sistema busca grabaciones relacionadas con una sesión de varias formas:
+The system detects recordings associated with a session based on two criteria:
 
-1. **Por prefijo de cámara y ID de sesión**: Los archivos MP4 que contienen el ID de la sesión en su nombre, como:
+1. **Camera prefix + session ID in the filename**
+   Examples:
    - `cam1_session42_20250502.mp4`
    - `c32_livinglab_s42_video.mp4`
    - `cam2-session42-20250502.mp4`
 
-2. **Por ubicación**: Archivos MP4 que se encuentran en el directorio específico de la sesión:
-   - `/sessions/Session42/recordings/cualquier_grabacion.mp4`
+2. **Directory location**
+   MP4 files stored inside the session-specific directory are automatically included:
+   - `/sessions/Session42/recordings/any_recording.mp4`
 
-## Estructura del archivo ZIP
+## ZIP file structure
 
-La estructura interna del archivo ZIP es la siguiente:
+The internal structure of the exported ZIP file is as follows:
 
 ```
 /
-├── README.txt                        # Información sobre la sesión y contenido
-├── recordings/                      # Directorio con grabaciones de vídeo
-│   ├── cam1_session42_20250502.mp4   # Grabaciones identificadas por ID de sesión
-│   ├── cam2-session42-20250502.mp4
-│   ├── c32_livinglab_s42_video.mp4
-│   └── ...
-├── data/                           # Directorio con datos y metadatos
-│   ├── zigbee-data.json            # Datos unificados en formato JSON
-│   ├── zigbee-sensors.csv           # Datos unificados en formato CSV
-│   ├── devices.json                # Información sobre dispositivos
-│   ├── session_metadata.json        # Metadatos de la sesión
-│   └── sensor_data/                # Directorio con datos específicos de sensores
-│       ├── sensor_readings.json     # Lecturas de sensores en formato JSON
-│       └── sensor_readings.csv      # Lecturas de sensores en formato CSV
+├── README.txt                        # Details about the session and contents
+├── recordings/                       # Directory containing video files
+│   ├── cam1_session42_20250502.mp4   # Recordings identified by session ID
+│   ├── cam2-session42-20250502.mp4   
+│   ├── c32_livinglab_s42_video.mp4   
+│   └── ...                           
+├── data/                             # Directory containing data and metadata
+│   ├── zigbee-data.json              # Unified Zigbee data in JSON format
+│   ├── zigbee-sensors.csv            # Unified Zigbee data in CSV format
+│   ├── devices.json                  # Information about devices involved
+│   ├── session_metadata.json         # High-level session metadata
+│   └── sensor_data/                  # Sensor-specific raw data
+│       ├── sensor_readings.json      # Sensor readings in JSON format
+│       └── sensor_readings.csv       # Sensor readings in CSV format
 └── ...
 ```
 
-## Recomendaciones para nombrar grabaciones
 
-Para asegurar que las grabaciones se asocien correctamente con las sesiones, se recomienda:
+## Recommendations for naming recordings
 
-1. **Uso del prefijo de cámara**: Configure el prefijo en la configuración de cada cámara
-2. **Incluir el ID de sesión** en el nombre del archivo usando alguno de estos formatos:
-   - `prefijo_session{ID}_fecha.mp4`
-   - `prefijo-session{ID}-fecha.mp4`
-   - `prefijo_s{ID}_fecha.mp4`
+To ensure recordings are properly linked to each session:
 
-## Resoluciones de problemas comunes
+1. **Use the camera prefix** configured in each camera device
+2. **Include the session ID** in the file name using one of the supported formats:
+   - `prefix_session{ID}_date.mp4`
+   - `prefix-session{ID}-date.mp4`
+   - `prefix_s{ID}_date.mp4`
 
-1. **Grabaciones no incluidas en el ZIP**: Verificar que el nombre del archivo siga las convenciones mencionadas e incluya el ID de sesión
-2. **ZIP sin datos de sensores**: Asegurarse de que los archivos `zigbee-data.json` y `zigbee-sensors.csv` existen en el directorio `data/`
-3. **Archivo ZIP vacío o solo con README**: Verificar que las carpetas `/recordings` y `/sessions/Session{ID}` existen y contienen archivos
+## Troubleshooting common issues
 
-## Notas adicionales
+1. **Recordings not included in the ZIP**  
+   → Verify that the filename includes the session ID and follows the naming conventions
 
-- La exportación crea un archivo temporal que se elimina automáticamente después de ser descargado
-- Para sesiones con muchos archivos, la generación del ZIP puede tardar varios minutos
-- El sistema excluye automáticamente grabaciones que no están relacionadas con la sesión seleccionada
+2. **ZIP does not include sensor data**  
+   → Ensure `zigbee-data.json` and `zigbee-sensors.csv` exist inside the `data/` directory
+
+3. **ZIP is nearly empty or only contains README**  
+   → Confirm that `/recordings` and `/sessions/Session{ID}` directories exist and contain valid files
+
+## Additional notes
+
+- The export process generates a temporary file that is automatically removed after download
+- ZIP generation may take several minutes for large sessions with multiple recordings
+- The system automatically excludes unrelated recordings from the export
