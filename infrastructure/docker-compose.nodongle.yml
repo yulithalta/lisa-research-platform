@@ -1,0 +1,5 @@
+services:
+  zigbee2mqtt:
+    # Override to avoid failing when the USB adapter isn't present
+    devices: []         # remove device mapping
+

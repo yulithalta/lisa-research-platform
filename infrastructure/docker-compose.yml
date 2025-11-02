@@ -1,0 +1,42 @@
+version: "4.0"
+
+services:
+  zigbee2mqtt:
+    image: ghcr.io/koenkk/zigbee2mqtt:latest
+    container_name: zigbee2mqtt
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ:-Europe/Madrid}
+    ports:
+      - "8080:8080"            # Zigbee2MQTT frontend
+    volumes:
+      - ${Z2M_DATA:-./z2m-data}:/app/data
+      - /run/udev:/run/udev:ro
+    devices:
+      # Ajusta a tu adaptador real
+      - ${Z2M_ADAPTER:-/dev/serial/by-id/usb-Texas_Instruments_TI_CC2531_USB_CDC___0X00124B0018ED3DDF-if00}:/dev/ttyACM0
+
+  dozzle:
+    image: amir20/dozzle:latest
+    container_name: dozzle
+    restart: unless-stopped
+    ports:
+      - "9090:8080"            # Dozzle UI
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DOZZLE_BASE=/          # optional
+      # Recomendado: proteger con auth simple
+      #- DOZZLE_AUTH_PROVIDER=simple
+      #- DOZZLE_SIMPLE_USERNAME=${DOZZLE_USER:-admin}
+      #- DOZZLE_SIMPLE_PASSWORD=${DOZZLE_PASS:-change-me}
+
+  dashdot:
+    image: mauricenino/dashdot:latest
+    container_name: dashdot
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - "4000:3001"            # Host 3001 → UI
+    volumes:
+      - /:/mnt/host:ro
