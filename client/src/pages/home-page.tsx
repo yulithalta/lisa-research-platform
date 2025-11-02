@@ -346,57 +346,6 @@ export default function HomePage() {
           </CardContent>
         </Card>
 
-        {/* System Usage Graph */}
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle>Engagement Time</CardTitle>
-            <Select
-              value={dateRange.toString()}
-              onValueChange={(value) => setDateRange(parseInt(value))}
-            >
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Select period" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="7">Last 7 days</SelectItem>
-                <SelectItem value="15">Last 15 days</SelectItem>
-                <SelectItem value="30">Last 30 days</SelectItem>
-              </SelectContent>
-            </Select>
-          </CardHeader>
-          <CardContent className="h-[300px]">
-            <Line 
-              data={filteredSystemUsage} 
-              options={{
-                responsive: true,
-                maintainAspectRatio: false,
-                interaction: {
-                  mode: 'index',
-                  intersect: false,
-                },
-                scales: {
-                  y: {
-                    beginAtZero: true,
-                    max: 24,
-                    title: {
-                      display: true,
-                      text: 'Hours'
-                    }
-                  }
-                },
-                plugins: {
-                  tooltip: {
-                    callbacks: {
-                      label: function(context) {
-                        return `${context.dataset.label}: ${context.parsed.y.toFixed(1)}h`;
-                      }
-                    }
-                  }
-                }
-              }} 
-            />
-          </CardContent>
-        </Card>
 
         {/* System Monitor and Service Status */}
         <div className="grid gap-8 grid-cols-1 lg:grid-cols-2">
