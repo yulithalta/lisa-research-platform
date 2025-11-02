@@ -204,7 +204,7 @@ Assessment and guidelines:
 
 If using LISA for scientific publications:
 
-Bermúdez et al.,
+Altamirano-Flores et al.,
 “LISA: Living-lab Integrated Sensing Architecture for synchronized acquisition of video and sensor data in research environments.”
 SoftwareX, 2025. (Under review)
 
