@@ -19,7 +19,7 @@
 
 ## About the Project
 
-EnterpriseWorkflow is an advanced system for managing synchronized recordings from IP cameras and capturing data from MQTT/Zigbee2MQTT sensors. It is designed for professional environments requiring **high precision and reliability**, such as clinical research and real-time monitoring.
+LISA is an advanced system for managing synchronized recordings from IP cameras and capturing data from MQTT/Zigbee2MQTT sensors. It is designed for professional environments requiring **high precision and reliability**, such as clinical research and real-time monitoring.
 
 ### Key Features
 
@@ -33,6 +33,6 @@ EnterpriseWorkflow is an advanced system for managing synchronized recordings fr
 
 ### Development Team
 
-Developed by the EnterpriseWorkflow team.
+Developed by the LISA team.
 
 © 2025 LISA – All rights reserved
