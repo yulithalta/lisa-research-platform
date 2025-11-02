@@ -1,84 +1,101 @@
-# Preguntas Frecuentes (FAQ)
+# **Frequently Asked Questions (FAQ)**
 
-## Generales
+## **General**
 
-### ¿Qué es EnterpriseWorkflow?
-EnterpriseWorkflow es un sistema avanzado para la gestión de grabaciones sincronizadas de cámaras IP y captura de datos de sensores MQTT/Zigbee2MQTT. Está diseñado para entornos profesionales que requieren máxima precisión y fiabilidad, como investigación clínica y monitorización en tiempo real.
+### **What is EnterpriseWorkflow?**
+EnterpriseWorkflow is an advanced system for managing synchronized recordings from IP cameras and capturing data from MQTT/Zigbee2MQTT sensors.  
+It is designed for professional environments that require maximum precision and reliability, such as clinical research and real-time monitoring.
 
-### ¿Cuáles son los requisitos mínimos del sistema?
-- **Hardware**: CPU 2 núcleos, 4GB RAM, 20GB almacenamiento
-- **Software**: Navegador moderno (Chrome, Firefox, Edge)
-- **Red**: Conectividad a las cámaras IP y al broker MQTT
+### **What are the minimum system requirements?**
+- **Hardware:** 2-core CPU, 4GB RAM, 20GB storage  
+- **Software:** Modern browser (Chrome, Firefox, Edge)  
+- **Network:** Connectivity to IP cameras and MQTT broker  
 
-### ¿Cómo se gestionan las actualizaciones del sistema?
-Las actualizaciones son distribuidas por el equipo de desarrollo. La versión actual del sistema puede verse en el pie de página de la aplicación o en el archivo VERSION.md.
+### **How are system updates managed?**
+Updates are distributed by the development team.  
+The current system version can be found in the application footer or in the `VERSION.md` file.
 
-## Configuración
+---
 
-### ¿Cómo configuro la conexión al broker MQTT?
-Edite el archivo `.env` con los valores adecuados para `VITE_MQTT_HOST` y `VITE_MQTT_PORT`. Si su broker requiere autenticación, incluya también `VITE_MQTT_USERNAME` y `VITE_MQTT_PASSWORD`.
+## **Configuration**
 
-### ¿Por qué no puedo conectar con mi broker MQTT?
-Verifique que:
-1. El broker tiene habilitado el soporte para WebSockets
-2. El puerto WebSocket (generalmente 9001) está abierto y accesible
-3. Las credenciales son correctas (si aplica)
-4. No hay restricciones de red o firewalls bloqueando la conexión
+### **How do I configure the connection to the MQTT broker?**
+Edit the `.env` file with the appropriate values for `VITE_MQTT_HOST` and `VITE_MQTT_PORT`.  
+If your broker requires authentication, also include `VITE_MQTT_USERNAME` and `VITE_MQTT_PASSWORD`.
 
-### ¿Cómo añado una cámara que no está en la lista predeterminada?
-En la sección "Gestión de Dispositivos", pestaña "Gestión de Cámaras", use el botón "Agregar Cámara" e introduzca manualmente los detalles de conexión RTSP de su cámara.
+### **Why can’t I connect to my MQTT broker?**
+Check that:
+1. The broker has WebSocket support enabled  
+2. The WebSocket port (usually 9001) is open and accessible  
+3. The credentials are correct (if applicable)  
+4. There are no network restrictions or firewalls blocking the connection  
 
-## Cámaras y Sensores
+### **How do I add a camera that isn’t on the default list?**
+In the **Device Management** section, under the **Camera Management** tab, use the **Add Camera** button and manually enter your camera’s RTSP connection details.
 
-### ¿Qué formatos de cámara son compatibles?
-Cualquier cámara que proporcione una URL RTSP válida es compatible. El sistema ha sido probado con fabricantes como Hikvision, Dahua, Axis y cámaras genéricas IP.
+---
 
-### ¿El sistema puede detectar automáticamente sensores Zigbee?
-Sí, el sistema se suscribe automáticamente a los topics relevantes en el broker MQTT y detecta los dispositivos Zigbee registrados a través de Zigbee2MQTT.
+## **Cameras and Sensors**
 
-### ¿Puedo añadir sensores con topics personalizados?
-Sí, el sistema permite suscribirse a topics adicionales más allá de los predeterminados. Esto puede configurarse en la sección de "Gestión de Sensores".
+### **What camera formats are supported?**
+Any camera providing a valid RTSP URL is supported.  
+The system has been tested with brands such as Hikvision, Dahua, Axis, and generic IP cameras.
 
-### ¿Cuántos sensores puedo monitorizar simultáneamente?
-El sistema está diseñado para escalar desde 6 hasta 10,000 sensores sin degradación significativa del rendimiento.
+### **Can the system automatically detect Zigbee sensors?**
+Yes, the system automatically subscribes to the relevant topics on the MQTT broker and detects Zigbee devices registered through Zigbee2MQTT.
 
-## Grabaciones y Sesiones
+### **Can I add sensors with custom topics?**
+Yes, the system allows subscribing to additional topics beyond the default ones.  
+This can be configured in the **Sensor Management** section.
 
-### ¿Qué sucede si cierro el navegador durante una grabación?
-La grabación continuará en el servidor mientras la sesión esté activa. Sin embargo, se recomienda mantener el navegador abierto para monitorizar el estado.
+### **How many sensors can I monitor simultaneously?**
+The system is designed to scale from 6 up to 10,000 sensors without significant performance degradation.
 
-### ¿Qué contiene el archivo ZIP de una sesión?
-El archivo ZIP incluye:
-1. Todas las grabaciones de video en formato MP4
-2. Un archivo JSON consolidado con todos los datos de sensores
-3. Archivos individuales con datos de sensores como respaldo
-4. Metadatos de la sesión
+---
 
-### ¿Cómo soluciono el error "413 Payload Too Large"?
-Este error ha sido resuelto en la versión 2.5.16 mediante la optimización del payload de creación de sesiones. Si aún lo experimenta, verifique que está utilizando la última versión del sistema.
+## **Recordings and Sessions**
 
-### ¿Puedo descargar sólo los datos de sensores sin los videos?
-Actualmente, el sistema genera un único archivo ZIP con todos los datos. Una función para descargar selectivamente está planificada para futuras versiones.
+### **What happens if I close the browser during a recording?**
+The recording will continue on the server as long as the session remains active.  
+However, it is recommended to keep the browser open to monitor status.
 
-## Problemas Comunes
+### **What does the session ZIP file contain?**
+The ZIP file includes:
+1. All video recordings in MP4 format  
+2. A consolidated JSON file with all sensor data  
+3. Individual JSON files with sensor data as backup  
+4. Session metadata  
 
-### Los datos de sensores aparecen vacíos en la descarga
-Este problema fue resuelto en la versión 2.5.17 implementando un sistema dual de almacenamiento. Asegúrese de estar utilizando la última versión.
+### **How can I fix the “413 Payload Too Large” error?**
+This issue was resolved in version **2.5.16** through session payload optimization.  
+If you still experience it, make sure you are using the latest system version.
 
-### La página de monitoreo muestra "Error de conexión WebSocket"
-Verifique:
-1. Que el broker MQTT está en funcionamiento
-2. Que las variables de entorno `VITE_MQTT_HOST` y `VITE_MQTT_PORT` están correctamente configuradas
-3. Que el puerto WebSocket está abierto y accesible desde su red
+### **Can I download only the sensor data without videos?**
+Currently, the system generates a single ZIP file containing all data.  
+A selective download feature is planned for future releases.
 
-### Algunas cámaras aparecen como "Sin conexión"
-El sistema realiza una verificación básica mediante HTTP. Asegúrese de que:
-1. La cámara está encendida y conectada a la red
-2. La IP y credenciales son correctas
-3. La cámara responde a peticiones HTTP básicas
+---
 
-### El rendimiento se degrada con muchas cámaras
-Para optimizar el rendimiento:
-1. Ajuste la resolución de las cámaras a valores razonables (720p recomendado)
-2. Considere distribuir cámaras en múltiples instancias para grabaciones de gran escala
-3. Asegúrese de que el hardware del servidor cumple con los requisitos recomendados
+## **Common Issues**
+
+### **Sensor data appears empty in the download**
+This issue was resolved in version **2.5.17** with the implementation of a dual data storage system.  
+Ensure you are running the latest version.
+
+### **The monitoring page shows “WebSocket Connection Error”**
+Check that:
+1. The MQTT broker is running  
+2. `VITE_MQTT_HOST` and `VITE_MQTT_PORT` environment variables are correctly configured  
+3. The WebSocket port is open and accessible from your network  
+
+### **Some cameras show as “Offline”**
+The system performs a basic HTTP status check. Make sure that:
+1. The camera is powered on and connected to the network  
+2. The IP and credentials are correct  
+3. The camera responds to basic HTTP requests  
+
+### **Performance degrades with many cameras**
+To optimize performance:
+1. Set camera resolution to reasonable values (720p recommended)  
+2. Consider distributing cameras across multiple instances for large-scale recordings  
+3. Ensure the server hardware meets the recommended requirements  

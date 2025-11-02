@@ -1,16 +1,18 @@
-# Referencia de API
+# **API Reference**
 
-## Estructura Base
-- Endpoint Base: `/api`
-- Formato de respuesta: JSON
-- Autenticación: Basada en sesiones
+## **Base Structure**
+- **Base Endpoint:** `/api`  
+- **Response Format:** JSON  
+- **Authentication:** Session-based  
 
-## Endpoints de Cámaras
+---
 
-### GET `/api/cameras`
-Obtiene la lista de todas las cámaras configuradas.
+## **Camera Endpoints**
 
-**Respuesta:**
+### **GET** `/api/cameras`
+Retrieves the list of all configured cameras.
+
+**Response:**
 ```json
 [
   {
@@ -23,12 +25,14 @@ Obtiene la lista de todas las cámaras configuradas.
     "createdAt": "timestamp"
   }
 ]
-```
+````
 
-### POST `/api/cameras`
-Crea una nueva cámara en el sistema.
+### **POST** `/api/cameras`
 
-**Cuerpo de la solicitud:**
+Creates a new camera in the system.
+
+**Request Body:**
+
 ```json
 {
   "name": "string",
@@ -38,26 +42,34 @@ Crea una nueva cámara en el sistema.
 }
 ```
 
-### GET `/api/cameras/:id`
-Obtiene información detallada de una cámara específica.
+### **GET** `/api/cameras/:id`
 
-### PUT `/api/cameras/:id`
-Actualiza los datos de una cámara existente.
+Retrieves detailed information about a specific camera.
 
-### DELETE `/api/cameras/:id`
-Elimina una cámara del sistema.
+### **PUT** `/api/cameras/:id`
 
-## Endpoints de Sensores
+Updates data for an existing camera.
 
-### GET `/api/sensors`
-Obtiene la lista de todos los sensores MQTT/Zigbee2MQTT.
+### **DELETE** `/api/cameras/:id`
 
-**Parámetros de consulta:**
-- `page`: Número de página (default: 1)
-- `limit`: Límite de resultados por página (default: 20)
-- `filter`: Filtro por nombre o ID (opcional)
+Removes a camera from the system.
 
-**Respuesta:**
+---
+
+## **Sensor Endpoints**
+
+### **GET** `/api/sensors`
+
+Retrieves a list of all MQTT/Zigbee2MQTT sensors.
+
+**Query Parameters:**
+
+* `page`: Page number (default: 1)
+* `limit`: Number of results per page (default: 20)
+* `filter`: Filter by name or ID (optional)
+
+**Response:**
+
 ```json
 {
   "data": [
@@ -80,18 +92,24 @@ Obtiene la lista de todos los sensores MQTT/Zigbee2MQTT.
 }
 ```
 
-### GET `/api/sensors/:id`
-Obtiene información detallada de un sensor específico.
+### **GET** `/api/sensors/:id`
 
-### PUT `/api/sensors/:id`
-Actualiza los datos de un sensor existente.
+Retrieves detailed information about a specific sensor.
 
-## Endpoints de Sesiones
+### **PUT** `/api/sensors/:id`
 
-### GET `/api/sessions`
-Obtiene la lista de todas las sesiones de grabación.
+Updates data for an existing sensor.
 
-**Respuesta:**
+---
+
+## **Session Endpoints**
+
+### **GET** `/api/sessions`
+
+Retrieves a list of all recording sessions.
+
+**Response:**
+
 ```json
 [
   {
@@ -109,10 +127,12 @@ Obtiene la lista de todas las sesiones de grabación.
 ]
 ```
 
-### POST `/api/sessions`
-Crea una nueva sesión de grabación.
+### **POST** `/api/sessions`
 
-**Cuerpo de la solicitud:**
+Creates a new recording session.
+
+**Request Body:**
+
 ```json
 {
   "name": "string",
@@ -129,15 +149,18 @@ Crea una nueva sesión de grabación.
 }
 ```
 
-**Nota:** Se envía sólo los metadatos de los sensores para evitar problemas con payloads grandes (413 Payload Too Large).
+**Note:** Only sensor metadata is sent to avoid large payload issues (`413 Payload Too Large`).
 
-### GET `/api/sessions/:id`
-Obtiene información detallada de una sesión específica.
+### **GET** `/api/sessions/:id`
 
-### PUT `/api/sessions/:id/complete`
-Marca una sesión como completada.
+Retrieves detailed information about a specific session.
 
-**Respuesta:**
+### **PUT** `/api/sessions/:id/complete`
+
+Marks a session as completed.
+
+**Response:**
+
 ```json
 {
   "id": "string",
@@ -146,23 +169,30 @@ Marca una sesión como completada.
 }
 ```
 
-### GET `/api/sessions/:id/download`
-Descarga los datos completos de una sesión en formato ZIP.
+### **GET** `/api/sessions/:id/download`
 
-**Contenido del ZIP:**
-- Grabaciones de cámaras en formato MP4
-- Datos de sensores en formato JSON (consolidado e individuales)
-- Metadata de la sesión en formato JSON
+Downloads the full session data as a ZIP file.
 
-## Endpoints de Monitoreo en Tiempo Real
+**ZIP Contents:**
 
-### GET `/api/live/cameras/:id`
-Establece una conexión WebSocket para streaming de video en tiempo real.
+* Camera recordings in MP4 format
+* Sensor data in JSON format (both consolidated and individual)
+* Session metadata in JSON format
 
-### GET `/api/live/sensors`
-Establece una conexión WebSocket para recibir actualizaciones en tiempo real de los sensores.
+---
 
-**Formato de mensajes WebSocket:**
+## **Real-Time Monitoring Endpoints**
+
+### **GET** `/api/live/cameras/:id`
+
+Establishes a WebSocket connection for real-time video streaming.
+
+### **GET** `/api/live/sensors`
+
+Establishes a WebSocket connection to receive real-time sensor updates.
+
+**WebSocket Message Format:**
+
 ```json
 {
   "topic": "string",
@@ -171,13 +201,16 @@ Establece una conexión WebSocket para recibir actualizaciones en tiempo real de
 }
 ```
 
-## Códigos de Error
+---
 
-- `400`: Bad Request - Datos de entrada inválidos
-- `401`: Unauthorized - Autenticación requerida
-- `403`: Forbidden - Sin permisos suficientes
-- `404`: Not Found - Recurso no encontrado
-- `409`: Conflict - Conflicto con recursos existentes (ej: cámara duplicada)
-- `413`: Payload Too Large - Cuerpo de la solicitud demasiado grande
-- `500`: Internal Server Error - Error interno del servidor
-- `503`: Service Unavailable - Servicio no disponible temporalmente
+## **Error Codes**
+
+* `400`: **Bad Request** – Invalid input data
+* `401`: **Unauthorized** – Authentication required
+* `403`: **Forbidden** – Insufficient permissions
+* `404`: **Not Found** – Resource not found
+* `409`: **Conflict** – Resource conflict (e.g., duplicate camera)
+* `413`: **Payload Too Large** – Request body too large
+* `500`: **Internal Server Error** – Server-side error
+* `503`: **Service Unavailable** – Service temporarily unavailable
+

@@ -5,84 +5,84 @@ Project: Living-lab Integrated Sensing Architecture (LISA)
 Review Type: Internal Security Assessment  
 
 ## Overview
-Este documento contiene los resultados de la evaluación de seguridad del sistema LISA, realizada como parte del proceso de aseguramiento de calidad antes de su implementación en entornos clínicos reales.
+This document summarizes the security assessment of the LISA system, conducted as part of the quality assurance process before deployment in real clinical environments.
 
 ## Checklist Results
 
-### 1. Tipado Estricto en TypeScript
+### 1. Strict Typing in TypeScript
 
-| Criterio | Estado | Observaciones |
-|----------|--------|---------------|
-| ¿Se ha activado el modo strict en el archivo tsconfig.json? | ✅ OK | El modo strict está activado correctamente |
-| ¿Se usa unknown en lugar de any para tipos desconocidos? | ✅ OK | Se utiliza en la mayoría de los casos, con excepciones documentadas |
-| ¿No se usan conversiones forzadas con as sin validación previa? | ✅ OK | Las conversiones están precedidas por validación |
+| Criteria | Status | Notes |
+|----------|--------|-------|
+| Is strict mode enabled in tsconfig.json? | ✅ OK | Strict mode is correctly enabled |
+| Is `unknown` used instead of `any` for unknown types? | ✅ OK | Used in most cases with documented exceptions |
+| No forced type assertions (`as`) without prior validation? | ✅ OK | All assertions are preceded by validation |
 
-### 2. Validación de Datos en Tiempo de Ejecución
+### 2. Runtime Data Validation
 
-| Criterio | Estado | Observaciones |
-|----------|--------|---------------|
-| ¿Se están utilizando librerías como zod, yup o io-ts para validar los datos entrantes? | ✅ OK | Se utiliza zod para validación en backend y frontend |
-| ¿Se valida correctamente los datos antes de ser procesados? | ✅ OK | Implementado en rutas de API y formularios |
+| Criteria | Status | Notes |
+|----------|--------|-------|
+| Are libraries like `zod`, `yup`, or `io-ts` used for input validation? | ✅ OK | `zod` is used in backend and frontend |
+| Are incoming data validated before processing? | ✅ OK | Applied in API routes and forms |
 
-### 3. Seguridad en API (Node.js + Express)
+### 3. API Security (Node.js + Express)
 
-| Criterio | Estado | Observaciones |
-|----------|--------|---------------|
-| ¿Se han configurado correctamente los headers de seguridad con Helmet? | ✅ OK | Implementado en el servidor express |
-| ¿Se ha configurado CORS de manera estricta? | ✅ OK | Configurado para funcionar solo con orígenes autorizados |
-| ¿Se está utilizando un rate limiter adecuado? | ✅ OK | Implementado para prevenir ataques DDoS |
-| ¿Se están sanitizando los inputs del cliente? | ✅ OK | Implementado para prevenir XSS y SQL Injection |
+| Criteria | Status | Notes |
+|----------|--------|-------|
+| Are security headers configured with Helmet? | ✅ OK | Implemented on Express server |
+| Is CORS strictly configured? | ✅ OK | Only authorized origins allowed |
+| Is an appropriate rate limiter used? | ✅ OK | Prevents DDoS attacks |
+| Are client inputs sanitized? | ✅ OK | Prevents XSS and SQL injection |
 
-### 4. Uso de DTOs (Data Transfer Objects)
+### 4. Use of DTOs (Data Transfer Objects)
 
-| Criterio | Estado | Observaciones |
-|----------|--------|---------------|
-| ¿Están definidos DTOs para la entrada y salida de datos de la API? | ✅ OK | Implementado en shared/schema.ts |
-| ¿Se usan interfaces o clases para representar los datos? | ✅ OK | Interfaces bien definidas para todos los modelos |
+| Criteria | Status | Notes |
+|----------|--------|-------|
+| Are DTOs defined for API input/output? | ✅ OK | Implemented in `shared/schema.ts` |
+| Are interfaces or classes used to represent data? | ✅ OK | All models have well-defined interfaces |
 
-### 5. Tipado en React
+### 5. React Typing
 
-| Criterio | Estado | Observaciones |
-|----------|--------|---------------|
-| ¿Todos los componentes de React tienen tipos explícitos? | ✅ OK | Props, state y context están correctamente tipados |
-| ¿Se utiliza React.FC<Props> o function Component({ prop1 }: Props)? | ✅ OK | Consistente en todos los componentes |
+| Criteria | Status | Notes |
+|----------|--------|-------|
+| Are all React components explicitly typed? | ✅ OK | Props, state, and context fully typed |
+| Is `React.FC<Props>` or `function Component({ prop1 }: Props)` used consistently? | ✅ OK | Consistent across all components |
 
-### 6. Código Defensivo
+### 6. Defensive Coding
 
-| Criterio | Estado | Observaciones |
-|----------|--------|---------------|
-| ¿Se están lanzando errores o excepciones claras? | ✅ OK | Mensajes de error descriptivos |
-| ¿Se está utilizando correctamente el manejo de excepciones? | ✅ OK | Try/catch en operaciones críticas |
+| Criteria | Status | Notes |
+|----------|--------|-------|
+| Are clear errors/exceptions thrown? | ✅ OK | Descriptive error messages |
+| Is exception handling correctly applied? | ✅ OK | Try/catch in critical operations |
 
-### 7. Pruebas (Testing)
+### 7. Testing
 
-| Criterio | Estado | Observaciones |
-|----------|--------|---------------|
-| ¿Se están escribiendo pruebas unitarias? | ✅ OK | Cobertura adecuada para componentes críticos |
-| ¿Se están ejecutando pruebas de integración? | ✅ OK | Implementado para endpoints principales |
+| Criteria | Status | Notes |
+|----------|--------|-------|
+| Are unit tests written? | ✅ OK | Adequate coverage for critical components |
+| Are integration tests executed? | ✅ OK | Applied to main API endpoints |
 
-### 8. Otros Comprobantes de Seguridad y Buenas Prácticas
+### 8. Additional Security Practices
 
-| Criterio | Estado | Observaciones |
-|----------|--------|---------------|
-| ¿Se está usando HTTPS de manera obligatoria? | ✅ OK | Todas las comunicaciones son seguras |
-| ¿Se realizan auditorías de seguridad de código? | ✅ OK | Se utiliza SonarQube para análisis continuo |
+| Criteria | Status | Notes |
+|----------|--------|-------|
+| Is HTTPS enforced? | ✅ OK | All communications are secure |
+| Are code security audits conducted? | ✅ OK | SonarQube used for continuous analysis |
 
-## Observaciones Adicionales
+## Additional Observations
 
-- La aplicación ha sido migrada exitosamente a un sistema de almacenamiento basado en archivos, eliminando dependencias de bases de datos.
-- La implementación actual prioriza la resiliencia y captura fiable de datos en entornos médicos.
-- Los métodos de captura de datos de sensores MQTT han sido optimizados para garantizar consistencia.
-- El sistema de verificación de cámaras ha sido simplificado a verificaciones de ping para maximizar la fiabilidad.
-- La arquitectura actual permite una escalabilidad de 6 a 10,000 sensores según requerimientos.
+- Migrated to a file-based storage system, removing database dependencies.
+- Implementation prioritizes resilience and reliable data capture in medical environments.
+- MQTT sensor data capture optimized for consistency.
+- Camera verification simplified to ping checks for maximum reliability.
+- Architecture supports scalability from 6 to 10,000 sensors as needed.
 
-## Recomendaciones
+## Recommendations
 
-1. Continuar monitorizando la fiabilidad de las conexiones MQTT en producción
-2. Implementar pruebas de rendimiento específicas para escenarios con alto volumen de sensores
-3. Documentar cualquier error de tipo (TypeScript) pendiente y planificar su resolución
-4. Considerar la implementación de un sistema de backup automático para archivos de sesión críticos
+1. Continue monitoring MQTT connection reliability in production.
+2. Conduct performance tests for high sensor-volume scenarios.
+3. Document any pending TypeScript type errors and plan resolution.
+4. Consider implementing an automatic backup system for critical session files.
 
-## Conclusión
+## Conclusion
 
-El sistema LISA cumple con los requisitos de seguridad establecidos y está preparado para su implementación en entornos clínicos reales, con las consideraciones mencionadas en las recomendaciones.
+The LISA system meets established security requirements and is ready for deployment in real clinical environments, with considerations as noted in the recommendations.

@@ -1,43 +1,55 @@
-# Documentación de API
+# **API Documentation**
 
-## Endpoints
+## **Endpoints**
 
-### Autenticación
+### **Authentication**
 ```
+
 POST /api/login
 POST /api/register
 POST /api/logout
+
 ```
 
-### Cámaras
+### **Cameras**
 ```
+
 GET /api/cameras
 POST /api/cameras
 GET /api/cameras/:id
 DELETE /api/cameras/:id
+
 ```
 
-### Grabaciones
+### **Recordings**
 ```
+
 GET /api/recordings
 POST /api/recordings
 GET /api/recordings/:id
 DELETE /api/recordings/:id
 GET /api/recordings/count
+
 ```
 
-### WebSocket
+### **WebSocket**
 ```
+
 WS /ws
-- Eventos:
-  - camera_stream
-  - performance_metrics
-  - recording_status
-```
 
-## Modelos de Datos
+* Events:
 
-### Camera
+  * camera_stream
+  * performance_metrics
+  * recording_status
+
+````
+
+---
+
+## **Data Models**
+
+### **Camera**
 ```typescript
 {
   id: number
@@ -48,9 +60,10 @@ WS /ws
   password: string
   status: "online" | "offline"
 }
-```
+````
 
-### Recording
+### **Recording**
+
 ```typescript
 {
   id: number

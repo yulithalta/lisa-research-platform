@@ -1,147 +1,159 @@
-# Cumplimiento de Objetivos Parciales - LISA v3.0.0
+# **Partial Objective Compliance – LISA v3.0.0**
 
-Este documento detalla cómo la plataforma LISA (Living-lab Integrated Sensing Architecture) cumple con los objetivos parciales mínimos establecidos para el proyecto.
+This document details how the **LISA (Living-lab Integrated Sensing Architecture)** platform meets the minimum partial objectives established for the project.
 
-## OP1: Gestión Eficiente de Fuentes de Video y Datos Sensoriales
+---
 
-> *Desarrollar una plataforma escalable que permita la gestión eficiente de múltiples fuentes de video y datos sensoriales, asegurando su almacenamiento estructurado para futuras consultas.*
+## **PO1: Efficient Management of Video Sources and Sensor Data**
 
-### Implementación:
+> *Develop a scalable platform that enables efficient management of multiple video and sensor data sources, ensuring structured storage for future queries.*
 
-- **Arquitectura Escalable**
-  - Sistema modular basado en componentes independientes
-  - Patrón Observer para notificaciones en tiempo real
-  - Estrategia de Publisher-Subscriber para datos de sensores
+### **Implementation**
 
-- **Gestión de Múltiples Fuentes**
-  - Soporte para cámaras IP múltiples con conexiones RTSP y HTTP
-  - Integración con protocolo MQTT para datos de sensores
-  - Compatibilidad con dispositivos Zigbee a través de Zigbee2MQTT
-  - Capacidad de escalar de 6 a 10,000+ sensores
+- **Scalable Architecture**
+  - Modular system based on independent components  
+  - Observer pattern for real-time notifications  
+  - Publisher-Subscriber strategy for sensor data  
 
-- **Almacenamiento Estructurado**
-  - Sistema de archivos organizado por usuario/dispositivo/sesión
-  - Metadatos completos para facilitar búsquedas
-  - Indexación eficiente de grabaciones y datos sensoriales
-  - Formato JSON para datos de sensores con esquema consistente
+- **Management of Multiple Sources**
+  - Support for multiple IP cameras via RTSP and HTTP connections  
+  - Integration with the MQTT protocol for sensor data  
+  - Compatibility with Zigbee devices through Zigbee2MQTT  
+  - Scalable capacity from 6 to over 10,000 sensors  
 
-- **Conectividad Flexible**
-  - Detección automática de dispositivos en la red
-  - Verificación de disponibilidad mediante HTTP
-  - Reconexión automática en caso de fallos
+- **Structured Storage**
+  - File system organized by user/device/session  
+  - Complete metadata for easy searching  
+  - Efficient indexing of recordings and sensor data  
+  - JSON format with consistent schema for sensor data  
 
-## OP2: Herramientas de Análisis en Tiempo Real
+- **Flexible Connectivity**
+  - Automatic detection of devices on the network  
+  - Availability verification via HTTP  
+  - Automatic reconnection in case of failure  
 
-> *Implementar herramientas de análisis en tiempo real que permitan la detección y clasificación automática de eventos de interés mediante técnicas de procesamiento de video offline.*
+---
 
-### Implementación:
+## **PO2: Real-Time Analysis Tools**
 
-- **Análisis en Tiempo Real**
-  - Monitorización de eventos de sensores con alertas configurables
-  - Panel de visualización en tiempo real para datos de sensores
-  - Métricas y estadísticas calculadas en tiempo de ejecución
+> *Implement real-time analysis tools that allow automatic detection and classification of relevant events using offline video processing techniques.*
 
-- **Procesamiento de Video Offline**
-  - Generación automática de miniaturas para grabaciones
-  - Exportación de frames para análisis posterior
-  - Interfaz para integración con herramientas de análisis externas
+### **Implementation**
 
-- **Detección de Eventos**
-  - Sistema de reglas configurables para identificar anomalías
-  - Registro de eventos con timestamps para correlaciones
-  - Marcadores en línea de tiempo para eventos significativos
+- **Real-Time Analysis**
+  - Sensor event monitoring with configurable alerts  
+  - Real-time dashboard for sensor data visualization  
+  - Metrics and statistics computed during runtime  
 
-- **Visualización Avanzada**
-  - Gráficos interactivos para datos temporales
-  - Representación visual del estado de dispositivos
-  - Dashboards personalizables según necesidades específicas
+- **Offline Video Processing**
+  - Automatic generation of thumbnails for recordings  
+  - Frame export for post-analysis  
+  - Interface for integration with external analysis tools  
 
-## OP3: Sistema de Almacenamiento Seguro
+- **Event Detection**
+  - Configurable rule-based system for anomaly detection  
+  - Event logging with timestamps for correlation  
+  - Timeline markers for significant events  
 
-> *Diseñar un sistema de almacenamiento seguro basado en cifrado de datos y control de acceso para garantizar la confidencialidad e integridad de la información.*
+- **Advanced Visualization**
+  - Interactive graphs for temporal data  
+  - Visual representation of device states  
+  - Customizable dashboards based on user needs  
 
-### Implementación:
+---
 
-- **Cifrado de Datos**
-  - Almacenamiento seguro de credenciales
-  - Cifrado en tránsito mediante HTTPS/WSS
-  - Preparación para cifrado en reposo con configuración avanzada
+## **PO3: Secure Storage System**
 
-- **Control de Acceso**
-  - Sistema de autenticación de usuarios
-  - Roles y permisos granulares
-  - Registro detallado de acciones para auditoría
-  - Bloqueo tras intentos fallidos de acceso
+> *Design a secure storage system based on data encryption and access control to ensure confidentiality and data integrity.*
 
-- **Integridad de la Información**
-  - Verificación de integridad de grabaciones
-  - Checksums para validar transferencias de datos
-  - Sistema de backup para prevenir pérdidas
+### **Implementation**
 
-- **Seguridad por Diseño**
-  - Principio de mínimo privilegio para operaciones
-  - Sanitización de inputs para prevenir inyecciones
-  - Arquitectura de seguridad en capas
+- **Data Encryption**
+  - Secure storage of credentials  
+  - In-transit encryption via HTTPS/WSS  
+  - Prepared for at-rest encryption with advanced configuration  
 
-## OP4: APIs de Integración
+- **Access Control**
+  - User authentication system  
+  - Granular roles and permissions  
+  - Detailed audit log of user actions  
+  - Account lockout after failed login attempts  
 
-> *Desarrollar APIs de integración que permitan la interoperabilidad con sistemas de terceros, facilitando la compatibilidad con plataformas de análisis externas.*
+- **Information Integrity**
+  - Recording integrity verification  
+  - Checksums to validate data transfers  
+  - Backup system to prevent data loss  
 
-### Implementación:
+- **Security by Design**
+  - Principle of least privilege for operations  
+  - Input sanitization to prevent injections  
+  - Layered security architecture  
 
-- **APIs RESTful**
-  - Puntos de acceso para todas las funcionalidades principales
-  - Métodos estándar (GET, POST, PUT, DELETE)
-  - Respuestas consistentes con códigos HTTP apropiados
-  - Documentación completa de endpoints
+---
 
-- **Integración con Terceros**
-  - Capacidad de exportación a formatos estándar (ZIP, CSV, JSON)
-  - Webhooks para notificaciones de eventos
-  - Mecanismos de autenticación para integraciones seguras
+## **PO4: Integration APIs**
 
-- **Compatibilidad**
-  - APIs versionadas para asegurar compatibilidad futura
-  - Endpoints específicos para plataformas de análisis externas
-  - Formatos de intercambio de datos estándar
+> *Develop integration APIs that enable interoperability with third-party systems, ensuring compatibility with external analysis platforms.*
 
-- **Extensibilidad**
-  - Arquitectura plugin para extender funcionalidades
-  - Personalización de esquemas de datos para casos específicos
-  - Capacidad de integración con sistemas heredados
+### **Implementation**
 
-## OP5: Conformidad con RGPD
+- **RESTful APIs**
+  - Endpoints for all main functionalities  
+  - Standard methods (GET, POST, PUT, DELETE)  
+  - Consistent responses with appropriate HTTP codes  
+  - Complete endpoint documentation  
 
-> *Garantizar el cumplimiento de normativas como el RGPD mediante la implementación de mecanismos de consentimiento informado y auditoría de accesos.*
+- **Third-Party Integration**
+  - Export capability to standard formats (ZIP, CSV, JSON)  
+  - Webhooks for event notifications  
+  - Authentication mechanisms for secure integrations  
 
-### Implementación:
+- **Compatibility**
+  - Versioned APIs to ensure future compatibility  
+  - Dedicated endpoints for external analysis platforms  
+  - Standardized data exchange formats  
 
-- **Gestión de Consentimientos**
-  - Sistema completo para creación y versión de formularios de consentimiento
-  - Registro de consentimientos de usuarios con timestamps y metadatos
-  - Mecanismos para retirar o modificar consentimientos
-  - Verificación de consentimiento activo antes de procesamiento
+- **Extensibility**
+  - Plugin-based architecture for extending features  
+  - Customizable data schemas for specific use cases  
+  - Integration capability with legacy systems  
 
-- **Auditoría de Accesos**
-  - Registro detallado de todos los accesos a datos personales
-  - Información sobre quién, cuándo, qué y por qué para cada acceso
-  - Rotación mensual de logs para mejor gestión
-  - Herramientas de generación de informes para cumplimiento
+---
 
-- **Derechos de los Titulares de Datos**
-  - Mecanismos para exportación de datos personales (derecho a portabilidad)
-  - Funcionalidad de eliminación o anonimización (derecho al olvido)
-  - Capacidad de corregir información personal inexacta
-  - Transparencia en el procesamiento de datos
+## **PO5: GDPR Compliance**
 
-- **Documentación y Políticas**
-  - Documentación detallada sobre prácticas de privacidad
-  - Procedimientos para manejo de brechas de seguridad
-  - Evaluaciones de impacto de protección de datos
-  - Políticas de retención de datos claramente definidas
+> *Ensure compliance with regulations such as GDPR through the implementation of informed consent mechanisms and access auditing.*
 
-## Conclusión
+### **Implementation**
 
-La plataforma LISA v3.0.0 cumple completamente con los cinco objetivos parciales establecidos, proporcionando una solución robusta, segura y conforme para la gestión de grabaciones sincronizadas de cámaras IP y datos de sensores en entornos clínicos y de investigación.
+- **Consent Management**
+  - Full system for creating and versioning consent forms  
+  - User consent logs with timestamps and metadata  
+  - Mechanisms to revoke or modify consent  
+  - Verification of active consent prior to data processing  
 
-La reciente implementación de las características de conformidad con RGPD completa el conjunto de objetivos, garantizando que la plataforma no solo es técnicamente sólida sino también legalmente conforme para su uso en contextos donde la privacidad y protección de datos es crítica.
+- **Access Auditing**
+  - Detailed logging of all access to personal data  
+  - Information about who, when, what, and why for each access  
+  - Monthly log rotation for better management  
+  - Reporting tools for compliance documentation  
+
+- **Data Subject Rights**
+  - Mechanisms for data export (right to portability)  
+  - Deletion or anonymization features (right to be forgotten)  
+  - Ability to correct inaccurate personal information  
+  - Transparency in data processing operations  
+
+- **Documentation and Policies**
+  - Detailed documentation of privacy practices  
+  - Procedures for handling security breaches  
+  - Data protection impact assessments (DPIA)  
+  - Clearly defined data retention policies  
+
+---
+
+## **Conclusion**
+
+The **LISA v3.0.0** platform fully meets the five established partial objectives, providing a **robust, secure, and compliant solution** for managing synchronized recordings from IP cameras and sensor data in clinical and research environments.
+
+The recent implementation of **GDPR compliance features** completes the set of objectives, ensuring that the platform is not only technically solid but also **legally compliant**, suitable for use in contexts where privacy and data protection are critical.

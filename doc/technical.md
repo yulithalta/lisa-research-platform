@@ -1,65 +1,66 @@
-# Documentación Técnica del Sistema EnterpriseWorkflow
+# **EnterpriseWorkflow System Technical Documentation**
 
-*Versión actual: v2.5.18*
+*Current version: v2.5.18*
 
-## Arquitectura del Sistema
+## **System Architecture**
 
-### Frontend (React/TypeScript)
-- **React**: Framework principal para UI
-- **TypeScript**: Tipado estático
-- **shadcn/ui**: Componentes UI
-- **TanStack Query**: Gestión de estado y caché
-- **WebSocket**: Comunicación en tiempo real
-- **MQTT Client**: Comunicación con broker MQTT/Zigbee2MQTT
+### **Frontend (React/TypeScript)**
+- **React**: Main UI framework  
+- **TypeScript**: Static typing  
+- **shadcn/ui**: UI components  
+- **TanStack Query**: State and cache management  
+- **WebSocket**: Real-time communication  
+- **MQTT Client**: Communication with MQTT/Zigbee2MQTT broker  
 
-### Backend (Node.js)
-- **Express**: Framework web
-- **ffmpeg**: Procesamiento de video
-- **WebSocket**: Streaming de video y datos en tiempo real
-- **MQTT Client**: Integración con broker MQTT/Zigbee2MQTT
-- **JSON Storage**: Persistencia de datos
-- **archiver**: Empaquetado de datos y grabaciones
+### **Backend (Node.js)**
+- **Express**: Web framework  
+- **ffmpeg**: Video processing  
+- **WebSocket**: Real-time video and data streaming  
+- **MQTT Client**: Integration with MQTT/Zigbee2MQTT broker  
+- **JSON Storage**: Data persistence  
+- **archiver**: Data and recording packaging  
 
-## Componentes Principales
+## **Main Components**
 
-### Sistema de Cámaras
-- Gestión de conexiones RTSP
-- Streaming en tiempo real
-- Grabación y almacenamiento
-- Verificación de estado vía HTTP
+### **Camera System**
+- RTSP connection management  
+- Real-time streaming  
+- Recording and storage  
+- Status verification via HTTP  
 
-### Sistema de Sensores
-- Conexión a broker MQTT/Zigbee2MQTT
-- Suscripción a múltiples topics
-- Almacenamiento dual de datos (individual y consolidado)
-- Soporte para hasta 10,000 sensores
+### **Sensor System**
+- Connection to MQTT/Zigbee2MQTT broker  
+- Subscription to multiple topics  
+- Dual data storage (individual and consolidated)  
+- Support for up to 10,000 sensors  
 
-### Sistema de Sesiones
-- Grabación sincronizada de cámaras y sensores
-- Generación de paquetes ZIP con datos completos
-- Interfaz de configuración con selección por checklist
-- Continuidad de grabaciones aunque cambie la pestaña del navegador
+### **Session System**
+- Synchronized recording of cameras and sensors  
+- Generation of ZIP packages with complete data  
+- Configuration interface with checklist selection  
+- Recording continuity even when browser tab changes  
 
-### Monitoreo de Rendimiento
-- Métricas en tiempo real
-- Estadísticas de cámaras y sensores
-- Dashboard de rendimiento
+### **Performance Monitoring**
+- Real-time metrics  
+- Camera and sensor statistics  
+- Performance dashboard  
 
-## Patrones de Diseño Implementados
-- **Observer/Publish-Subscribe**: Para manejo escalable de datos de sensores
-- **Component Pattern**: Interfaz modular con pestañas y componentes reusables
-- **Repository Pattern**: Abstracción de acceso a datos
-- **Factory Pattern**: Creación de instancias para conexiones de cámaras y sensores
+## **Implemented Design Patterns**
+- **Observer/Publish-Subscribe**: For scalable sensor data handling  
+- **Component Pattern**: Modular interface with reusable tabs and components  
+- **Repository Pattern**: Data access abstraction  
+- **Factory Pattern**: Instance creation for camera and sensor connections  
 
-## Flujos de Datos
-1. **Streaming de Video**
-   - Conexión RTSP -> ffmpeg -> WebSocket -> Cliente
-   
-2. **Captura de Datos de Sensores**
-   - MQTT Broker -> MQTT Client -> Sistema dual de almacenamiento -> Cliente
-   
-3. **Grabación de Sesiones**
-   - Cliente -> API -> Sistema de archivos + Almacenamiento JSON
-   
-4. **Descarga de Sesiones**
-   - Cliente -> API -> Archiver (ZIP) -> Cliente
+## **Data Flows**
+
+1. **Video Streaming**  
+   - RTSP Connection → ffmpeg → WebSocket → Client  
+
+2. **Sensor Data Capture**  
+   - MQTT Broker → MQTT Client → Dual Storage System → Client  
+
+3. **Session Recording**  
+   - Client → API → File System + JSON Storage  
+
+4. **Session Download**  
+   - Client → API → Archiver (ZIP) → Client  

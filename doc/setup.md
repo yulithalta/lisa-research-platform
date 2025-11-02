@@ -1,41 +1,48 @@
-# Guía de Instalación y Configuración
+# **Installation and Configuration Guide**
 
-## Requisitos Previos
-- Node.js 18.x o superior
-- ffmpeg instalado en el sistema
-- Acceso a cámaras IP con RTSP
+## **Prerequisites**
+- Node.js 18.x or higher  
+- ffmpeg installed on the system  
+- Access to IP cameras with RTSP  
 
-## Instalación
+## **Installation**
 
-1. **Clonar Repositorio**
-```bash
-git clone <repository-url>
-cd camera-management-system
-```
+1. **Clone Repository**
+   ```bash
+   git clone <repository-url>
+   cd camera-management-system
+````
 
-2. **Instalar Dependencias**
-```bash
-npm install
-```
+2. **Install Dependencies**
 
-3. **Configuración**
-- Crear archivo `.env` basado en `.env.example`
-- Configurar variables de entorno:
-  - `PORT`: Puerto del servidor
-  - `SESSION_SECRET`: Secreto para sesiones
-  - `STORAGE_PATH`: Ruta para almacenamiento
+   ```bash
+   npm install
+   ```
 
-4. **Iniciar Aplicación**
-```bash
-npm run dev
-```
+3. **Configuration**
 
-## Configuración de Cámaras
-1. Asegurarse que las cámaras estén en la misma red
-2. Obtener credenciales RTSP
-3. Configurar en la interfaz de usuario
+   * Create a `.env` file based on `.env.example`
+   * Set the following environment variables:
 
-## Mantenimiento
-- Los archivos de grabación se almacenan en `/recordings`
-- Los datos de configuración en `/data`
-- Logs del sistema en `/logs`
+     * `PORT`: Server port
+     * `SESSION_SECRET`: Secret key for sessions
+     * `STORAGE_PATH`: Storage directory path
+
+4. **Start Application**
+
+   ```bash
+   npm run dev
+   ```
+
+## **Camera Configuration**
+
+1. Make sure cameras are on the same network
+2. Obtain RTSP credentials
+3. Configure cameras through the user interface
+
+## **Maintenance**
+
+* Recording files are stored in `/recordings`
+* Configuration data is stored in `/data`
+* System logs are located in `/logs`
+

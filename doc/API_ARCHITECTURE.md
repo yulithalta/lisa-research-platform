@@ -1,128 +1,130 @@
-# Arquitectura de la API para Recepción y Almacenamiento de Datos en LISA 3.0.0
+# API Architecture for Data Reception and Storage in LISA 3.0.0
 
-## Resumen Ejecutivo
+## Executive Summary
 
-Este documento detalla la arquitectura y diseño de la API implementada en Node.js para LISA (Living-lab Integrated Sensing Architecture), un sistema de gestión para la sincronización de grabaciones de cámaras IP y sensores MQTT/Zigbee. La API fue diseñada con un enfoque en escalabilidad, tolerancia a fallos y flexibilidad de implementación.
+This document describes the architecture and design of the Node.js-based API for LISA (Living-lab Integrated Sensing Architecture), a system for synchronized acquisition of IP camera recordings and MQTT/Zigbee sensor data. The API is designed for scalability, fault tolerance, and deployment flexibility.
 
-## Arquitectura General
+## High-Level Architecture
 
-La API sigue una arquitectura modular basada en el patrón MVC (Modelo-Vista-Controlador) con elementos de microservicios, implementando los siguientes componentes clave:
+The API follows a modular architecture inspired by MVC principles and elements of microservices, with the following key layers:
 
-### 1. Capa de Interfaz (Routes)
+---
 
-Todas las rutas de la API están definidas en `server/routes.ts`, organizadas por funcionalidad:
+### 1. Interface Layer (Routes)
+
+All routes are implemented in `server/routes.ts`, organized by functional domains:
 
 ```typescript
-// Rutas para gestión de usuarios
+// User management routes
 app.get('/api/user', authenticatedOnly, (req, res) => res.json(req.user));
 app.post('/api/login', passport.authenticate('local'), (req, res) => res.json(req.user));
 app.post('/api/register', async (req, res) => { /* ... */ });
 app.post('/api/logout', (req, res) => { /* ... */ });
 
-// Rutas para gestión de cámaras
+// Camera management routes
 app.get('/api/cameras', authenticatedOnly, async (req, res) => { /* ... */ });
 app.post('/api/cameras', authenticatedOnly, async (req, res) => { /* ... */ });
 app.put('/api/cameras/:id', authenticatedOnly, async (req, res) => { /* ... */ });
 app.delete('/api/cameras/:id', authenticatedOnly, async (req, res) => { /* ... */ });
 
-// Rutas para gestión de sensores
+// Sensor management routes
 app.get('/api/sensors', authenticatedOnly, async (req, res) => { /* ... */ });
 app.post('/api/sensors', authenticatedOnly, async (req, res) => { /* ... */ });
 app.put('/api/sensors/:id', authenticatedOnly, async (req, res) => { /* ... */ });
 app.delete('/api/sensors/:id', authenticatedOnly, async (req, res) => { /* ... */ });
 
-// Rutas para sesiones de grabación
+// Recording session routes
 app.get('/api/sessions', authenticatedOnly, async (req, res) => { /* ... */ });
 app.post('/api/sessions', authenticatedOnly, async (req, res) => { /* ... */ });
 app.get('/api/sessions/:id', authenticatedOnly, async (req, res) => { /* ... */ });
 app.put('/api/sessions/:id', authenticatedOnly, async (req, res) => { /* ... */ });
 app.delete('/api/sessions/:id', authenticatedOnly, async (req, res) => { /* ... */ });
 
-// Rutas para datos de sensores y telemetría
+// Data export and sensor data retrieval
 app.get('/api/sensor-data/:sensorId', authenticatedOnly, async (req, res) => { /* ... */ });
 app.get('/api/session-data/:sessionId', authenticatedOnly, async (req, res) => { /* ... */ });
 app.get('/api/export/:sessionId', authenticatedOnly, async (req, res) => { /* ... */ });
-```
+````
 
-### 2. Capa de Almacenamiento (Storage)
+---
 
-La implementación utiliza el patrón Strategy para proporcionar flexibilidad en el mecanismo de almacenamiento:
+### 2. Storage Layer (Strategy Pattern)
+
+The application implements a `Strategy`-based storage layer for interchangeable persistence mechanisms:
 
 ```typescript
-// Interfaz común (IStorage)
 export interface IStorage {
-  // Métodos para usuarios
+  // User methods
   getUser(id: number): Promise<any>;
   getUserByUsername(username: string): Promise<any>;
   createUser(user: any): Promise<any>;
-  
-  // Métodos para cámaras
+
+  // Camera methods
   getCameras(userId: number): Promise<any[]>;
   getCamera(id: number): Promise<any>;
   createCamera(camera: any): Promise<any>;
   updateCamera(id: number, data: any): Promise<any>;
   deleteCamera(id: number): Promise<void>;
-  
-  // Métodos para sensores
+
+  // Sensor methods
   getSensors(userId: number): Promise<any[]>;
   getSensor(id: number): Promise<any>;
   createSensor(sensor: any): Promise<any>;
   updateSensor(id: number, data: any): Promise<any>;
   deleteSensor(id: number): Promise<void>;
-  
-  // Métodos para sesiones
+
+  // Session methods
   getSessions(userId: number): Promise<any[]>;
   getSession(id: number): Promise<any>;
   createSession(session: any): Promise<any>;
   updateSession(id: number, data: any): Promise<any>;
   deleteSession(id: number): Promise<void>;
-  
-  // Métodos para lecturas de sensores
+
+  // Sensor readings
   saveSensorReading(reading: any): Promise<any>;
   getSensorReadings(sensorId: number, options?: any): Promise<any[]>;
-  
-  // Store para sesiones
+
+  // Session store
   sessionStore: session.Store;
 }
 ```
 
-#### Implementaciones de Storage
+Supported implementations:
 
-1. **MemStorage**: Implementación basada en memoria con persistencia en archivos JSON, ideal para desarrollo y despliegues pequeños.
-2. **DatabaseStorage**: Implementación para PostgreSQL, diseñada para entornos de producción con gran volumen de datos.
+| Implementation      | Intended Use Case                        |
+| ------------------- | ---------------------------------------- |
+| **MemStorage**      | Development and lightweight deployments  |
+| **DatabaseStorage** | PostgreSQL-based production environments |
 
-La selección de la implementación se realiza mediante variables de entorno:
+Selection based on environment variables:
 
 ```typescript
-export const storage = process.env.USE_DATABASE === 'true' 
-  ? new DatabaseStorage() 
+export const storage = process.env.USE_DATABASE === 'true'
+  ? new DatabaseStorage()
   : new MemStorage();
 ```
 
-### 3. Integración MQTT para Datos en Tiempo Real
+---
+
+### 3. MQTT Integration for Real-Time Data
 
 ```typescript
-// Conexión al broker MQTT configurado mediante variables de entorno
 const mqttClient = mqtt.connect(process.env.MQTT_BROKER, {
   username: process.env.MQTT_USERNAME || undefined,
   password: process.env.MQTT_PASSWORD || undefined
 });
 
-// Suscripción a múltiples tópicos, incluyendo tópicos de dispositivos Zigbee
 mqttClient.on('connect', () => {
-  mqttClient.subscribe('#'); // Suscripción a todos los tópicos
-  console.log('Conectado a broker MQTT, escuchando todos los tópicos');
+  mqttClient.subscribe('#');
+  console.log('Connected to MQTT broker, listening to all topics');
 });
 
-// Procesamiento y almacenamiento de datos de sensores
 mqttClient.on('message', async (topic, message) => {
   try {
     const data = JSON.parse(message.toString());
-    
-    // Identificar el sensor por el tópico
     const sensor = await findSensorByTopic(topic);
+
     if (sensor) {
-      // Almacenar la lectura asociada al sensor
       await storage.saveSensorReading({
         sensorId: sensor.id,
         value: data,
@@ -130,50 +132,40 @@ mqttClient.on('message', async (topic, message) => {
         timestamp: new Date(),
         sessionId: getActiveSessionId(sensor.id)
       });
-      
-      // Emitir evento para notificar a clientes en tiempo real
+
       eventEmitter.emit('sensor-data', { sensor, data });
     }
   } catch (error) {
-    console.error(`Error procesando mensaje MQTT de ${topic}:`, error);
+    console.error(`Error processing MQTT message on ${topic}:`, error);
   }
 });
 ```
 
-### 4. Sistema de Notificación de Eventos en Tiempo Real
+---
+
+### 4. WebSocket Event-Driven Communication
 
 ```typescript
-// Configuración de WebSocket para comunicación en tiempo real
 const wss = new WebSocketServer({ server: httpServer, path: '/ws' });
 
 wss.on('connection', (socket) => {
-  console.log('Nueva conexión WebSocket establecida');
-  
-  // Enviar datos de sensores en tiempo real
+  console.log('WebSocket connection established');
+
   const sensorDataListener = (data) => {
     if (socket.readyState === WebSocket.OPEN) {
-      socket.send(JSON.stringify({
-        type: 'sensor-data',
-        data
-      }));
+      socket.send(JSON.stringify({ type: 'sensor-data', data }));
     }
   };
-  
-  // Enviar actualizaciones de estado de sesión
+
   const sessionUpdateListener = (data) => {
     if (socket.readyState === WebSocket.OPEN) {
-      socket.send(JSON.stringify({
-        type: 'session-update',
-        data
-      }));
+      socket.send(JSON.stringify({ type: 'session-update', data }));
     }
   };
-  
-  // Registrar listeners
+
   eventEmitter.on('sensor-data', sensorDataListener);
   eventEmitter.on('session-update', sessionUpdateListener);
-  
-  // Limpiar listeners cuando se cierra la conexión
+
   socket.on('close', () => {
     eventEmitter.off('sensor-data', sensorDataListener);
     eventEmitter.off('session-update', sessionUpdateListener);
@@ -181,102 +173,97 @@ wss.on('connection', (socket) => {
 });
 ```
 
-## Gestión de Datos
+---
 
-### 1. Estructura de Datos
+## Data Handling and Persistence
 
-Los datos se organizan en las siguientes entidades principales:
+### Main entities
 
-- **Users**: Almacena información de usuarios y credenciales
-- **Cameras**: Gestiona dispositivos de captura de video
-- **Sensors**: Administra sensores y sus configuraciones
-- **Sessions**: Sesiones de grabación que asocian cámaras y sensores
-- **SensorReadings**: Almacena las lecturas de sensores
+* Users
+* Cameras
+* Sensors
+* Sessions
+* SensorReadings
 
-### 2. Exportación de Datos
+### Data Export (ZIP packaging)
 
 ```typescript
 app.get('/api/export/:sessionId', authenticatedOnly, async (req, res) => {
   const sessionId = parseInt(req.params.sessionId);
   const session = await storage.getSession(sessionId);
-  
-  if (!session) {
-    return res.status(404).json({ error: 'Sesión no encontrada' });
-  }
-  
-  // Crear archivo ZIP con grabaciones y datos de sensores
+
+  if (!session) return res.status(404).json({ error: 'Session not found' });
+
   const archive = archiver('zip', { zlib: { level: 9 } });
   const sessionDir = path.join(process.cwd(), 'recordings', `session-${sessionId}`);
-  
-  // Preparar respuesta HTTP
+
   res.setHeader('Content-Type', 'application/zip');
   res.setHeader('Content-Disposition', `attachment; filename="session-${sessionId}.zip"`);
   archive.pipe(res);
-  
-  // Añadir archivos de video
+
   if (fs.existsSync(sessionDir)) {
     archive.directory(sessionDir, 'videos');
   }
-  
-  // Añadir datos de sensores en formato JSON y CSV
+
   for (const sensor of session.sensors) {
     const readings = await storage.getSensorReadings(sensor.id, { sessionId });
-    
-    // Formato JSON
-    archive.append(JSON.stringify(readings, null, 2), { name: `sensor-data/${sensor.name}-data.json` });
-    
-    // Formato CSV
-    const csvData = convertToCSV(readings);
-    archive.append(csvData, { name: `sensor-data/${sensor.name}-data.csv` });
+
+    archive.append(JSON.stringify(readings, null, 2), {
+      name: `sensor-data/${sensor.name}-data.json`
+    });
+
+    archive.append(convertToCSV(readings), {
+      name: `sensor-data/${sensor.name}-data.csv`
+    });
   }
-  
-  // Añadir metadatos de la sesión
+
   archive.append(JSON.stringify(session, null, 2), { name: 'session-metadata.json' });
-  
-  // Finalizar y enviar
+
   await archive.finalize();
 });
 ```
 
-## Justificación Técnica
+---
 
-### 1. Patrón Strategy para Almacenamiento
+## Technical Rationale
 
-Se implementó el patrón Strategy para la capa de almacenamiento por las siguientes razones:
+### Strategy Pattern for Storage
 
-- **Flexibilidad de Despliegue**: Permite cambiar entre MemStorage y DatabaseStorage sin modificar el código de la aplicación.
-- **Aislamiento de Complejidad**: Encapsula la lógica específica de almacenamiento detrás de una interfaz común.
-- **Testabilidad**: Facilita las pruebas unitarias mediante implementaciones mock de IStorage.
-- **Evolución Gradual**: Permite una transición suave de almacenamiento en memoria a bases de datos relacionales.
+* Deployment flexibility (JSON FS or PostgreSQL)
+* Encapsulation of persistence logic
+* Improved testability with mock storage providers
+* Enables phased scaling
 
-### 2. Observador + Publicador/Suscriptor para Datos en Tiempo Real
+### Observer + Pub/Sub for Real-Time Data
 
-Se implementó una combinación de Observer y Pub/Sub por las siguientes razones:
+* Full decoupling between producers and consumers
+* Non-blocking processing under high load
+* Scalable to thousands of messages per second
 
-- **Desacoplamiento**: Los productores de eventos no necesitan conocer a los consumidores.
-- **Escalabilidad**: Permite manejar miles de sensores sin degradar el rendimiento.
-- **Rendimiento**: Procesamiento asíncrono de datos sin bloquear el hilo principal.
-- **Mantenibilidad**: Facilita agregar nuevos tipos de eventos o suscriptores.
+### Distributed Microservice-Oriented Design
 
-### 3. Arquitectura de Microservicios para Distribución
+* Fault isolation between components
+* Horizontal scalability for specific subsystems
+* Independent deployment strategies (Docker-ready)
 
-- **Separación de Responsabilidades**: Cada componente (API, MQTT, WebSocket) tiene una función claramente definida.
-- **Tolerancia a Fallos**: Un fallo en un componente no afecta al resto del sistema.
-- **Escalabilidad Horizontal**: Permite escalar individualmente los componentes con mayor carga.
-- **Distribuible**: Facilita el despliegue en múltiples servidores o en Docker Swarm.
+---
 
-## Conclusiones y Recomendaciones Futuras
+## Conclusions and Recommendations
 
-1. **Logros de la Versión Actual**:
-   - Implementación completa de la API RESTful para gestión de dispositivos
-   - Integración con MQTT para captura de datos de sensores en tiempo real
-   - Soporte para WebSockets que permite monitorización en tiempo real
-   - Sistema flexible de almacenamiento con soporte para memoria y PostgreSQL
+### Completed in v3.0.0
 
-2. **Recomendaciones para Versión 4.0**:
-   - Implementar sharding de base de datos para mayor escalabilidad
-   - Agregar soporte para análisis de datos en tiempo real mediante streaming analytics
-   - Implementar un sistema de permisos granular basado en roles
-   - Desarrollar APIs GraphQL como alternativa a REST para consultas complejas
+* Full REST API for device and session management
+* Real-time MQTT ingestion and storage
+* WebSocket push channel for live monitoring
+* Swappable storage backend for multi-stage deployment
 
-Este documento resume la estructura y justificación técnica de la API para recepción y almacenamiento de datos en LISA 3.0.0. La arquitectura implementada proporciona una base sólida y escalable para el crecimiento futuro del sistema.
+### Recommended for v4.0.0
+
+* Database sharding and high-availability storage
+* Real-time analytics and anomaly detection
+* Role-based access control (RBAC)
+* Optional GraphQL APIs for complex queries
+
+---
+
+This document summarizes the API architecture for data acquisition and storage in LISA 3.0.0. The current design establishes a robust and extensible foundation for future system evolution.

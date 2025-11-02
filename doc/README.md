@@ -1,38 +1,38 @@
-# Documentación del Sistema EnterpriseWorkflow
+# LISA System Documentation
 
-*Versión actual: v2.5.18*
+*Current Version: v3.0.0*
 
-## Índice de Documentación
+## Documentation Index
 
-### Guías de Usuario
-- [Guía de Usuario](user-guide.md) - Instrucciones paso a paso para el uso del sistema
-- [Preguntas Frecuentes (FAQ)](faq.md) - Respuestas a preguntas comunes
-- [Guía de Configuración](config-guide.md) - Instrucciones para configurar el sistema
+### User Guides
+- [User Guide](user-guide.md) – Step-by-step instructions for using the system
+- [Frequently Asked Questions (FAQ)](faq.md) – Answers to common questions
+- [Configuration Guide](config-guide.md) – Instructions for system setup
 
-### Documentación Técnica
-- [Documentación Técnica](technical.md) - Visión general de la arquitectura y componentes
-- [Patrones de Diseño](design-patterns.md) - Patrones implementados en el sistema
-- [Referencia de API](api-reference.md) - Documentación completa de endpoints
+### Technical Documentation
+- [Technical Documentation](technical.md) – Overview of architecture and components
+- [Design Patterns](design-patterns.md) – Patterns implemented in the system
+- [API Reference](api-reference.md) – Complete documentation of endpoints
 
-### Control de Versiones
-- [Historial de Versiones](VERSION.md) - Registro de cambios en cada versión
+### Version Control
+- [Version History](VERSION.md) – Record of changes in each version
 
-## Acerca del Proyecto
+## About the Project
 
-EnterpriseWorkflow es un sistema avanzado para la gestión de grabaciones sincronizadas de cámaras IP y captura de datos de sensores MQTT/Zigbee2MQTT. El sistema está diseñado para entornos profesionales que requieren máxima precisión y fiabilidad, como investigación clínica y monitorización en tiempo real.
+EnterpriseWorkflow is an advanced system for managing synchronized recordings from IP cameras and capturing data from MQTT/Zigbee2MQTT sensors. It is designed for professional environments requiring **high precision and reliability**, such as clinical research and real-time monitoring.
 
-### Características Principales
+### Key Features
 
-- **Grabación sincronizada** de múltiples cámaras IP
-- **Captura de datos** de sensores MQTT/Zigbee2MQTT
-- **Interfaz intuitiva** con sistema de pestañas para una navegación mejorada
-- **Monitoreo en tiempo real** de cámaras y sensores
-- **Exportación completa** de datos en formato ZIP
-- **Escalabilidad** para soportar entre 6 y 10,000 sensores
-- **Integración robusta** con broker MQTT mediante WebSockets
+- **Synchronized recording** of multiple IP cameras
+- **Sensor data capture** via MQTT/Zigbee2MQTT
+- **Intuitive interface** with tab system for enhanced navigation
+- **Real-time monitoring** of cameras and sensors
+- **Full data export** in ZIP format
+- **Scalability** to support between 6 and 10,000 sensors
+- **Robust integration** with MQTT brokers via WebSockets
 
-### Equipo de Desarrollo
+### Development Team
 
-Desarrollado por el equipo de EnterpriseWorkflow.
+Developed by the EnterpriseWorkflow team.
 
-© 2025 EnterpriseWorkflow - Todos los derechos reservados
+© 2025 LISA – All rights reserved
