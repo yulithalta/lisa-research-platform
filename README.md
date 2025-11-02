@@ -7,7 +7,7 @@
 LISA is an open-source system for time-aligned acquisition of IP video streams and MQTT-based sensor data in controlled research environments.  
 It enables reproducible session workflows, structured metadata, and export of synchronized datasets for offline analysis.
 
-This repository contains the reference implementation evaluated in the SoftwareX article.
+This repository contains the reference implementation evaluated in the SoftwareX submission.
 
 ---
 
@@ -15,9 +15,9 @@ This repository contains the reference implementation evaluated in the SoftwareX
 
 LISA supports scenarios requiring:
 
-- Multi-camera video acquisition
-- Real-time MQTT and Zigbee2MQTT sensor monitoring
-- Timestamp-aligned data logging
+- Multi-camera video acquisition  
+- Real-time MQTT and Zigbee2MQTT sensor monitoring  
+- Timestamp-aligned data logging  
 - Local data handling with configurable privacy controls
 
 LISA is not a clinical diagnosis system and must not be used as a certified medical device.
@@ -26,18 +26,20 @@ LISA is not a clinical diagnosis system and must not be used as a certified medi
 
 ## 2. System Requirements
 
-| Component | Version | Notes |
-|----------|---------|------|
-| OS | Linux (Debian tested) | Reference environment: Debian 12 |
-| Node.js | ‚â• 20 | Backend & development UI |
-| NPM | ‚â• 10 | Dependency management |
-| Docker + Compose v2 | Optional infrastructure stack |
-| IP Cameras | RTSP/HTTP streams | 4 cameras tested |
-| Zigbee Coordinator | CC2531 or equivalent | Zigbee2MQTT interface |
-| MQTT Broker | MQTT v3.1+ | 50 sensors tested |
+| Component              | Version                  | Notes                                   |
+|-----------------------|--------------------------|-----------------------------------------|
+| OS                    | Linux (Debian tested)    | Reference environment: Debian 12        |
+| Node.js               | ‚â• 20                     | Backend and development UI              |
+| NPM                   | ‚â• 10                     | Dependency management                   |
+| Docker + Compose v2   | Required                 | Infrastructure stack                    |
+| IP Cameras            | RTSP/HTTP streams        | 4 cameras tested                        |
+| Zigbee Coordinator    | CC2531 or equivalent     | Zigbee2MQTT interface                   |
+| MQTT Broker           | MQTT v3.1+               | 50 sensors tested                       |
 
 Full compatibility details:  
-Ì†ΩÌ≥Ñ `docs/system-architecture.md`
+https://github.com/yulithalta/lisa-research-platform/tree/main/doc/system-architecture.svg  
+https://github.com/yulithalta/lisa-research-platform/tree/main/doc/system-architecture-2.0.svg  
+https://github.com/yulithalta/lisa-research-platform/tree/main/doc/API_ARCHITECTURE.md
 
 ---
 
@@ -45,14 +47,14 @@ Full compatibility details:
 
 The results reported in the article were obtained with:
 
-- **4 IP cameras** (1080p, synchronized start/stop)
-- **50 Zigbee sensors**
-- **Local MQTT broker + Zigbee2MQTT**
+- 4 IP cameras (1080p, synchronized start/stop)  
+- 50 Zigbee sensors  
+- Local MQTT broker with Zigbee2MQTT  
 - Standard LAN deployment in a living-lab room
 
 Environmental parameters required for reproducibility:  
-Ì†ΩÌ≥Ñ `docs/setup.md`  
-Ì†ΩÌ≥Ñ `docs/technical.md`
+https://github.com/yulithalta/lisa-research-platform/tree/main/doc/setup.md  
+https://github.com/yulithalta/lisa-research-platform/tree/main/doc/technical.md
 
 ---
 
@@ -65,90 +67,85 @@ npm install
 cp .env.example .env
 ````
 
-Configure `.env` minimally:
+Minimum variables in `.env`:
 
 | Variable               | Description                |
 | ---------------------- | -------------------------- |
-| PORT                   | Default HTTP port: 5000    |
+| PORT                   | Default HTTP port (5000)   |
 | MQTT_BROKER            | e.g. mqtt://localhost:1883 |
 | ZIGBEE2MQTT_BASE_TOPIC | e.g. zigbee2mqtt           |
 
-Prepare local recordings directory:
+Prepare local recordings directory (if video recording is used):
 
 ```bash
 mkdir -p recordings/sessions
 ```
 
-Full configuration guidance:
-Ì†ΩÌ≥Ñ `docs/config-guide.md`
+Configuration guide:
+[https://github.com/yulithalta/lisa-research-platform/tree/main/doc/config-guide.md](https://github.com/yulithalta/lisa-research-platform/tree/main/doc/config-guide.md)
 
 ---
 
-## 5. Optional Docker Infrastructure
+## 5. Infrastructure and Development Execution
 
-Includes:
+The repository includes an orchestration script to start the full environment (Zigbee2MQTT, monitoring tools, and the LISA application) in a single step. Hardware presence (Zigbee adapter) is detected automatically; absence does not stop execution.
 
-* Zigbee2MQTT
-* Dozzle (container/log monitoring)
-* dashdot (system telemetry)
-
-Start development environment:
+Start full development stack:
 
 ```bash
 ./run-lisa.sh dev
 ```
 
-Stop everything:
+Stop all processes:
 
 ```bash
 ./run-lisa.sh down
 ```
 
-Component configuration:
-Ì†ΩÌ≥Ñ `infrastructure/README.md`
-Ì†ΩÌ≥Ñ `docs/TICK_STACK.md` (experimental telemetry)
+Notes:
 
-Zigbee adapter presence is validated automatically; absence does not stop execution.
+* Zigbee2MQTT, Dozzle (log viewer), and dashdot (system metrics) are started as part of the stack.
+* When a Zigbee adapter is not present, Zigbee2MQTT launches without USB mapping for UI access and configuration.
+
+Additional details:
+[https://github.com/yulithalta/lisa-research-platform/tree/main/doc/README.md](https://github.com/yulithalta/lisa-research-platform/tree/main/doc/README.md)
+[https://github.com/yulithalta/lisa-research-platform/tree/main/doc/TICK_STACK.md](https://github.com/yulithalta/lisa-research-platform/tree/main/doc/TICK_STACK.md) (optional telemetry)
+[https://github.com/yulithalta/lisa-research-platform/tree/main/doc/TICK_ENV_VARIABLES.md](https://github.com/yulithalta/lisa-research-platform/tree/main/doc/TICK_ENV_VARIABLES.md)
 
 ---
 
-## 6. Development Execution
+## 6. Running Without the Orchestrator (alternative)
 
-### Live development (frontend + backend + WebSockets)
+For completeness, the reference implementation can also be launched manually:
+
+Development mode:
 
 ```bash
 npm run dev
 ```
 
-### Production build
+Production build:
 
 ```bash
 npm run build
 npm start
 ```
 
-Web UI:
-
-> [http://localhost:5000](http://localhost:5000)
+Web UI: [http://localhost:5000](http://localhost:5000)
 
 ---
 
 ## 7. Data Handling
 
-| File Type | Format     | Location                    |
-| --------- | ---------- | --------------------------- |
-| Videos    | MP4        | `recordings/sessions/<id>/` |
-| Sensors   | JSON + CSV | `data/user_<id>/sessions`   |
-| Metadata  | JSON       | Included in exports         |
+| File Type           | Format                | Location                            |
+| ------------------- | --------------------- | ----------------------------------- |
+| Videos              | MP4                   | `recordings/sessions/<session_id>/` |
+| Sensor measurements | JSON and optional CSV | `data/user_<id>/sessions/`          |
+| Session metadata    | JSON                  | Included in export packages         |
 
-ZIP export packages preserve:
-
-‚úÖ timestamps
-‚úÖ device metadata
-‚úÖ file integrity for replication
-
-Data structure specification:
-Ì†ΩÌ≥Ñ `docs/technical.md` ‚Üí *"Data Storage Model"*
+Export packages preserve timestamps, device metadata, and file integrity.
+Data model and storage layout:
+[https://github.com/yulithalta/lisa-research-platform/tree/main/doc/technical.md](https://github.com/yulithalta/lisa-research-platform/tree/main/doc/technical.md)
 
 ---
 
@@ -161,25 +158,26 @@ Data structure specification:
 * Streaming: FFmpeg (via RTSP)
 * Messaging: MQTT.js
 
-Diagram and data flows:
-Ì†ΩÌ≥Ñ `docs/API_ARCHITECTURE.md`
-Ì†ΩÌ≥Ñ `docs/system-architecture-2.0.svg`
+Architecture and API documentation:
+[https://github.com/yulithalta/lisa-research-platform/tree/main/doc/API_ARCHITECTURE.md](https://github.com/yulithalta/lisa-research-platform/tree/main/doc/API_ARCHITECTURE.md)
+[https://github.com/yulithalta/lisa-research-platform/tree/main/doc/api.md](https://github.com/yulithalta/lisa-research-platform/tree/main/doc/api.md)
+[https://github.com/yulithalta/lisa-research-platform/tree/main/doc/api-reference.md](https://github.com/yulithalta/lisa-research-platform/tree/main/doc/api-reference.md)
 
 ---
 
-## 9. Performance and Limitations
+## 9. Performance and Limitations (v3.0.0)
 
-Validated performance for v3.0.0:
+Validated performance:
 
-| Test Condition       | Result                     |
-| -------------------- | -------------------------- |
-| Simultaneous cameras | 4 stable 1080p streams     |
-| Zigbee sensor load   | 50 sensors, <120ms latency |
-| Storage backend      | Local filesystem only      |
+| Test Condition       | Result                         |
+| -------------------- | ------------------------------ |
+| Simultaneous cameras | 4 stable 1080p streams         |
+| Zigbee sensor load   | 50 sensors, sub-120 ms latency |
+| Storage backend      | Local filesystem only          |
 
 Current limitations:
 
-* No cloud storage or analytics
+* No cloud storage or automated analytics
 * No automatic camera discovery
 * Evaluation performed on single-room deployments
 
@@ -187,10 +185,7 @@ Current limitations:
 
 ## 10. Ethical and Data Protection Considerations
 
-Research involving human subjects **must** adhere to:
-
-* GDPR, HIPAA or equivalent local regulations
-* Institutional Review Board / Ethics Committee approvals
+Research involving human subjects must adhere to applicable regulations (e.g., GDPR, HIPAA) and institutional ethics approvals.
 
 Built-in features supporting compliance:
 
@@ -198,9 +193,10 @@ Built-in features supporting compliance:
 * Removable personal identifiers in exports
 * Explicit session metadata handling
 
-Complete assessment:
-Ì†ΩÌ≥Ñ `docs/gdpr-compliance.md`
-Ì†ΩÌ≥Ñ `docs/objectives-compliance.md`
+Assessment and guidelines:
+[https://github.com/yulithalta/lisa-research-platform/tree/main/doc/gdpr-compliance.md](https://github.com/yulithalta/lisa-research-platform/tree/main/doc/gdpr-compliance.md)
+[https://github.com/yulithalta/lisa-research-platform/tree/main/doc/objectives-compliance.md](https://github.com/yulithalta/lisa-research-platform/tree/main/doc/objectives-compliance.md)
+[https://github.com/yulithalta/lisa-research-platform/tree/main/doc/security-assessment.md](https://github.com/yulithalta/lisa-research-platform/tree/main/doc/security-assessment.md)
 
 ---
 
@@ -208,18 +204,17 @@ Complete assessment:
 
 If using LISA for scientific publications:
 
-> Berm√∫dez et al.,
-> *LISA: Living-lab Integrated Sensing Architecture for synchronized acquisition of video and sensor data in research environments.*
-> SoftwareX, 2025. *(Under review)*
+Berm√∫dez et al.,
+‚ÄúLISA: Living-lab Integrated Sensing Architecture for synchronized acquisition of video and sensor data in research environments.‚Äù
+SoftwareX, 2025. (Under review)
 
-BibTeX will be provided upon acceptance.
+A BibTeX entry will be provided upon acceptance.
 
 ---
 
 ## 12. License
 
-Released under MIT License.
-
-The authors provide no warranty and accept no liability for medical or safety-critical use.
+MIT License.
+No warranty is provided. This software must not be used as a certified medical device.
 
 ---
