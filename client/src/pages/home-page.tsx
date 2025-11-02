@@ -154,9 +154,9 @@ export default function HomePage() {
       try {
         const serviceUrls = {
           'API Server': window.location.origin,
-          'MQTT Broker': `http://${import.meta.env.VITE_HOST_IP || '192.168.0.20'}:1884`,
-          'InfluxDB': `http://${import.meta.env.VITE_HOST_IP || '192.168.0.20'}:8086`,
-          'Grafana': `http://${import.meta.env.VITE_HOST_IP || '192.168.0.20'}:3000`,
+          'MQTT Broker': `http://${import.meta.env.VITE_HOST_IP || '127.0.0.1'}:1884`,
+          'InfluxDB': `http://${import.meta.env.VITE_HOST_IP || '127.0.0.1'}:8086`,
+          'Grafana': `http://${import.meta.env.VITE_HOST_IP || '127.0.0.1'}:3000`,
         };
         
         const statuses: Record<string, boolean> = {};
@@ -356,7 +356,7 @@ export default function HomePage() {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => window.open(`http://${import.meta.env.VITE_HOST_IP || '192.168.0.20'}:4000`, '_blank')}
+                onClick={() => window.open(`http://${import.meta.env.VITE_HOST_IP || '127.0.0.1'}:4000`, '_blank')}
               >
                 <MonitorCheck className="h-4 w-4 mr-2" />
                 Open
@@ -364,7 +364,7 @@ export default function HomePage() {
             </CardHeader>
             <CardContent className="p-0 relative aspect-video">
               <iframe 
-                src={`http://${import.meta.env.VITE_HOST_IP || '192.168.0.20'}:4000`}
+                src={`http://${import.meta.env.VITE_HOST_IP || '127.0.0.1'}:4000`}
                 className="w-full h-full absolute inset-0 border-0"
                 title="System Monitor"
               />
@@ -373,14 +373,22 @@ export default function HomePage() {
 
           {/* Services Status */}
           <Card>
-            <CardHeader>
+            <CardHeader className="flex flex-row items-center justify-between">
               <CardTitle>Services Status</CardTitle>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => window.open(`http://${import.meta.env.VITE_HOST_IP || '127.0.0.1'}:9090`, '_blank')}
+              >
+                <MonitorCheck className="h-4 w-4 mr-2" />
+                Open
+              </Button>
             </CardHeader>
             <CardContent className="p-0 relative aspect-video">
               <iframe 
-                src={`http://${import.meta.env.VITE_HOST_IP || '192.168.0.20'}:3001/status/estadoservicios`}
+                src={`http://${import.meta.env.VITE_HOST_IP || '127.0.0.1'}:9090`}
                 className="w-full h-full absolute inset-0 border-0"
-                title="Services Status"
+                title="System Monitor"
               />
             </CardContent>
           </Card>
