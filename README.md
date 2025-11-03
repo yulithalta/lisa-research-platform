@@ -214,7 +214,7 @@ A BibTeX entry will be provided upon acceptance.
 
 ## 12. License
 
-MIT License.
+GPL-3.0 License.
 No warranty is provided. This software must not be used as a certified medical device.
 
 ---
