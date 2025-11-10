@@ -1,6 +1,9 @@
 version: "4.0"
 
 services:
+  # -------------------------
+  # Zigbee2MQTT
+  # -------------------------
   zigbee2mqtt:
     image: ghcr.io/koenkk/zigbee2mqtt:latest
     container_name: zigbee2mqtt
@@ -13,9 +16,11 @@ services:
       - ${Z2M_DATA:-./z2m-data}:/app/data
       - /run/udev:/run/udev:ro
     devices:
-      # Ajusta a tu adaptador real
       - ${Z2M_ADAPTER:-/dev/serial/by-id/usb-Texas_Instruments_TI_CC2531_USB_CDC___0X00124B0018ED3DDF-if00}:/dev/ttyACM0
 
+  # -------------------------
+  # Dozzle (Docker logs UI)
+  # -------------------------
   dozzle:
     image: amir20/dozzle:latest
     container_name: dozzle
@@ -31,6 +36,9 @@ services:
       #- DOZZLE_SIMPLE_USERNAME=${DOZZLE_USER:-admin}
       #- DOZZLE_SIMPLE_PASSWORD=${DOZZLE_PASS:-change-me}
 
+  # -------------------------
+  # Dashdot (Host metrics UI)
+  # -------------------------
   dashdot:
     image: mauricenino/dashdot:latest
     container_name: dashdot
@@ -40,7 +48,11 @@ services:
       - "4000:3001"            # Host 3001 → UI
     volumes:
       - /:/mnt/host:ro
-    camera-backend:
+
+  # -------------------------
+  # Camera Backend
+  # -------------------------
+  camera-backend:
     image: chunche95/camera-backend:1.0
     container_name: camera-backend
     ports:
@@ -49,7 +61,10 @@ services:
       - ./backend/streams:/app/streams
       - ./backend/logs:/app/logs
     restart: unless-stopped
-    
+
+  # -------------------------
+  # Camera Frontend
+  # -------------------------
   camera-frontend:
     image: chunche95/camera-frontend:1.0
     container_name: camera-frontend
@@ -59,6 +74,9 @@ services:
       - camera-backend
     restart: unless-stopped
 
+  # -------------------------
+  # Crudsensor App
+  # -------------------------
   crudsensor-app:
     image: chunche95/crudsensor-app:1.0
     container_name: crudsensor-app
@@ -66,6 +84,9 @@ services:
       - "3001:3001"
     restart: unless-stopped
 
+  # -------------------------
+  # Zigbee Dashboard
+  # -------------------------
   zigbee-dashboard:
     image: chunche95/zigbee-dashboard:v2.5.2
     container_name: zigbee-dashboard
@@ -73,6 +94,9 @@ services:
       - "3002:3002"
     restart: unless-stopped
 
+  # -------------------------
+  # RGPD Module
+  # -------------------------
   rgpd-module:
     image: chunche95/rgpd-module-rgpd-module:1.0.0
     container_name: rgpd-module
