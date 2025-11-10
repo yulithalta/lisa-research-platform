@@ -40,3 +40,42 @@ services:
       - "4000:3001"            # Host 3001 → UI
     volumes:
       - /:/mnt/host:ro
+    camera-backend:
+    image: chunche95/camera-backend:1.0
+    container_name: camera-backend
+    ports:
+      - "3033:3033"
+    volumes:
+      - ./backend/streams:/app/streams
+      - ./backend/logs:/app/logs
+    restart: unless-stopped
+    
+  camera-frontend:
+    image: chunche95/camera-frontend:1.0
+    container_name: camera-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - camera-backend
+    restart: unless-stopped
+
+  crudsensor-app:
+    image: chunche95/crudsensor-app:1.0
+    container_name: crudsensor-app
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+
+  zigbee-dashboard:
+    image: chunche95/zigbee-dashboard:v2.5.2
+    container_name: zigbee-dashboard
+    ports:
+      - "3002:3002"
+    restart: unless-stopped
+
+  rgpd-module:
+    image: chunche95/rgpd-module-rgpd-module:1.0.0
+    container_name: rgpd-module
+    ports:
+      - "3003:3003"
+    restart: unless-stopped
